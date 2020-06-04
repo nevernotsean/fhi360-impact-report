@@ -24,7 +24,7 @@ const InViewImage = ({
 
   React.useEffect(() => {
     console.log(height, inView)
-    if (loaded && height == 0) window.dispatchEvent(new Event("resize"))
+    if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
   }, [height, inView, loaded])
 
   return (
@@ -56,11 +56,11 @@ const Container = styled(Box)`
     height: 100%;
     overflow: hidden;
     ${({ revealSpeed }) =>
-      revealSpeed != 0 && `transition: height ${revealSpeed}s ease`};
+      revealSpeed !== 0 && `transition: height ${revealSpeed}s ease`};
   }
 
   ${({ h }) =>
-    h != undefined &&
+    h !== undefined &&
     `
       height: ${h}px;
       

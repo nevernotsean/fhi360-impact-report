@@ -78,7 +78,7 @@ const MaskOuter = styled.div`
       animated &&
       `
       stroke-dashoffset: 0; 
-      transition: stroke-dashoffset ${duration}s ease ${duration * 2 + delay}s;
+      transition: stroke-dashoffset ${duration}s ease ${duration * 1 + delay}s;
       `};
   }
 `

@@ -133,7 +133,7 @@ export const SplitSectionBraveFullscreen = ({ image, children, ...props }) => {
         }}
       >
         <img
-          src={brave2}
+          src={image}
           style={{
             maxWidth: "none",
             marginBottom: 0,

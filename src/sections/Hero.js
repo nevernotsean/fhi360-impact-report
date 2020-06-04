@@ -9,9 +9,9 @@ import HandDrawnSVG from "../components/HandDrawnSVG"
 // img
 import hero from "../images/patrick-fine-hero.png"
 import strip from "../images/pattern-strip.png"
-import PullQuote from "./PullQuote"
-import { Lead } from "./Typography"
-import InViewImage from "./InViewImage"
+import PullQuote from "../components/PullQuote"
+import { Lead } from "../components/Typography"
+import InViewImage from "../components/InViewImage"
 
 const Hero = () => {
   return (

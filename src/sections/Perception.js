@@ -15,8 +15,8 @@ import Arrow from "../assets/svg/arrow.svg"
 import And from "../assets/svg/and.svg"
 import ZipZag from "../assets/svg/zigzag.svg"
 import { Lead } from "../components/Typography"
-import OrderedListCard from "./OrderedListCard"
-import FlexSectionContainer from "./FlexSectionContainer"
+import OrderedListCard from "../components/OrderedListCard"
+import FlexSectionContainer from "../components/FlexSectionContainer"
 import { useInView } from "react-intersection-observer"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 
@@ -174,4 +174,5 @@ const Perception = props => {
 }
 
 const Container = styled.div``
+
 export default Perception

@@ -16,6 +16,8 @@ import {
   SplitSection,
 } from "../components/SplitSection"
 
+import { Box } from "reflexbox"
+
 const Brave = () => {
   return (
     <Container>
