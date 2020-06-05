@@ -5,7 +5,7 @@ import { animated } from "react-spring"
 
 import useDimensions from "react-use-dimensions"
 
-const OrderedListCard = ({ number, children, y, ...props }) => {
+const OrderedListCard = ({ number, children, y, href, ...props }) => {
   const [ref, { height }] = useDimensions()
 
   return (
@@ -20,6 +20,11 @@ const OrderedListCard = ({ number, children, y, ...props }) => {
         <span className="line"></span>
         <p className="number">{number}</p>
         {children}
+        {href && (
+          <a href={href} className="learn-more">
+            Learn More
+          </a>
+        )}
       </animated.span>
     </OrderedListCardContainer>
   )
@@ -27,7 +32,6 @@ const OrderedListCard = ({ number, children, y, ...props }) => {
 
 const OrderedListCardContainer = styled(Box)`
   padding: 0 25px;
-  margin-bottom: 50px;
 
   overflow: hidden;
   position: relative;
@@ -49,6 +53,17 @@ const OrderedListCardContainer = styled(Box)`
     font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 900;
     margin: 1rem 0;
+  }
+
+  .learn-more {
+    color: ${({ theme }) => theme.colors.orange};
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  a {
+    display: inline-block;
   }
 `
 

@@ -2,12 +2,23 @@ import React from "react"
 import { Flex, Box } from "reflexbox"
 import stripeVert from "../images/pattern-vert.png"
 import InViewImage from "../components/InViewImage"
+import FlexSectionContainer from "./FlexSectionContainer"
 
-export const SplitSection = ({ image, children, flip, ...props }) => {
+export const SplitSection = ({
+  image,
+  children,
+  flip,
+  imageCredits,
+  ...props
+}) => {
   return (
     <Flex minHeight={"100vh"} {...props}>
       {!flip && (
-        <SplitSectionImage image={image} scrollSpeed={0}></SplitSectionImage>
+        <SplitSectionImage
+          image={image}
+          imageCredits={imageCredits}
+          scrollSpeed={0}
+        ></SplitSectionImage>
       )}
       <Box
         width={[1, 1 / 2]}
@@ -22,9 +33,10 @@ export const SplitSection = ({ image, children, flip, ...props }) => {
             position: "absolute",
             left: flip ? undefined : 0,
             right: !flip ? undefined : 0,
-            marginTop: "25%",
+            // marginTop: "25%",
           }}
         />
+
         <Flex
           flexDirection={"column"}
           justifyContent={"center"}
@@ -36,14 +48,19 @@ export const SplitSection = ({ image, children, flip, ...props }) => {
         </Flex>
       </Box>
       {flip && (
-        <SplitSectionImage image={image} scrollSpeed={0}></SplitSectionImage>
+        <SplitSectionImage
+          image={image}
+          imageCredits={imageCredits}
+          scrollSpeed={0}
+        ></SplitSectionImage>
       )}
     </Flex>
   )
 }
-export const SplitSectionImage = ({ image, ...props }) => (
+export const SplitSectionImage = ({ image, imageCredits, ...props }) => (
   <Box width={[1, 1 / 2]}>
     <InViewImage
+      imageCredits
       src={image}
       scrollSpeed={1}
       imageSpeed={1.5}
@@ -62,64 +79,99 @@ export const SplitSectionCroppedImage = ({
   image,
   image2,
   children,
+  flip,
   ...props
 }) => {
   return (
-    <Flex minHeight={"100vh"} style={{ position: "relative" }}>
-      <Flex width={[1, 1 / 2]} justifyContent={"center"} alignItems={"center"}>
-        <Box width={[1, 1 / 2]} paddingLeft={"50px"}>
-          <InViewImage
-            src={image}
-            scrollSpeed={1.5}
-            imageSeed={1.2}
-            style={{
-              display: "block",
-              maxWidth: "none",
-              margin: "0 0 0 auto",
-              width: "300px",
-              height: "80vh",
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-          ></InViewImage>
-        </Box>
-        <Box width={[1, 1 / 2]} marginLeft={"-50px"}>
-          <InViewImage
-            src={image2}
-            scrollSpeed={-0.5}
-            imageSeed={3}
-            style={{
-              display: "block",
-              maxWidth: "none",
-              margin: "0 auto 0 0",
-              width: "300px",
-              height: "250px",
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-          ></InViewImage>
-        </Box>
-      </Flex>
-      <Box
-        width={[1, 1 / 2]}
-        ml={"auto"}
-        style={{ position: "relative", zIndex: 1 }}
-      >
+    <FlexSectionContainer minHeight={"100vh"}>
+      <Flex style={{ position: "relative" }}>
+        {flip && (
+          <Box
+            width={[1, 1 / 2]}
+            mr={"auto"}
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            <Flex
+              flexDirection={"column"}
+              justifyContent={"center"}
+              height={"100%"}
+              pr={[15, 30]}
+              pl={[15, 60]}
+            >
+              {children}
+            </Flex>
+          </Box>
+        )}
         <Flex
-          flexDirection={"column"}
+          width={[1, 1 / 2]}
           justifyContent={"center"}
-          height={"100%"}
-          pr={[15, 30]}
-          pl={[15, 60]}
+          alignItems={"center"}
         >
-          {children}
+          <Box
+            width={[1, 1 / 2]}
+            paddingLeft={"50px"}
+            style={{ margin: "0 0 0 auto", width: "300px" }}
+          >
+            <InViewImage
+              src={image}
+              scrollSpeed={1.5}
+              imageSpeed={0.8}
+              style={{
+                display: "block",
+                maxWidth: "none",
+                maxHeight: "500px",
+                height: "80vh",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            ></InViewImage>
+          </Box>
+
+          <Box width={[1, 1 / 2]} marginLeft={"-50px"}>
+            <InViewImage
+              src={image2}
+              scrollSpeed={-0.5}
+              imageSpeed={1}
+              style={{
+                display: "block",
+                maxWidth: "none",
+                margin: "0 auto 0 0",
+                width: "300px",
+                height: "250px",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            ></InViewImage>
+          </Box>
         </Flex>
-      </Box>
-    </Flex>
+        {!flip && (
+          <Box
+            width={[1, 1 / 2]}
+            ml={"auto"}
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            <Flex
+              flexDirection={"column"}
+              justifyContent={"center"}
+              height={"100%"}
+              pr={[15, 30]}
+              pl={[15, 60]}
+            >
+              {children}
+            </Flex>
+          </Box>
+        )}
+      </Flex>
+    </FlexSectionContainer>
   )
 }
 
-export const SplitSectionBraveFullscreen = ({ image, children, ...props }) => {
+export const SplitSectionBraveFullscreen = ({
+  image,
+  children,
+  imageCredits = "C 2020 IMAGE CREDITS",
+  ...props
+}) => {
   return (
     <Flex minHeight={"100vh"} style={{ position: "relative" }}>
       <Box
@@ -143,6 +195,7 @@ export const SplitSectionBraveFullscreen = ({ image, children, ...props }) => {
             objectPosition: "center right",
           }}
         ></img>
+        <small className="image-credits">{imageCredits}</small>
       </Box>
       <Box
         width={[1, 1 / 2]}

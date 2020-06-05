@@ -5,7 +5,6 @@ import BraveSVG from "../assets/svg/brave.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import brave1 from "../images/fpo-brave-1.png"
-import brave2 from "../images/fpo-brave-2.png"
 
 import bravecrop1 from "../images/brave-crop1.png"
 import bravecrop2 from "../images/brave-crop2.png"

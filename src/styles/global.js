@@ -43,6 +43,12 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 200;
   }
+  /** images */
+  .image-credits {
+    font-size: 10px;
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-weight: 200;
+  }
   
 `
 

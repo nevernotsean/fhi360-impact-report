@@ -1,8 +1,23 @@
 import React from "react"
-import { Flex } from "reflexbox"
+import { Flex, Box } from "reflexbox"
 
-const FlexSectionContainer = props => (
-  <Flex maxWidth={1200} mx={"auto"} my={[100, 300]} px={20} {...props}></Flex>
+const FlexSectionContainer = ({
+  py = 100,
+  px = 20,
+  minHeight = "100vh",
+  children,
+  ...props
+}) => (
+  <Flex
+    flexDirection={"column"}
+    justifyContent={"center"}
+    alignItems={"center"}
+    {...props}
+  >
+    <Box py={py} px={px} width={1} maxWidth={1200} minHeight={minHeight}>
+      {children}
+    </Box>
+  </Flex>
 )
 
 export default FlexSectionContainer

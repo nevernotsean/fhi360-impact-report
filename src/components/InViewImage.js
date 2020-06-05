@@ -11,10 +11,11 @@ const InViewImage = ({
   scrollSpeed = 1,
   imageSpeed = 1,
   revealSpeed = 0.75,
+  imageCredits = "C 2020 IMAGE CREDITS",
   ...props
 }) => {
   const [loaded, setLoaded] = useState(false)
-  const [ref, { height }] = useDimensions()
+  const [ref, { height, width }] = useDimensions()
 
   const [parentRef, inView] = useInView({
     rootMargin: "20% 0px -20% 0px",
@@ -23,7 +24,6 @@ const InViewImage = ({
   })
 
   React.useEffect(() => {
-    console.log(height, inView)
     if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
   }, [height, inView, loaded])
 
@@ -33,6 +33,7 @@ const InViewImage = ({
       data-scroll
       data-scroll-speed={scrollSpeed}
       h={inView ? height : 0}
+      w={width}
       revealSpeed={revealSpeed}
     >
       <div className="mask">
@@ -46,6 +47,7 @@ const InViewImage = ({
           {...props}
         ></img>
       </div>
+      <small className="image-credits">{imageCredits}</small>
     </Container>
   )
 }
@@ -59,7 +61,7 @@ const Container = styled(Box)`
       revealSpeed !== 0 && `transition: height ${revealSpeed}s ease`};
   }
 
-  ${({ h }) =>
+  ${({ h, w }) =>
     h !== undefined &&
     `
       height: ${h}px;

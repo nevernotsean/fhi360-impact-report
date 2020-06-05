@@ -45,6 +45,7 @@ const Hero = () => {
               svg={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
+              duration={2}
             ></HandDrawnSVG>
             <div className="line">
               <h2>
