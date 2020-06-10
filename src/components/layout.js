@@ -19,6 +19,8 @@ import Footer from "./Footer"
 import { SmoothScrollFull } from "../hooks/useSmoothScrollbar"
 import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"
 
+import { Helmet } from "react-helmet"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,6 +34,9 @@ const Layout = ({ children }) => {
 
   return (
     <Providers>
+      <Helmet>
+        <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css" />
+      </Helmet>
       <GlobalStyles />
       {/* <SmoothScrollFull /> */}
       <LocomotiveScrollFull>

@@ -17,6 +17,7 @@ const PullQuote = ({ children, ...props }) => {
             fontSize: "48px",
             lineHeight: 1,
           }}
+          className={"serif"}
           children={children}
         ></p>
       </Box>

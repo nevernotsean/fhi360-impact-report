@@ -5,8 +5,10 @@ import { Box } from "reflexbox"
 export const Lead = styled.h2`
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   font-weight: 400;
+  font-style: normal;
+  margin-bottom: 75px;
 `
 
 export const splitLockup = ({

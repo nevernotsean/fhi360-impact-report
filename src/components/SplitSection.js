@@ -1,14 +1,16 @@
 import React from "react"
-import { Flex, Box } from "reflexbox"
+import { Flex, Box } from "reflexbox/styled-components"
 import stripeVert from "../images/pattern-vert.png"
 import InViewImage from "../components/InViewImage"
 import FlexSectionContainer from "./FlexSectionContainer"
+import styled from "styled-components"
 
 export const SplitSection = ({
   image,
   children,
   flip,
   imageCredits,
+  hideImageOnMobile,
   ...props
 }) => {
   return (
@@ -18,6 +20,7 @@ export const SplitSection = ({
           image={image}
           imageCredits={imageCredits}
           scrollSpeed={0}
+          hideImageOnMobile={hideImageOnMobile}
         ></SplitSectionImage>
       )}
       <Box
@@ -52,13 +55,14 @@ export const SplitSection = ({
           image={image}
           imageCredits={imageCredits}
           scrollSpeed={0}
+          hideImageOnMobile={hideImageOnMobile}
         ></SplitSectionImage>
       )}
     </Flex>
   )
 }
 export const SplitSectionImage = ({ image, imageCredits, ...props }) => (
-  <Box width={[1, 1 / 2]}>
+  <SplitImageContainer width={[1, 1 / 2]}>
     <InViewImage
       imageCredits
       src={image}
@@ -73,8 +77,19 @@ export const SplitSectionImage = ({ image, imageCredits, ...props }) => (
       }}
       {...props}
     ></InViewImage>
-  </Box>
+  </SplitImageContainer>
 )
+
+const SplitImageContainer = styled(Box)`
+  ${({ hideImageOnMobile }) =>
+    hideImageOnMobile &&
+    `
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+  `}
+`
+
 export const SplitSectionCroppedImage = ({
   image,
   image2,

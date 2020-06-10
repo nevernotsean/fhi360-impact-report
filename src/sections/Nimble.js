@@ -23,22 +23,23 @@ import OrderedListCard from "../components/OrderedListCard"
 const data = [
   {
     number: "01",
-    body: "About lorem ipsum dolor ist amet, consectateur.",
+    body: "Innovative funding and impact investing",
     href: "#",
   },
   {
     number: "02",
-    body: "About lorem ipsum dolor ist amet, consectateur.",
+    body: "Customizednutrition and health solutions",
     href: "#",
   },
   {
     number: "03",
-    body: "About lorem ipsum dolor ist amet, consectateur.",
+    body: "Complex clinical research in resource-limited settings",
     href: "#",
   },
   {
     number: "04",
-    body: "About lorem ipsum dolor ist amet, consectateur.",
+    body:
+      "Specialized solutions in partnership with foundations and the private sector",
     href: "#",
   },
 ]
@@ -103,10 +104,12 @@ const Nimble = () => {
                   key={index}
                   number={data[index].number}
                   width={[1, 1 / 2]}
-                  maxWidth={200}
-                  m={"25px 25px auto 25px"}
+                  maxWidth={180}
+                  height={350}
+                  p={"25px"}
                   y={y}
                   href={data[index].href}
+                  noBorder={index < 2}
                 >
                   <p>{data[index].body}</p>
                 </OrderedListCard>
@@ -118,7 +121,11 @@ const Nimble = () => {
       <SplitSection image={image1} flip>
         <Lead>We are nimble</Lead>
         <h2 className={"section-title"}>
-          Each can move quickly and seamlessly,
+          Each can
+          <br />
+          move quickly
+          <br />
+          and seamlessly,
           <br />
           <span className={"serif"}>
             alone or with the larger organization.{" "}

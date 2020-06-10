@@ -47,7 +47,7 @@ const InViewImage = ({
           {...props}
         ></img>
       </div>
-      <small className="image-credits">{imageCredits}</small>
+      {/* <small className="image-credits">{imageCredits}</small> */}
     </Container>
   )
 }

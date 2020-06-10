@@ -5,11 +5,23 @@ import { animated } from "react-spring"
 
 import useDimensions from "react-use-dimensions"
 
-const OrderedListCard = ({ number, children, y, href, ...props }) => {
-  const [ref, { height }] = useDimensions()
+const OrderedListCard = ({
+  number,
+  children,
+  y,
+  href,
+  maxWidth,
+  height,
+  ...props
+}) => {
+  const [ref, { height: h }] = useDimensions()
 
   return (
-    <OrderedListCardContainer {...props} height={height}>
+    <OrderedListCardContainer
+      {...props}
+      height={height || h}
+      innerMaxWidth={maxWidth}
+    >
       <animated.span
         ref={ref}
         className={"inner"}
@@ -36,16 +48,20 @@ const OrderedListCardContainer = styled(Box)`
   overflow: hidden;
   position: relative;
   height: ${({ height }) => height}px;
+  /* display: flex;
+  justify-content: center; */
 
   .inner {
     position: absolute;
     height: auto;
     width: 100%;
+    ${({ innerMaxWidth }) => innerMaxWidth && `max-width: ${innerMaxWidth}px;`}
   }
 
   .line {
     display: block;
     border-top: 1px solid ${({ theme }) => theme.colors.orange};
+    ${({ noBorder }) => noBorder && `border-top: none;`}
   }
 
   .number {

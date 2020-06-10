@@ -34,7 +34,7 @@ const Hero = () => {
         </Box>
         <Box width={[1, 1 / 2]}>
           <div className="lockup">
-            <Lead>Welcome</Lead>
+            <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
             <h1 className="title">
               We are so
               <br />
@@ -55,7 +55,7 @@ const Hero = () => {
               </h2>
             </div>
           </div>
-          <Box px={5}>
+          <Box px={5} maxWidth={520}>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
@@ -122,13 +122,14 @@ const HeroContainer = styled(Box)`
     min-height: 500px;
 
     .title {
-      font-size: 60px;
+      font-size: 88px;
+      line-height: 82px;
       font-weight: 900;
     }
 
     .you-are-here {
       position: absolute;
-      width: 100%;
+      width: 115%;
       height: auto;
       transform: translate(-17%, -15%);
     }
