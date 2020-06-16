@@ -57,7 +57,7 @@ const Evidence = () => {
         <FlexSectionContainer width={1} px={[20, 100]}>
           <HandDrawnSVG
             svg={ScienceSVG}
-            alt="We study,test and evaluate.We gather evidence andgenerate reliable data."
+            alt="We study, test and evaluate. We gather evidence and generate reliable data."
             duration={0.3}
             duration2={0.3}
             delay={1}
@@ -94,7 +94,7 @@ const Evidence = () => {
             The result:
             <br />
             <span className={"serif"}>
-              A deep understandingof the people and communities we serve.
+              A deep understanding of the people and communities we serve.
             </span>
           </h2>
         </Box>

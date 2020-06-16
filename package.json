@@ -15,6 +15,7 @@
     "gatsby-plugin-sharp": "^2.6.4",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-sharp": "^2.5.2",
+    "lerp": "^1.0.3",
     "locomotive-scroll": "^3.5.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -37,7 +38,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "build-prefix": "gatsby build --prefix-paths",
+    "build-prefix": "rm -r public/* && gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

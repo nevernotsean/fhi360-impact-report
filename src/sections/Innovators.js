@@ -57,7 +57,7 @@ const Innovators = () => {
       <SplitSection image={image2} flip>
         <Lead>We are innovators</Lead>
         <h2 className={"section-title"}>
-          We are leadingthe revolution
+          We are leading the revolution
           <br />
           <span className="serif">
             in the international nonprofit sector...

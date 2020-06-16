@@ -36,7 +36,9 @@ export const SplitSection = ({
             position: "absolute",
             left: flip ? undefined : 0,
             right: !flip ? undefined : 0,
-            // marginTop: "25%",
+            height: "616px",
+            width: "23px",
+            marginTop: "25vh",
           }}
         />
 
@@ -46,6 +48,8 @@ export const SplitSection = ({
           height={"100%"}
           pr={[15, 30]}
           pl={[15, 60]}
+          maxWidth={600}
+          mx={"auto"}
         >
           {children}
         </Flex>
@@ -61,8 +65,13 @@ export const SplitSection = ({
     </Flex>
   )
 }
-export const SplitSectionImage = ({ image, imageCredits, ...props }) => (
-  <SplitImageContainer width={[1, 1 / 2]}>
+export const SplitSectionImage = ({
+  image,
+  imageCredits,
+  hideImageOnMobile,
+  ...props
+}) => (
+  <SplitImageContainer width={[1, 1 / 2]} hideImageOnMobile={hideImageOnMobile}>
     <InViewImage
       imageCredits
       src={image}
@@ -124,7 +133,6 @@ export const SplitSectionCroppedImage = ({
         >
           <Box
             width={[1, 1 / 2]}
-            paddingLeft={"50px"}
             style={{ margin: "0 0 0 auto", width: "300px" }}
           >
             <InViewImage
@@ -142,7 +150,7 @@ export const SplitSectionCroppedImage = ({
             ></InViewImage>
           </Box>
 
-          <Box width={[1, 1 / 2]} marginLeft={"-50px"}>
+          <Box width={[1, 1 / 2]} ml={-50}>
             <InViewImage
               src={image2}
               scrollSpeed={-0.5}

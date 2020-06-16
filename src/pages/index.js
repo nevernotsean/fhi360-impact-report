@@ -9,7 +9,7 @@ import Evidence from "../sections/Evidence"
 import Nimble from "../sections/Nimble"
 import Innovators from "../sections/Innovators"
 import LiveWork from "../sections/LiveWork"
-import Outro from "../components/Outro"
+import Outro from "../sections/Outro"
 
 const IndexPage = () => (
   <Layout>

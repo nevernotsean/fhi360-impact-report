@@ -28,18 +28,18 @@ const data = [
   },
   {
     number: "02",
-    body: "Customizednutrition and health solutions",
+    body: "Customized nutrition and health solutions",
     href: "#",
   },
   {
     number: "03",
-    body: "Complex clinical research in resource-limited settings",
+    body: "Complex clinical research in  resource-limited settings",
     href: "#",
   },
   {
     number: "04",
     body:
-      "Specialized solutions in partnership with foundations and the private sector",
+      "Specialized  solutions in  partnership with foundations and the private sector",
     href: "#",
   },
 ]
@@ -57,7 +57,7 @@ const Nimble = () => {
 
   const listAnim = useTrail(data.length, {
     config,
-    y: listInView ? "0" : "100%",
+    y: listInView ? "0" : "400px",
   })
 
   return (

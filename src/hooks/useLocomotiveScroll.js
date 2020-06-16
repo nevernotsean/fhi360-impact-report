@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useContext, createContext } from "react"
+import React, {
+  useRef,
+  useEffect,
+  useContext,
+  createContext,
+  useCallback,
+} from "react"
 import LocomotiveScroll from "locomotive-scroll"
 import styled, { createGlobalStyle } from "styled-components"
 
@@ -19,6 +25,7 @@ export const useLocomotiveScroll = (options, ref) => {
     context.scroll = new LocomotiveScroll({
       el,
       smooth: true,
+      scrollFromAnywhere: true,
       ...options,
     })
 

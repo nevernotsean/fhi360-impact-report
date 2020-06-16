@@ -160,7 +160,7 @@ const Perception = props => {
                 </h2>
                 <Box maxWidth={480}>
                   <p className="section-body">
-                    Each of our subsidiaries is designedto make us nimble,
+                    Each of our subsidiaries is designed to make us nimble,
                     innovative, flexible and customizable.
                   </p>
                   <p className="section-body">
