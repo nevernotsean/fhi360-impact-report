@@ -4,7 +4,7 @@ import React from "react"
 
 import Logo from "../assets/svg/fhi-logo-white.svg"
 import MenuButton from "../assets/svg/menu-button.svg"
-import { Flex, Box } from "reflexbox"
+import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 
 const Header = ({ siteTitle }) => (

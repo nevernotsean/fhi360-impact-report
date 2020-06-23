@@ -8,38 +8,38 @@ import styled from "styled-components"
 import NimbleSVG from "../assets/svg/nimble.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import { Lead } from "../components/Typography"
+import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSection } from "../components/SplitSection"
 
 import image1 from "../images/Nimble1.png"
 
-import { Flex, Box } from "reflexbox"
+import { Flex, Box } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import Arrow from "../assets/svg/arrow.svg"
-import OrderedListCard from "../components/OrderedListCard"
+import TitledListCard from "../components/TitledListCard"
 
 const data = [
   {
-    number: "01",
+    title: "FHI<br/><span class='bolder'>Clinical</span>",
+    body: "Complex clinical research support in resource-limited settings",
+    href: "#",
+  },
+  {
+    title: "FHI<br/><span class='bolder'>Vectures</span>",
     body: "Innovative funding and impact investing",
     href: "#",
   },
   {
-    number: "02",
+    title: "FHI<br/><span class='bolder'>Solutions</span>",
     body: "Customized nutrition and health solutions",
     href: "#",
   },
   {
-    number: "03",
-    body: "Complex clinical research in  resource-limited settings",
-    href: "#",
-  },
-  {
-    number: "04",
+    title: "FHI<br/><span class='bolder'>Partners</span>",
     body:
-      "Specialized  solutions in  partnership with foundations and the private sector",
+      "Specialized solutions in partnership with foundations and the private sector",
     href: "#",
   },
 ]
@@ -62,30 +62,33 @@ const Nimble = () => {
 
   return (
     <Container>
-      <SectionDividerDark
+      {/* <SectionDividerDark
         svg={NimbleSVG}
         alt="we are nimble"
         duration={0.2}
         duration2={0.2}
         delay={0.01}
-      ></SectionDividerDark>
+      ></SectionDividerDark> */}
       <FlexSectionContainer>
         <Flex alignItems={"center"} width={1}>
           <Box width={[1, 1 / 2]} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
-            <h2 className="section-title">
+            <H2 className="section-title">
               We are eager, ready & able
               <br />
               <span className="serif">to jump in, pivot and solve.</span>
-            </h2>
+            </H2>
             <div
               className="divider"
               style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
             />
-            <h3 className="section-subtitle">
+            <H3 className="section-subtitle">
               Our global footprint means we do not need a lot of lead time to
               respond to new crises or existing challenges.
-            </h3>
+              <br />
+              <br />
+              Our four subsidiaries have unique areas of focus:
+            </H3>
             <Box
               mt={-50}
               style={{ transform: "translate(15%, -30%) rotate(-12deg)" }}
@@ -100,19 +103,19 @@ const Nimble = () => {
           <Box width={[1, 1 / 2]} ref={listRef}>
             <Flex flexWrap="wrap">
               {listAnim.map(({ y, ...rest }, index) => (
-                <OrderedListCard
+                <TitledListCard
                   key={index}
-                  number={data[index].number}
+                  title={data[index].title}
                   width={[1, 1 / 2]}
                   maxWidth={180}
                   height={350}
                   p={"25px"}
                   y={y}
                   href={data[index].href}
-                  noBorder={index < 2}
+                  // noBorder={index < 2}
                 >
                   <p>{data[index].body}</p>
-                </OrderedListCard>
+                </TitledListCard>
               ))}
             </Flex>
           </Box>
@@ -120,26 +123,22 @@ const Nimble = () => {
       </FlexSectionContainer>
       <SplitSection image={image1} flip>
         <Lead>We are nimble</Lead>
-        <h2 className={"section-title"}>
-          Each can
+        <H2 className={"section-title"}>
+          Each subsidiary
           <br />
-          move quickly
+          can move
           <br />
-          and seamlessly,
-          <br />
-          <span className={"serif"}>
-            alone or with the larger organization.{" "}
-          </span>
-        </h2>
+          <span className={"serif"}>quickly and seamlessly.</span>
+        </H2>
         <div
           className="divider"
           style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
         />
         <Box maxWidth={480}>
-          <p className={"section-body"}>
-            Lorem ipsum fpo contextual content lorem ilset dor nimble
-            subsidiaries fpo content lorem.
-          </p>
+          <H3 className="section-subtitle">
+            On its own or with the larger organization — both in the United
+            States and around the world.
+          </H3>
         </Box>
       </SplitSection>
     </Container>

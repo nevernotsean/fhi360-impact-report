@@ -1,71 +1,12 @@
 import React from "react"
-import { Flex, Box } from "reflexbox/styled-components"
+import { Flex, Box } from "rebass/styled-components"
 import stripeVert from "../images/pattern-vert.png"
 import InViewImage from "../components/InViewImage"
 import FlexSectionContainer from "./FlexSectionContainer"
 import styled from "styled-components"
+import { FlexWrap } from "../elements/Flex"
 
-export const SplitSection = ({
-  image,
-  children,
-  flip,
-  imageCredits,
-  hideImageOnMobile,
-  ...props
-}) => {
-  return (
-    <Flex minHeight={"100vh"} {...props}>
-      {!flip && (
-        <SplitSectionImage
-          image={image}
-          imageCredits={imageCredits}
-          scrollSpeed={0}
-          hideImageOnMobile={hideImageOnMobile}
-        ></SplitSectionImage>
-      )}
-      <Box
-        width={[1, 1 / 2]}
-        style={{ position: "relative", marginLeft: "auto" }}
-      >
-        <img
-          data-scroll
-          data-scroll-speed={1.2}
-          src={stripeVert}
-          alt="pattern"
-          style={{
-            position: "absolute",
-            left: flip ? undefined : 0,
-            right: !flip ? undefined : 0,
-            height: "616px",
-            width: "23px",
-            marginTop: "25vh",
-          }}
-        />
-
-        <Flex
-          flexDirection={"column"}
-          justifyContent={"center"}
-          height={"100%"}
-          pr={[15, 30]}
-          pl={[15, 60]}
-          maxWidth={600}
-          mx={"auto"}
-        >
-          {children}
-        </Flex>
-      </Box>
-      {flip && (
-        <SplitSectionImage
-          image={image}
-          imageCredits={imageCredits}
-          scrollSpeed={0}
-          hideImageOnMobile={hideImageOnMobile}
-        ></SplitSectionImage>
-      )}
-    </Flex>
-  )
-}
-export const SplitSectionImage = ({
+const SplitSectionImage = ({
   image,
   imageCredits,
   hideImageOnMobile,
@@ -99,6 +40,67 @@ const SplitImageContainer = styled(Box)`
   `}
 `
 
+export const SplitSection = ({
+  image,
+  children,
+  flip,
+  imageCredits,
+  hideImageOnMobile,
+  ...props
+}) => {
+  return (
+    <FlexWrap minHeight={"100vh"} {...props}>
+      {!flip && (
+        <SplitSectionImage
+          image={image}
+          imageCredits={imageCredits}
+          scrollSpeed={0}
+          hideImageOnMobile={hideImageOnMobile}
+        ></SplitSectionImage>
+      )}
+      <Box
+        width={[1, 1 / 2]}
+        style={{ position: "relative", marginLeft: "auto" }}
+      >
+        <img
+          data-scroll
+          data-scroll-speed={1.2}
+          src={stripeVert}
+          alt="pattern"
+          style={{
+            position: "absolute",
+            left: flip ? undefined : 0,
+            right: !flip ? undefined : 0,
+            height: "616px",
+            width: "23px",
+            marginTop: "1.45rem",
+          }}
+        />
+
+        <Flex
+          flexDirection={"column"}
+          justifyContent={"center"}
+          height={"100vh"}
+          pr={[15, 30]}
+          pl={[15, 60]}
+          maxWidth={600}
+          mx={"auto"}
+        >
+          {children}
+        </Flex>
+      </Box>
+      {flip && (
+        <SplitSectionImage
+          image={image}
+          imageCredits={imageCredits}
+          scrollSpeed={0}
+          hideImageOnMobile={hideImageOnMobile}
+        ></SplitSectionImage>
+      )}
+    </FlexWrap>
+  )
+}
+
 export const SplitSectionCroppedImage = ({
   image,
   image2,
@@ -108,7 +110,7 @@ export const SplitSectionCroppedImage = ({
 }) => {
   return (
     <FlexSectionContainer minHeight={"100vh"}>
-      <Flex style={{ position: "relative" }}>
+      <FlexWrap style={{ position: "relative" }}>
         {flip && (
           <Box
             width={[1, 1 / 2]}
@@ -184,57 +186,56 @@ export const SplitSectionCroppedImage = ({
             </Flex>
           </Box>
         )}
-      </Flex>
+      </FlexWrap>
     </FlexSectionContainer>
   )
 }
 
-export const SplitSectionBraveFullscreen = ({
-  image,
-  children,
-  imageCredits = "C 2020 IMAGE CREDITS",
-  ...props
-}) => {
-  return (
-    <Flex minHeight={"100vh"} style={{ position: "relative" }}>
-      <Box
-        width={[1, 1]}
-        height={"100%"}
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%,-50%)",
-        }}
-      >
-        <img
-          src={image}
-          style={{
-            maxWidth: "none",
-            marginBottom: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center right",
-          }}
-        ></img>
-        <small className="image-credits">{imageCredits}</small>
-      </Box>
-      <Box
-        width={[1, 1 / 2]}
-        ml={"auto"}
-        style={{ position: "relative", zIndex: 1 }}
-      >
-        <Flex
-          flexDirection={"column"}
-          justifyContent={"center"}
-          height={"100%"}
-          pr={[15, 30]}
-          pl={[15, 60]}
-        >
-          {children}
-        </Flex>
-      </Box>
-    </Flex>
-  )
-}
+// export const SplitSectionLong = ({
+//   image,
+//   children,
+//   imageCredits,
+//   hideImageOnMobile,
+//   ...props
+// }) => {
+//   return (
+//     <FlexWrap minHeight={"100vh"} {...props}>
+//       <SplitSectionImage
+//         image={}
+//         imageCredits={imageCredits}
+//         scrollSpeed={0}
+//         hideImageOnMobile={hideImageOnMobile}
+//       ></SplitSectionImage>
+//       <Box
+//         width={[1, 1 / 2]}
+//         style={{ position: "relative", marginLeft: "auto" }}
+//       >
+//         <img
+//           data-scroll
+//           data-scroll-speed={1.2}
+//           src={stripeVert}
+//           alt="pattern"
+//           style={{
+//             position: "absolute",
+//             right: 0,
+//             height: "616px",
+//             width: "23px",
+//             marginTop: "25vh",
+//           }}
+//         />
+
+//         <Flex
+//           flexDirection={"column"}
+//           justifyContent={"center"}
+//           height={"100vh"}
+//           pr={[15, 30]}
+//           pl={[15, 60]}
+//           maxWidth={600}
+//           mx={"auto"}
+//         >
+//           {children}
+//         </Flex>
+//       </Box>
+//     </FlexWrap>
+//   )
+// }

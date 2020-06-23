@@ -9,8 +9,8 @@ import styled from "styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
-import { Box, Flex } from "reflexbox"
-import { Lead } from "../components/Typography"
+import { Box, Flex } from "rebass/styled-components"
+import { Lead, H2, H3 } from "../elements/Type"
 
 import strip from "../images/pattern-strip.png"
 import theme from "../styles/index"
@@ -66,6 +66,9 @@ const OutroWord = ({ image, children, ...props }) => {
   )
 }
 
+const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
+  lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
+
 const Outro = () => {
   const image = "http://unsplash.it/800/800"
 
@@ -100,51 +103,43 @@ const Outro = () => {
       } else setScale(5)
   }, [scroll, lastType])
 
-  const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
-    lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
-  // {
-  //   var val = lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
-  //   // console.log(scrollY, endY)
-  //   return val
-  // }
-
   return (
     <>
       <OutroWord image={worksImage}>
         <Lead>Lorem ipsum</Lead>
-        <h2 className={"section-title"}>
+        <H2 className={"section-title"}>
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
-        </h2>
+        </H2>
         <Box m={"-170px auto"} maxWidth={450} w={1}>
           <HandDrawnSVG svg={Works}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord image={empowersImage}>
         <Lead>Lorem ipsum</Lead>
-        <h2 className={"section-title"}>
+        <H2 className={"section-title"}>
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
-        </h2>
+        </H2>
         <Box m={"-80px auto"} maxWidth={550} w={1}>
           <HandDrawnSVG svg={Empowers}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord>
         <Lead>Lorem ipsum</Lead>
-        <h2 className={"section-title"}>
+        <H2 className={"section-title"}>
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
-        </h2>
+        </H2>
         <Box m={"-100px auto"} maxWidth={600} w={1}>
           <HandDrawnSVG svg={Engages}></HandDrawnSVG>
         </Box>

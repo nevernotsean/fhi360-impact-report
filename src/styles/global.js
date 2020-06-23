@@ -21,47 +21,51 @@ const GlobalStyles = createGlobalStyle`
 
   /** sections */
   .section-title {
-    font-size: 68px;
-    line-height: 64px;
+    font-weight: 700;
+    margin-bottom: 30px;
   }
 
   .section-subtitle {
-    font-size: 24px;
-    line-height: 33px;
     font-weight: 400;
+    margin-bottom: 30px;
   }
 
   .section-body {
     font-size: 24px;
     line-height: 30px;
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 400;
   }
 
+  span.section-body {
+    display: inline-block;
+    margin-bottom: 1.45rem;
+  }
+
   .serif {
-    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-family: ${({ theme }) => theme.fonts.serif};
     font-weight: 400;
   }
 
   .sans {
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 200;
   }
   /** images */
   .image-credits {
     font-size: 10px;
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 200;
   }
 
 
   h1,h2,h3,h4,h5,h6 {
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.heading};
     font-weight: 700;
   }
 
   p {
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;

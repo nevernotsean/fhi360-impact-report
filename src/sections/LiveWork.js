@@ -8,7 +8,7 @@ import styled from "styled-components"
 import LiveWorkSVG from "../assets/svg/livework.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import { Lead } from "../components/Typography"
+import { Lead, H2 } from "../elements/Type"
 import { SplitSection } from "../components/SplitSection"
 
 import image1 from "../images/Innovators1.png"
@@ -16,7 +16,7 @@ import image2 from "../images/Innovators2.png"
 
 import map from "../images/map.jpg"
 
-import { Box, Flex } from "reflexbox"
+import { Box, Flex } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 
 const LiveWork = () => {
@@ -30,11 +30,11 @@ const LiveWork = () => {
         duration={1}
         duration2={0.2}
         delay={1}
-        overrideLength1={11000}
+        overrideLength={[11000]}
       ></SectionDividerDark>
       <SplitSection image={image1} flip>
         <Lead>We live where we work</Lead>
-        <h2 className={"section-title"}>
+        <H2 className={"section-title"}>
           Over 80%
           <br />
           of our team
@@ -46,16 +46,24 @@ const LiveWork = () => {
             <br />
             they work.
           </span>
-        </h2>
+        </H2>
         <div
           className="divider"
           style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
         />
         <Box maxWidth={480}>
           <p className={"section-body"}>
-            Hand-in-hand, we work with our partners and share our knowledge, so
-            we can learn together to achieve far more than we ever could alone.
+            With our teams based in the countries or communities where they
+            work, we collaborate hand-in-hand with our partners and share our
+            knowledge so we can learn together and achieve far more than we ever
+            could alone.
           </p>
+          {/* <p className={"section-body"}>
+           We partner with nurses and mothers to solve nutrition problems, with young adults and public officials to ensure that public policies meet youth needs, and with women to develop new contraception methods. 
+          </p> */}
+          {/* <p className={"section-body"}>
+          By empowering individuals, families and communities to tackle their challenges, we drive progress for years to come.
+          </p> */}
         </Box>
       </SplitSection>
 
@@ -72,11 +80,11 @@ const LiveWork = () => {
           >
             <Box width={[1, 1 / 2]} mb={[0, 100]}>
               <Lead>We live where we work</Lead>
-              <h2 className={"section-title"}>
+              <H2 className={"section-title"}>
                 In more than
                 <br />
                 <span className="serif">60 countries.</span>
-              </h2>
+              </H2>
               <div
                 className="divider"
                 style={{

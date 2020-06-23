@@ -14,10 +14,13 @@ const HandDrawnSVG = ({
   triggerOnce,
   threshold,
   rootMargin = "20% 0px -20% 0px",
-  overrideLength1,
+  overrideLength = [],
   ...props
 }) => {
   const ref = useRef()
+
+  const [triggered, setTriggered] = useState(false)
+
   const [inViewRef, inView, entry] = useInView({
     rootMargin,
     threshold: 0.8,
@@ -39,6 +42,10 @@ const HandDrawnSVG = ({
   const [pathLength3, setPathLength3] = useState(0)
 
   useEffect(() => {
+    if (inView) setTriggered(true)
+  }, [inView])
+
+  useEffect(() => {
     if (!ref.current) return
 
     const path = ref.current.querySelector(".animate")
@@ -46,21 +53,21 @@ const HandDrawnSVG = ({
     const path2 = ref.current.querySelector(".animate3")
     const path3 = ref.current.querySelector(".animate4")
 
-    if (path) setPathLength(path.getTotalLength())
-    if (path1) setPathLength1(path1.getTotalLength())
-    if (path2) setPathLength2(path2.getTotalLength())
-    if (path3) setPathLength3(path3.getTotalLength())
+    if (path && !overrideLength[0]) setPathLength(path.getTotalLength())
+    if (path1 && !overrideLength[1]) setPathLength1(path1.getTotalLength())
+    if (path2 && !overrideLength[2]) setPathLength2(path2.getTotalLength())
+    if (path3 && !overrideLength[3]) setPathLength3(path3.getTotalLength())
   }, [])
 
   return (
     <MaskOuter
       {...props}
       ref={setRefs}
-      length={overrideLength1 || pathLength}
-      length1={pathLength1}
-      length2={pathLength2}
-      length3={pathLength3}
-      animated={useInview ? inView : animated}
+      length={overrideLength[0] || pathLength}
+      length1={overrideLength[1] || pathLength1}
+      length2={overrideLength[2] || pathLength2}
+      length3={overrideLength[3] || pathLength3}
+      animated={useInview ? triggered : animated}
       duration={duration}
       duration2={duration2}
       delay={delay}

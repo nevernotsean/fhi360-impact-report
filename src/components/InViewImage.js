@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
 import { animated } from "react-spring"
 import useDimensions from "react-use-dimensions"
-import { Box } from "reflexbox"
+import { Box, Image } from "rebass/styled-components"
 
 const InViewImage = ({
   src,
@@ -37,7 +37,7 @@ const InViewImage = ({
       revealSpeed={revealSpeed}
     >
       <div className="mask">
-        <img
+        <Image
           ref={ref}
           src={src}
           alt={alt}
@@ -45,7 +45,7 @@ const InViewImage = ({
           data-scroll-speed={-imageSpeed}
           onLoad={() => setLoaded(true)}
           {...props}
-        ></img>
+        ></Image>
       </div>
       {/* <small className="image-credits">{imageCredits}</small> */}
     </Container>

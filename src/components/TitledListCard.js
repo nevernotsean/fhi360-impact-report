@@ -5,8 +5,8 @@ import { animated } from "react-spring"
 
 import useDimensions from "react-use-dimensions"
 
-const OrderedListCard = ({
-  number,
+const TitledListCard = ({
+  title,
   children,
   y,
   href,
@@ -17,7 +17,7 @@ const OrderedListCard = ({
   const [ref, { height: h }] = useDimensions()
 
   return (
-    <OrderedListCardContainer
+    <TitledListCardContainer
       {...props}
       height={height || h}
       innerMaxWidth={maxWidth}
@@ -30,7 +30,10 @@ const OrderedListCard = ({
         }}
       >
         <span className="line"></span>
-        <p className="number">{number}</p>
+        <div
+          className="title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></div>
         {children}
         {href && (
           <a href={href} className="learn-more">
@@ -38,11 +41,11 @@ const OrderedListCard = ({
           </a>
         )}
       </animated.span>
-    </OrderedListCardContainer>
+    </TitledListCardContainer>
   )
 }
 
-const OrderedListCardContainer = styled(Box)`
+const TitledListCardContainer = styled(Box)`
   padding: 0 25px;
 
   overflow: hidden;
@@ -64,11 +67,16 @@ const OrderedListCardContainer = styled(Box)`
     ${({ noBorder }) => noBorder && `border-top: none;`}
   }
 
-  .number {
-    font-size: 44px;
+  .title {
     font-family: ${({ theme }) => theme.fonts.sans};
-    font-weight: 900;
+    color: ${({ theme }) => theme.colors.orange};
     margin: 1rem 0;
+    text-transform: uppercase;
+
+    .bolder {
+      font-size: 24px;
+      font-weight: 900;
+    }
   }
 
   .learn-more {
@@ -76,6 +84,7 @@ const OrderedListCardContainer = styled(Box)`
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 900;
     text-decoration: none;
+    text-transform: uppercase;
   }
 
   a {
@@ -83,4 +92,4 @@ const OrderedListCardContainer = styled(Box)`
   }
 `
 
-export default OrderedListCard
+export default TitledListCard

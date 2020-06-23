@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Box } from "reflexbox"
+import { Flex, Box } from "rebass/styled-components"
 
 const FlexSectionContainer = ({
   py = 100,

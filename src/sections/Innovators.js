@@ -8,13 +8,15 @@ import styled from "styled-components"
 import InnoSVG from "../assets/svg/innovators.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import { Lead } from "../components/Typography"
+import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSection } from "../components/SplitSection"
+import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
 import image2 from "../images/Innovators2.png"
 
-import { Box } from "reflexbox"
+import { Box } from "rebass/styled-components"
+import HandDrawnSVG from "../components/HandDrawnSVG"
 
 const Innovators = () => {
   const { scroll } = useContext(LocomotiveContext)
@@ -36,43 +38,61 @@ const Innovators = () => {
       ></SectionDividerDark>
       <SplitSection image={image1}>
         <Lead>We are innovators</Lead>
-        <h2 className={"section-title"}>
-          Big organizations
+        <H2 className={"section-title"}>
+          Some organizations
           <br />
           <span className="serif">offer scale.</span>
-        </h2>
+        </H2>
         <div
           className="divider"
           style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
         />
         <Box maxWidth={480}>
           <p className={"section-body"}>
-            Small organizations can move quickly to develop customizable
-            solutions.
-            <br></br>
-            <strong>FHI 360 can do both.</strong>
+            Other organizations focus on developing tailored solutions.
           </p>
+          <span className={"section-body"} style={{ position: "relative" }}>
+            <strong>FHI 360 does both.</strong>
+            <Box
+              sx={{
+                left: 0,
+                width: "200px",
+                position: "absolute",
+                transform: "translateY(-20%)",
+                zIndex: -1,
+              }}
+            >
+              <HandDrawnSVG
+                svg={Streak}
+                duration={0.3}
+                delay={1}
+              ></HandDrawnSVG>
+            </Box>
+          </span>
         </Box>
       </SplitSection>
       <SplitSection image={image2} flip>
         <Lead>We are innovators</Lead>
-        <h2 className={"section-title"}>
-          We are leading the revolution
+        <H2 className={"section-title"}>
+          We are pioneering new ways of doing business
           <br />
-          <span className="serif">
-            in the international nonprofit sector...
-          </span>
-        </h2>
+          <span className="serif">in the international nonprofit sector.</span>
+        </H2>
         <div
           className="divider"
           style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
         />
         <Box maxWidth={480}>
           <p className={"section-body"}>
-            ...to pioneer a new way of doing business. FHI 360 and our family of
-            companies work together to support partners, pilot new initiatives
-            and expand our social imipact.
+            FHI 360 and our family of companies provide fit-for-purpose
+            solutions to businesses, foundations, governments and civil society
+            organizations.
           </p>
+          {/* <p className="section-body">
+            Our global presence and networks enable us to cross-pollinate ideas
+            and knowledge within and across countries so that we can pilot
+            initiatives, nurture innovation and expand our social impact.
+          </p> */}
         </Box>
       </SplitSection>
     </Container>

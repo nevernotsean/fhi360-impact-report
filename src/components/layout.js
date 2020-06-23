@@ -14,7 +14,7 @@ import "../styles/layout.css"
 
 import Providers from "./Providers"
 import GlobalStyles from "../styles/global"
-import { Box } from "reflexbox"
+import { Box } from "rebass/styled-components"
 import Footer from "./Footer"
 import { SmoothScrollFull } from "../hooks/useSmoothScrollbar"
 import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"

@@ -1,46 +1,94 @@
 import React from "react"
 import YouAreHere from "../assets/svg/you-are-here.svg"
+import YouAreHereMobile from "../assets/svg/you-are-here-mobile.svg"
 import Sig from "../assets/svg/sig.svg"
-import { Flex, Box } from "reflexbox"
+import { Flex, Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
 // img
 import hero from "../images/patrick-fine-hero.png"
+import heroMobile from "../images/patrick-fine-hero-mobile.png"
 import strip from "../images/pattern-strip.png"
 import PullQuote from "../components/PullQuote"
-import { Lead } from "../components/Typography"
+import { Lead } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
+import { FlexWrap } from "../elements/Flex"
+import { H1 } from "../elements/Type"
+
+import Streak2 from "../assets/svg/streak2.svg"
+
+const pullquoteContent = {
+  title: "LOREM",
+  body:
+    "pull quote lorem ipsum changing fpo lorem ipsum human engagement placeholder only.",
+}
 
 const Hero = () => {
   return (
-    <HeroContainer bg={theme.colors.lightblue} pt={100}>
-      <Flex maxWidth={1200} mx={"auto"} px={20}>
-        <Box width={[1, 1 / 2]}>
+    <HeroContainer bg={theme.colors.lightblue} pt={[0, 100]}>
+      <FlexWrap maxWidth={1200} mx={"auto"} px={20}>
+        {/* Mobile */}
+        <Box
+          width={1}
+          display={["block", "none"]}
+          sx={{ position: "relative" }}
+        >
+          <Image
+            src={heroMobile}
+            width={"50%"}
+            ml={"-20px"}
+            display={"block"}
+          ></Image>
+          <Image src={strip} className="strip" ml={"-20px"}></Image>
+          <Box className="lockup lockup-mobile" width={"50vw"}>
+            <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
+            <H1 className="title">
+              We are so
+              <br />
+              very glad
+              <span className="hidden">you are here</span>
+            </H1>
+            <HandDrawnSVG
+              svg={YouAreHereMobile}
+              alt={"You are here"}
+              className="you-are-here"
+              duration={2}
+            ></HandDrawnSVG>
+            <div className="line">
+              <h2>
+                Patrick Fine
+                <br />
+                CEO
+              </h2>
+            </div>
+          </Box>
+        </Box>
+        {/* Desktop */}
+        <Box width={[1 / 2]} display={["none", "block"]}>
           <InViewImage
             src={hero}
             className="hero-image"
             scrollSpeed={0}
             imageSpeed={1.5}
-            style={{ marginTop: "50px" }}
+            mt={[0, 50]}
             revealSpeed={0}
           ></InViewImage>
           <img src={strip} className="strip"></img>
-          <PullQuote title={"LOREM IPSUM"} px={[1, 5]}>
-            pull quote lorem ipsum changing fpo lorem ipsum human engagement
-            placeholder only.
+          <PullQuote title={pullquoteContent.title} px={[1, 5]}>
+            {pullquoteContent.body}
           </PullQuote>
         </Box>
         <Box width={[1, 1 / 2]}>
-          <div className="lockup">
+          <Box className="lockup lockup-desktop" display={["none", "block"]}>
             <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
-            <h1 className="title">
+            <H1 className="title">
               We are so
               <br />
               very glad
               <span className="hidden">you are here</span>
-            </h1>
+            </H1>
             <HandDrawnSVG
               svg={YouAreHere}
               alt={"You are here"}
@@ -54,8 +102,8 @@ const Hero = () => {
                 CEO
               </h2>
             </div>
-          </div>
-          <Box px={5} maxWidth={520}>
+          </Box>
+          <Box px={[3, 5]} maxWidth={["none", 520]}>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
@@ -67,6 +115,16 @@ const Hero = () => {
               consequat. Duis autem vel eum iriure dolor in hendrerit in
               vulputate velit esse molestie consequat.
             </p>
+            <Box display={["block", "none"]}>
+              <PullQuote
+                title={pullquoteContent.title}
+                px={[1, 5]}
+                fontSize={"28px"}
+                streak={Streak2}
+              >
+                {pullquoteContent.body}
+              </PullQuote>
+            </Box>
             <p>
               Ut wisi enim ad minim veniam, quis nostrud exerci tation
               ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
@@ -98,18 +156,18 @@ const Hero = () => {
             </Box>
           </Box>
         </Box>
-      </Flex>
+      </FlexWrap>
       <Box bg={"black"} width={[1 / 4]} height={20} ml={"auto"}></Box>
     </HeroContainer>
   )
 }
 
 const HeroContainer = styled(Box)`
-  .hero-image {
+  /* .hero-image {
     margin-bottom: 0;
     display: block;
     width: 100%;
-  }
+  } */
 
   .strip {
     transform: translateY(-100%);
@@ -117,14 +175,10 @@ const HeroContainer = styled(Box)`
   }
 
   .lockup {
-    position: relative;
-    margin-top: 40px;
-    min-height: 500px;
-
     .title {
-      font-size: 88px;
+      /* font-size: 88px;
       line-height: 82px;
-      font-weight: 900;
+      font-weight: 900; */
     }
 
     .you-are-here {
@@ -150,6 +204,29 @@ const HeroContainer = styled(Box)`
       visibility: hidden;
       position: absolute;
       pointer-events: none;
+    }
+  }
+
+  .lockup-desktop {
+    position: relative;
+    margin-top: 40px;
+    min-height: 500px;
+  }
+
+  .lockup-mobile {
+    position: absolute;
+    top: 30px;
+    left: 45vw;
+
+    .line {
+      width: 40vw;
+      border-top: none;
+      border-bottom: 1px solid black;
+      transform: translate(-9vw, 70px);
+      h2 {
+        margin-left: 0;
+        transform: translateX(20vw);
+      }
     }
   }
 `

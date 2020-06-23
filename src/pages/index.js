@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../sections/Hero"
-import Perception from "../sections/Perception"
+import Perception from "../sections/Perception/"
 import Brave from "../sections/Brave"
 import Evidence from "../sections/Evidence"
 import Nimble from "../sections/Nimble"
@@ -16,8 +16,8 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Hero></Hero>
     <Perception></Perception>
-    <Brave></Brave>
     <Evidence></Evidence>
+    <Brave></Brave>
     <Nimble></Nimble>
     <Innovators></Innovators>
     <LiveWork></LiveWork>

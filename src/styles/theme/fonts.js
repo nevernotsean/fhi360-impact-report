@@ -1,6 +1,8 @@
 const fonts = {
-  primary: "benton-sans, sans-serif",
-  secondary: "poynter-oldstyle-display, serif",
+  heading: "benton-sans, sans-serif",
+  body: "poynter-oldstyle-display, serif",
+  sans: "benton-sans, sans-serif",
+  serif: "poynter-oldstyle-display, serif",
 }
 
 export default fonts

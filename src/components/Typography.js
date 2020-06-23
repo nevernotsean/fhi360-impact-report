@@ -1,15 +1,6 @@
 import React from "react"
-import styled from "styled-components"
-import { Box } from "reflexbox"
-
-export const Lead = styled.h2`
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-weight: 400;
-  font-style: normal;
-  margin-bottom: 75px;
-`
+import { Lead, H2, H3 } from "../elements/Type"
+import { Box } from "rebass/styled-components"
 
 export const splitLockup = ({
   flip,
@@ -22,8 +13,8 @@ export const splitLockup = ({
 }) => (
   <>
     <Lead>{lead}</Lead>
-    <h2 className={"section-title"}>{line1}</h2>
-    <h3 className={"section-subtitle"}>{line2}</h3>
+    <H2 className={"section-title"}>{line1}</H2>
+    <H3 className={"section-subtitle"}>{line2}</H3>
     {divider && (
       <div
         className="divider"

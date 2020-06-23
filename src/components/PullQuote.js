@@ -1,34 +1,38 @@
 import React from "react"
-import { Flex, Box } from "reflexbox"
-import styled from "styled-components"
-import { Lead } from "./Typography"
+import { Box } from "rebass/styled-components"
+import { Lead } from "../elements/Type"
 import Streak from "../assets/svg/streak.svg"
 import HandDrawnSVG from "./HandDrawnSVG"
+import { P } from "../elements/Type"
 
-const PullQuote = ({ children, ...props }) => {
+const PullQuote = ({
+  children,
+  streak = Streak,
+  fontSize = "48px",
+  ...props
+}) => {
   return (
-    <Flex flexDirection={"column"} {...props}>
+    <Box flexDirection={"column"} display={"flex"} {...props} mb={"1.45rem"}>
       <Box>
         <Lead>{props.title}</Lead>
       </Box>
       <Box>
-        <p
-          style={{
-            fontSize: "48px",
-            lineHeight: 1,
-          }}
+        <P
+          lineHeight={1.1}
+          fontSize={fontSize}
           className={"serif"}
           children={children}
-        ></p>
+        ></P>
       </Box>
       <Box width={200}>
         <HandDrawnSVG
           duration={0.25}
-          svg={Streak}
+          svg={streak}
           className="pullquote-streak"
+          overrideLength={[238]}
         ></HandDrawnSVG>
       </Box>
-    </Flex>
+    </Box>
   )
 }
 

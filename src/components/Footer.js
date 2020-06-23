@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Box } from "reflexbox"
+import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 import styled from "styled-components"
 
