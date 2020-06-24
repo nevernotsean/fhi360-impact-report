@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 // import InViewMonitor from "react-inview-monitor"
 import { useInView } from "react-intersection-observer"
+import { Box } from "rebass/styled-components"
 
 const HandDrawnSVG = ({
   svg: SvgComponent,
@@ -72,14 +73,16 @@ const HandDrawnSVG = ({
       duration2={duration2}
       delay={delay}
     >
-      <SvgComponent></SvgComponent>
+      <Box data-scroll data-scroll-speed={0.1}>
+        <SvgComponent></SvgComponent>
+      </Box>
     </MaskOuter>
   )
 }
 
 const animate = ({ animated, duration, duration2, delay }, i) => {
-  duration = i == 1 ? duration : duration2
-  delay = i == 1 ? delay : duration * i + delay
+  duration = i === 1 ? duration : duration2
+  delay = i === 1 ? delay : duration * i + delay
 
   return (
     animated &&
@@ -88,6 +91,9 @@ const animate = ({ animated, duration, duration2, delay }, i) => {
 }
 
 const MaskOuter = styled.div`
+  svg {
+    pointer-events: none;
+  }
   .animate {
     opacity: ${({ length }) => (length == 0 ? 0 : 1)};
     stroke-dasharray: ${({ length }) => `${length}px ${length}px`};

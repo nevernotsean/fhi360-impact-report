@@ -89,17 +89,23 @@ const AndSection1 = () => {
               <br />
               <span className="serif">of companies.</span>
             </H2>
-            <Box maxWidth={480}>
-              <p className="section-body">
-                Each of our subsidiaries is designed to make us:
-              </p>
+            <Box maxWidth={480} className="section-body">
+              <p>Each of our subsidiaries is designed to make us:</p>
               <ul>
-                <li>nimble</li>
-                <li>innovative</li>
-                <li>responsive</li>
-                <li>fit for purpose</li>
+                <li>
+                  <p>nimble</p>
+                </li>
+                <li>
+                  <p>innovative</p>
+                </li>
+                <li>
+                  <p>responsive</p>
+                </li>
+                <li>
+                  <p>fit for purpose</p>
+                </li>
               </ul>
-              <p className="section-body">
+              <p>
                 All have a shared common goal:
                 <br />
                 Improving lives in a lasting way.

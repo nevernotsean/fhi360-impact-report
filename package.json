@@ -27,6 +27,7 @@
     "react-spring": "^8.0.27",
     "react-use-dimensions": "^1.2.1",
     "rebass": "^4.0.7",
+    "shortid": "^2.2.15",
     "smooth-scrollbar": "^8.5.2",
     "styled-components": "^5.1.0"
   },

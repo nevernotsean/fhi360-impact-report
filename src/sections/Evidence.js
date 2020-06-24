@@ -24,7 +24,11 @@ const Evidence = () => {
   return (
     <Container>
       <SectionDividerDark svg={EvidenceSVG} alt="we lead with science">
-        We lead with science and act with heart.
+        We lead
+        <br />
+        with science and
+        <br />
+        act with heart.
       </SectionDividerDark>
       <FlexSectionContainer minHeight={"100vh"}>
         <Box width={1} textAlign={"center"}>
@@ -64,7 +68,11 @@ const Evidence = () => {
         </FlexSectionContainer>
         <img src={strip} className="strip"></img>
       </Flex>
-      <SplitSectionCroppedImage image={image1} image2={image1} flip={true}>
+      <SplitSectionCroppedImage
+        image={image1}
+        image2={"https://via.placeholder.com/1000"}
+        flip={true}
+      >
         <Lead>We lead with science</Lead>
         <Box maxWidth={480}>
           <H2 className={"section-title"}>

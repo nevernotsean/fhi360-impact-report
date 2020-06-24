@@ -14,11 +14,11 @@ import Outro from "../sections/Outro"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Hero></Hero>
-    <Perception></Perception>
-    <Evidence></Evidence>
-    <Brave></Brave>
-    <Nimble></Nimble>
+    {/* <Hero></Hero> */}
+    {/* <Perception></Perception> */}
+    {/* <Evidence></Evidence> */}
+    {/* <Brave></Brave> */}
+    {/* <Nimble></Nimble> */}
     <Innovators></Innovators>
     <LiveWork></LiveWork>
     <Outro></Outro>

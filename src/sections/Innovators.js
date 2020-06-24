@@ -9,7 +9,7 @@ import InnoSVG from "../assets/svg/innovators.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import { SplitSection } from "../components/SplitSection"
+import { SplitSection, SplitSectionLong } from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
@@ -71,7 +71,7 @@ const Innovators = () => {
           </span>
         </Box>
       </SplitSection>
-      <SplitSection image={image2} flip>
+      <SplitSectionLong image={image2} flip>
         <Lead>We are innovators</Lead>
         <H2 className={"section-title"}>
           We are pioneering new ways of doing business
@@ -88,13 +88,13 @@ const Innovators = () => {
             solutions to businesses, foundations, governments and civil society
             organizations.
           </p>
-          {/* <p className="section-body">
+          <p className="section-body">
             Our global presence and networks enable us to cross-pollinate ideas
             and knowledge within and across countries so that we can pilot
             initiatives, nurture innovation and expand our social impact.
-          </p> */}
+          </p>
         </Box>
-      </SplitSection>
+      </SplitSectionLong>
     </Container>
   )
 }
