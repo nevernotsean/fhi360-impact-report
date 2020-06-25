@@ -61,7 +61,7 @@ const Container = styled(Flex)`
     max-width: 800px;
     transform: translateX(-50%);
     left: 50%;
-    top: 10vw;
+    top: 5vw;
     line-height: 1;
   }
 `

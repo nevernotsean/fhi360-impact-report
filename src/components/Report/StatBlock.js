@@ -8,15 +8,22 @@ const StatBlock = ({
   start,
   end,
   duration,
+  decimals,
   prefix,
   postfix,
+  separator,
   ...props
 }) => {
   return (
     <StatBlockContainer flexDirection={"column"} {...props}>
       <Box className={"number"}>
         {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}
-        <CountUp end={end} duration={duration}></CountUp>
+        <CountUp
+          end={end}
+          duration={duration}
+          decimals={decimals}
+          separator={separator}
+        ></CountUp>
         {postfix && <span dangerouslySetInnerHTML={{ __html: postfix }}></span>}
       </Box>
       <Box className={"body"}>{children}</Box>

@@ -62,13 +62,13 @@ const Nimble = () => {
 
   return (
     <Container>
-      {/* <SectionDividerDark
+      <SectionDividerDark
         svg={NimbleSVG}
         alt="we are nimble"
         duration={0.2}
         duration2={0.2}
         delay={0.01}
-      ></SectionDividerDark> */}
+      ></SectionDividerDark>
       <FlexSectionContainer>
         <Flex alignItems={"center"} width={1}>
           <Box width={[1, 1 / 2]} maxWidth={480} mr={"auto"}>

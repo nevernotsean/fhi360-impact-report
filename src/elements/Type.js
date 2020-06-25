@@ -4,7 +4,7 @@ import { Text, Heading } from "rebass/styled-components"
 
 export const H1 = props => (
   <Heading
-    fontWeight={"900"}
+    fontWeight={900}
     fontSize={[28, 88]}
     lineHeight={["24px", "82px"]}
     {...props}
@@ -12,7 +12,7 @@ export const H1 = props => (
 )
 export const H2 = props => (
   <Heading
-    fontWeight={700}
+    fontWeight={900}
     fontSize={[28, 68]}
     lineHeight={["24px", "64px"]}
     {...props}

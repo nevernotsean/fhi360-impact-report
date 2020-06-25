@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "benton-sans";
+  src: url("Benton Sans Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "benton-sans";
+  src: url("Benton Sans Medium.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "benton-sans";
+  src: url("Benton Sans Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "poynter-oldstyle-display";
+  src: url("Poynter Oldstyle Display Regular") format("opentype");
+  font-style: normal;
+}

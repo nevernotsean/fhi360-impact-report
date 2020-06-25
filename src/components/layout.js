@@ -14,14 +14,13 @@ import "../styles/layout.css"
 
 import Providers from "./Providers"
 import GlobalStyles from "../styles/global"
-import { Box } from "rebass/styled-components"
 import Footer from "./Footer"
-import { SmoothScrollFull } from "../hooks/useSmoothScrollbar"
 import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"
 
 import { Helmet } from "react-helmet"
+import SideNav from "./SideNav"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, sidenavData, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,12 +33,11 @@ const Layout = ({ children }) => {
 
   return (
     <Providers>
-      <Helmet>
-        <link rel="stylesheet" href="https://use.typekit.net/cua6unr.css" />
-      </Helmet>
+      <Helmet></Helmet>
       <GlobalStyles />
-      {/* <SmoothScrollFull /> */}
+
       <LocomotiveScrollFull>
+        <SideNav data={sidenavData}></SideNav>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
         <Footer></Footer>

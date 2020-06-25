@@ -70,7 +70,7 @@ const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
   lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
 
 const Outro = () => {
-  const image = "http://unsplash.it/800/800"
+  const image = "https://via.placeholder.com/1000"
 
   const context = useContext(LocomotiveContext)
   const [loaded, setLoaded] = useState()

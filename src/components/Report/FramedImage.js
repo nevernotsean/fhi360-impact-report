@@ -6,7 +6,7 @@ import HandDrawnSVG from "../HandDrawnSVG"
 
 const FramedImage = ({ src, alt, ...props }) => {
   return (
-    <Container {...props}>
+    <Container {...props} my={[50, 100]}>
       <Image src={src} alt={alt}></Image>
       <Box className="frame">
         <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG>

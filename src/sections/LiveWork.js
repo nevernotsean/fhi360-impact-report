@@ -9,9 +9,9 @@ import LiveWorkSVG from "../assets/svg/livework.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2 } from "../elements/Type"
-import { SplitSection } from "../components/SplitSection"
+import { SplitSectionLong } from "../components/SplitSection"
 
-import image1 from "../images/Innovators1.png"
+import image1 from "../images/Nimble1.png"
 import image2 from "../images/Innovators2.png"
 
 import map from "../images/map.jpg"
@@ -32,7 +32,7 @@ const LiveWork = () => {
         delay={1}
         overrideLength={[11000]}
       ></SectionDividerDark>
-      <SplitSection image={image1} flip>
+      <SplitSectionLong image={image1} flip>
         <Lead>We live where we work</Lead>
         <H2 className={"section-title"}>
           Over 80%
@@ -58,14 +58,18 @@ const LiveWork = () => {
             knowledge so we can learn together and achieve far more than we ever
             could alone.
           </p>
-          {/* <p className={"section-body"}>
-           We partner with nurses and mothers to solve nutrition problems, with young adults and public officials to ensure that public policies meet youth needs, and with women to develop new contraception methods. 
-          </p> */}
-          {/* <p className={"section-body"}>
-          By empowering individuals, families and communities to tackle their challenges, we drive progress for years to come.
-          </p> */}
+          <p className={"section-body"}>
+            We partner with nurses and mothers to solve nutrition problems, with
+            young adults and public officials to ensure that public policies
+            meet youth needs, and with women to develop new contraception
+            methods.
+          </p>
+          <p className={"section-body"}>
+            By empowering individuals, families and communities to tackle their
+            challenges, we drive progress for years to come.
+          </p>
         </Box>
-      </SplitSection>
+      </SplitSectionLong>
 
       <Box className={"fullpage"}>
         <img className={"bg"} src={map}></img>

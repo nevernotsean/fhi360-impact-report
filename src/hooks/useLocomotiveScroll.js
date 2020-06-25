@@ -39,7 +39,7 @@ export const LocomotiveScrollFull = ({ options, ...props }) => {
   const [_, context] = useLocomotiveScroll({ query: "#___gatsby" })
 
   return (
-    <div data-scroll-section>
+    <div id="sidebar-target">
       <FullStyle />
       <LocomotiveContext.Provider
         value={context}

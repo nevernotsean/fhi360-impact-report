@@ -13,15 +13,16 @@ import { Lead, H2, H3 } from "../elements/Type"
 import {
   SplitSectionCroppedImage,
   SplitSection,
+  SplitSectionLong,
 } from "../components/SplitSection"
 
 import { Box } from "rebass/styled-components"
 
 const Brave = () => {
   return (
-    <Container>
+    <>
       <SectionDividerDark svg={BraveSVG}></SectionDividerDark>
-      <SplitSection image={brave1}>
+      <SplitSectionLong image={brave1}>
         <Lead>We are brave</Lead>
         <H2 className={"section-title"}>
           Some
@@ -40,7 +41,7 @@ const Brave = () => {
             Our willingness to tackle novel challenges keeps us ahead of the
             curve in recognizing and responding to critical global issues.
           </p>
-          {/* <p className={"section-body"}>
+          <p className={"section-body"}>
             Our trailblazing work in contraceptive research and development
             builds on a long history of leadership in family planning that
             empowers women and men to decide the size of their families and
@@ -57,11 +58,14 @@ const Brave = () => {
             In times of conflict, disaster or displacement, we are there to meet
             both urgent needs and to help people rebuild their lives and
             communities.
-          </p> */}
+          </p>
         </Box>
-      </SplitSection>
+      </SplitSectionLong>
 
-      <SplitSectionCroppedImage image={bravecrop1} image2={bravecrop2}>
+      <SplitSectionCroppedImage
+        image={"https://via.placeholder.com/1000"}
+        image2={bravecrop2}
+      >
         <Lead>We are brave</Lead>
         <H2 className={"section-title"}>
           We aren’t
@@ -76,10 +80,8 @@ const Brave = () => {
           </H3>
         </Box>
       </SplitSectionCroppedImage>
-    </Container>
+    </>
   )
 }
-
-const Container = styled.div``
 
 export default Brave

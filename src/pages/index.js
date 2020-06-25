@@ -12,17 +12,58 @@ import LiveWork from "../sections/LiveWork"
 import Outro from "../sections/Outro"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout sidenavData={data}>
     <SEO title="Home" />
-    <Hero></Hero>
-    <Perception></Perception>
-    <Evidence></Evidence>
-    <Brave></Brave>
-    <Nimble></Nimble>
-    <Innovators></Innovators>
-    <LiveWork></LiveWork>
-    <Outro></Outro>
+    {data.map(({ component: Component, id }, i) => (
+      <React.Fragment key={id + i}>
+        <div id={id}></div>
+        <Component></Component>
+      </React.Fragment>
+    ))}
   </Layout>
 )
+
+const data = [
+  {
+    id: "hello",
+    label: "Hello",
+    component: Hero,
+  },
+  {
+    id: "perception",
+    label: "Perception",
+    component: Perception,
+  },
+  {
+    id: "Evidence",
+    label: "Evidence",
+    component: Evidence,
+  },
+  {
+    id: "Brave",
+    label: "Brave",
+    component: Brave,
+  },
+  {
+    id: "Nimble",
+    label: "Nimble",
+    component: Nimble,
+  },
+  {
+    id: "Innovators",
+    label: "Innovators",
+    component: Innovators,
+  },
+  {
+    id: "LiveWork",
+    label: "LiveWork",
+    component: LiveWork,
+  },
+  {
+    id: "Outro",
+    label: "Outro",
+    component: Outro,
+  },
+]
 
 export default IndexPage
