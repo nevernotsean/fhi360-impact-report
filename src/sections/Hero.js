@@ -1,7 +1,7 @@
 import React from "react"
 import YouAreHere from "../assets/svg/you-are-here.svg"
 import YouAreHereMobile from "../assets/svg/you-are-here-mobile.svg"
-import Sig from "../assets/svg/sig.svg"
+import Sig from "../images/sig.png"
 import { Flex, Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
@@ -19,6 +19,17 @@ import { H1 } from "../elements/Type"
 
 import Streak2 from "../assets/svg/streak2.svg"
 
+const introLetter = [
+  "Dear friends and colleagues,",
+
+  "Thanks for visiting! We are delighted to share with you who we are, what we do and where we work. Whether you are just learning about FHI 360 or have worked with us before, you may be surprised by what you see.",
+
+  "As we entered 2020, none of us could have imagined how our world would be upended by COVID-19. What started as a public health emergency has become a global crisis that has exposed and exacerbated systemic inequalities in many of our communities. The social and economic aftershocks will be with us for years to come.",
+
+  "Now as never before, we will be challenged to be creative and work differently. And because we are stronger and more effective when we work together, this is a time to marshal our collective strengths — the vast scope and urgency of this crisis demand nothing less.",
+
+  "Today, we find ourselves called to deliver on our mission to combine science with the art of improving lives like never before. The scale of the challenge is vast, and the stakes couldn’t be higher. This is what FHI 360 is built for. Take a look at what we’re doing.",
+]
 const pullquoteContent = {
   title: "LOREM",
   body:
@@ -96,64 +107,42 @@ const Hero = () => {
               duration={2}
             ></HandDrawnSVG>
             <div className="line">
-              <h2>
+              <h3>
                 Patrick Fine
                 <br />
                 CEO
-              </h2>
+              </h3>
             </div>
           </Box>
           <Box px={[3, 5]} maxWidth={["none", 520]}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation.
-            </p>
-            <p>
-              Ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat. Duis autem vel eum iriure dolor in hendrerit in
-              vulputate velit esse molestie consequat.
-            </p>
-            <Box display={["block", "none"]}>
-              <PullQuote
-                title={pullquoteContent.title}
-                px={[1, 5]}
-                fontSize={"28px"}
-                streak={Streak2}
-              >
-                {pullquoteContent.body}
-              </PullQuote>
+            {introLetter.map((body, i) => {
+              return (
+                <>
+                  <p>{body}</p>
+                  {i == 2 && (
+                    <Box display={["block", "none"]}>
+                      <PullQuote
+                        title={pullquoteContent.title}
+                        px={[1, 5]}
+                        fontSize={"28px"}
+                        streak={Streak2}
+                      >
+                        {pullquoteContent.body}
+                      </PullQuote>
+                    </Box>
+                  )}
+                </>
+              )
+            })}
+            <p>Warm regards,</p>
+            <Box width={200} mr={"auto"} mb={25}>
+              <Image src={Sig}></Image>
             </Box>
             <p>
-              Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat. Duis autem vel eum iriure dolor in hendrerit in
-              vulputate velit esse molestie consequat, vel illum dolore eu
-              feugiat nulla facilisis at vero eros et accumsan et iusto odio
-              dignissim qui blandit praesent luptatum zzril delenit augue duis
-              dolore te feugait nulla facilisi.exerci tation ullamcorper
-              suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              Patrick C. Fine
+              <br />
+              Chief Executive Officer, FHI 360
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-              tation.
-            </p>
-            <p>
-              Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat. Duis autem vel eum iriure dolor in hendrerit in
-              vulputate velit esse molestie consequat, vel illum dolore eu
-              feugiat nulla facilisis at vero eros et accumsan et iusto odio
-              dignissim qui blandit praesent luptatum zzril delenit augue duis
-              dolore te feugait nulla facilisi.exerci tation ullamcorper
-              suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
-            <Box width={200} mx={"auto"} mb={25}>
-              <Sig></Sig>
-            </Box>
           </Box>
         </Box>
       </FlexWrap>
@@ -193,7 +182,7 @@ const HeroContainer = styled(Box)`
       width: 15vw;
       transform: translate(-13px, 165px);
 
-      h2 {
+      h3 {
         margin-left: 32px;
         margin-top: 16px;
         font-size: 14px;

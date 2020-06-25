@@ -7,8 +7,8 @@ const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fontWeights: {
     body: 400,
-    heading: 700,
-    bold: 700,
+    heading: 900,
+    bold: 900,
   },
   lineHeights: {
     body: 1.5,

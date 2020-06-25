@@ -12,6 +12,7 @@ const SplitSectionImage = ({
   imageCredits,
   hideImageOnMobile,
   width = [1, 1 / 2],
+  flip,
   ...props
 }) => (
   <SplitImageContainer width={width} hideImageOnMobile={hideImageOnMobile}>
@@ -29,10 +30,23 @@ const SplitSectionImage = ({
       }}
       {...props}
     ></InViewImage>
+    <Box
+      width={2 / 3}
+      sx={{
+        height: "25px",
+        background: "black",
+        position: "absolute",
+        right: flip ? 0 : undefined,
+        left: flip ? undefined : 0,
+        bottom: -1,
+        zIndex: 999,
+      }}
+    ></Box>
   </SplitImageContainer>
 )
 
 const SplitImageContainer = styled(Box)`
+  position: relative;
   ${({ hideImageOnMobile }) =>
     hideImageOnMobile &&
     `
@@ -58,6 +72,7 @@ export const SplitSection = ({
           imageCredits={imageCredits}
           scrollSpeed={0}
           hideImageOnMobile={hideImageOnMobile}
+          flip={flip}
         ></SplitSectionImage>
       )}
       <Box
@@ -97,6 +112,7 @@ export const SplitSection = ({
           imageCredits={imageCredits}
           scrollSpeed={0}
           hideImageOnMobile={hideImageOnMobile}
+          flip={flip}
         ></SplitSectionImage>
       )}
     </FlexWrap>
@@ -225,6 +241,7 @@ export const SplitSectionLong = ({
         data-scroll
         data-scroll-sticky
         data-scroll-target={`.sticky-section-${id}`}
+        sx={{ position: "relative" }}
       >
         <Image
           mr={!flip && "auto"}
@@ -239,6 +256,18 @@ export const SplitSectionLong = ({
           }}
           src={image}
         ></Image>
+        <Box
+          width={1 / 3}
+          sx={{
+            height: "25px",
+            background: "black",
+            position: "absolute",
+            right: flip ? 0 : undefined,
+            left: flip ? undefined : 0,
+            bottom: -1,
+            zIndex: 999,
+          }}
+        ></Box>
       </Box>
       <FlexColumn
         width={[1, 1 / 2]}

@@ -73,7 +73,7 @@ const HandDrawnSVG = ({
       duration2={duration2}
       delay={delay}
     >
-      <Box data-scroll data-scroll-speed={0.1}>
+      <Box data-scroll data-scroll-speed={0.25}>
         <SvgComponent></SvgComponent>
       </Box>
     </MaskOuter>

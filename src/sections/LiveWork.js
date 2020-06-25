@@ -11,7 +11,7 @@ import SectionDividerDark from "../components/SectionDividerDark"
 import { Lead, H2 } from "../elements/Type"
 import { SplitSectionLong } from "../components/SplitSection"
 
-import image1 from "../images/Innovators1.png"
+import image1 from "../images/Nimble1.png"
 import image2 from "../images/Innovators2.png"
 
 import map from "../images/map.jpg"

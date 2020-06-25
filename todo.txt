@@ -1,0 +1,10 @@
+- Turn load animation into SVG and animate
+- create Financials page, insert Financials PNGS
+- update hand written animation "We lead with science and act with heart"
+- Insert "This is FHI 360" into Outro.
+- Insert new Map.
+
+Things I still need:
+Updated photos for main page
+Photos for Impact report
+Photos for Outro
