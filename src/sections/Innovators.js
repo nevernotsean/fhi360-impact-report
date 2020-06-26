@@ -71,30 +71,59 @@ const Innovators = () => {
           </span>
         </Box>
       </SplitSection>
-      <SplitSectionLong image={image2} flip>
-        <Lead>We are innovators</Lead>
-        <H2 className={"section-title"}>
-          We are pioneering new ways of doing business
-          <br />
-          <span className="serif">in the international nonprofit sector.</span>
-        </H2>
-        <div
-          className="divider"
-          style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
-        />
-        <Box maxWidth={480}>
-          <p className={"section-body"}>
-            FHI 360 and our family of companies provide fit-for-purpose
-            solutions to businesses, foundations, governments and civil society
-            organizations.
-          </p>
-          <p className="section-body">
-            Our global presence and networks enable us to cross-pollinate ideas
-            and knowledge within and across countries so that we can pilot
-            initiatives, nurture innovation and expand our social impact.
-          </p>
-        </Box>
-      </SplitSectionLong>
+      <SplitSectionLong
+        image={image2}
+        flip
+        contentArray={[
+          {
+            img: image2,
+            imgCredits: "credits missing",
+            content: () => (
+              <>
+                <Lead>We are innovators</Lead>
+                <H2 className={"section-title"}>
+                  We are pioneering new ways of doing business
+                  <br />
+                  <span className="serif">
+                    in the international nonprofit sector.
+                  </span>
+                </H2>
+                <div
+                  className="divider"
+                  style={{
+                    borderTop: "1px solid black",
+                    marginBottom: "1.45rem",
+                  }}
+                />
+                <Box maxWidth={480}>
+                  <p className={"section-body"}>
+                    FHI 360 and our family of companies provide fit-for-purpose
+                    solutions to businesses, foundations, governments and civil
+                    society organizations.
+                  </p>
+                </Box>
+              </>
+            ),
+          },
+          {
+            img: image2,
+            imgCredits: "credits missing",
+            content: () => (
+              <>
+                <Lead>We are innovators</Lead>
+                <Box maxWidth={480}>
+                  <p className="section-body">
+                    Our global presence and networks enable us to
+                    cross-pollinate ideas and knowledge within and across
+                    countries so that we can pilot initiatives, nurture
+                    innovation and expand our social impact.
+                  </p>
+                </Box>
+              </>
+            ),
+          },
+        ]}
+      ></SplitSectionLong>
     </Container>
   )
 }

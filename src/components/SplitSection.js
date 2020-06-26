@@ -367,13 +367,16 @@ const SplitSectionLongInner = ({
           </Flex>
         </Box>
         {flip && (
-          <SplitSectionImage
-            image={img}
-            imageCredits={imgCredits}
-            scrollSpeed={0}
-            hideImageOnMobile={hideImageOnMobile}
+          <Image
+            src={img}
             flip={flip}
-          ></SplitSectionImage>
+            width={[1, 1 / 2]}
+            sx={{
+              objectFit: "cover",
+              objectPosition: "center center",
+            }}
+            flip={flip}
+          ></Image>
         )}
       </FlexWrap>
     </>

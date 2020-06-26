@@ -42,21 +42,21 @@ const data = [
   //   label: "Evidence",
   //   component: Evidence,
   // },
-  {
-    id: "Brave",
-    label: "Brave",
-    component: Brave,
-  },
+  // {
+  //   id: "Brave",
+  //   label: "Brave",
+  //   component: Brave,
+  // },
   // {
   //   id: "Nimble",
   //   label: "Nimble",
   //   component: Nimble,
   // },
-  // {
-  //   id: "Innovators",
-  //   label: "Innovators",
-  //   component: Innovators,
-  // },
+  {
+    id: "Innovators",
+    label: "Innovators",
+    component: Innovators,
+  },
   // {
   //   id: "LiveWork",
   //   label: "LiveWork",
