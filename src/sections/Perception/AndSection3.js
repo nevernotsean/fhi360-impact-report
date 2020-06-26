@@ -44,26 +44,6 @@ const RightSide = () => (
         </Box>
       </span>
     </span>
-    <span className="section-body">
-      We are{" "}
-      <span style={{ position: "relative" }}>
-        constantly
-        <Box
-          sx={{
-            left: "50%",
-            width: "150px",
-            position: "absolute",
-            transform: "translate(-50%, -30%)",
-            zIndex: -1,
-          }}
-        >
-          <HandDrawnSVG svg={Streak} duration={0.3} delay={1.5}></HandDrawnSVG>
-        </Box>
-      </span>{" "}
-      developing new partnerships, new funding relationships and customized
-      solutions that we apply to solving some of the world’s most intractable
-      problems.
-    </span>
   </>
 )
 

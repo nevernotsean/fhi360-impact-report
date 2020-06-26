@@ -15,7 +15,6 @@ import { animated } from "react-spring"
 // SVG
 
 import Circle from "../../assets/svg/circle.svg"
-import Streak from "../../assets/svg/streak2.svg"
 
 const config = { mass: 300, tension: 2000, friction: 20000 }
 
@@ -55,26 +54,6 @@ const RightSide = () => (
           }}
         >
           <HandDrawnSVG svg={Circle} duration={0.3} delay={1}></HandDrawnSVG>
-        </Box>
-      </span>
-    </span>
-    <span className="section-body">
-      From Nepal to North Dakota, our committed team of development
-      professionals, scientists and researchers is continuously applying an
-      entrepreneurial approach and striving for excellence to reduce inequality
-      and achieve{" "}
-      <span style={{ position: "relative" }}>
-        meaningful impact.
-        <Box
-          sx={{
-            left: 0,
-            width: "150px",
-            position: "absolute",
-            transform: "translateY(-20%)",
-            zIndex: -1,
-          }}
-        >
-          <HandDrawnSVG svg={Streak} duration={0.3} delay={1}></HandDrawnSVG>
         </Box>
       </span>
     </span>

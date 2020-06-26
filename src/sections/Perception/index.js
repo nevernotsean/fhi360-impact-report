@@ -12,7 +12,7 @@ import { useTrail, useSpring, animated } from "react-spring"
 
 import PerceptionSVG from "../../assets/svg/perception.svg"
 import Arrow from "../../assets/svg/arrow.svg"
-import { H2, H3 } from "../../elements/Type"
+import { H2, H3, Lead } from "../../elements/Type"
 import OrderedListCard from "../../components/OrderedListCard"
 import FlexSectionContainer from "../../components/FlexSectionContainer"
 import { useInView } from "react-intersection-observer"
@@ -21,6 +21,8 @@ import { FlexWrap } from "../../elements/Flex"
 import AndSection1 from "./AndSection1"
 import AndSection2 from "./AndSection2"
 import AndSection3 from "./AndSection3"
+import { SplitSectionCroppedImage } from "../../components/SplitSection"
+import Streak from "../../assets/svg/streak2.svg"
 
 const data = [
   {
@@ -109,8 +111,83 @@ const Perception = props => {
         alt="let's change perception"
       ></SectionDividerDark>
       <AndSection1 />
-      <AndSection2 />
-      <AndSection3 />
+      <AndSection2 />{" "}
+      <SplitSectionCroppedImage
+        flip
+        image={"https://via.placeholder.com/1920x1180"}
+        image2={"https://via.placeholder.com/1920x1180"}
+      >
+        <Lead>LET’S CHANGE PERCEPTION</Lead>
+        <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>
+          Nepal to
+          <br />
+          North Dakota
+        </H3>
+        <Box maxWidth={["none", 320]}>
+          <span className="section-body">
+            Our committed team of development professionals, scientists and
+            researchers is continuously applying an entrepreneurial approach and
+            striving for excellence to reduce inequality and achieve{" "}
+            <span style={{ position: "relative" }}>
+              meaningful impact.
+              <Box
+                sx={{
+                  left: 0,
+                  width: "150px",
+                  position: "absolute",
+                  transform: "translateY(-20%)",
+                  zIndex: -1,
+                }}
+              >
+                <HandDrawnSVG
+                  svg={Streak}
+                  duration={0.3}
+                  delay={1}
+                ></HandDrawnSVG>
+              </Box>
+            </span>
+          </span>
+        </Box>
+      </SplitSectionCroppedImage>
+      <AndSection3 />{" "}
+      <SplitSectionCroppedImage
+        flip
+        image={"https://via.placeholder.com/1920x1180"}
+        image2={"https://via.placeholder.com/1920x1180"}
+      >
+        <Lead>LET’S CHANGE PERCEPTION</Lead>
+        <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>
+          We Are
+          <br />
+          <span style={{ position: "relative" }}>
+            constantly
+            <Box
+              sx={{
+                left: "50%",
+                width: "150px",
+                position: "absolute",
+                transform: "translate(-50%, -30%)",
+                zIndex: -1,
+              }}
+            >
+              <HandDrawnSVG
+                svg={Streak}
+                duration={0.3}
+                delay={1.5}
+              ></HandDrawnSVG>
+            </Box>
+          </span>
+          <br />
+          Developing
+        </H3>
+        <Box maxWidth={["none", 320]}>
+          <span className="section-body">
+            New partnerships, new funding relationships and customized solutions
+            that we apply to solving some of the world’s most intractable
+            problems.
+          </span>
+        </Box>
+      </SplitSectionCroppedImage>
     </Container>
   )
 }

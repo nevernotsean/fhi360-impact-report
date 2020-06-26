@@ -32,44 +32,81 @@ const LiveWork = () => {
         delay={1}
         overrideLength={[11000]}
       ></SectionDividerDark>
-      <SplitSectionLong image={image1} flip>
-        <Lead>We live where we work</Lead>
-        <H2 className={"section-title"}>
-          Over 80%
-          <br />
-          of our team
-          <br />
-          <span className="serif">
-            are based in the
-            <br />
-            countries where
-            <br />
-            they work.
-          </span>
-        </H2>
-        <div
-          className="divider"
-          style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
-        />
-        <Box maxWidth={480}>
-          <p className={"section-body"}>
-            With our teams based in the countries or communities where they
-            work, we collaborate hand-in-hand with our partners and share our
-            knowledge so we can learn together and achieve far more than we ever
-            could alone.
-          </p>
-          <p className={"section-body"}>
-            We partner with nurses and mothers to solve nutrition problems, with
-            young adults and public officials to ensure that public policies
-            meet youth needs, and with women to develop new contraception
-            methods.
-          </p>
-          <p className={"section-body"}>
-            By empowering individuals, families and communities to tackle their
-            challenges, we drive progress for years to come.
-          </p>
-        </Box>
-      </SplitSectionLong>
+      <SplitSectionLong
+        flip
+        contentArray={[
+          {
+            img: image1,
+            imgCredits: "Credits MIssing",
+            content: () => (
+              <>
+                <Lead>We live where we work</Lead>
+                <H2 className={"section-title"}>
+                  Over 80%
+                  <br />
+                  of our team
+                  <br />
+                  <span className="serif">
+                    are based in the
+                    <br />
+                    countries where
+                    <br />
+                    they work.
+                  </span>
+                </H2>
+                <div
+                  className="divider"
+                  style={{
+                    borderTop: "1px solid black",
+                    marginBottom: "1.45rem",
+                  }}
+                />
+                <Box maxWidth={480}>
+                  <p className={"section-body"}>
+                    With our teams based in the countries or communities where
+                    they work, we collaborate hand-in-hand with our partners and
+                    share our knowledge so we can learn together and achieve far
+                    more than we ever could alone.
+                  </p>
+                </Box>
+              </>
+            ),
+          },
+          {
+            img: image1,
+            imgCredits: "Credits MIssing",
+            content: () => (
+              <>
+                <Lead>We live where we work</Lead>
+                <Box maxWidth={480}>
+                  <p className={"section-body"}>
+                    We partner with nurses and mothers to solve nutrition
+                    problems, with young adults and public officials to ensure
+                    that public policies meet youth needs, and with women to
+                    develop new contraception methods.
+                  </p>
+                </Box>
+              </>
+            ),
+          },
+          {
+            img: image1,
+            imgCredits: "Credits MIssing",
+            content: () => (
+              <>
+                <Lead>We live where we work</Lead>
+                <Box maxWidth={480}>
+                  <p className={"section-body"}>
+                    By empowering individuals, families and communities to
+                    tackle their challenges, we drive progress for years to
+                    come.
+                  </p>
+                </Box>
+              </>
+            ),
+          },
+        ]}
+      ></SplitSectionLong>
 
       <Box className={"fullpage"}>
         <Image
