@@ -314,3 +314,28 @@ const FlexColumn = props => (
     {...props}
   ></Flex>
 )
+
+const PhotoCredits = ({ credit, ...props }) => {
+  const [isOpen, setIsOpen] = React.useState()
+
+  return (
+    <PhotoCreditsContainer isOpen={isOpen}>
+      <span className={"button"} onClick={() => setIsOpen(!isOpen)}>
+        Photo Credits
+      </span>
+      <p className={"credit"}>: {credit}</p>
+    </PhotoCreditsContainer>
+  )
+}
+
+const PhotoCreditsContainer = styled(Box)`
+  span,
+  p {
+    font-size: 12px;
+  }
+  .credit {
+    opacity: 0;
+    transition: opacity 300ms linear;
+    ${({ isOpen }) => isOpen && `opacity: 1;`}
+  }
+`

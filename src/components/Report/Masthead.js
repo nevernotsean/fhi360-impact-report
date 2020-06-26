@@ -3,18 +3,21 @@ import { Flex } from "rebass"
 import FlexSectionContainer from "../FlexSectionContainer"
 import { H1, H2, Lead } from "../../elements/Type"
 import styled from "styled-components"
+import { Box } from "rebass/styled-components"
 
-const Masthead = () => {
+const Masthead = ({
+  title = "Measuring Progress",
+  headline = "2019<br />Impact Report",
+  children,
+  ...props
+}) => {
   return (
     <MastheadContainer>
-      <FlexSectionContainer minHeight={"80vh"}>
-        <Lead mb={3}>Measuring Progress</Lead>
+      <FlexSectionContainer minHeight={"50vh"} {...props}>
+        <Lead mb={3}>{title}</Lead>
         <div className="hr"></div>
-        <H1>
-          2019
-          <br />
-          Impact Report
-        </H1>
+        <H1 dangerouslySetInnerHTML={{ __html: headline }}></H1>
+        {children && <Box my={30}>{children}</Box>}
       </FlexSectionContainer>
     </MastheadContainer>
   )

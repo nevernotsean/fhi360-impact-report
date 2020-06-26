@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     height: 100vh;
     overflow: auto;
+
+    ${({ bg }) => bg && `background: ${bg};`}
   }
 
   /** sections */

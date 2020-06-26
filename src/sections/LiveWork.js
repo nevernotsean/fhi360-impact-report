@@ -16,7 +16,7 @@ import image2 from "../images/Innovators2.png"
 
 import map from "../images/map.jpg"
 
-import { Box, Flex } from "rebass/styled-components"
+import { Box, Flex, Image } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 
 const LiveWork = () => {
@@ -72,7 +72,14 @@ const LiveWork = () => {
       </SplitSectionLong>
 
       <Box className={"fullpage"}>
-        <img className={"bg"} src={map}></img>
+        <Image
+          className={"bg"}
+          src={map}
+          sx={{
+            objectFit: "contain",
+            objectPosition: "center center",
+          }}
+        ></Image>
         <FlexSectionContainer>
           <Flex
             flexDirection={"column"}

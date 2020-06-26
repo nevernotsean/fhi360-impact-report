@@ -1,8 +1,8 @@
 import React from "react"
 import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
-import CountUp from "react-countup"
-
+import { useCountUp } from "react-countup"
+import { useInView } from "react-intersection-observer"
 const StatBlock = ({
   children,
   start,
@@ -14,16 +14,30 @@ const StatBlock = ({
   separator,
   ...props
 }) => {
+  const [parentRef, inView] = useInView({
+    rootMargin: "20% 0px -20% 0px",
+    threshold: 1,
+    triggerOnce: true,
+  })
+
+  const { countUp, start: startCount, reset } = useCountUp({
+    end,
+    duration,
+    decimals,
+    separator,
+    startOnMount: false,
+  })
+
+  React.useEffect(() => {
+    if (inView) startCount()
+  }, [inView])
+
   return (
     <StatBlockContainer flexDirection={"column"} {...props}>
+      <div ref={parentRef}></div>
       <Box className={"number"}>
         {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}
-        <CountUp
-          end={end}
-          duration={duration}
-          decimals={decimals}
-          separator={separator}
-        ></CountUp>
+        <span>{countUp}</span>
         {postfix && <span dangerouslySetInnerHTML={{ __html: postfix }}></span>}
       </Box>
       <Box className={"body"}>{children}</Box>

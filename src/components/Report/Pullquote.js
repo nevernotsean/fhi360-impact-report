@@ -12,17 +12,20 @@ const ReportPullquote = ({ title, headline, ...props }) => {
       <H2
         dangerouslySetInnerHTML={{ __html: headline }}
         fontSize={[24, 48]}
+        className={"quote"}
       ></H2>
       <Box width={100} className="underline">
-        <HandDrawnSVG svg={Streak}></HandDrawnSVG>
+        <HandDrawnSVG svg={Streak} duration={0.3}></HandDrawnSVG>
       </Box>
     </Container>
   )
 }
 
 const Container = styled(Box)`
-  h2 {
+  .quote {
     font-family: ${({ theme }) => theme.fonts.serif};
+    font-weight: 400;
+    line-height: 1;
   }
 
   .underline {

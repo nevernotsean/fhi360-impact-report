@@ -10,11 +10,13 @@ import FramedImage from "../components/Report/FramedImage"
 import tribeJPG from "../images/fro-native-american.jpg"
 import { Box } from "rebass"
 import ReportPullquote from "./../components/Report/Pullquote"
+import Nav from "../components/Report/Nav"
 
 const impactReport = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Nav></Nav>
       <Masthead></Masthead>
       <Section {...data[0]}>
         <Box width={[1, 1 / 2]} ml={"auto"}>

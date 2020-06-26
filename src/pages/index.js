@@ -14,12 +14,15 @@ import Outro from "../sections/Outro"
 const IndexPage = () => (
   <Layout sidenavData={data}>
     <SEO title="Home" />
-    {data.map(({ component: Component, id }, i) => (
-      <React.Fragment key={id + i}>
-        <div id={id}></div>
-        <Component></Component>
-      </React.Fragment>
-    ))}
+    {data.map(
+      ({ component: Component, id }, i) =>
+        Component && (
+          <React.Fragment key={id + i}>
+            <div id={id}></div>
+            <Component></Component>
+          </React.Fragment>
+        )
+    )}
   </Layout>
 )
 
@@ -63,6 +66,11 @@ const data = [
     id: "Outro",
     label: "Outro",
     component: Outro,
+  },
+  {
+    id: "report",
+    label: "Impact Report",
+    url: "/report",
   },
 ]
 

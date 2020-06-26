@@ -7,7 +7,7 @@ import MenuButton from "../assets/svg/menu-button.svg"
 import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, setSideNavOpen }) => (
   <header
     style={{
       background: theme.colors.black,
@@ -16,7 +16,8 @@ const Header = ({ siteTitle }) => (
     <Flex
       m={"0 auto"}
       maxWidth={1200}
-      p={"1.45rem 1.0875rem"}
+      height={100}
+      p={"0 1.0875rem"}
       alignItems={"center"}
       justifyContent={"space-between"}
     >
@@ -46,11 +47,10 @@ const Header = ({ siteTitle }) => (
           The science of improving lives
         </span>
       </h1>
-      <div>
-        <Box height={21} width={25}>
-          <MenuButton></MenuButton>
-        </Box>
-      </div>
+
+      <Box height={26.66} width={32} sx={{ cursor: "pointer" }}>
+        <MenuButton onClick={() => setSideNavOpen(true)}></MenuButton>
+      </Box>
     </Flex>
   </header>
 )

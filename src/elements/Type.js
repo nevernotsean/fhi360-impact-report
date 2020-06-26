@@ -31,7 +31,7 @@ export const Lead = props => (
   <Heading
     fontWeight={"400"}
     fontSize={"14px"}
-    letterSpacing={"7px"}
+    letterSpacing={"5px"}
     mb={["25px", "75px"]}
     sx={{ textTransform: "uppercase" }}
     {...props}

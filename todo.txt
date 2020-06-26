@@ -1,3 +1,4 @@
+/- Update the sidenav with animation and styles
 - Turn load animation into SVG and animate
 - create Financials page, insert Financials PNGS
 - update hand written animation "We lead with science and act with heart"

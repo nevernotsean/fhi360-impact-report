@@ -20,7 +20,7 @@ import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"
 import { Helmet } from "react-helmet"
 import SideNav from "./SideNav"
 
-const Layout = ({ children, sidenavData, ...props }) => {
+const Layout = ({ children, sidenavData, bg, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,14 +31,23 @@ const Layout = ({ children, sidenavData, ...props }) => {
     }
   `)
 
+  const [sideNavOpen, setSideNavOpen] = React.useState(false)
+
   return (
     <Providers>
       <Helmet></Helmet>
-      <GlobalStyles />
+      <GlobalStyles bg={bg} />
 
       <LocomotiveScrollFull>
-        <SideNav data={sidenavData}></SideNav>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <SideNav
+          data={sidenavData}
+          isOpen={sideNavOpen}
+          closeSidenav={() => setSideNavOpen(false)}
+        ></SideNav>
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          setSideNavOpen={setSideNavOpen}
+        />
         <main>{children}</main>
         <Footer></Footer>
       </LocomotiveScrollFull>

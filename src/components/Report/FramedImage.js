@@ -9,7 +9,8 @@ const FramedImage = ({ src, alt, ...props }) => {
     <Container {...props} my={[50, 100]}>
       <Image src={src} alt={alt}></Image>
       <Box className="frame">
-        <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG>
+        <RectangleFrame></RectangleFrame>
+        {/* <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG> */}
       </Box>
     </Container>
   )
@@ -20,10 +21,10 @@ const Container = styled(Box)`
 
   .frame {
     position: absolute;
-    top: -15%;
-    left: -4%;
+    top: -12%;
+    left: -8%;
     height: auto;
-    width: 110%;
+    width: 116%;
   }
 `
 
