@@ -6,6 +6,7 @@ module.exports = {
   },
   pathPrefix: `/fhi360-2020`,
   plugins: [
+    "gatsby-plugin-styled-components",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -41,7 +42,7 @@ module.exports = {
       options: {
         custom: {
           families: ["benton-sans"],
-          urls: ["/fonts/fonts.css"],
+          urls: ["./fonts/fonts.css"],
         },
       },
     },
