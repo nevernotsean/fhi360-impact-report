@@ -40,8 +40,8 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
-          families: ["benton-sans"],
-          urls: ["/fonts/fonts.css"],
+          families: ["benton-sans", "poynter-oldstyle-display"],
+          urls: ["./fonts/fonts.css"],
         },
       },
     },
