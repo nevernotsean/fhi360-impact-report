@@ -25,15 +25,19 @@ const Section = ({
                 {headline}
               </H2>
 
-              <Lead mb={2}>Project</Lead>
+              <H3 className="labelhead" mb={2}>
+                Project
+              </H3>
               <H3
-                className={"label"}
+                className={"project label"}
                 dangerouslySetInnerHTML={{ __html: project }}
               ></H3>
               <div className="label-hr"></div>
-              <Lead mb={2}>Funder</Lead>
+              <H3 className="labelhead" mb={2}>
+                Funder
+              </H3>
               <H3
-                className={"label"}
+                className={"funder label"}
                 dangerouslySetInnerHTML={{ __html: funder }}
               ></H3>
             </Flex>
@@ -77,6 +81,11 @@ const Container = styled.div`
   .label {
     font-size: 16px;
     line-height: 1.25;
+    font-weight: 700;
+  }
+  .labelhead {
+    font-weight: 900;
+    text-transform: uppercase;
   }
   .label-hr {
     max-width: 215px;

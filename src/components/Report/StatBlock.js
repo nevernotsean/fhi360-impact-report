@@ -51,13 +51,14 @@ const StatBlockContainer = styled(Flex)`
   .number {
     font-size: 68px;
     font-family: ${({ theme }) => theme.fonts.sans};
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1.5;
   }
 
   .body {
     max-width: 320px;
     margin-bottom: 10px;
+    font-weight: 700;
   }
 
   .hr {
