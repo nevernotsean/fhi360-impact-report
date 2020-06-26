@@ -20,7 +20,7 @@ import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"
 import { Helmet } from "react-helmet"
 import SideNav from "./SideNav"
 
-const Layout = ({ children, sidenavData, bg, ...props }) => {
+const Layout = ({ children, sidenavData, bg, hideMenuButton, ...props }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -46,6 +46,7 @@ const Layout = ({ children, sidenavData, bg, ...props }) => {
         ></SideNav>
         <Header
           siteTitle={data.site.siteMetadata.title}
+          hideMenuButton={hideMenuButton}
           setSideNavOpen={setSideNavOpen}
         />
         <main>{children}</main>

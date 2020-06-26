@@ -6,6 +6,7 @@ import FlexSectionContainer from "./FlexSectionContainer"
 import styled from "styled-components"
 import { FlexWrap } from "../elements/Flex"
 import shortid from "shortid"
+import theme from "../styles/index"
 
 const SplitSectionImage = ({
   image,
@@ -260,7 +261,7 @@ export const SplitSectionLong = ({
           width={1 / 3}
           sx={{
             height: "25px",
-            background: "black",
+            background: theme.colors.black,
             position: "absolute",
             right: flip ? 0 : undefined,
             left: flip ? undefined : 0,

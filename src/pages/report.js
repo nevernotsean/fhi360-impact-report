@@ -14,7 +14,7 @@ import Nav from "../components/Report/Nav"
 
 const impactReport = () => {
   return (
-    <Layout>
+    <Layout bg={"#e2e2e2"} hideMenuButton={true}>
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead></Masthead>

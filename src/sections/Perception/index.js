@@ -59,7 +59,7 @@ const Perception = props => {
 
   return (
     <Container>
-      <FlexSectionContainer>
+      <FlexSectionContainer justifyContent="center" alightItems="center">
         <FlexWrap alignItems={"center"} width={1}>
           <Box width={[1, 1 / 3]}>
             <H2 className="section-title">
