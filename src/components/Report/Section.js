@@ -21,7 +21,12 @@ const Section = ({
         <Flex>
           <Box width={[1, 1 / 2, 1 / 3]}>
             <Flex flexDirection={"column"}>
-              <H2 className="headline" fontSize={[24, 44, 68]} mb={[0, 100]}>
+              <H2
+                className="headline"
+                fontSize={[24, 44, 68]}
+                mb={[0, 100]}
+                fontWeight={400}
+              >
                 {headline}
               </H2>
 

@@ -38,7 +38,7 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
         </Box>
         {data.map(({ label, id, component, url, ...props }, i) =>
           url ? (
-            <Link key={id + i} to={url} {...props}>
+            <Link key={id + i} to={url} {...props} className="link">
               {label}
               <div className="hr"></div>
             </Link>
@@ -109,7 +109,8 @@ const Container = styled(Box)`
     z-index: 9999;
   }
 
-  .scrollToLink {
+  .scrollToLink,
+  .link {
     cursor: pointer;
 
     font-size: 18px;
@@ -138,6 +139,11 @@ const Container = styled(Box)`
         transform: scaleX(1);
       }
     }
+  }
+
+  .link {
+    color: ${({ theme }) => theme.colors.black};
+    text-decoration: none;
   }
 `
 

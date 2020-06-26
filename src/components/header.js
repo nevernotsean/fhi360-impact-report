@@ -7,7 +7,7 @@ import MenuButton from "../assets/svg/menu-button.svg"
 import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 
-const Header = ({ siteTitle, setSideNavOpen }) => (
+const Header = ({ siteTitle, setSideNavOpen, hideMenuButton = false }) => (
   <header
     style={{
       background: theme.colors.black,
@@ -48,9 +48,11 @@ const Header = ({ siteTitle, setSideNavOpen }) => (
         </span>
       </h1>
 
-      <Box height={26.66} width={32} sx={{ cursor: "pointer" }}>
-        <MenuButton onClick={() => setSideNavOpen(true)}></MenuButton>
-      </Box>
+      {hideMenuButton != true && (
+        <Box height={26.66} width={32} sx={{ cursor: "pointer" }}>
+          <MenuButton onClick={() => setSideNavOpen(true)}></MenuButton>
+        </Box>
+      )}
     </Flex>
   </header>
 )

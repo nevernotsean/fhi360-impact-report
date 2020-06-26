@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     ${({ bg }) => bg && `background: ${bg};`}
   }
 
+  body {
+    font-family: ${({ theme }) => theme.fonts.sans};
+  }
+
   /** sections */
   .section-title {
     font-weight: 900;

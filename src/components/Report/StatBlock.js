@@ -11,7 +11,7 @@ const StatBlock = ({
   decimals,
   prefix,
   postfix,
-  separator,
+  separator = ",",
   ...props
 }) => {
   const [parentRef, inView] = useInView({

@@ -10,7 +10,7 @@ import Nav from "../components/Report/Nav"
 
 const Funders = () => {
   return (
-    <Layout bg={"#e2e2e2"}>
+    <Layout bg={"#e2e2e2"} hideMenuButton={true}>
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead title={"Thank you"} headline={"2019<br/>Funders"}>
