@@ -16,19 +16,17 @@ import {
 
 import image1 from "../images/Evidence1.png"
 
-import { Flex, Box } from "rebass/styled-components"
+import { Flex, Box, Image } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 import HandDrawnSVG from "../components/HandDrawnSVG"
+
+import LeadwithScienceActwithHeart from "../images/LeadwithScienceActwithHeart.png"
 
 const Evidence = () => {
   return (
     <Container>
-      <SectionDividerDark svg={EvidenceSVG} alt="we lead with science">
-        We lead
-        <br />
-        with science and
-        <br />
-        act with heart.
+      <SectionDividerDark alt="we lead with science">
+        <Image src={LeadwithScienceActwithHeart}></Image>
       </SectionDividerDark>
       <FlexSectionContainer minHeight={"100vh"}>
         <Box width={1} textAlign={"center"}>

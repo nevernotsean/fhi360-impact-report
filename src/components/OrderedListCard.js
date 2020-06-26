@@ -9,6 +9,7 @@ const OrderedListCard = ({
   number,
   children,
   y,
+  transition,
   href,
   maxWidth,
   height,
@@ -16,17 +17,20 @@ const OrderedListCard = ({
 }) => {
   const [ref, { height: h }] = useDimensions()
 
+  console.log(transition)
+
   return (
     <OrderedListCardContainer
       {...props}
       height={height || h}
       innerMaxWidth={maxWidth}
     >
-      <animated.span
+      <span
         ref={ref}
         className={"inner"}
         style={{
-          transform: y.interpolate(y => `translateY(${y})`),
+          transform: `translateY(${y})`,
+          transition: transition,
         }}
       >
         <span className="line"></span>
@@ -37,7 +41,7 @@ const OrderedListCard = ({
             Learn More
           </a>
         )}
-      </animated.span>
+      </span>
     </OrderedListCardContainer>
   )
 }

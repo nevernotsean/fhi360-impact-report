@@ -41,8 +41,6 @@ const data = [
   },
 ]
 
-const config = { mass: 5, tension: 2000, friction: 200 }
-
 const Perception = props => {
   const { scroll } = useContext(LocomotiveContext)
 
@@ -52,10 +50,10 @@ const Perception = props => {
     triggerOnce: true,
   })
 
-  const listAnim = useTrail(data.length, {
-    config,
-    y: listInView ? "0" : "100%",
-  })
+  const listAnim = data.map((props, i) => ({
+    transition: `transform 600ms ease ${i * 300 + 500}ms`,
+    y: listInView ? "0" : "101%",
+  }))
 
   return (
     <Container>
@@ -91,12 +89,12 @@ const Perception = props => {
           <Box width={[1, 2 / 3]} ref={listRef}>
             <Flex flexWrap="wrap">
               <Box className="spacer" width={[1, 1 / 4]}></Box>
-              {listAnim.map(({ y, ...rest }, index) => (
+              {listAnim.map((animProps, index) => (
                 <OrderedListCard
                   key={index}
                   number={data[index].number}
                   width={[1, 1 / 4]}
-                  y={y}
+                  {...animProps}
                 >
                   <p>{data[index].body}</p>
                 </OrderedListCard>

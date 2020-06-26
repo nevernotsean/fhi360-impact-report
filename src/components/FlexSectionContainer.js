@@ -6,18 +6,23 @@ const FlexSectionContainer = ({
   px = 20,
   minHeight = "100vh",
   children,
+  centered,
   ...props
 }) => (
-  <Flex
+  <Box
+    py={py}
+    px={px}
+    width={1}
+    maxWidth={1200}
+    mx={"auto"}
+    minHeight={minHeight}
+    display={"flex"}
     flexDirection={"column"}
-    justifyContent={"center"}
-    alignItems={"center"}
+    justifyContent={centered && "center"}
     {...props}
   >
-    <Box py={py} px={px} width={1} maxWidth={1200} minHeight={minHeight}>
-      {children}
-    </Box>
-  </Flex>
+    {children}
+  </Box>
 )
 
 export default FlexSectionContainer

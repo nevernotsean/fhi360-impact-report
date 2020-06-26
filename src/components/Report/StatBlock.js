@@ -3,6 +3,7 @@ import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
 import { useCountUp } from "react-countup"
 import { useInView } from "react-intersection-observer"
+
 const StatBlock = ({
   children,
   start,
@@ -12,6 +13,7 @@ const StatBlock = ({
   prefix,
   postfix,
   separator = ",",
+  flip,
   ...props
 }) => {
   const [parentRef, inView] = useInView({
@@ -35,14 +37,23 @@ const StatBlock = ({
   return (
     <StatBlockContainer flexDirection={"column"} {...props}>
       <div ref={parentRef}></div>
-      <Box className={"number"}>
-        {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}
-        <span>{countUp}</span>
-        {postfix && <span dangerouslySetInnerHTML={{ __html: postfix }}></span>}
-      </Box>
-      <Box className={"body"}>{children}</Box>
+      <Flex
+        flexDirection={"column"}
+        alignItems={flip ? "flex-end" : "flex-start"}
+      >
+        <Box className={"number"}>
+          {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}
+          <span>{countUp}</span>
+          {postfix && (
+            <span dangerouslySetInnerHTML={{ __html: postfix }}></span>
+          )}
+        </Box>
+        <Box className={"body"}>
+          {children}
+          <div className="black-box"></div>
+        </Box>
+      </Flex>
       <div className="hr"></div>
-      <div className="black-box"></div>
     </StatBlockContainer>
   )
 }
@@ -53,11 +64,11 @@ const StatBlockContainer = styled(Flex)`
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 900;
     line-height: 1.5;
+    min-width: 300px;
   }
 
   .body {
-    max-width: 320px;
-    margin-bottom: 10px;
+    max-width: 300px;
     font-weight: 700;
   }
 
@@ -66,11 +77,17 @@ const StatBlockContainer = styled(Flex)`
   }
 
   .black-box {
-    height: 25px;
-    width: 50%;
-    max-width: 300px;
+    height: 20px;
+    width: 100%;
     background: ${({ theme }) => theme.colors.black};
+    transform: translateY(20px);
   }
+
+  ${({ flip }) =>
+    flip &&
+    `
+
+  `}
 `
 
 export default StatBlock

@@ -8,7 +8,7 @@ import HandDrawnSVG from "./../HandDrawnSVG"
 const ReportPullquote = ({ title, headline, ...props }) => {
   return (
     <Container {...props}>
-      <Lead dangerouslySetInnerHTML={{ __html: title }} mb={2}></Lead>
+      <Lead dangerouslySetInnerHTML={{ __html: title }}></Lead>
       <H2
         dangerouslySetInnerHTML={{ __html: headline }}
         fontSize={[24, 48]}
@@ -26,6 +26,7 @@ const Container = styled(Box)`
     font-family: ${({ theme }) => theme.fonts.serif};
     font-weight: 400;
     line-height: 1;
+    max-width: 1000px;
   }
 
   .underline {

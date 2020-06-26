@@ -27,51 +27,51 @@ const IndexPage = () => (
 )
 
 const data = [
-  {
-    id: "hello",
-    label: "Hello",
-    component: Hero,
-  },
-  {
-    id: "perception",
-    label: "Perception",
-    component: Perception,
-  },
-  {
-    id: "Evidence",
-    label: "Evidence",
-    component: Evidence,
-  },
+  // {
+  //   id: "hello",
+  //   label: "Hello",
+  //   component: Hero,
+  // },
+  // {
+  //   id: "perception",
+  //   label: "Perception",
+  //   component: Perception,
+  // },
+  // {
+  //   id: "Evidence",
+  //   label: "Evidence",
+  //   component: Evidence,
+  // },
   {
     id: "Brave",
     label: "Brave",
     component: Brave,
   },
-  {
-    id: "Nimble",
-    label: "Nimble",
-    component: Nimble,
-  },
-  {
-    id: "Innovators",
-    label: "Innovators",
-    component: Innovators,
-  },
-  {
-    id: "LiveWork",
-    label: "LiveWork",
-    component: LiveWork,
-  },
-  {
-    id: "Outro",
-    label: "Outro",
-    component: Outro,
-  },
-  {
-    id: "report",
-    label: "Impact Report",
-    url: "/report",
-  },
+  // {
+  //   id: "Nimble",
+  //   label: "Nimble",
+  //   component: Nimble,
+  // },
+  // {
+  //   id: "Innovators",
+  //   label: "Innovators",
+  //   component: Innovators,
+  // },
+  // {
+  //   id: "LiveWork",
+  //   label: "LiveWork",
+  //   component: LiveWork,
+  // },
+  // {
+  //   id: "Outro",
+  //   label: "Outro",
+  //   component: Outro,
+  // },
+  // {
+  //   id: "report",
+  //   label: "Impact Report",
+  //   url: "/report",
+  // },
 ]
 
 export default IndexPage

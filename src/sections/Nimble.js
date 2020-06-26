@@ -37,6 +37,12 @@ const data = [
     href: "#",
   },
   {
+    title: "FHI<br/><span class='bolder'>Konung</span>",
+    body:
+      "Lorem ipsum fpo summary copy only no link fpo lorem ipsum summary copy only no lnk fpo.",
+    href: "#",
+  },
+  {
     title: "FHI<br/><span class='bolder'>Partners</span>",
     body:
       "Specialized solutions in partnership with foundations and the private sector",
@@ -65,8 +71,6 @@ const Nimble = () => {
       <SectionDividerDark
         svg={NimbleSVG}
         alt="we are nimble"
-        duration={0.2}
-        duration2={0.2}
         delay={0.01}
       ></SectionDividerDark>
       <FlexSectionContainer>
@@ -100,13 +104,13 @@ const Nimble = () => {
               ></HandDrawnSVG>
             </Box>
           </Box>
-          <Box width={[1, 1 / 2]} ref={listRef}>
+          <Box width={[1, 1 / 2]} ref={listRef} overflow="hidden">
             <Flex flexWrap="wrap">
               {listAnim.map(({ y, ...rest }, index) => (
                 <TitledListCard
                   key={index}
                   title={data[index].title}
-                  width={[1, 1 / 2]}
+                  width={[1, 1 / 3]}
                   maxWidth={180}
                   height={350}
                   p={"25px"}
@@ -114,7 +118,9 @@ const Nimble = () => {
                   href={data[index].href}
                   // noBorder={index < 2}
                 >
-                  <p>{data[index].body}</p>
+                  <p>
+                    <em>{data[index].body}</em>
+                  </p>
                 </TitledListCard>
               ))}
             </Flex>

@@ -7,7 +7,13 @@ import MenuButton from "../assets/svg/menu-button.svg"
 import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 
-const Header = ({ siteTitle, setSideNavOpen, hideMenuButton = false }) => (
+const Header = ({
+  siteTitle,
+  setSideNavOpen,
+  sideNavOpen,
+  hideMenuButton = false,
+  ...props
+}) => (
   <header
     style={{
       background: theme.colors.black,
@@ -30,26 +36,45 @@ const Header = ({ siteTitle, setSideNavOpen, hideMenuButton = false }) => (
           fontSize: "12px",
           display: "flex",
           alignItems: "center",
+          zIndex: 1,
+          position: "relative",
         }}
       >
         <Link
           to="/"
           style={{
+            zIndex: 995,
             color: `white`,
             textDecoration: `none`,
           }}
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#sidebar-target"
         >
           <Box width={100} mr={20}>
             <Logo></Logo>
           </Box>
         </Link>
-        <span style={{ marginBottom: "-6px" }}>
+        <span
+          style={{
+            marginBottom: "-6px",
+            fontWeight: 700,
+            letterSpacing: "1px",
+          }}
+        >
           The science of improving lives
         </span>
       </h1>
 
       {hideMenuButton != true && (
-        <Box height={26.66} width={32} sx={{ cursor: "pointer" }}>
+        <Box
+          height={26.66}
+          width={32}
+          sx={{ cursor: "pointer", opacity: sideNavOpen ? 0 : 1 }}
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#sidebar-target"
+        >
           <MenuButton onClick={() => setSideNavOpen(true)}></MenuButton>
         </Box>
       )}

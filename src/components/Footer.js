@@ -38,6 +38,12 @@ const Footer = () => {
 
 const StyledFooter = styled.footer`
   color: white;
+
+  h5 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
 `
 
 export default Footer

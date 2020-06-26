@@ -47,6 +47,7 @@ const Layout = ({ children, sidenavData, bg, hideMenuButton, ...props }) => {
         <Header
           siteTitle={data.site.siteMetadata.title}
           hideMenuButton={hideMenuButton}
+          sideNavOpen={sideNavOpen}
           setSideNavOpen={setSideNavOpen}
         />
         <main>{children}</main>

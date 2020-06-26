@@ -12,6 +12,7 @@ const InViewImage = ({
   imageSpeed = 1,
   revealSpeed = 0.75,
   imageCredits = "C 2020 IMAGE CREDITS",
+  sx,
   ...props
 }) => {
   const [loaded, setLoaded] = useState(false)
@@ -34,6 +35,7 @@ const InViewImage = ({
       data-scroll-speed={scrollSpeed}
       h={inView ? height : 0}
       w={width}
+      sx={sx}
       revealSpeed={revealSpeed}
     >
       <div className="mask">

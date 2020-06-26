@@ -27,7 +27,11 @@ const impactReport = () => {
         </Box>
       </Section>
       <Section {...data[1]}>
-        <FramedImage src={tribeJPG}></FramedImage>
+        <FramedImage
+          src={tribeJPG}
+          credit="FatCamera/Getty Images"
+          alt="native american mother with child"
+        ></FramedImage>
       </Section>
       <Section {...data[2]}>
         <Box py={5}>
@@ -40,18 +44,71 @@ const impactReport = () => {
         </Box>
       </Section>
       <Section {...data[3]}>
-        <Box width={[1, 1 / 2]} ml={"auto"}>
+        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
           <StatBlock end={32.9} decimals={1} duration={2} postfix={"M"}>
             People reached through social media
           </StatBlock>
         </Box>
       </Section>
-      <Section {...data[4]}></Section>
-      <Section {...data[5]}></Section>
-      <Section {...data[6]}></Section>
-      <Section {...data[7]}></Section>
-      <Section {...data[8]}></Section>
-      <Section {...data[9]}></Section>
+      <Section {...data[4]}>
+        <FramedImage
+          src={"https://via.placeholder.com/1920x1180"}
+          credit="Qualcomm® Wireless Reach™"
+          alt="( photo from 2016 annual report, of WISE phone app, under: SMARTPHONE APP CLOSES GENDER GAP )"
+        ></FramedImage>
+      </Section>
+      <Section {...data[5]}>
+        <Box width={[1, 7 / 16]} mt={50} flip>
+          <StatBlock end={707843} decimals={0} duration={2} flip>
+            students learning in their local languages.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[6]}>
+        <FramedImage
+          src={"https://via.placeholder.com/1920x1180"}
+          credit="Jessica Scranton/FHI 360"
+          alt="(photo from DAM: 10737, two youth, Indonesia)"
+        ></FramedImage>
+      </Section>
+      <Section {...data[7]}>
+        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
+          <StatBlock end={70} decimals={0} duration={2} postfix={"%"}>
+            Price reduction for TB diagnostic tests
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[8]}>
+        <Box width={[1, 2 / 3]} ml={"auto"} mt={50}>
+          <StatBlock end={75} decimals={0} duration={2} postfix={"%"}>
+            participants are back in schools or have a job or apprenticeship
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[9]}>
+        <FramedImage
+          src={"https://via.placeholder.com/1920x1180"}
+          credit="Credit: Giacamo Pirozzi/FHI 360"
+          alt="(photo from DAM: 10737, two youth, Indonesia)"
+        ></FramedImage>
+      </Section>
+      <Section {...data[10]}>
+        <Box py={5}>
+          <ReportPullquote
+            title={"Learn More"}
+            headline={
+              "www.ngoconnect.net/resource/ local-philanthropy-and-self-reliance"
+            }
+          ></ReportPullquote>
+        </Box>
+      </Section>
+      <Section {...data[11]}>
+        <FramedImage
+          src={"https://via.placeholder.com/1920x1180"}
+          credit="Jessica Scranton/FHI 360"
+          alt="(photo from DAM: 10948, woman in Uganda)"
+        ></FramedImage>
+      </Section>
     </Layout>
   )
 }
@@ -78,13 +135,14 @@ const data = [
   },
 
   {
-    title: "EDUCATION – U.S.",
-    headline: "Reducing recidivism among young Americans",
+    title: "RESEARCH",
+    headline: "Leading trailblazing research",
     body:
-      "Reentering the community after incarceration is difficult and too often unsuccessful. The Compass Rose Collaborative is an FHI 360 initiative supported by the U.S. Department of Labor’s Reentry Program. Compass Rose helps young adults ages 18 to 24 in nine states transition from the justice system into educational programs and jobs. Of the 613 young adults being served in the collaborative’s first cohort, 75 percent have gone back to school, engaged in an apprenticeship or found a job. Less than 1 percent of the participants have been convicted of a new crime within body: 12 months of release from incarceration or being placed on probation.",
+      "The ECHO Study was the first large-scale, randomized, clinical trial designed to yield high-quality data on the long-standing question of whether hormonal contraception is linked to greater risk of HIV infection. The study found similar risks and benefits associated with use of two hormonal contraceptives — the injectable depot-medroxyprogesterone acetate (DMPA) and a levonorgestrel implant — and one nonhormonal method — the copper intrauterine device (IUD). These data led the World Health Organization to recommend that women at high risk of HIV infection can use all contraceptive methods without restrictions, allowing women to make informed choices. A consortium of global and national institutions, led by FHI 360, the University of Washington, Wits body: Reproductive Health and HIV Institute, and the World Health Organization collaborated with 12 sites in Eswatini, Kenya, South Africa and Zambia.",
 
-    project: "Compass Rose Collaborative",
-    funder: "U.S. Department of Labor",
+    project: "Evidence for Contraceptive Options and HIV Outcomes (ECHO) Study",
+    funder:
+      "Bill & Melinda Gates Foundation<br/>U.S. Agency for International Development<br/>U.S. President's Emergency Plan for AIDS Relief",
   },
 
   {
@@ -98,6 +156,16 @@ const data = [
   },
 
   {
+    title: "TECHNOLOGY",
+    headline: "Enhancing fishery outcomes",
+    body:
+      "Artisanal fishers in Senegal typically lack access to timely market prices and have little information on improved processing techniques and limited access to financial services. They also endure higher health risks and poor hygiene at processing sites. FHI 360 partnered with Qualcomm Wireless Reach and the Senegalese Food Security Commission on the development of a mobile app to provide fishermen and fish processors with real-time market information, emergency and early warning weather alerts, and information on healthy processing practices. This new digital tool is now in use at four major fish landing and processing sites. Participants realized a tenfold increase in production and up to 35 percent increases in revenue. The government is planning to extend the body: project to other locales and industries to improve the economic outlook for thousands of Senegalese.",
+
+    project: "Wireless Solutions for Fisheries in Senegal",
+    funder: "Qualcomm® Wireless Reach™",
+  },
+
+  {
     title: "EDUCATION – GLOBAL",
     headline: "Building literacy in Ghanaian early learners",
     body:
@@ -105,27 +173,6 @@ const data = [
 
     project: "USAID Partnership for Education: Learning",
     funder: "U.S. Agency for International Development",
-  },
-
-  {
-    title: "HEALTH – GLOBAL",
-    headline: "Reducing costs through private-sector partnerships",
-    body:
-      "Tuberculosis (TB) is the world’s most deadly infectious disease. Expanding access to state-of-the-art case detection is critical to reducing its spread. Through USAID’s TB Innovations Health Systems Strengthening project, private hospitals and laboratories formed the Philippines Private Sector Diagnostic Consortium to mobilize and coordinate efforts to fight TB. By joining together, consortium members were able to negotiate a 70 percent price reduction for GeneXpert TB diagnostic tests, from an average cost of US$152 per test to US$42, making TB care and treatment more body: affordable for all.",
-
-    project: "TB Innovations Health Systems Strengthening",
-    funder: "U.S. Agency for International Development",
-  },
-
-  {
-    title: "RESEARCH",
-    headline: "Leading trailblazing research",
-    body:
-      "The ECHO Study was the first large-scale, randomized, clinical trial designed to yield high-quality data on the long-standing question of whether hormonal contraception is linked to greater risk of HIV infection. The study found similar risks and benefits associated with use of two hormonal contraceptives — the injectable depot-medroxyprogesterone acetate (DMPA) and a levonorgestrel implant — and one nonhormonal method — the copper intrauterine device (IUD). These data led the World Health Organization to recommend that women at high risk of HIV infection can use all contraceptive methods without restrictions, allowing women to make informed choices. A consortium of global and national institutions, led by FHI 360, the University of Washington, Wits body: Reproductive Health and HIV Institute, and the World Health Organization collaborated with 12 sites in Eswatini, Kenya, South Africa and Zambia.",
-
-    project: "Evidence for Contraceptive Options and HIV Outcomes (ECHO) Study",
-    funder:
-      "Bill & Melinda Gates Foundation<br/>U.S. Agency for International Development<br/>U.S. President's Emergency Plan for AIDS Relief",
   },
 
   {
@@ -141,6 +188,26 @@ const data = [
   },
 
   {
+    title: "HEALTH – GLOBAL",
+    headline: "Reducing costs through private-sector partnerships",
+    body:
+      "Tuberculosis (TB) is the world’s most deadly infectious disease. Expanding access to state-of-the-art case detection is critical to reducing its spread. Through USAID’s TB Innovations Health Systems Strengthening project, private hospitals and laboratories formed the Philippines Private Sector Diagnostic Consortium to mobilize and coordinate efforts to fight TB. By joining together, consortium members were able to negotiate a 70 percent price reduction for GeneXpert TB diagnostic tests, from an average cost of US$152 per test to US$42, making TB care and treatment more body: affordable for all.",
+
+    project: "TB Innovations Health Systems Strengthening",
+    funder: "U.S. Agency for International Development",
+  },
+
+  {
+    title: "EDUCATION – U.S.",
+    headline: "Reducing recidivism among young Americans",
+    body:
+      "Reentering the community after incarceration is difficult and too often unsuccessful. The Compass Rose Collaborative is an FHI 360 initiative supported by the U.S. Department of Labor’s Reentry Program. Compass Rose helps young adults ages 18 to 24 in nine states transition from the justice system into educational programs and jobs. Of the 613 young adults being served in the collaborative’s first cohort, 75 percent have gone back to school, engaged in an apprenticeship or found a job. Less than 1 percent of the participants have been convicted of a new crime within body: 12 months of release from incarceration or being placed on probation.",
+
+    project: "Compass Rose Collaborative",
+    funder: "U.S. Department of Labor",
+  },
+
+  {
     title: "FHI SOLUTIONS",
     headline: "Measuring the cost of not breastfeeding",
     body:
@@ -150,15 +217,7 @@ const data = [
     funder:
       "Bill & Melinda Gates Foundation<br/>Irish Aid<br/>the Tanoto Foundation, UNICEF, World Bank",
   },
-  {
-    title: "TECHNOLOGY",
-    headline: "Enhancing fishery outcomes",
-    body:
-      "Artisanal fishers in Senegal typically lack access to timely market prices and have little information on improved processing techniques and limited access to financial services. They also endure higher health risks and poor hygiene at processing sites. FHI 360 partnered with Qualcomm Wireless Reach and the Senegalese Food Security Commission on the development of a mobile app to provide fishermen and fish processors with real-time market information, emergency and early warning weather alerts, and information on healthy processing practices. This new digital tool is now in use at four major fish landing and processing sites. Participants realized a tenfold increase in production and up to 35 percent increases in revenue. The government is planning to extend the body: project to other locales and industries to improve the economic outlook for thousands of Senegalese.",
 
-    project: "Wireless Solutions for Fisheries in Senegal",
-    funder: "Qualcomm® Wireless Reach™",
-  },
   {
     title: "CIVIL SOCIETY",
     headline: "Activating civil society",
@@ -167,6 +226,17 @@ const data = [
 
     project: "Strengthening Civil Society Globally",
     funder: "U.S. Agency for International Development",
+  },
+
+  {
+    title: "HEALTH",
+    headline: "Expanding self-care options through public and private sectors",
+    body:
+      "Having a full range of modern family planning methods available in hard-to-reach areas is critical to the health and well-being of individuals and families. In Uganda, the Advancing Partners and Communities project and the Catalytic Opportunity Fund supported the Ministry of Health in the scale-up of injectable contraceptives provided through community health workers and drug shops. The scale-up included self-injection of subcutaneous depot medroxyprogesterone acetate (DMPA-SC, brand name Sayana® Press). In Malawi, the DMPA-SC Introduction and Scale-up project supported the simultaneous introduction of the product and self-injection through clinics and community health workers. Findings from FHI 360 implementation science research are being used to inform each countries’ plan for national scale-up.",
+
+    project: "Advancing Partners and Communities",
+    funder:
+      "U.S. Agency for International Development,<br/> Bill & Melinda Gates Foundation,<br/> Children’s Investment Fund Foundation",
   },
 ]
 

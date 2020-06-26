@@ -6,8 +6,8 @@ import { H2 } from "../elements/Type"
 
 const SectionDividerDark = ({
   svg,
-  duration = 1,
-  duration2 = 0.5,
+  duration = 2,
+  duration2 = 1,
   alt,
   overrideLength,
   children,
@@ -25,15 +25,17 @@ const SectionDividerDark = ({
         }}
         {...props}
       >
-        <H2 fontSize={[28, 88]}>{children}</H2>
-        <HandDrawnSVG
-          svg={svg}
-          duration={duration}
-          duration2={duration2}
-          delay={0.5}
-          alt={alt}
-          overrideLength={overrideLength}
-        ></HandDrawnSVG>
+        {children}
+        {svg && (
+          <HandDrawnSVG
+            svg={svg}
+            duration={duration}
+            duration2={duration2}
+            delay={0.5}
+            alt={alt}
+            overrideLength={overrideLength}
+          ></HandDrawnSVG>
+        )}
       </Box>
     </Container>
   )

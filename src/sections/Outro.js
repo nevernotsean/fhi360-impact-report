@@ -106,7 +106,7 @@ const Outro = () => {
   return (
     <>
       <OutroWord image={worksImage}>
-        <Lead>Lorem ipsum</Lead>
+        <Lead>Lead</Lead>
         <H2 className={"section-title"}>
           We are
           <br />
@@ -119,7 +119,7 @@ const Outro = () => {
         </Box>
       </OutroWord>
       <OutroWord image={empowersImage}>
-        <Lead>Lorem ipsum</Lead>
+        <Lead>Inspire</Lead>
         <H2 className={"section-title"}>
           We are
           <br />
@@ -132,7 +132,7 @@ const Outro = () => {
         </Box>
       </OutroWord>
       <OutroWord>
-        <Lead>Lorem ipsum</Lead>
+        <Lead>Innovate</Lead>
         <H2 className={"section-title"}>
           We are
           <br />

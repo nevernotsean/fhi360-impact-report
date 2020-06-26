@@ -19,7 +19,7 @@ const Section = ({
       <FlexSectionContainer>
         <TitleRule title={title}></TitleRule>
         <Flex>
-          <Box width={[1, 1 / 2, 1 / 3]}>
+          <Box width={[1, 1 / 2, 7 / 16]}>
             <Flex flexDirection={"column"}>
               <H2
                 className="headline"
@@ -37,7 +37,6 @@ const Section = ({
                 className={"project label"}
                 dangerouslySetInnerHTML={{ __html: project }}
               ></H3>
-              <div className="label-hr"></div>
               <H3 className="labelhead" mb={2}>
                 Funder
               </H3>
@@ -53,10 +52,7 @@ const Section = ({
             width={[1, 9 / 16, 1 / 2]}
             ml={[0, "auto"]}
           >
-            <div
-              className={"body"}
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
+            <p className={"body"} dangerouslySetInnerHTML={{ __html: body }} />
           </Flex>
         </Flex>
         {children}
@@ -67,7 +63,7 @@ const Section = ({
 
 const TitleRule = ({ children, title, ...props }) => (
   <Flex {...props} flexDirection={"column"}>
-    <div dangerouslySetInnerHTML={{ __html: title }}></div>
+    <div className="title" dangerouslySetInnerHTML={{ __html: title }}></div>
     <div className="hr"></div>
   </Flex>
 )
@@ -78,6 +74,10 @@ const Container = styled.div`
     margin-bottom: 20px;
   }
 
+  .title {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
   .headline {
     font-family: ${({ theme }) => theme.fonts.serif};
     margin-bottom: 50px;
@@ -89,6 +89,8 @@ const Container = styled.div`
     font-weight: 700;
   }
   .labelhead {
+    line-height: 1;
+    font-size: 16px;
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -100,6 +102,11 @@ const Container = styled.div`
 
   .section-inner {
     margin-top: 100px;
+  }
+
+  .project {
+    text-decoration: underline;
+    margin-bottom: 30px;
   }
 `
 
