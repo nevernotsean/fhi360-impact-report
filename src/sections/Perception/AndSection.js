@@ -22,9 +22,9 @@ const AndSection = ({ children, ...props }) => {
     // delay: 1,
   })
 
-  React.useEffect(() => {
-    if (isInView) console.log("hit1")
-  }, [isInView])
+  // React.useEffect(() => {
+  //   if (isInView) console.log("hit1")
+  // }, [isInView])
 
   return (
     <FlexSectionContainer minHeight={"100vh"} className="section1" centered>

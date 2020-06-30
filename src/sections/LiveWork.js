@@ -11,8 +11,8 @@ import SectionDividerDark from "../components/SectionDividerDark"
 import { Lead, H2 } from "../elements/Type"
 import { SplitSectionLong } from "../components/SplitSection"
 
-import image1 from "../images/Nimble1.png"
-import image2 from "../images/Innovators2.png"
+import image1 from "../images/we-live-work.jpg"
+import image2 from "../images/we-live-work-2.jpg"
 
 import map from "../images/map.jpg"
 
@@ -37,7 +37,7 @@ const LiveWork = () => {
         contentArray={[
           {
             img: image1,
-            imgCredits: "Credits MIssing",
+            imageCredits: "Mbuto Machili/FHI 360",
             content: () => (
               <>
                 <Lead>We live where we work</Lead>
@@ -73,8 +73,8 @@ const LiveWork = () => {
             ),
           },
           {
-            img: image1,
-            imgCredits: "Credits MIssing",
+            img: "https://via.placeholder.com/1920x1080?text=FPO",
+            imageCredits: "CREDITS MISSING",
             content: () => (
               <>
                 <Lead>We live where we work</Lead>
@@ -90,8 +90,8 @@ const LiveWork = () => {
             ),
           },
           {
-            img: image1,
-            imgCredits: "Credits MIssing",
+            img: image2,
+            imageCredits: "Jessica Scranton/FHI 360",
             content: () => (
               <>
                 <Lead>We live where we work</Lead>

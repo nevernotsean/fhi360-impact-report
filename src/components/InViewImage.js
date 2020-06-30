@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { animated } from "react-spring"
 import useDimensions from "react-use-dimensions"
 import { Box, Image } from "rebass/styled-components"
+import Pattern from "../images/pattern.png"
 
 const InViewImage = ({
   src,
@@ -11,7 +12,8 @@ const InViewImage = ({
   scrollSpeed = 1,
   imageSpeed = 1,
   revealSpeed = 0.75,
-  imageCredits = "C 2020 IMAGE CREDITS",
+  usePattern,
+  pattern = Pattern,
   sx,
   ...props
 }) => {
@@ -37,6 +39,7 @@ const InViewImage = ({
       w={width}
       sx={sx}
       revealSpeed={revealSpeed}
+      style={{ position: usePattern && "relative" }}
     >
       <div className="mask">
         <Image
@@ -49,7 +52,24 @@ const InViewImage = ({
           {...props}
         ></Image>
       </div>
-      {/* <small className="image-credits">{imageCredits}</small> */}
+      {usePattern && (
+        <Box
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            top: "0",
+            left: 0,
+            width: width + "px",
+            height: height + "px",
+            background: `url(${pattern})`,
+            transition: `transform 0.25s ease-out ${
+              revealSpeed + 0.01
+            }s, opacity 1ms linear ${revealSpeed}s`,
+            transform: inView && `translate(30px, -30px)`,
+            opacity: inView ? 1 : 0,
+          }}
+        ></Box>
+      )}
     </Container>
   )
 }

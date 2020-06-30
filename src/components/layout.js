@@ -15,12 +15,23 @@ import "../styles/layout.css"
 import Providers from "./Providers"
 import GlobalStyles from "../styles/global"
 import Footer from "./Footer"
-import { LocomotiveScrollFull } from "../hooks/useLocomotiveScroll"
 
 import { Helmet } from "react-helmet"
 import SideNav from "./SideNav"
+import LightModeTrigger from "./LightModeTrigger"
+import theme from "../styles/index"
+import { Box } from "rebass/styled-components"
+import Intro from "./Intro"
 
-const Layout = ({ children, sidenavData, bg, hideMenuButton, ...props }) => {
+const Layout = ({
+  children,
+  sidenavData,
+  bg,
+  hideMenuButton,
+  headerStyle,
+  showIntro,
+  ...props
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,22 +48,31 @@ const Layout = ({ children, sidenavData, bg, hideMenuButton, ...props }) => {
     <Providers>
       <Helmet></Helmet>
       <GlobalStyles bg={bg} />
-
-      <LocomotiveScrollFull>
-        <SideNav
-          data={sidenavData}
-          isOpen={sideNavOpen}
-          closeSidenav={() => setSideNavOpen(false)}
-        ></SideNav>
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          hideMenuButton={hideMenuButton}
-          sideNavOpen={sideNavOpen}
-          setSideNavOpen={setSideNavOpen}
-        />
-        <main>{children}</main>
-        <Footer></Footer>
-      </LocomotiveScrollFull>
+      <SideNav
+        data={sidenavData}
+        isOpen={sideNavOpen}
+        closeSidenav={() => setSideNavOpen(false)}
+      ></SideNav>
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        hideMenuButton={hideMenuButton}
+        headerStyle={headerStyle}
+        sideNavOpen={sideNavOpen}
+        setSideNavOpen={setSideNavOpen}
+      />
+      {showIntro && <Intro></Intro>}
+      <main id={"main-content"}>
+        <Box
+          sx={{
+            background: theme.colors.black,
+            width: "100%",
+            height: "100px",
+          }}
+        ></Box>
+        <LightModeTrigger></LightModeTrigger>
+        {children}
+      </main>
+      <Footer></Footer>
     </Providers>
   )
 }

@@ -114,8 +114,7 @@ const Perception = props => {
       <AndSection2 />{" "}
       <SplitSectionCroppedImage
         flip
-        image={"https://via.placeholder.com/1920x1180"}
-        image2={"https://via.placeholder.com/1920x1180"}
+        image={"https://via.placeholder.com/1920x1080?text=FPO"}
       >
         <Lead>LET’S CHANGE PERCEPTION</Lead>
         <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>
@@ -152,8 +151,7 @@ const Perception = props => {
       <AndSection3 />{" "}
       <SplitSectionCroppedImage
         flip
-        image={"https://via.placeholder.com/1920x1180"}
-        image2={"https://via.placeholder.com/1920x1180"}
+        image={"https://via.placeholder.com/1920x1080?text=FPO"}
       >
         <Lead>LET’S CHANGE PERCEPTION</Lead>
         <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>

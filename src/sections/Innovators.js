@@ -13,7 +13,8 @@ import { SplitSection, SplitSectionLong } from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
-import image2 from "../images/Innovators2.png"
+import image2 from "../images/innovate-2.jpg"
+import image3 from "../images/Innovators2.png"
 
 import { Box } from "rebass/styled-components"
 import HandDrawnSVG from "../components/HandDrawnSVG"
@@ -36,7 +37,7 @@ const Innovators = () => {
         duration2={0.2}
         delay={1}
       ></SectionDividerDark>
-      <SplitSection image={image1}>
+      <SplitSection image={image1} imageCredits={"2 men (current layout)"}>
         <Lead>We are innovators</Lead>
         <H2 className={"section-title"}>
           Some organizations
@@ -77,7 +78,7 @@ const Innovators = () => {
         contentArray={[
           {
             img: image2,
-            imgCredits: "credits missing",
+            imageCredits: "Leanne Gray/ FHI 360",
             content: () => (
               <>
                 <Lead>We are innovators</Lead>
@@ -106,8 +107,8 @@ const Innovators = () => {
             ),
           },
           {
-            img: image2,
-            imgCredits: "credits missing",
+            img: image3,
+            imageCredits: "CREDITS MISSING",
             content: () => (
               <>
                 <Lead>We are innovators</Lead>

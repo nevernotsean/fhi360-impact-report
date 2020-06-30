@@ -66,10 +66,10 @@ const Evidence = () => {
         </FlexSectionContainer>
         <img src={strip} className="strip"></img>
       </Flex>
-      <SplitSectionCroppedImage
+      <SplitSection
         image={image1}
-        image2={"https://via.placeholder.com/1000"}
         flip={true}
+        imageCredits={"mom & baby (current layout)"}
       >
         <Lead>We lead with science</Lead>
         <Box maxWidth={480}>
@@ -90,7 +90,7 @@ const Evidence = () => {
             And the interventions most likely to discover the greatest impact.
           </H3>
         </Box>
-      </SplitSectionCroppedImage>
+      </SplitSection>
     </Container>
   )
 }

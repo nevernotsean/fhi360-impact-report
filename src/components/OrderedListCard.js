@@ -17,8 +17,6 @@ const OrderedListCard = ({
 }) => {
   const [ref, { height: h }] = useDimensions()
 
-  console.log(transition)
-
   return (
     <OrderedListCardContainer
       {...props}

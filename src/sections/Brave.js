@@ -5,9 +5,7 @@ import BraveSVG from "../assets/svg/brave.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import image1 from "../images/fpo-brave-1.png"
-
-import bravecrop1 from "../images/brave-crop1.png"
-import bravecrop2 from "../images/brave-crop2.png"
+import image2 from "../images/stand-gap.jpg"
 
 import { Lead, H2, H3 } from "../elements/Type"
 import {
@@ -17,6 +15,10 @@ import {
 } from "../components/SplitSection"
 
 import { Box } from "rebass/styled-components"
+import HandDrawnSVG from "../components/HandDrawnSVG"
+
+import Streak from "../assets/svg/streak2.svg"
+import Circle from "../assets/svg/circle.svg"
 
 const Brave = () => {
   return (
@@ -26,7 +28,7 @@ const Brave = () => {
         contentArray={[
           {
             img: image1,
-            imgCredits: "Credits MISSING",
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
                 <Lead>We are brave</Lead>
@@ -59,51 +61,54 @@ const Brave = () => {
           },
           {
             img: image1,
-            imgCredits: "Credits MISSING",
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
                 <Lead>We are brave</Lead>
                 <Box maxWidth={480}>
-                  <p className={"section-body"}>
+                  <span className={"section-body"}>
+                    We invested our own capital and put our trust in pilot
+                    projects to prove, when few thought it possible, that
+                    lifesaving anti-retrovirals<Underlined>could be</Underlined>
+                    delivered in low-resource settings.
+                  </span>
+                </Box>
+              </>
+            ),
+          },
+          {
+            img: image1,
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            content: () => (
+              <>
+                <Lead>We are brave</Lead>
+                <Box maxWidth={480}>
+                  <span className={"section-body"}>
                     Our trailblazing work in contraceptive research and
                     development builds on a long history of leadership in family
                     planning that empowers women and men to decide the size of
                     their families and improve their lives.
-                  </p>
+                  </span>
                 </Box>
               </>
             ),
           },
           {
             img: image1,
-            imgCredits: "Credits MISSING",
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
                 <Lead>We are brave</Lead>
                 <Box maxWidth={480}>
-                  <p className={"section-body"}>
-                    In the United States, we partner with Native American
-                    populations on early childcare, education and tribal
-                    language revitalization; improve employment outcomes for
-                    young adults caught in the criminal justice system; promote
-                    healthy behaviors; and work to lessen the stigma of HIV.
-                  </p>
-                </Box>
-              </>
-            ),
-          },
-          {
-            img: image1,
-            imgCredits: "Credits MISSING",
-            content: () => (
-              <>
-                <Lead>We are brave</Lead>
-                <Box maxWidth={480}>
-                  <p className={"section-body"}>
-                    In times of conflict, disaster or displacement, we are there
-                    to meet both urgent needs and to help people rebuild their
-                    lives and communities.
-                  </p>
+                  <span className={"section-body"}>
+                    In the United States, we<Underlined>partner</Underlined>
+                    with Native American populations on early childcare,
+                    education and tribal language revitalization;
+                    <Circled>improve</Circled>
+                    employment outcomes for young adults caught in the criminal
+                    justice system; promote<Underlined>healthy</Underlined>
+                    behaviors; and work to lessen the stigma of HIV.
+                  </span>
                 </Box>
               </>
             ),
@@ -111,7 +116,7 @@ const Brave = () => {
         ]}
       ></SplitSectionLong>
 
-      <SplitSection image={bravecrop1}>
+      <SplitSection image={image2} imageCredits={"Jessica Scranton/FHI 360"}>
         <Lead>We are brave</Lead>
         <H2 className={"section-title"}>
           We aren’t
@@ -129,5 +134,31 @@ const Brave = () => {
     </>
   )
 }
+
+const WordNote = ({ children, sx, style, svg, ...props }) => (
+  <>
+    {" "}
+    <span style={{ position: "relative" }}>
+      {children}
+      <Box
+        sx={{
+          left: 0,
+          width: "80px",
+          position: "absolute",
+          transform: "translateY(-20%)",
+          zIndex: -1,
+          ...style,
+          ...sx,
+        }}
+      >
+        <HandDrawnSVG svg={svg} duration={0.3} delay={1}></HandDrawnSVG>
+      </Box>
+    </span>{" "}
+  </>
+)
+
+const Underlined = props => <WordNote svg={Streak} {...props} />
+
+const Circled = props => <WordNote svg={Circle} {...props} />
 
 export default Brave

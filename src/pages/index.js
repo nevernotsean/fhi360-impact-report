@@ -9,33 +9,33 @@ import Evidence from "../sections/Evidence"
 import Nimble from "../sections/Nimble"
 import Innovators from "../sections/Innovators"
 import LiveWork from "../sections/LiveWork"
-import Outro from "../sections/Outro"
-import { Image } from "rebass"
-
-import welcome from "../images/welcome-fpo.gif"
+import Outro from "../sections/Outro/"
+import { Box } from "rebass/styled-components"
 
 const IndexPage = () => (
-  <Layout sidenavData={data}>
+  <Layout
+    sidenavData={data}
+    showIntro={true}
+    headerStyle={{
+      position: "absolute",
+      top: 0,
+      width: "100%",
+      background: "transparent",
+    }}
+  >
     <SEO title="Home" />
-    <Image
-      width={1}
-      height={"100vh"}
-      src={welcome}
-      sx={{
-        objectFit: "cover",
-        objectPosition: "center center",
-        display: "block",
-      }}
-    ></Image>
-    {data.map(
-      ({ component: Component, id }, i) =>
-        Component && (
-          <React.Fragment key={id + i}>
-            <div id={id}></div>
-            <Component></Component>
-          </React.Fragment>
-        )
-    )}
+
+    <Box id="sections">
+      {data.map(
+        ({ component: Component, id }, i) =>
+          Component && (
+            <React.Fragment key={id + i}>
+              <div id={id}></div>
+              <Component></Component>
+            </React.Fragment>
+          )
+      )}
+    </Box>
   </Layout>
 )
 
@@ -72,12 +72,12 @@ const data = [
   },
   {
     id: "LiveWork",
-    label: "LiveWork",
+    label: "Where We Live",
     component: LiveWork,
   },
   {
     id: "Outro",
-    label: "Outro",
+    label: "Changing",
     component: Outro,
   },
   {

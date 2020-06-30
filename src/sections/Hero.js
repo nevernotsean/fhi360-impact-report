@@ -31,15 +31,15 @@ const introLetter = [
   "Today, we find ourselves called to deliver on our mission to combine science with the art of improving lives like never before. The scale of the challenge is vast, and the stakes couldn’t be higher. This is what FHI 360 is built for. Take a look at what we’re doing.",
 ]
 const pullquoteContent = {
-  title: "LOREM",
+  title: "QUOTE",
   body:
-    "pull quote lorem ipsum changing fpo lorem ipsum human engagement placeholder only.",
+    "Now as never before, we will be challenged to be creative and work differently ... the vast scope and urgency of this crisis demand nothing less.",
 }
 
 const Hero = () => {
   return (
-    <HeroContainer bg={theme.colors.lightblue} pt={[0, 100]}>
-      <FlexWrap maxWidth={1200} mx={"auto"} px={20}>
+    <HeroContainer bg={theme.colors.lightblue}>
+      <FlexWrap maxWidth={1200} mx={"auto"} px={20} pt={[0, 100]}>
         {/* Mobile */}
         <Box
           width={1}
@@ -117,7 +117,7 @@ const Hero = () => {
           <Box px={[3, 5]} maxWidth={["none", 520]}>
             {introLetter.map((body, i) => {
               return (
-                <>
+                <React.Fragment key={i}>
                   <p>{body}</p>
                   {i == 2 && (
                     <Box display={["block", "none"]}>
@@ -131,7 +131,7 @@ const Hero = () => {
                       </PullQuote>
                     </Box>
                   )}
-                </>
+                </React.Fragment>
               )
             })}
             <p>Warm regards,</p>
