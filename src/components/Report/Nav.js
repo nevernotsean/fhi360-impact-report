@@ -5,7 +5,13 @@ import styled from "styled-components"
 
 const Nav = () => {
   return (
-    <Container justifyContent={"flex-end"} maxWidth={1200} mx={"auto"} py={30}>
+    <Container
+      justifyContent={"flex-end"}
+      maxWidth={1200}
+      mx={"auto"}
+      py={30}
+      px={50}
+    >
       <Link className={"link"} to={"/report"}>
         2019 Overview
       </Link>
@@ -14,6 +20,9 @@ const Nav = () => {
       </Link>
       <Link className={"link"} to={"/funders"}>
         Funders
+      </Link>
+      <Link className={"link"} to={"/globalreach"}>
+        Global Reach
       </Link>
     </Container>
   )
@@ -28,6 +37,7 @@ const Container = styled(Flex)`
     color: ${({ theme }) => theme.colors.black};
     letter-spacing: 2px;
     margin: 0 10px;
+    font-size: 12px;
   }
 `
 

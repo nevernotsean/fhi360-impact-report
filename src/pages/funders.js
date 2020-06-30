@@ -183,7 +183,7 @@ const Funders = () => (
             for solutions to today’s most challenging issues in human
             development.
           </p>
-          <Box width={1 / 2} mx={"auto"}>
+          <Box width={1 / 2} maxWidth={300} mx={"auto"}>
             <HandDrawnSVG svg={Streak} duration={0.3}></HandDrawnSVG>
           </Box>
         </Flex>
@@ -207,7 +207,7 @@ const Section = ({ title, children, bg, ...props }) => (
       <Box sx={{ borderBottom: "1px solid black" }} mb={50}>
         <H2
           fontWeight={900}
-          fontSize={[18, 24]}
+          fontSize={[16, 18]}
           lineHeight={1}
           mb={10}
           sx={{

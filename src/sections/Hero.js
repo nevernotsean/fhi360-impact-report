@@ -1,6 +1,5 @@
 import React from "react"
-import YouAreHere from "../assets/svg/you-are-here.svg"
-import YouAreHereMobile from "../assets/svg/you-are-here-mobile.svg"
+import YouAreHere from "../images/you-are-here.png"
 import Sig from "../images/sig.png"
 import { Flex, Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
@@ -10,7 +9,7 @@ import HandDrawnSVG from "../components/HandDrawnSVG"
 // img
 import hero from "../images/patrick-fine-hero.png"
 import heroMobile from "../images/patrick-fine-hero-mobile.png"
-import strip from "../images/pattern-strip.png"
+import strip from "../images/pattern-Patrick.png"
 import PullQuote from "../components/PullQuote"
 import { Lead } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
@@ -18,6 +17,7 @@ import { FlexWrap } from "../elements/Flex"
 import { H1 } from "../elements/Type"
 
 import Streak2 from "../assets/svg/streak2.svg"
+import { H3 } from "./../elements/Type"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -61,12 +61,12 @@ const Hero = () => {
               very glad
               <span className="hidden">you are here</span>
             </H1>
-            <HandDrawnSVG
-              svg={YouAreHereMobile}
+            <Image
+              src={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
-              duration={2}
-            ></HandDrawnSVG>
+              // duration={2}
+            ></Image>
             <div className="line">
               <h2>
                 Patrick Fine
@@ -87,7 +87,7 @@ const Hero = () => {
             revealSpeed={0}
           ></InViewImage>
           <img src={strip} className="strip"></img>
-          <PullQuote title={pullquoteContent.title} px={[1, 5]}>
+          <PullQuote title={pullquoteContent.title} px={[1, 5]} mb={50}>
             {pullquoteContent.body}
           </PullQuote>
         </Box>
@@ -100,18 +100,18 @@ const Hero = () => {
               very glad
               <span className="hidden">you are here</span>
             </H1>
-            <HandDrawnSVG
-              svg={YouAreHere}
+            <Image
+              src={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
-              duration={2}
-            ></HandDrawnSVG>
+              // duration={2}
+            ></Image>
             <div className="line">
-              <h3>
+              <H3 fontWeight={700} fontSize={[14]} lineHeight={"20px"} mt={10}>
                 Patrick Fine
                 <br />
                 CEO
-              </h3>
+              </H3>
             </div>
           </Box>
           <Box px={[3, 5]} maxWidth={["none", 520]}>
@@ -126,6 +126,7 @@ const Hero = () => {
                         px={[1, 5]}
                         fontSize={"28px"}
                         streak={Streak2}
+                        mb={50}
                       >
                         {pullquoteContent.body}
                       </PullQuote>
@@ -135,7 +136,7 @@ const Hero = () => {
               )
             })}
             <p>Warm regards,</p>
-            <Box width={200} mr={"auto"} mb={25}>
+            <Box width={275} mr={"auto"} mb={25}>
               <Image src={Sig}></Image>
             </Box>
             <p>

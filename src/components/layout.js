@@ -61,18 +61,10 @@ const Layout = ({
         setSideNavOpen={setSideNavOpen}
       />
       {showIntro && <Intro></Intro>}
-      <main id={"main-content"}>
-        <Box
-          sx={{
-            background: theme.colors.black,
-            width: "100%",
-            height: "100px",
-          }}
-        ></Box>
-        <LightModeTrigger></LightModeTrigger>
+      <main id={"main-content"} style={{ paddingTop: 100 }}>
         {children}
+        <Footer></Footer>
       </main>
-      <Footer></Footer>
     </Providers>
   )
 }

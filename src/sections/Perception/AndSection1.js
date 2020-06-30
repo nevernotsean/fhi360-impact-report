@@ -18,13 +18,7 @@ const LeftSide = () => (
       <br />
       international
       <br />
-      <span className="serif">
-        human
-        <br />
-        development
-        <br />
-        organization.
-      </span>
+      <span className="serif">human development organization.</span>
     </H2>
   </>
 )
@@ -57,7 +51,7 @@ const RightSide = () => (
       <p>
         All have a shared common goal:
         <br />
-        Improving lives in a lasting way.
+        Improving lives in lasting ways.
       </p>
     </Box>
     <Box mt={-30} ml={0} width={[2 / 3, 1 / 2]}>

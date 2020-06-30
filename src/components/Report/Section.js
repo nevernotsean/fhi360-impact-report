@@ -11,12 +11,13 @@ const Section = ({
   headline,
   project,
   funder,
+  link,
   body,
   ...props
 }) => {
   return (
-    <Container>
-      <FlexSectionContainer>
+    <Container {...props}>
+      <FlexSectionContainer minHeight={"none"}>
         <TitleRule title={title}></TitleRule>
         <Flex>
           <Box width={[1, 1 / 2, 7 / 16]}>
@@ -33,10 +34,9 @@ const Section = ({
               <H3 className="labelhead" mb={2}>
                 Project
               </H3>
-              <H3
-                className={"project label"}
-                dangerouslySetInnerHTML={{ __html: project }}
-              ></H3>
+              <a href={link} className={"project label"}>
+                {project}
+              </a>
               <H3 className="labelhead" mb={2}>
                 Funder
               </H3>
@@ -107,6 +107,10 @@ const Container = styled.div`
   .project {
     text-decoration: underline;
     margin-bottom: 30px;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.black};
   }
 `
 

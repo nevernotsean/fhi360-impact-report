@@ -1,7 +1,7 @@
 import React from "react"
 
 import styled from "styled-components"
-import BraveSVG from "../assets/svg/brave.svg"
+import BraveCard from "../images/brave.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import image1 from "../images/fpo-brave-1.png"
@@ -19,11 +19,14 @@ import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import Streak from "../assets/svg/streak2.svg"
 import Circle from "../assets/svg/circle.svg"
+import { Circled, Underlined } from "../components/WordNote"
+
+import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"
 
 const Brave = () => {
   return (
     <>
-      {/* <SectionDividerDark svg={BraveSVG}></SectionDividerDark> */}
+      <SectionDividerDark img={BraveCard}></SectionDividerDark>
       <SplitSectionLong
         contentArray={[
           {
@@ -33,15 +36,16 @@ const Brave = () => {
               <>
                 <Lead>We are brave</Lead>
                 <H2 className={"section-title"}>
-                  Some
+                  Our willingness to tackle novel challenges
                   <br />
-                  organizations
-                  <br />
-                  <span className={"serif"}>are afraid to fail.</span>
+                  <span className={"serif"}>
+                    keeps us ahead of the curve in recognizing and responding to
+                    critical global issues
+                  </span>
                 </H2>
-                <H3 className={"section-subtitle"}>
+                {/* <H3 className={"section-subtitle"}>
                   We are afraid not to try.
-                </H3>
+                </H3> */}
                 <div
                   className="divider"
                   style={{
@@ -51,9 +55,7 @@ const Brave = () => {
                 />
                 <Box maxWidth={480}>
                   <p className={"section-body"}>
-                    Our willingness to tackle novel challenges keeps us ahead of
-                    the curve in recognizing and responding to critical global
-                    issues.
+                    in recognizing and responding to critical and global issues.
                   </p>
                 </Box>
               </>
@@ -69,8 +71,9 @@ const Brave = () => {
                   <span className={"section-body"}>
                     We invested our own capital and put our trust in pilot
                     projects to prove, when few thought it possible, that
-                    lifesaving anti-retrovirals<Underlined>could be</Underlined>
-                    delivered in low-resource settings.
+                    lifesaving anti-retrovirals{" "}
+                    <Underlined orange={true}>could be</Underlined> delivered in
+                    low-resource settings.
                   </span>
                 </Box>
               </>
@@ -101,13 +104,14 @@ const Brave = () => {
                 <Lead>We are brave</Lead>
                 <Box maxWidth={480}>
                   <span className={"section-body"}>
-                    In the United States, we<Underlined>partner</Underlined>
-                    with Native American populations on early childcare,
-                    education and tribal language revitalization;
-                    <Circled>improve</Circled>
+                    In the United States, we{" "}
+                    <Underlined orange={true}>partner</Underlined> with Native
+                    American populations on early childcare, education and
+                    tribal language revitalization; <Circled>improve</Circled>{" "}
                     employment outcomes for young adults caught in the criminal
-                    justice system; promote<Underlined>healthy</Underlined>
-                    behaviors; and work to lessen the stigma of HIV.
+                    justice system; promote{" "}
+                    <Underlined orange={true}>healthy</Underlined> behaviors;
+                    and work to lessen the stigma of HIV.
                   </span>
                 </Box>
               </>
@@ -116,7 +120,11 @@ const Brave = () => {
         ]}
       ></SplitSectionLong>
 
-      <SplitSection image={image2} imageCredits={"Jessica Scranton/FHI 360"}>
+      <SplitSectionCroppedImage
+        image={image2}
+        imageCredits={"Jessica Scranton/FHI 360"}
+        pattern={gapVert}
+      >
         <Lead>We are brave</Lead>
         <H2 className={"section-title"}>
           We aren’t
@@ -127,38 +135,12 @@ const Brave = () => {
         </H2>
         <Box maxWidth={480}>
           <H3 className={"section-subtitle"}>
-            Around the world, we step in to serve those others might not.
+            We step in to create a more equitable world.
           </H3>
         </Box>
-      </SplitSection>
+      </SplitSectionCroppedImage>
     </>
   )
 }
-
-const WordNote = ({ children, sx, style, svg, ...props }) => (
-  <>
-    {" "}
-    <span style={{ position: "relative" }}>
-      {children}
-      <Box
-        sx={{
-          left: 0,
-          width: "80px",
-          position: "absolute",
-          transform: "translateY(-20%)",
-          zIndex: -1,
-          ...style,
-          ...sx,
-        }}
-      >
-        <HandDrawnSVG svg={svg} duration={0.3} delay={1}></HandDrawnSVG>
-      </Box>
-    </span>{" "}
-  </>
-)
-
-const Underlined = props => <WordNote svg={Streak} {...props} />
-
-const Circled = props => <WordNote svg={Circle} {...props} />
 
 export default Brave

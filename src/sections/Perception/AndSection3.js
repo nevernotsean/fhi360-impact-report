@@ -28,7 +28,7 @@ const RightSide = () => (
     </H2>
     <span className="section-body">
       educational institutions, faith-based organizations, local communities,
-      governments and{" "}
+      non-U.S. governments and{" "}
       <span style={{ position: "relative" }}>
         more.
         <Box

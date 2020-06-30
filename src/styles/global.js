@@ -27,6 +27,9 @@ const GlobalStyles = createGlobalStyle`
 
   /** sections */
   .section-title {
+    font-size: 48px;
+    line-height: 52px;
+
     font-weight: 900;
     margin-bottom: 30px;
   }
@@ -37,8 +40,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .section-body {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 19px;
+    line-height: 24px;
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 400;
   }

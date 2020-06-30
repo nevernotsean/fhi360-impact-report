@@ -1,18 +1,16 @@
 import React from "react"
 
 import styled from "styled-components"
-import EvidenceSVG from "../assets/svg/evidence.svg"
+import EvidenceCard from "../images/evidence.png"
 import ScienceSVG from "../assets/svg/science.svg"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import Streak3 from "../assets/svg/streak3.svg"
-import strip from "../images/pattern-strip.png"
+import Streak from "../assets/svg/streak.svg"
+import strip from "../images/pattern-LeadWithScience_WeStudy.png"
+import vert from "../images/pattern-vert-WeLeadwithScience_TheResult.png"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import {
-  SplitSectionCroppedImage,
-  SplitSection,
-} from "../components/SplitSection"
+import { SplitSectionCroppedImage } from "../components/SplitSection"
 
 import image1 from "../images/Evidence1.png"
 
@@ -20,15 +18,16 @@ import { Flex, Box, Image } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
-import LeadwithScienceActwithHeart from "../images/LeadwithScienceActwithHeart.png"
+import { Circled, Underlined } from "../components/WordNote"
 
 const Evidence = () => {
   return (
     <Container>
-      <SectionDividerDark alt="we lead with science">
-        <Image src={LeadwithScienceActwithHeart}></Image>
-      </SectionDividerDark>
-      <FlexSectionContainer minHeight={"100vh"}>
+      <SectionDividerDark
+        alt="we lead with science"
+        img={EvidenceCard}
+      ></SectionDividerDark>
+      <FlexSectionContainer minHeight={"100vh"} centered={true}>
         <Box width={1} textAlign={"center"}>
           <Lead>We lead with science</Lead>
           <H2 className="section-title">
@@ -38,38 +37,52 @@ const Evidence = () => {
             <br />
             than our tagline.
           </H2>
-          <Box width={250} mx={"auto"}>
+          <Box width={250} mx={"auto"} mt={-20}>
             <HandDrawnSVG
               duration={0.25}
-              svg={Streak3}
+              svg={Streak}
               className="pullquote-streak"
             ></HandDrawnSVG>
           </Box>
-          <H2 className="section-title serif">
-            It’s our approach
-            <br />
-            to solving some of the world’s
-            <br />
-            most intractable problems.
-          </H2>
         </Box>
       </FlexSectionContainer>
       <Flex style={{ background: "#cccccc", position: "relative" }} width={1}>
-        <FlexSectionContainer width={1} px={[20, 100]}>
-          <HandDrawnSVG
-            svg={ScienceSVG}
-            alt="We study, test and evaluate. We gather evidence and generate reliable data."
-            duration={0.3}
-            duration2={0.3}
-            delay={1}
-          />
+        <FlexSectionContainer
+          width={1}
+          px={[20, 100]}
+          centered={true}
+          textAlign={"center"}
+        >
+          <Lead>We Lead With Science</Lead>
+          <span
+            style={{ fontWeight: 900, fontSize: "48px", lineHeigh: "54px" }}
+          >
+            We gather{" "}
+            <Underlined delay={0.5} transform={"translateY(-10%)"} orange>
+              evidence
+            </Underlined>
+            ,
+            <br />
+            generate{" "}
+            <Underlined delay={0.75} transform={"translateY(-10%)"} orange>
+              reliable
+            </Underlined>{" "}
+            data and
+            <br />
+            develop{" "}
+            <Circled delay={1} transform={"translateY(-25%) scale(1.5)"}>
+              new
+            </Circled>{" "}
+            ideas.
+          </span>
         </FlexSectionContainer>
         <img src={strip} className="strip"></img>
       </Flex>
-      <SplitSection
+      <SplitSectionCroppedImage
         image={image1}
         flip={true}
         imageCredits={"mom & baby (current layout)"}
+        pattern={vert}
       >
         <Lead>We lead with science</Lead>
         <Box maxWidth={480}>
@@ -77,7 +90,7 @@ const Evidence = () => {
             The result:
             <br />
             <span className={"serif"}>
-              A deep understanding of the people and communities we serve.
+              A deep connection to the people and communities we serve
             </span>
           </H2>
         </Box>
@@ -87,10 +100,11 @@ const Evidence = () => {
         />
         <Box maxWidth={480}>
           <H3 className={"section-subtitle"}>
-            And the interventions most likely to discover the greatest impact.
+            And the co-creation of interventions most likely to yield the
+            greatest impact.
           </H3>
         </Box>
-      </SplitSection>
+      </SplitSectionCroppedImage>
     </Container>
   )
 }

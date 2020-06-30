@@ -52,6 +52,7 @@ export const SplitSection = ({
   flip,
   imageCredits = "CREDITS MISSING",
   hideImageOnMobile,
+  pattern = stripeVert,
   ...props
 }) => {
   return (
@@ -71,7 +72,7 @@ export const SplitSection = ({
         <img
           data-scroll
           data-scroll-speed={1.2}
-          src={stripeVert}
+          src={pattern}
           alt="pattern"
           style={{
             position: "absolute",
@@ -117,6 +118,7 @@ export const SplitSectionCroppedImage = ({
   children,
   flip,
   minHeight,
+  pattern = stripeVert,
   ...props
 }) => {
   return (
@@ -126,8 +128,9 @@ export const SplitSectionCroppedImage = ({
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
+      style={{ position: "relative" }}
     >
-      <FlexWrap style={{ position: "relative" }}>
+      <FlexWrap>
         {flip && (
           <Box
             width={[1, 1 / 2]}
@@ -152,22 +155,26 @@ export const SplitSectionCroppedImage = ({
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Box width={[1]} style={{ position: "relative" }}>
+          <Box
+            width={[1]}
+            style={{ position: "relative" }}
+            pr={flip && "10vh"}
+            pl={!flip && "10vh"}
+          >
             <InViewImage
               src={image}
               scrollSpeed={-0.5}
               imageSpeed={1}
-              usePattern={true}
+              usePattern={flip}
               style={{
                 display: "block",
                 maxWidth: "none",
-                margin: "0 auto 0 0",
-                width: "60%",
+                width: "100%",
                 height: "80vh",
                 objectFit: "cover",
                 objectPosition: "center center",
-                marginLeft: !flip && "auto",
-                marginRight: flip && "auto",
+                marginLeft: !flip && "auto !important",
+                marginRight: flip && "auto  !important",
               }}
             ></InViewImage>
           </Box>
@@ -182,7 +189,7 @@ export const SplitSectionCroppedImage = ({
             <img
               data-scroll
               data-scroll-speed={1.2}
-              src={stripeVert}
+              src={pattern}
               alt="pattern"
               style={{
                 position: "absolute",
@@ -207,11 +214,11 @@ export const SplitSectionCroppedImage = ({
             </Flex>
           </Box>
         )}
-        <PhotoCredits
-          credits={imageCredits}
-          sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
-        ></PhotoCredits>
       </FlexWrap>
+      <PhotoCredits
+        credits={imageCredits}
+        sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+      ></PhotoCredits>
     </Flex>
   )
 }
@@ -219,6 +226,7 @@ export const SplitSectionCroppedImage = ({
 export const SplitSectionLong = ({
   children,
   contentArray = [{ img: null, imgCredits: null, content: null }],
+  pattern = stripeVert,
   ...props
 }) => {
   const id = useMemo(() => shortid())
@@ -235,7 +243,7 @@ export const SplitSectionLong = ({
       {/* <img
         data-scroll
         data-scroll-speed={1}
-        src={stripeVert}
+        src={pattern}
         alt="pattern"
         style={{
           position: "absolute",

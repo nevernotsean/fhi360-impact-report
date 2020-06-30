@@ -17,6 +17,10 @@ import empowersImage from "../../images/outro-empowers.jpg"
 
 import Engages from "../../assets/svg/engages.svg"
 
+import pattern1 from "../../images/pattern-WeAreChanging_Works.png"
+import pattern2 from "../../images/pattern-WeAreChanging_Empowers.png"
+import pattern3 from "../../images/pattern-WeAreChanging_Engages.png"
+
 const WordSections = () => {
   return (
     <>
@@ -24,6 +28,7 @@ const WordSections = () => {
         image={worksImage}
         alt={"university students"}
         imageCredits="Kiana Hayeri/The Verbatim Agency for FHI 360"
+        pattern={pattern1}
       >
         <Lead>Lead</Lead>
         <H2 className={"section-title"}>
@@ -41,6 +46,7 @@ const WordSections = () => {
         image={empowersImage}
         alt={"woman in focus group (current layout)"}
         imageCredits={""}
+        pattern={pattern2}
       >
         <Lead>Inspire</Lead>
         <H2 className={"section-title"}>
@@ -54,7 +60,7 @@ const WordSections = () => {
           <HandDrawnSVG svg={Empowers}></HandDrawnSVG>
         </Box>
       </OutroWord>
-      <OutroWord>
+      <OutroWord pattern={pattern3}>
         <Lead>Innovate</Lead>
         <H2 className={"section-title"}>
           We are

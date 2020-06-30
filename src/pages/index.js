@@ -13,16 +13,7 @@ import Outro from "../sections/Outro/"
 import { Box } from "rebass/styled-components"
 
 const IndexPage = () => (
-  <Layout
-    sidenavData={data}
-    showIntro={true}
-    headerStyle={{
-      position: "absolute",
-      top: 0,
-      width: "100%",
-      background: "transparent",
-    }}
-  >
+  <Layout sidenavData={data} showIntro={true}>
     <SEO title="Home" />
 
     <Box id="sections">

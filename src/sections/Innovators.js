@@ -5,11 +5,14 @@ import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import { useTrail } from "react-spring"
 
 import styled from "styled-components"
-import InnoSVG from "../assets/svg/innovators.svg"
+import Innovate from "../images/innovators.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import { SplitSection, SplitSectionLong } from "../components/SplitSection"
+import {
+  SplitSectionCroppedImage,
+  SplitSectionLong,
+} from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
@@ -18,6 +21,8 @@ import image3 from "../images/Innovators2.png"
 
 import { Box } from "rebass/styled-components"
 import HandDrawnSVG from "../components/HandDrawnSVG"
+
+import innoVert from "../images/pattern-vert-WeAreInnovators_section1.png"
 
 const Innovators = () => {
   const { scroll } = useContext(LocomotiveContext)
@@ -31,13 +36,17 @@ const Innovators = () => {
   return (
     <Container>
       <SectionDividerDark
-        svg={InnoSVG}
+        img={Innovate}
         alt="we are innovative"
-        duration={1}
-        duration2={0.2}
-        delay={1}
+        // duration={1}
+        // duration2={0.2}
+        // delay={1}
       ></SectionDividerDark>
-      <SplitSection image={image1} imageCredits={"2 men (current layout)"}>
+      <SplitSectionCroppedImage
+        image={image1}
+        imageCredits={"2 men (current layout)"}
+        pattern={innoVert}
+      >
         <Lead>We are innovators</Lead>
         <H2 className={"section-title"}>
           Some organizations
@@ -57,7 +66,7 @@ const Innovators = () => {
             <Box
               sx={{
                 left: 0,
-                width: "200px",
+                width: "160px",
                 position: "absolute",
                 transform: "translateY(-20%)",
                 zIndex: -1,
@@ -71,7 +80,7 @@ const Innovators = () => {
             </Box>
           </span>
         </Box>
-      </SplitSection>
+      </SplitSectionCroppedImage>
       <SplitSectionLong
         image={image2}
         flip
@@ -107,16 +116,16 @@ const Innovators = () => {
             ),
           },
           {
-            img: image3,
+            img: image2,
             imageCredits: "CREDITS MISSING",
             content: () => (
               <>
                 <Lead>We are innovators</Lead>
                 <Box maxWidth={480}>
                   <p className="section-body">
-                    Our global presence and networks enable us to
-                    cross-pollinate ideas and knowledge within and across
-                    countries so that we can pilot initiatives, nurture
+                    From Nepal to North Dakota, our global presence and networks
+                    enable us to cross-pollinate ideas and knowledge within and
+                    across countries so that we can pilot initiatives, nurture
                     innovation and expand our social impact.
                   </p>
                 </Box>

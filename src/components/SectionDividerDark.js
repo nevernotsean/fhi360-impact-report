@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
-import { Flex, Box } from "rebass/styled-components"
+import { Flex, Box, Image } from "rebass/styled-components"
 import HandDrawnSVG from "./HandDrawnSVG"
 import { H2 } from "../elements/Type"
 import { useInView } from "react-intersection-observer"
@@ -8,6 +8,7 @@ import LightModeTrigger from "./LightModeTrigger"
 
 const SectionDividerDark = ({
   svg,
+  img,
   duration = 2,
   duration2 = 1,
   alt,
@@ -39,6 +40,14 @@ const SectionDividerDark = ({
               alt={alt}
               overrideLength={overrideLength}
             ></HandDrawnSVG>
+          )}
+          {img && (
+            <Image
+              src={img}
+              width={1}
+              data-scroll
+              data-scroll-speed={1.5}
+            ></Image>
           )}
         </Box>
       </Container>

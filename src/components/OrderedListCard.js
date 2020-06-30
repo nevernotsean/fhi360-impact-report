@@ -32,7 +32,7 @@ const OrderedListCard = ({
         }}
       >
         <span className="line"></span>
-        <p className="number">{number}</p>
+        <span className="number">{number}</span>
         {children}
         {href && (
           <a href={href} className="learn-more">
@@ -71,6 +71,11 @@ const OrderedListCardContainer = styled(Box)`
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 900;
     margin: 1rem 0;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
   }
 
   .learn-more {

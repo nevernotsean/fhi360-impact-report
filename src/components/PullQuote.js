@@ -12,7 +12,7 @@ const PullQuote = ({
   ...props
 }) => {
   return (
-    <Box flexDirection={"column"} display={"flex"} {...props} mb={"1.45rem"}>
+    <Box flexDirection={"column"} display={"flex"} mb={"1.45rem"} {...props}>
       <Box>
         <Lead>{props.title}</Lead>
       </Box>

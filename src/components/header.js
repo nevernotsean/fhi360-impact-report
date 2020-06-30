@@ -36,10 +36,11 @@ const Header = ({
   return (
     <Container style={{ ...headerStyle }} scrolledPast={scrolledPast}>
       <Flex
-        height={100}
+        height={scrolledPast ? 75 : 100}
         p={"0 60px 0 20px"}
         alignItems={"center"}
         justifyContent={"space-between"}
+        sx={{ transition: "height .5s ease" }}
       >
         <h1
           className="allow-pointer-events"
@@ -80,7 +81,7 @@ const Header = ({
         </h1>
         <Flex>
           <Box
-            width={32}
+            width={26}
             sx={{ cursor: "pointer", opacity: sideNavOpen ? 0 : 1 }}
           >
             <ShareButton
@@ -121,8 +122,7 @@ const Container = styled.header`
 
   z-index: 99;
 
-  ${({ scrolledPast }) =>
-    scrolledPast && `.header-title {opacity: 0; pointer-events: none;}`}
+  background: ${({ theme }) => theme.colors.black};
 
   .allow-pointer-events {
     pointer-events: all;
@@ -130,13 +130,16 @@ const Container = styled.header`
 
   .color-detect {
     transition: color 0.7s ease;
+    color: ${({ theme }) => theme.colors.white} !important;
   }
   .fill-detect path {
     transition: fill 0.7s ease;
+    fill: ${({ theme }) => theme.colors.white} !important;
   }
   .stroke-detect {
     line {
       transition: stroke 0.7s ease;
+      stroke: ${({ theme }) => theme.colors.white} !important;
     }
   }
 `

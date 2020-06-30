@@ -5,11 +5,11 @@ import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import { useTrail } from "react-spring"
 
 import styled from "styled-components"
-import NimbleSVG from "../assets/svg/nimble.svg"
+import NimbleCard from "../images/nimble.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import { SplitSection } from "../components/SplitSection"
+import { SplitSectionCroppedImage } from "../components/SplitSection"
 
 import image1 from "../images/Nimble1.png"
 
@@ -20,21 +20,23 @@ import HandDrawnSVG from "../components/HandDrawnSVG"
 import Arrow from "../assets/svg/arrow.svg"
 import TitledListCard from "../components/TitledListCard"
 
+import nimbleVert from "../images/pattern-vert-WeAreNimble_EachSubsidiary.png"
+
 const data = [
   {
     title: "FHI<br/><span class='bolder'>Clinical</span>",
     body: "Complex clinical research support in resource-limited settings",
-    href: "#",
+    href: "https://www.fhiclinical.com/",
   },
   {
     title: "FHI<br/><span class='bolder'>Ventures</span>",
     body: "Innovative funding and impact investing",
-    href: "#",
+    href: "https://www.fhiventures.com/",
   },
   {
     title: "FHI<br/><span class='bolder'>Solutions</span>",
     body: "Customized nutrition and health solutions",
-    href: "#",
+    href: "https://www.fhisolutions.org/",
   },
   {
     title: "FHI<br/><span class='bolder'>Konung</span>",
@@ -45,7 +47,7 @@ const data = [
     title: "FHI<br/><span class='bolder'>Partners</span>",
     body:
       "Specialized solutions in partnership with foundations and the private sector",
-    href: "#",
+    href: "https://www.fhipartners.org/",
   },
 ]
 
@@ -68,26 +70,26 @@ const Nimble = () => {
   return (
     <Container>
       <SectionDividerDark
-        svg={NimbleSVG}
+        img={NimbleCard}
         alt="we are nimble"
-        delay={0.01}
       ></SectionDividerDark>
       <FlexSectionContainer>
         <Flex alignItems={"center"} width={1}>
           <Box width={[1, 1 / 2]} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
             <H2 className="section-title">
-              We are eager, ready & able
+              Our global platform means we do not need a lot of lead time
               <br />
-              <span className="serif">to jump in, pivot and solve.</span>
+              <span className="serif">
+                to respond to new crises or existing challenges.
+              </span>
             </H2>
             <div
               className="divider"
               style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
             />
             <H3 className="section-subtitle">
-              Our global footprint means we do not need a lot of lead time to
-              respond to new crises or existing challenges.
+              We are eager, ready & able to jump in, pivot and act.
               <br />
               <br />
               Our four subsidiaries have unique areas of focus:
@@ -126,7 +128,12 @@ const Nimble = () => {
           </Box>
         </Flex>
       </FlexSectionContainer>
-      <SplitSection image={image1} flip imageCredits={"2 women health workers"}>
+      <SplitSectionCroppedImage
+        pattern={nimbleVert}
+        image={image1}
+        flip
+        imageCredits={"2 women health workers"}
+      >
         <Lead>We are nimble</Lead>
         <H2 className={"section-title"}>
           Each subsidiary
@@ -145,7 +152,7 @@ const Nimble = () => {
             States and around the world.
           </H3>
         </Box>
-      </SplitSection>
+      </SplitSectionCroppedImage>
     </Container>
   )
 }

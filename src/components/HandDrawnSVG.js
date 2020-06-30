@@ -11,12 +11,13 @@ const HandDrawnSVG = ({
   duration2 = 1,
   delay = 0,
   delay2 = -1,
-  useInview = true,
+  useInviewTrigger = true,
   animated = false,
   triggerOnce,
   threshold,
   rootMargin = "20% 0px -20% 0px",
   overrideLength = [],
+  orange,
   ...props
 }) => {
   const ref = useRef()
@@ -44,7 +45,7 @@ const HandDrawnSVG = ({
   const [pathLength3, setPathLength3] = useState(0)
 
   useEffect(() => {
-    if (inView) setTriggered(true)
+    if (inView) !console.log("triggered", ref) && setTriggered(true)
   }, [inView])
 
   useEffect(() => {
@@ -69,14 +70,14 @@ const HandDrawnSVG = ({
       length1={overrideLength[1] || pathLength1}
       length2={overrideLength[2] || pathLength2}
       length3={overrideLength[3] || pathLength3}
-      animated={useInview ? triggered : animated}
+      animated={useInviewTrigger ? triggered : animated}
       duration={duration}
       duration2={duration2}
       delay={delay}
       delay2={delay2}
     >
-      <Box data-scroll data-scroll-speed={0.25}>
-        <SvgComponent></SvgComponent>
+      <Box data-scroll data-scroll-speed={0.25} className={orange && "orange"}>
+        <SvgComponent orange={orange}></SvgComponent>
       </Box>
     </MaskOuter>
   )

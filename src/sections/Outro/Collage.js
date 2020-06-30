@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react"
 import styled from "styled-components"
 
-import centerImage from "../../images/collage-center.jpg"
+import centerImage from "../../images/RS11344_1F2A9964.jpg"
 
 import Frame from "../../assets/svg/rect-frame.svg"
 import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
@@ -15,6 +15,12 @@ import imageE from "../../images/collage-e.png"
 import imageF from "../../images/collage-f.png"
 import imageG from "../../images/collage-g.png"
 import imageH from "../../images/collage-h.png"
+
+import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
+
+import FlexSectionContainer from "../../components/FlexSectionContainer"
+import { Flex } from "rebass/styled-components"
+import HandDrawnSVG from "./../../components/HandDrawnSVG"
 
 const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
   lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
@@ -78,88 +84,105 @@ const Outro = () => {
 
     let isWp1 = scroll >= zoomProps.bottom - window.innerHeight
     setWp1(isWp1)
-
-    console.log(isWp1)
   }, [scroll, zoomProps.bottom])
 
   return (
-    <Container className="grid" wp1={wp1}>
-      <div
-        className="s-instagram"
-        data-scroll
-        data-scroll-sticky
-        data-scroll-target=".grid"
-        data-scroll-call="zoom"
-        data-scroll-repeat={"true"}
-      >
+    <>
+      <Container className="grid" wp1={wp1}>
         <div
-          className="s-instagram-grid"
-          style={{
-            transform: `scale(${scale})`,
-          }}
+          className="s-instagram"
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target=".grid"
+          data-scroll-call="zoom"
+          data-scroll-repeat={"true"}
         >
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageA})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageB})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageH})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer center-square">
-            <div
-              aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
-              className="s-instagram-block"
-              style={{
-                backgroundImage: `url(${centerImage})`,
-                backgroundPosition: "80% 50%",
-              }}
-            ></div>
-            <Frame id="frame"></Frame>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageE})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageC})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageF})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageG})` }}
-            ></div>
-          </div>
-          <div className="s-instagram-layer">
-            <div
-              className="s-instagram-block"
-              style={{ backgroundImage: `url(${imageD})` }}
-            ></div>
+          <div
+            className="s-instagram-grid"
+            style={{
+              transform: `scale(${scale})`,
+            }}
+          >
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageA})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageB})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageH})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer center-square">
+              <div
+                aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
+                className="s-instagram-block"
+                style={{
+                  backgroundImage: `url(${centerImage})`,
+                  backgroundPosition: "80% 50%",
+                }}
+              ></div>
+              <Frame id="frame"></Frame>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageE})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageC})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageF})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageG})` }}
+              ></div>
+            </div>
+            <div className="s-instagram-layer">
+              <div
+                className="s-instagram-block"
+                style={{ backgroundImage: `url(${imageD})` }}
+              ></div>
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+      <FlexSectionContainer minHeight={"100vh"} justifyContent={"center"}>
+        <Flex
+          width={1}
+          maxWidth={600}
+          mx={"auto"}
+          flexDirection="column"
+          justifyContent={"center"}
+          sx={{ position: "relative" }}
+        >
+          <HandDrawnSVG
+            svg={ThisIsFHI}
+            delay2={2}
+            duration={2}
+            duration2={2}
+          ></HandDrawnSVG>
+        </Flex>
+      </FlexSectionContainer>
+    </>
   )
 }
 

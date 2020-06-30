@@ -35,19 +35,20 @@ const LeftSide = () => (
 const RightSide = () => (
   <>
     <H2 className="section-title">
-      FHI 360 has decades of work
+      FHI 360 has worked for decades
       <br />
       <span className="serif">throughout the United States</span>
     </H2>
     <span className="section-body">
-      to advance health, safety, education and workforce development for people
-      of all ages — particularly those who are marginalized and{" "}
+      to reduce inequality and advance health, safety, education and workforce
+      development — particularly among those who are
+      <br />
       <span style={{ position: "relative" }}>
-        underserved.
+        marginalized and underserved.
         <Box
           sx={{
             left: 0,
-            width: "100px",
+            width: "200px",
             position: "absolute",
             transform: "translateY(-60%)",
             zIndex: -1,

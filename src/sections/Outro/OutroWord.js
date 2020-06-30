@@ -15,7 +15,14 @@ const BGImage = styled.img`
   width: 100vw;
 `
 
-const OutroWord = ({ image, alt, imageCredits, children, ...props }) => {
+const OutroWord = ({
+  image,
+  alt,
+  imageCredits,
+  children,
+  pattern = strip,
+  ...props
+}) => {
   return (
     <>
       <Flex
@@ -34,7 +41,7 @@ const OutroWord = ({ image, alt, imageCredits, children, ...props }) => {
           <Box>{children}</Box>
         </Flex>
         <Box height={45} style={{ textAlign: "center" }}>
-          <img src={strip}></img>
+          <img src={pattern}></img>
         </Box>
       </Flex>
       {image && (

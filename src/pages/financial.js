@@ -95,16 +95,36 @@ const Financial = () => (
     </Masthead>
     <Flex flexDirection={"column"}></Flex>
     <Section title={"Revenue by source"}>
-      <Image src={Image5}></Image>
+      <Image
+        src={Image5}
+        maxWidth={800}
+        mx={"auto"}
+        sx={{ display: "block" }}
+      ></Image>
     </Section>
     <Section title={"Allocation of expenses"}>
-      <Image src={Image4}></Image>
+      <Image
+        src={Image4}
+        maxWidth={800}
+        mx={"auto"}
+        sx={{ display: "block" }}
+      ></Image>
     </Section>
     <Section title={"Work by area"}>
-      <Image src={Image3}></Image>
+      <Image
+        src={Image3}
+        maxWidth={800}
+        mx={"auto"}
+        sx={{ display: "block" }}
+      ></Image>
     </Section>
     <Section title={"Work by region"}>
-      <Image src={Image2}></Image>
+      <Image
+        src={Image2}
+        maxWidth={800}
+        mx={"auto"}
+        sx={{ display: "block" }}
+      ></Image>
     </Section>
   </Layout>
 )
@@ -121,7 +141,7 @@ const Section = ({ title, children, ...props }) => (
     <Box sx={{ borderBottom: "1px solid black" }} width={1} mb={30}>
       <H2
         fontWeight={900}
-        fontSize={[18, 24]}
+        fontSize={[16, 18]}
         lineHeight={1}
         mb={10}
         sx={{

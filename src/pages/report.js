@@ -7,13 +7,18 @@ import Section from "../components/Report/Section"
 import StatBlock from "../components/Report/StatBlock"
 import FramedImage from "../components/Report/FramedImage"
 
-import tribeJPG from "../images/fro-native-american.jpg"
 import { Box } from "rebass"
 import ReportPullquote from "./../components/Report/Pullquote"
 import Nav from "../components/Report/Nav"
 
+import tribeJPG from "../images/fro-native-american.jpg"
+import DAM from "../images/SupportingHighImpactHIV_creditJessicaScranton.jpg"
+import DAM2 from "../images/ExpandingSelfCare_creditJessicaScranton.jpg"
+import enhancingFisheries from "../images/ImpactReport_EnhancingFisheries.jpg"
+import breastFeeding from "../images/MeasuringtheCostBreastfeeding_GiacomoPirozzi.jpg"
+
 const impactReport = () => (
-  <Layout bg={"#e2e2e2"} hideMenuButton={true}>
+  <Layout bg={"#e2e2e2"} sidenavData={data}>
     <SEO title="Home" />
     <Nav></Nav>
     <Masthead></Masthead>
@@ -35,9 +40,9 @@ const impactReport = () => (
     <Section {...data[2]}>
       <Box py={5}>
         <ReportPullquote
-          title={"Lorem Ipsum"}
+          title={"Results"}
           headline={
-            "pull quote lorem ipsum changing fpo lorem ipsum human engagement placeholder only fpo lorem ipsum."
+            "The results support continued access to the three contraceptives studied."
           }
         ></ReportPullquote>
       </Box>
@@ -51,9 +56,9 @@ const impactReport = () => (
     </Section>
     <Section {...data[4]}>
       <FramedImage
-        src={"https://via.placeholder.com/1920x1180"}
+        src={enhancingFisheries}
         credit="Qualcomm® Wireless Reach™"
-        alt="( photo from 2016 annual report, of WISE phone app, under: SMARTPHONE APP CLOSES GENDER GAP )"
+        alt="(photo of WISE phone app)"
       ></FramedImage>
     </Section>
     <Section {...data[5]}>
@@ -65,7 +70,7 @@ const impactReport = () => (
     </Section>
     <Section {...data[6]}>
       <FramedImage
-        src={"https://via.placeholder.com/1920x1180"}
+        src={DAM}
         credit="Jessica Scranton/FHI 360"
         alt="(photo from DAM: 10737, two youth, Indonesia)"
       ></FramedImage>
@@ -86,9 +91,9 @@ const impactReport = () => (
     </Section>
     <Section {...data[9]}>
       <FramedImage
-        src={"https://via.placeholder.com/1920x1180"}
-        credit="Credit: Giacamo Pirozzi/FHI 360"
-        alt="(photo from DAM: 10737, two youth, Indonesia)"
+        src={breastFeeding}
+        credit="Giacamo Pirozzi/FHI 360"
+        alt="Asian mom and newborn"
       ></FramedImage>
     </Section>
     <Section {...data[10]}>
@@ -96,14 +101,14 @@ const impactReport = () => (
         <ReportPullquote
           title={"Learn More"}
           headline={
-            "www.ngoconnect.net/resource/ local-philanthropy-and-self-reliance"
+            "www.ngoconnect.net/resource/local-philanthropy-and-self-reliance"
           }
         ></ReportPullquote>
       </Box>
     </Section>
     <Section {...data[11]}>
       <FramedImage
-        src={"https://via.placeholder.com/1920x1180"}
+        src={DAM2}
         credit="Jessica Scranton/FHI 360"
         alt="(photo from DAM: 10948, woman in Uganda)"
       ></FramedImage>
@@ -114,6 +119,8 @@ const impactReport = () => (
 const data = [
   // { id:"", title:"", headline:"", project:"", funder:"", body:"" }
   {
+    id: "i",
+    label: "Crisis Response",
     title: "Crisis Response",
     headline: "Responding in real time to Ebola",
     body:
@@ -121,18 +128,25 @@ const data = [
     project: "DRC Ebola Rapid Response",
     funder:
       "U.S. Agency for International Development<br/>Office of U.S. Foreign Disaster Assistance",
+    link:
+      "https://www.fhi360.org/projects/scaling-ebola-response-through-community-engagement-suerce",
   },
   {
-    title: "EDUCATION – U.S.",
+    id: "ii",
+    label: "EDUCATION I",
+    title: "EDUCATION",
     headline: "Building community among Native American tribes",
     body:
       "Across the United States, less than 2 percent of the 46,000 Native American and Alaskan native children who are enrolled in Head Start and Early Head Start programs speak their tribal languages at home. Through the American Indian and Alaska Native Head Start Collaboration Office, FHI 360 is assisting tribal communities to incorporate native languages and cultural traditions into the classroom across 26 states. Learning these languages serves as a protective factor for well-being for native children and aids academic success. Reawakening this cultural heritage also helps bring healing to trauma-induced communities. FHI 360 brings together tribal members, educators and researchers to discuss educational challenges, solutions and practices tailored to participants’ contexts. In 2019, the Collaboration Office developed and co-hosted four statewide early childhood tribal language summits.",
 
     project: "Head Start",
     funder: "U.S. Department of Health and Human Services",
+    link: "https://www.fhi360.org/projects/head-start",
   },
 
   {
+    id: "iii",
+    label: "RESEARCH",
     title: "RESEARCH",
     headline: "Leading trailblazing research",
     body:
@@ -144,7 +158,9 @@ const data = [
   },
 
   {
-    title: "HEALTH – U.S.",
+    id: "iv",
+    label: "HEALTH I",
+    title: "HEALTH",
     headline: "Using social media to end HIV stigma",
     body:
       "Stigma and complacency continue to be major obstacles to addressing HIV in the United States. FHI 360 supports the U.S. Centers for Disease Control and Prevention (CDC) national awareness and antistigma campaign, Let’s Stop HIV Together, which features all aspects of HIV education and many different campaign strategies. FHI 360 has particularly helped reach new audiences with body: essential messaging through social media: The campaign has attained an estimated total of 32.9 million post impressions and more than 13,000 Instagram followers.",
@@ -154,6 +170,8 @@ const data = [
   },
 
   {
+    id: "v",
+    label: "TECHNOLOGY",
     title: "TECHNOLOGY",
     headline: "Enhancing fishery outcomes",
     body:
@@ -164,7 +182,9 @@ const data = [
   },
 
   {
-    title: "EDUCATION – GLOBAL",
+    id: "vi",
+    label: "EDUCATION II",
+    title: "EDUCATION",
     headline: "Building literacy in Ghanaian early learners",
     body:
       "Literacy and numeracy are the foundation of all learning, yet far too many children fail to master these critical skills. During the 2017-2019 academic years, more than 7,200 Ghanaian schools in 100 districts introduced a high-quality early grade reading program. By the end of 2019, 707,843 pupils in kindergarten and primary grades 1 and 2 had been taught using the new reading methods, and more than 51,000 teachers, head teachers and curriculum directors received instructional materials and training in advanced reading instruction methods. An independent evaluation of the early grade reading program found that students in primary grades 1 and 2 significantly increased their average scores on all reading skills tested in a Ghanaian language. In fact, the evaluation noted body: that, “compared with similar programs worldwide, Learning has one of the largest program impacts measured to date.”",
@@ -174,7 +194,9 @@ const data = [
   },
 
   {
-    title: "HEALTH – HIV",
+    id: "vii",
+    label: "HEALTH II",
+    title: "HEALTH",
     headline: "Supporting high-impact HIV interventions",
     body:
       "Accessing safe, effective and quality HIV and AIDS services is critical to reducing the spread of HIV. Yet, far too many people who are at risk do not have access to services. Since 2014, the LINKAGES project has reached more than 2 million individuals who are at risk, tested more than 1.3 million people who are at high risk, diagnosed almost 90,000 new infections, and initiated or linked to treatment more than 60,000 people living with HIV. In addition, LINKAGES supports locally led and trusted partners, some of whom have grown into self-reliant, independent organizations body: sustaining the HIV response in their countries.",
@@ -186,7 +208,9 @@ const data = [
   },
 
   {
-    title: "HEALTH – GLOBAL",
+    id: "ix",
+    label: "HEALTH III",
+    title: "HEALTH",
     headline: "Reducing costs through private-sector partnerships",
     body:
       "Tuberculosis (TB) is the world’s most deadly infectious disease. Expanding access to state-of-the-art case detection is critical to reducing its spread. Through USAID’s TB Innovations Health Systems Strengthening project, private hospitals and laboratories formed the Philippines Private Sector Diagnostic Consortium to mobilize and coordinate efforts to fight TB. By joining together, consortium members were able to negotiate a 70 percent price reduction for GeneXpert TB diagnostic tests, from an average cost of US$152 per test to US$42, making TB care and treatment more body: affordable for all.",
@@ -196,7 +220,9 @@ const data = [
   },
 
   {
-    title: "EDUCATION – U.S.",
+    id: "x",
+    label: "EDUCATION III",
+    title: "EDUCATION",
     headline: "Reducing recidivism among young Americans",
     body:
       "Reentering the community after incarceration is difficult and too often unsuccessful. The Compass Rose Collaborative is an FHI 360 initiative supported by the U.S. Department of Labor’s Reentry Program. Compass Rose helps young adults ages 18 to 24 in nine states transition from the justice system into educational programs and jobs. Of the 613 young adults being served in the collaborative’s first cohort, 75 percent have gone back to school, engaged in an apprenticeship or found a job. Less than 1 percent of the participants have been convicted of a new crime within body: 12 months of release from incarceration or being placed on probation.",
@@ -206,6 +232,8 @@ const data = [
   },
 
   {
+    id: "xi",
+    label: "FHI SOLUTIONS",
     title: "FHI SOLUTIONS",
     headline: "Measuring the cost of not breastfeeding",
     body:
@@ -217,16 +245,20 @@ const data = [
   },
 
   {
+    id: "xii",
+    label: "CIVIL SOCIETY",
     title: "CIVIL SOCIETY",
     headline: "Activating civil society",
     body:
-      "Civil society organizations play a vital role in democratic societies, enabling citizens to solve their own problems, influence policy and hold leaders accountable. Under the Strengthening Civil Society Globally (SCS Global) cooperative agreement with USAID, the project released three new tools focused on more effective youth programming and organizational self-reliance, augmenting a library of more than 50 tools that development practitioners are using to increase the capacity and technical effectiveness of civil society organizations and to enhance young people’s media literacy skills. The tools include the Youth Programming Assessment Tool, and Guidance on Local Philanthropy and Self-Reliance. SCS Global promotes self-reliance among more than 1,000 local civil body: society organizations and media partners across 82 countries.",
+      "Civil society organizations play a vital role in democratic societies, enabling citizens to solve their own problems, influence policy and hold leaders accountable. Under the Strengthening Civil Society Globally (SCS Global) cooperative agreement with USAID, the project released three new tools focused on more effective youth programming and organizational self-reliance, augmenting a library of more than 50 tools that development practitioners are using to increase the capacity and technical effectiveness of civil society organizations and to enhance young people’s media literacy skills. The tools include the Youth Programming Assessment Tool, and Local Philanthropy and Self-Reliance. SCS Global promotes self-reliance among more than 1,000 local civil body: society organizations and media partners across 82 countries.",
 
     project: "Strengthening Civil Society Globally",
     funder: "U.S. Agency for International Development",
   },
 
   {
+    id: "xiii",
+    label: "HEALTH IV",
     title: "HEALTH",
     headline: "Expanding self-care options through public and private sectors",
     body:

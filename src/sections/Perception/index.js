@@ -10,7 +10,7 @@ import { useTrail, useSpring, animated } from "react-spring"
 
 // SVG
 
-import PerceptionSVG from "../../assets/svg/perception.svg"
+import PerceptionCard from "../../images/perception.png"
 import Arrow from "../../assets/svg/arrow.svg"
 import { H2, H3, Lead } from "../../elements/Type"
 import OrderedListCard from "../../components/OrderedListCard"
@@ -27,7 +27,7 @@ import Streak from "../../assets/svg/streak2.svg"
 const data = [
   {
     number: "01",
-    body: "about how international development is working around the world",
+    body: "about how human development is working around the world",
   },
   {
     number: "02",
@@ -70,7 +70,7 @@ const Perception = props => {
             <H3 className="section-subtitle">
               and we want to change
               <br />
-              your perception
+              your perception.
             </H3>
             <Box
               mt={-50}
@@ -106,13 +106,13 @@ const Perception = props => {
         </FlexWrap>
       </FlexSectionContainer>
       <SectionDividerDark
-        svg={PerceptionSVG}
-        mt={"-6vw"}
+        img={PerceptionCard}
+        // mt={"-6vw"}
         alt="let's change perception"
       ></SectionDividerDark>
       <AndSection1 />
       <AndSection2 />{" "}
-      <SplitSectionCroppedImage
+      {/* <SplitSectionCroppedImage
         flip
         image={"https://via.placeholder.com/1920x1080?text=FPO"}
       >
@@ -147,7 +147,7 @@ const Perception = props => {
             </span>
           </span>
         </Box>
-      </SplitSectionCroppedImage>
+      </SplitSectionCroppedImage> */}
       <AndSection3 />{" "}
       <SplitSectionCroppedImage
         flip
@@ -176,7 +176,7 @@ const Perception = props => {
             </Box>
           </span>
           <br />
-          Developing
+          developing
         </H3>
         <Box maxWidth={["none", 320]}>
           <span className="section-body">
