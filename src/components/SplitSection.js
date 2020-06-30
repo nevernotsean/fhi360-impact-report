@@ -287,6 +287,7 @@ const SplitSectionLongInner = ({
   return (
     <>
       <Box
+        className={"inview-trigger"}
         height={`${(total - index + 1) * 100}vh`}
         width={1}
         ref={ref}
@@ -301,6 +302,7 @@ const SplitSectionLongInner = ({
         data-scroll-sticky
         data-scroll-target={target}
         minHeight={"100vh"}
+        width={1}
         {...props}
         width={1}
         sx={{
