@@ -1,8 +1,10 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import { Flex, Box } from "rebass/styled-components"
 import HandDrawnSVG from "./HandDrawnSVG"
 import { H2 } from "../elements/Type"
+import { useInView } from "react-intersection-observer"
+import LightModeTrigger from "./LightModeTrigger"
 
 const SectionDividerDark = ({
   svg,
@@ -14,30 +16,33 @@ const SectionDividerDark = ({
   ...props
 }) => {
   return (
-    <Container>
-      <Box
-        width={1}
-        maxWidth={1000}
-        mx={"auto"}
-        py={"10vw"}
-        sx={{
-          position: "relative",
-        }}
-        {...props}
-      >
-        {children}
-        {svg && (
-          <HandDrawnSVG
-            svg={svg}
-            duration={duration}
-            duration2={duration2}
-            delay={0.5}
-            alt={alt}
-            overrideLength={overrideLength}
-          ></HandDrawnSVG>
-        )}
-      </Box>
-    </Container>
+    <>
+      <LightModeTrigger height={100}></LightModeTrigger>
+      <Container>
+        <Box
+          width={1}
+          maxWidth={1000}
+          mx={"auto"}
+          py={"10vw"}
+          sx={{
+            position: "relative",
+          }}
+          {...props}
+        >
+          {children}
+          {svg && (
+            <HandDrawnSVG
+              svg={svg}
+              duration={duration}
+              duration2={duration2}
+              delay={0.5}
+              alt={alt}
+              overrideLength={overrideLength}
+            ></HandDrawnSVG>
+          )}
+        </Box>
+      </Container>
+    </>
   )
 }
 

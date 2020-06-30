@@ -8,6 +8,8 @@ import React, {
 import LocomotiveScroll from "locomotive-scroll"
 import styled, { createGlobalStyle } from "styled-components"
 
+// import { onRouteUpdate } from "../../gatsby-browser"
+
 export const LocomotiveContext = createContext({ scroll: null })
 
 export const useLocomotiveScroll = (options, ref) => {
@@ -36,16 +38,16 @@ export const useLocomotiveScroll = (options, ref) => {
 }
 
 export const LocomotiveScrollFull = ({ options, ...props }) => {
-  const [_, context] = useLocomotiveScroll({ query: "#___gatsby" })
+  const [_, context] = useLocomotiveScroll({ query: "#main-content" })
 
   return (
-    <div id="sidebar-target">
+    <>
       <FullStyle />
       <LocomotiveContext.Provider
         value={context}
         {...props}
       ></LocomotiveContext.Provider>
-    </div>
+    </>
   )
 }
 

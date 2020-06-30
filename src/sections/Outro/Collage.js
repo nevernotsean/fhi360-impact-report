@@ -1,82 +1,38 @@
-import React, {
-  useEffect,
-  useContext,
-  useLayoutEffect,
-  useCallback,
-  useState,
-} from "react"
+import React, { useEffect, useContext, useState } from "react"
 import styled from "styled-components"
-import FlexSectionContainer from "../components/FlexSectionContainer"
-import HandDrawnSVG from "../components/HandDrawnSVG"
 
-import { Box, Flex } from "rebass/styled-components"
-import { Lead, H2, H3 } from "../elements/Type"
+import centerImage from "../../images/collage-center.jpg"
 
-import strip from "../images/pattern-strip.png"
-import theme from "../styles/index"
-
-import Works from "../assets/svg/works.svg"
-import worksImage from "../images/outro-works.jpg"
-
-import Empowers from "../assets/svg/empowers.svg"
-import empowersImage from "../images/outro-empowers.jpg"
-
-import Engages from "../assets/svg/engages.svg"
-import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
-
+import Frame from "../../assets/svg/rect-frame.svg"
+import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import lerp from "lerp"
 
-const BGImage = styled.img`
-  margin: 0;
-  display: block;
-  object-fit: cover;
-  object-position: center center;
-  height: 100vh;
-  width: 100vw;
-`
-
-const OutroWord = ({ image, children, ...props }) => {
-  return (
-    <>
-      <Flex
-        flexDirection={"column"}
-        minHeight={"100vh"}
-        alignItems={"center"}
-        style={{ background: theme.colors.grey }}
-      >
-        <Flex
-          flexDirection={"column"}
-          justifyContent={"center"}
-          style={{ textAlign: "center" }}
-          flex={"1 0 100%"}
-          display={"flex"}
-        >
-          <Box>{children}</Box>
-        </Flex>
-        <Box height={45} style={{ textAlign: "center" }}>
-          <img src={strip}></img>
-        </Box>
-      </Flex>
-      {image && (
-        <div>
-          <BGImage src={image}></BGImage>
-        </div>
-      )}
-    </>
-  )
-}
+import imageA from "../../images/collage-a.png"
+import imageB from "../../images/collage-b.png"
+import imageC from "../../images/collage-c.png"
+import imageD from "../../images/collage-d.png"
+import imageE from "../../images/collage-e.png"
+import imageF from "../../images/collage-f.png"
+import imageG from "../../images/collage-g.png"
+import imageH from "../../images/collage-h.png"
 
 const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
   lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
 
 const Outro = () => {
-  const image = "https://via.placeholder.com/1000"
+  const image = "https://via.placeholder.com/1000?text=FPO"
 
   const context = useContext(LocomotiveContext)
   const [loaded, setLoaded] = useState()
 
+  // current scroll
   const [scroll, setScroll] = useState(false)
-  const [zoomProps, setZoomProps] = useState(false)
+
+  // locomotive props for sticky section
+  const [zoomProps, setZoomProps] = useState({
+    top: null,
+    bottom: null,
+  })
   const [lastType, setLastType] = useState(false)
   const [scale, setScale] = useState(3)
 
@@ -84,10 +40,13 @@ const Outro = () => {
     setLoaded(true)
 
     if (context.scroll) {
-      context.scroll.on("scroll", props => setScroll(props.scroll.y))
+      context.scroll.on("scroll", props => {
+        setScroll(props.scroll.y)
+      })
 
       context.scroll.on("call", (value, type, props) => {
         if (value == "zoom") {
+          console.log(props)
           setZoomProps(props)
           setLastType(type)
         }
@@ -98,132 +57,157 @@ const Outro = () => {
   useEffect(() => {
     if (scroll)
       if (lastType == "enter" || scroll >= zoomProps.top - 100) {
-        var newScale = getScale(scroll, zoomProps.top, zoomProps.bottom, 3, 1)
-        setScale(newScale < 1 ? 1 : newScale)
+        var newScale = getScale(
+          scroll,
+          zoomProps.top,
+          zoomProps.bottom - window.innerHeight * 1, // 100vh of scrolling to disappear
+          3,
+          1
+        )
+        newScale = newScale < 1 ? 1 : newScale
+        newScale = newScale > 3 ? 3 : newScale
+        setScale(newScale)
       } else setScale(5)
   }, [scroll, lastType])
 
+  // trigger dissapear all but center
+  const [wp1, setWp1] = useState(false)
+
+  useEffect(() => {
+    if (!zoomProps.bottom) return
+
+    let isWp1 = scroll >= zoomProps.bottom - window.innerHeight
+    setWp1(isWp1)
+
+    console.log(isWp1)
+  }, [scroll, zoomProps.bottom])
+
   return (
-    <>
-      <OutroWord image={worksImage}>
-        <Lead>Lead</Lead>
-        <H2 className={"section-title"}>
-          We are
-          <br />
-          changing the way
-          <br />
-          <span className="serif">human development</span>
-        </H2>
-        <Box m={"-170px auto"} maxWidth={450} w={1}>
-          <HandDrawnSVG svg={Works}></HandDrawnSVG>
-        </Box>
-      </OutroWord>
-      <OutroWord image={empowersImage}>
-        <Lead>Inspire</Lead>
-        <H2 className={"section-title"}>
-          We are
-          <br />
-          changing the way
-          <br />
-          <span className="serif">human development</span>
-        </H2>
-        <Box m={"-80px auto"} maxWidth={550} w={1}>
-          <HandDrawnSVG svg={Empowers}></HandDrawnSVG>
-        </Box>
-      </OutroWord>
-      <OutroWord>
-        <Lead>Innovate</Lead>
-        <H2 className={"section-title"}>
-          We are
-          <br />
-          changing the way
-          <br />
-          <span className="serif">human development</span>
-        </H2>
-        <Box m={"-100px auto"} maxWidth={600} w={1}>
-          <HandDrawnSVG svg={Engages}></HandDrawnSVG>
-        </Box>
-      </OutroWord>
-      <Container className="grid">
+    <Container className="grid" wp1={wp1}>
+      <div
+        className="s-instagram"
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target=".grid"
+        data-scroll-call="zoom"
+        data-scroll-repeat={"true"}
+      >
         <div
-          className="s-instagram"
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target=".grid"
-          data-scroll-call="zoom"
-          data-scroll-repeat={"true"}
+          className="s-instagram-grid"
+          style={{
+            transform: `scale(${scale})`,
+          }}
         >
-          <div
-            className="s-instagram-grid"
-            style={{
-              transform: `scale(${scale})`,
-            }}
-          >
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
-            <div className="s-instagram-layer">
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-            </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageA})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageB})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageH})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer center-square">
+            <div
+              aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
+              className="s-instagram-block"
+              style={{
+                backgroundImage: `url(${centerImage})`,
+                backgroundPosition: "80% 50%",
+              }}
+            ></div>
+            <Frame id="frame"></Frame>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageE})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageC})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageF})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageG})` }}
+            ></div>
+          </div>
+          <div className="s-instagram-layer">
+            <div
+              className="s-instagram-block"
+              style={{ backgroundImage: `url(${imageD})` }}
+            ></div>
           </div>
         </div>
-      </Container>
-    </>
+      </div>
+    </Container>
   )
 }
 
 const Container = styled.div`
   position: relative;
-  min-height: 300vh;
+  min-height: 400vh;
   overflow: hidden;
+
+  .s-instagram-layer:nth-child(1) {
+    transition: opacity 0.2s linear ${1 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(2) {
+    transition: opacity 0.2s linear ${2 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(3) {
+    transition: opacity 0.2s linear ${3 * 0.1}s;
+  }
+
+  .s-instagram-layer:nth-child(5) {
+    transition: opacity 0.2s linear ${5 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(6) {
+    transition: opacity 0.2s linear ${6 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(7) {
+    transition: opacity 0.2s linear ${7 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(8) {
+    transition: opacity 0.2s linear ${8 * 0.1}s;
+  }
+  .s-instagram-layer:nth-child(9) {
+    transition: opacity 0.2s linear ${9 * 0.1}s;
+  }
+
+  ${({ wp1 }) =>
+    wp1 &&
+    `
+      .s-instagram-layer:nth-child(1),
+      .s-instagram-layer:nth-child(2),
+      .s-instagram-layer:nth-child(3),
+      .s-instagram-layer:nth-child(5),
+      .s-instagram-layer:nth-child(6),
+      .s-instagram-layer:nth-child(7),
+      .s-instagram-layer:nth-child(8),
+      .s-instagram-layer:nth-child(9) {
+        opacity: 0;
+      }
+      `}
 
   .s-instagram {
     margin: 0;
@@ -244,8 +228,8 @@ const Container = styled.div`
     width: 70vw;
     height: 60vw;
     margin: 0 calc(100vw / 20 * 3);
+    margin-bottom: 8.125vw;
     position: absolute;
-    margin-bottom: 16.25vw;
 
     will-change: transform;
   }
@@ -281,6 +265,7 @@ const Container = styled.div`
   }
   .s-instagram-block {
     background-size: cover;
+    background-repeat: no-repeat;
   }
   .s-instagram-layer {
     top: 0;
@@ -334,8 +319,17 @@ const Container = styled.div`
   .s-instagram-layer:nth-child(4) .s-instagram-block {
     top: 17.5vw;
     left: 17.5vw;
-    width: 30vw;
+    width: 40vw;
     height: 30vw;
+  }
+  #frame {
+    display: block;
+    position: absolute;
+    top: 16vw;
+    left: 15.5vw;
+    width: 46vw;
+    height: auto;
+    transform: scaleY(1.22);
   }
   @media only screen and (max-width: 580px) {
     .s-instagram-layer:nth-child(4) .s-instagram-block {
@@ -349,8 +343,8 @@ const Container = styled.div`
     z-index: 1;
   }
   .s-instagram-layer:nth-child(5) .s-instagram-block {
-    top: 20vw;
-    left: 50vw;
+    top: 25vw;
+    left: 60vw;
     width: 5vw;
     height: 5vw;
     background-color: #cb9274;
@@ -382,10 +376,10 @@ const Container = styled.div`
     }
   }
   .s-instagram-layer:nth-child(6) .s-instagram-block {
-    left: 50vw;
-    top: 27.5vw;
-    width: 20vw;
-    height: 20vw;
+    left: 60vw;
+    top: 32.5vw;
+    width: 15vw;
+    height: 15vw;
   }
   @media only screen and (max-width: 580px) {
     .s-instagram-layer:nth-child(6) .s-instagram-block {
@@ -408,7 +402,7 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(8) .s-instagram-block {
     bottom: 5vw;
-    left: 42.5vw;
+    left: 52.5vw;
     width: 5vw;
     height: 5vw;
   }
@@ -419,7 +413,7 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(9) .s-instagram-block {
     bottom: 0;
-    left: 50vw;
+    left: 60vw;
     width: 10vw;
     height: 10vw;
   }

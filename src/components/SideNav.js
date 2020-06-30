@@ -4,6 +4,7 @@ import { Flex, Box } from "rebass/styled-components"
 import { Link } from "gatsby"
 import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
 import CloseSVG from "../assets/svg/close-button.svg"
+import ReactDom from "react-dom"
 
 const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
   const context = React.useContext(LocomotiveContext)
@@ -19,12 +20,7 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
   if (!data) return null
 
   return (
-    <Container
-      data-scroll
-      data-scroll-sticky
-      data-scroll-target="#sidebar-target"
-      isOpen={isOpen}
-    >
+    <Container isOpen={isOpen}>
       <div className="background" onClick={() => closeSidenav()}></div>
       <Flex flexDirection={"column"} alignItems={"flex-end"} id="sidenav">
         <Box
@@ -66,7 +62,7 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
 const ScrollToLink = props => <a className="scrollToLink sans" {...props}></a>
 
 const Container = styled(Box)`
-  position: relative;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;

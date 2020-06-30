@@ -27,7 +27,7 @@ const data = [
     href: "#",
   },
   {
-    title: "FHI<br/><span class='bolder'>Vectures</span>",
+    title: "FHI<br/><span class='bolder'>Ventures</span>",
     body: "Innovative funding and impact investing",
     href: "#",
   },
@@ -40,7 +40,6 @@ const data = [
     title: "FHI<br/><span class='bolder'>Konung</span>",
     body:
       "Lorem ipsum fpo summary copy only no link fpo lorem ipsum summary copy only no lnk fpo.",
-    href: "#",
   },
   {
     title: "FHI<br/><span class='bolder'>Partners</span>",
@@ -127,7 +126,7 @@ const Nimble = () => {
           </Box>
         </Flex>
       </FlexSectionContainer>
-      <SplitSection image={image1} flip>
+      <SplitSection image={image1} flip imageCredits={"2 women health workers"}>
         <Lead>We are nimble</Lead>
         <H2 className={"section-title"}>
           Each subsidiary

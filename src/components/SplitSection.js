@@ -8,10 +8,10 @@ import { FlexWrap } from "../elements/Flex"
 import shortid from "shortid"
 import theme from "../styles/index"
 import { useInView } from "react-intersection-observer"
+import PhotoCredits from "./PhotoCredits"
 
 const SplitSectionImage = ({
   image,
-  imageCredits,
   hideImageOnMobile,
   width = [1, 1 / 2],
   flip,
@@ -32,18 +32,6 @@ const SplitSectionImage = ({
       }}
       {...props}
     ></InViewImage>
-    {/* <Box
-      width={2 / 3}
-      sx={{
-        height: "25px",
-        background: "black",
-        position: "absolute",
-        right: flip ? 0 : undefined,
-        left: flip ? undefined : 0,
-        bottom: 0,
-        zIndex: 999,
-      }}
-    ></Box> */}
   </SplitImageContainer>
 )
 
@@ -62,7 +50,7 @@ export const SplitSection = ({
   image,
   children,
   flip,
-  imageCredits,
+  imageCredits = "CREDITS MISSING",
   hideImageOnMobile,
   ...props
 }) => {
@@ -71,7 +59,6 @@ export const SplitSection = ({
       {!flip && (
         <SplitSectionImage
           image={image}
-          imageCredits={imageCredits}
           scrollSpeed={0}
           hideImageOnMobile={hideImageOnMobile}
           flip={flip}
@@ -107,11 +94,14 @@ export const SplitSection = ({
         >
           {children}
         </Flex>
+        <PhotoCredits
+          credits={imageCredits}
+          sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+        ></PhotoCredits>
       </Box>
       {flip && (
         <SplitSectionImage
           image={image}
-          imageCredits={imageCredits}
           scrollSpeed={0}
           hideImageOnMobile={hideImageOnMobile}
           flip={flip}
@@ -123,7 +113,7 @@ export const SplitSection = ({
 
 export const SplitSectionCroppedImage = ({
   image,
-  image2,
+  imageCredits,
   children,
   flip,
   minHeight,
@@ -165,36 +155,15 @@ export const SplitSectionCroppedImage = ({
           <Box width={[1]} style={{ position: "relative" }}>
             <InViewImage
               src={image}
-              scrollSpeed={1.5}
-              imageSpeed={0.8}
-              sx={{
-                paddingX: 20,
-              }}
-              style={{
-                display: "block",
-                maxWidth: "none",
-                height: "80vh",
-                width: "80%",
-                objectFit: "cover",
-                objectPosition: "center center",
-                marginLeft: flip && "auto",
-                marginRight: !flip && "auto",
-              }}
-            ></InViewImage>
-            <InViewImage
-              src={image2}
               scrollSpeed={-0.5}
               imageSpeed={1}
-              sx={{
-                position: "absolute",
-                top: "20vh",
-              }}
+              usePattern={true}
               style={{
                 display: "block",
                 maxWidth: "none",
                 margin: "0 auto 0 0",
                 width: "60%",
-                height: "60vh",
+                height: "80vh",
                 objectFit: "cover",
                 objectPosition: "center center",
                 marginLeft: !flip && "auto",
@@ -203,6 +172,7 @@ export const SplitSectionCroppedImage = ({
             ></InViewImage>
           </Box>
         </Flex>
+
         {!flip && (
           <Box
             width={[1, 1 / 2]}
@@ -237,6 +207,10 @@ export const SplitSectionCroppedImage = ({
             </Flex>
           </Box>
         )}
+        <PhotoCredits
+          credits={imageCredits}
+          sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+        ></PhotoCredits>
       </FlexWrap>
     </Flex>
   )
@@ -278,6 +252,7 @@ export const SplitSectionLong = ({
       <Box>
         {contentArray.map(({ content: Content, ...contentProps }, i) => (
           <SplitSectionLongInner
+            key={i}
             className={"long-section-inner"}
             target={`#fixedScroll-${id}`}
             index={i}
@@ -300,7 +275,6 @@ const SplitSectionLongInner = ({
   hideImageOnMobile,
   minHeight,
   img,
-  imgCredits,
   target,
   index,
   total,
@@ -328,6 +302,7 @@ const SplitSectionLongInner = ({
         data-scroll-target={target}
         minHeight={"100vh"}
         {...props}
+        width={1}
         sx={{
           background: "white",
           position: "absolute",
@@ -344,6 +319,7 @@ const SplitSectionLongInner = ({
             flip={flip}
             width={[1, 1 / 2]}
             sx={{
+              height: "100vh",
               objectFit: "cover",
               objectPosition: "center center",
             }}
@@ -365,13 +341,19 @@ const SplitSectionLongInner = ({
           >
             {children}
           </Flex>
+          <PhotoCredits
+            credits={imageCredits}
+            sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+          ></PhotoCredits>
         </Box>
+
         {flip && (
           <Image
             src={img}
             flip={flip}
             width={[1, 1 / 2]}
             sx={{
+              height: "100vh",
               objectFit: "cover",
               objectPosition: "center center",
             }}
@@ -382,28 +364,3 @@ const SplitSectionLongInner = ({
     </>
   )
 }
-
-const PhotoCredits = ({ credit, ...props }) => {
-  const [isOpen, setIsOpen] = React.useState()
-
-  return (
-    <PhotoCreditsContainer isOpen={isOpen}>
-      <span className={"button"} onClick={() => setIsOpen(!isOpen)}>
-        Photo Credits
-      </span>
-      <p className={"credit"}>: {credit}</p>
-    </PhotoCreditsContainer>
-  )
-}
-
-const PhotoCreditsContainer = styled(Box)`
-  span,
-  p {
-    font-size: 12px;
-  }
-  .credit {
-    opacity: 0;
-    transition: opacity 300ms linear;
-    ${({ isOpen }) => isOpen && `opacity: 1;`}
-  }
-`

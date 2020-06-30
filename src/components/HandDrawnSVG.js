@@ -10,6 +10,7 @@ const HandDrawnSVG = ({
   duration = 1,
   duration2 = 1,
   delay = 0,
+  delay2 = -1,
   useInview = true,
   animated = false,
   triggerOnce,
@@ -72,6 +73,7 @@ const HandDrawnSVG = ({
       duration={duration}
       duration2={duration2}
       delay={delay}
+      delay2={delay2}
     >
       <Box data-scroll data-scroll-speed={0.25}>
         <SvgComponent></SvgComponent>
@@ -80,9 +82,10 @@ const HandDrawnSVG = ({
   )
 }
 
-const animate = ({ animated, duration, duration2, delay }, i) => {
+const animate = ({ animated, duration, duration2, delay, delay2 }, i) => {
   duration = i === 1 ? duration : duration2
-  delay = i === 1 ? delay : duration * i + delay
+  delay = i === 1 ? delay : duration * (i - 1) + delay
+  if (delay2 > -1 && i == 2) delay = delay2
 
   return (
     animated &&
