@@ -32,18 +32,6 @@ const SplitSectionImage = ({
       }}
       {...props}
     ></InViewImage>
-    {/* <Box
-      width={2 / 3}
-      sx={{
-        height: "25px",
-        background: "black",
-        position: "absolute",
-        right: flip ? 0 : undefined,
-        left: flip ? undefined : 0,
-        bottom: 0,
-        zIndex: 999,
-      }}
-    ></Box> */}
   </SplitImageContainer>
 )
 

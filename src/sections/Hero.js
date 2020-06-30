@@ -146,7 +146,6 @@ const Hero = () => {
           </Box>
         </Box>
       </FlexWrap>
-      <Box bg={"black"} width={[1 / 4]} height={20} ml={"auto"}></Box>
     </HeroContainer>
   )
 }
