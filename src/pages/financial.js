@@ -33,31 +33,31 @@ const Financial = () => (
             <tbody>
               <tr>
                 <td>Us Government</td>
-                <td>$000,000,000</td>
+                <td>$642,000,000</td>
               </tr>
               <tr>
                 <td>Foundations/Individuals</td>
-                <td>$000,000,000</td>
+                <td>$66,000,000</td>
               </tr>
               <tr>
                 <td>Multilateral Agencies</td>
-                <td>$000,000,000</td>
+                <td>$28,000,000</td>
               </tr>
               <tr>
                 <td>Corporations</td>
-                <td>$000,000,000</td>
+                <td>$39,000,000</td>
               </tr>
               <tr>
                 <td>Other</td>
-                <td>$000,000,000</td>
+                <td>$10,000,000</td>
               </tr>
               <tr className="no-stroke">
                 <td>Other Governments</td>
-                <td>$000,000,000</td>
+                <td>$5,000,000</td>
               </tr>
               <tr className="white-bg no-stroke">
                 <td>Total</td>
-                <td>$000,000,000</td>
+                <td>$790,000,000</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -73,20 +73,20 @@ const Financial = () => (
             </thead>
             <tbody>
               <tr>
-                <td>Program Expenses</td>
-                <td>$000,000,000</td>
+                <td>Operational Expenses</td>
+                <td>$667,000,000</td>
               </tr>
               <tr>
                 <td>General & Administrative</td>
-                <td>$000,000,000</td>
+                <td>$102,000,000</td>
               </tr>
               <tr className="no-stroke">
                 <td>Business Development</td>
-                <td>$000,000,000</td>
+                <td>$17,000,000</td>
               </tr>
               <tr className="white-bg no-stroke">
                 <td>Total</td>
-                <td>$000,000,000</td>
+                <td>$786,000,000</td>
               </tr>
             </tbody>
           </StyledTable>
