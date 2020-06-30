@@ -8,7 +8,7 @@ import HandDrawnSVG from "../../components/HandDrawnSVG"
 
 import { useTrail, useSpring, animated } from "react-spring"
 
-// SVG
+import image1 from "../../images/WeAreConstantlyDeveloping_creditLeanneGray.jpg"
 
 import PerceptionCard from "../../images/perception.png"
 import Arrow from "../../assets/svg/arrow.svg"
@@ -151,7 +151,9 @@ const Perception = props => {
       <AndSection3 />{" "}
       <SplitSectionCroppedImage
         flip
-        image={"https://via.placeholder.com/1920x1080?text=FPO"}
+        image={image1}
+        imageCredits={"Leanne Gray/ FHI 360"}
+        alignImageMobile={"center top"}
       >
         <Lead>LET’S CHANGE PERCEPTION</Lead>
         <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>

@@ -15,6 +15,7 @@ const InViewImage = ({
   usePattern,
   pattern = Pattern,
   sx,
+  maxHeight,
   ...props
 }) => {
   const [loaded, setLoaded] = useState(false)
@@ -49,6 +50,7 @@ const InViewImage = ({
           data-scroll
           data-scroll-speed={-imageSpeed}
           onLoad={() => setLoaded(true)}
+          maxHeight={maxHeight}
           {...props}
         ></Image>
       </div>
@@ -81,6 +83,12 @@ const Container = styled(Box)`
     overflow: hidden;
     ${({ revealSpeed }) =>
       revealSpeed !== 0 && `transition: height ${revealSpeed}s ease`};
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
   }
 
   ${({ h, w }) =>

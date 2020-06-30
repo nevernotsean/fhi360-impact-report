@@ -119,6 +119,7 @@ export const SplitSectionCroppedImage = ({
   flip,
   minHeight,
   pattern = stripeVert,
+  alignImageMobile = "center center",
   ...props
 }) => {
   return (
@@ -166,13 +167,14 @@ export const SplitSectionCroppedImage = ({
               scrollSpeed={-0.5}
               imageSpeed={1}
               usePattern={flip}
-              style={{
+              maxHeight={"80vh"}
+              sx={{
                 display: "block",
                 maxWidth: "none",
                 width: "100%",
                 height: "80vh",
                 objectFit: "cover",
-                objectPosition: "center center",
+                objectPosition: [alignImageMobile, "center center"],
                 marginLeft: !flip && "auto !important",
                 marginRight: flip && "auto  !important",
               }}
