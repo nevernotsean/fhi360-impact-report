@@ -38,7 +38,7 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={"-170px auto"} maxWidth={450} w={1}>
+        <Box m={"-100px auto"} maxWidth={250} w={1}>
           <HandDrawnSVG svg={Works}></HandDrawnSVG>
         </Box>
       </OutroWord>

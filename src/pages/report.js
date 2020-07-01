@@ -155,6 +155,8 @@ const data = [
     project: "Evidence for Contraceptive Options and HIV Outcomes (ECHO) Study",
     funder:
       "Bill & Melinda Gates Foundation<br/>U.S. Agency for International Development<br/>U.S. President's Emergency Plan for AIDS Relief",
+    link:
+      "https://www.fhi360.org/news/fhi-360-responds-release-landmark-echo-study-results",
   },
 
   {
@@ -167,6 +169,8 @@ const data = [
 
     project: "Let’s Stop HIV Together",
     funder: "U.S. Centers for Disease Control and Prevention",
+    link:
+      "https://www.fhi360.org/projects/lets-stop-hiv-together-hiv-communication-campaign",
   },
 
   {
@@ -179,6 +183,8 @@ const data = [
 
     project: "Wireless Solutions for Fisheries in Senegal",
     funder: "Qualcomm® Wireless Reach™",
+    link:
+      "https://www.fhi360.org/projects/wireless-solutions-fisheries-senegal-wise",
   },
 
   {
@@ -191,6 +197,8 @@ const data = [
 
     project: "USAID Partnership for Education: Learning",
     funder: "U.S. Agency for International Development",
+    link:
+      "https://www.fhi360.org/projects/usaid-partnership-education-learning",
   },
 
   {
@@ -205,6 +213,8 @@ const data = [
       "Linkages across the Continuum of HIV Services for Key Populations Affected by HIV",
     funder:
       "U.S. Agency for International Development<br/>U.S. President's Emergency Plan for AIDS Relief",
+    link:
+      "https://www.fhi360.org/projects/linkages-across-continuum-hiv-services-key-populations-affected-hiv-linkages",
   },
 
   {
@@ -217,6 +227,8 @@ const data = [
 
     project: "TB Innovations Health Systems Strengthening",
     funder: "U.S. Agency for International Development",
+    link:
+      "https://www.fhi360.org/projects/tb-innovations-and-health-systems-strengthening",
   },
 
   {
@@ -229,6 +241,7 @@ const data = [
 
     project: "Compass Rose Collaborative",
     funder: "U.S. Department of Labor",
+    link: "https://www.fhi360.org/projects/compass-rose-collaborative",
   },
 
   {
@@ -242,6 +255,7 @@ const data = [
     project: "Alive & Thrive",
     funder:
       "Bill & Melinda Gates Foundation<br/>Irish Aid<br/>the Tanoto Foundation, UNICEF, World Bank",
+    link: "https://www.fhi360.org/projects/alive-thrive",
   },
 
   {
@@ -254,6 +268,8 @@ const data = [
 
     project: "Strengthening Civil Society Globally",
     funder: "U.S. Agency for International Development",
+    link:
+      "https://www.fhi360.org/projects/strengthening-civil-society-globally-scs-global",
   },
 
   {
@@ -267,6 +283,8 @@ const data = [
     project: "Advancing Partners and Communities",
     funder:
       "U.S. Agency for International Development,<br/> Bill & Melinda Gates Foundation,<br/> Children’s Investment Fund Foundation",
+    link:
+      "https://www.fhi360.org/projects/advancing-partners-and-communities-apc",
   },
 ]
 

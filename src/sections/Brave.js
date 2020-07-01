@@ -134,7 +134,7 @@ const Brave = () => {
           <span className={"serif"}>in the gap.</span>
         </H2>
         <Box maxWidth={480}>
-          <H3 className={"section-subtitle"}>
+          <H3 className={"section-body"}>
             We step in to create a more equitable world.
           </H3>
         </Box>

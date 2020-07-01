@@ -23,7 +23,7 @@ const Circle = () => {
           <g id="circle">
             <g style={{ clipPath: `url(#clip-path-circle-${id})` }}>
               <path
-                class="animate"
+                className="animate"
                 d="M195.15,24.71s-43-22.47-102.7-13.57S8.38,34.08,8.69,45.5s3.88,40.22,83.76,35,97-22.53,97-22.53"
                 transform="translate(6.31 5.95)"
                 style={{

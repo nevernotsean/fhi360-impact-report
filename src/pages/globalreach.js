@@ -16,7 +16,7 @@ const GlobalReach = () => {
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead title={"Where we work"} headline={"2019<br/>Global Reach"}>
-        <Box mb={50} maxWidth={400}>
+        <Box mb={-30} maxWidth={400}>
           <p>
             FHI 360 serves more than 60 countries, including the United States.
           </p>
@@ -26,7 +26,30 @@ const GlobalReach = () => {
           </p>
         </Box>
       </Masthead>
-      <Image src={map}></Image>
+      <Box>
+        <Image src={map}></Image>
+        <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
+          <Box
+            sx={{
+              position: "absolute",
+              width: [1, 500],
+              right: 0,
+              bottom: 0,
+              zIndex: 1,
+              padding: "50px 20px",
+            }}
+          >
+            <p style={{ textAlign: "right" }}>
+              <small>
+                The boundaries and names on this map do not imply official
+                endorsement acceptance by FHI 360. Countries where FHI 360 is
+                registered but does not have an office or activity are not
+                highlighted on this map.
+              </small>
+            </p>
+          </Box>
+        </Box>
+      </Box>
       <Section px={20}>
         <StyledTable border="0" cellspacing="0" cellpadding="0">
           <thead>

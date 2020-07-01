@@ -10,9 +10,9 @@ const LightModeTrigger = ({ height = 0 }) => {
     threshold: 0,
   })
 
-  React.useEffect(() => {
-    console.log(inView)
-  }, [inView])
+  // React.useEffect(() => {
+  //   console.log(inView)
+  // }, [inView])
 
   return (
     <Box sx={{ position: "relative", height: 0 }}>

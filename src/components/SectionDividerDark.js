@@ -18,7 +18,7 @@ const SectionDividerDark = ({
 }) => {
   return (
     <>
-      <LightModeTrigger height={100}></LightModeTrigger>
+      {/* <LightModeTrigger height={100}></LightModeTrigger> */}
       <Container>
         <Box
           width={1}

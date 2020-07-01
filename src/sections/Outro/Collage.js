@@ -19,7 +19,7 @@ import imageH from "../../images/collage-h.png"
 import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 
 import FlexSectionContainer from "../../components/FlexSectionContainer"
-import { Flex } from "rebass/styled-components"
+import { Flex, Box } from "rebass/styled-components"
 import HandDrawnSVG from "./../../components/HandDrawnSVG"
 
 const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
@@ -41,6 +41,7 @@ const Outro = () => {
   })
   const [lastType, setLastType] = useState(false)
   const [scale, setScale] = useState(3)
+  const [opacity, setOpacity] = useState(1)
 
   useEffect(() => {
     setLoaded(true)
@@ -52,7 +53,7 @@ const Outro = () => {
 
       context.scroll.on("call", (value, type, props) => {
         if (value == "zoom") {
-          console.log(props)
+          // console.log(props)
           setZoomProps(props)
           setLastType(type)
         }
@@ -61,11 +62,11 @@ const Outro = () => {
   }, [loaded])
 
   useEffect(() => {
-    if (scroll)
+    if (scroll && zoomProps.top) {
       if (lastType == "enter" || scroll >= zoomProps.top - 100) {
         var newScale = getScale(
           scroll,
-          zoomProps.top,
+          zoomProps.top - window.innerHeight * 1,
           zoomProps.bottom - window.innerHeight * 1, // 100vh of scrolling to disappear
           3,
           1
@@ -73,7 +74,27 @@ const Outro = () => {
         newScale = newScale < 1 ? 1 : newScale
         newScale = newScale > 3 ? 3 : newScale
         setScale(newScale)
-      } else setScale(5)
+      } else setScale(3)
+
+      if (
+        lastType == "enter" ||
+        scroll >= zoomProps.bottom - window.innerHeight
+      ) {
+        var newOp = getScale(
+          scroll,
+          zoomProps.bottom - window.innerHeight * 1,
+          zoomProps.bottom,
+          1,
+          0
+        )
+
+        newOp = newOp <= 0 ? 0 : newOp
+        newOp = newOp >= 1 ? 1 : newOp
+        setOpacity(newOp)
+
+        // if (newOp == 0) console.log(scroll, zoomProps)
+      } else setOpacity(1)
+    }
   }, [scroll, lastType])
 
   // trigger dissapear all but center
@@ -90,6 +111,7 @@ const Outro = () => {
     <>
       <Container className="grid" wp1={wp1}>
         <div
+          style={{ opacity: opacity }}
           className="s-instagram"
           data-scroll
           data-scroll-sticky
@@ -164,24 +186,24 @@ const Outro = () => {
             </div>
           </div>
         </div>
-      </Container>
-      <FlexSectionContainer minHeight={"100vh"} justifyContent={"center"}>
         <Flex
-          width={1}
-          maxWidth={600}
-          mx={"auto"}
-          flexDirection="column"
+          id="endcard"
+          minHeight={"calc(100vh - 150px)"}
           justifyContent={"center"}
-          sx={{ position: "relative" }}
+          alignItems={"center"}
         >
-          <HandDrawnSVG
-            svg={ThisIsFHI}
-            delay2={2}
-            duration={2}
-            duration2={2}
-          ></HandDrawnSVG>
+          <Box width={1} maxWidth={600} sx={{ position: "relative" }}>
+            <HandDrawnSVG
+              svg={ThisIsFHI}
+              delay2={2}
+              duration={2}
+              duration2={2}
+              useInviewTrigger={false}
+              animated={opacity < 0.6}
+            ></HandDrawnSVG>
+          </Box>
         </Flex>
-      </FlexSectionContainer>
+      </Container>
     </>
   )
 }
@@ -190,6 +212,14 @@ const Container = styled.div`
   position: relative;
   min-height: 400vh;
   overflow: hidden;
+
+  #endcard {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 
   .s-instagram-layer:nth-child(1) {
     transition: opacity 0.2s linear ${1 * 0.1}s;

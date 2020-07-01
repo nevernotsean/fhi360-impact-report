@@ -15,6 +15,7 @@ import { animated } from "react-spring"
 // SVG
 
 import Circle from "../../assets/svg/circle.svg"
+import { Underlined } from "../../components/WordNote"
 
 const config = { mass: 300, tension: 2000, friction: 20000 }
 
@@ -41,22 +42,15 @@ const RightSide = () => (
     </H2>
     <span className="section-body">
       to reduce inequality and advance health, safety, education and workforce
-      development — particularly among those who are
-      <br />
-      <span style={{ position: "relative" }}>
-        marginalized and underserved.
-        <Box
-          sx={{
-            left: 0,
-            width: "200px",
-            position: "absolute",
-            transform: "translateY(-60%)",
-            zIndex: -1,
-          }}
-        >
-          <HandDrawnSVG svg={Circle} duration={0.3} delay={1}></HandDrawnSVG>
-        </Box>
-      </span>
+      development — particularly among those who are{" "}
+      <Underlined delay={0.5} orange>
+        marginalized
+      </Underlined>{" "}
+      and{" "}
+      <Underlined delay={1} orange>
+        underserved
+      </Underlined>
+      .
     </span>
   </>
 )

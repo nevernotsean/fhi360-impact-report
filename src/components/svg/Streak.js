@@ -22,7 +22,7 @@ const Streak = ({ orange, ...props }) => {
           <g id="streak">
             <g style={{ clipPath: `url(#clip-path-streak-${newId}` }}>
               <line
-                class="animate"
+                className="animate"
                 y1="15"
                 x2="237.65"
                 y2="15"

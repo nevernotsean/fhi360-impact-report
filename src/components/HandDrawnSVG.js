@@ -45,7 +45,8 @@ const HandDrawnSVG = ({
   const [pathLength3, setPathLength3] = useState(0)
 
   useEffect(() => {
-    if (inView) !console.log("triggered", ref) && setTriggered(true)
+    if (inView) setTriggered(true)
+    // if(inView) console.log("triggered", ref)
   }, [inView])
 
   useEffect(() => {

@@ -99,7 +99,7 @@ const Evidence = () => {
           style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
         />
         <Box maxWidth={480}>
-          <H3 className={"section-subtitle"}>
+          <H3 className={"section-body"}>
             And the co-creation of interventions most likely to yield the
             greatest impact.
           </H3>
