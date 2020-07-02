@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import theme from "./index"
 
 const GlobalStyles = createGlobalStyle`
@@ -78,6 +78,17 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    .section-title { 
+      font-size: 24px; 
+      line-height: 28px; 
+    }
+    .section-subtitle, .section-body { 
+      font-size: 12px; 
+      line-height: 14px; 
+    }
   }
   
 `

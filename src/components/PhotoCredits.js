@@ -33,6 +33,12 @@ const PhotoCreditsContainer = styled(Box)`
     transition: opacity 300ms linear;
     ${({ isOpen }) => isOpen && `opacity: 1;`}
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    .credit {
+      opacity: 1 !important;
+    }
+  }
 `
 
 export default PhotoCredits

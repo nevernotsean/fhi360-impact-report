@@ -3,7 +3,8 @@ import { Image } from "rebass"
 import welcome from "../images/welcome-fpo.gif"
 import { Box } from "rebass/styled-components"
 import styled, { createGlobalStyle } from "styled-components"
-import ReactDOM from "react-dom"
+import { useMediaQuery } from "react-responsive"
+import theme from "./../styles/index"
 
 const Intro = props => {
   const [loaded, setLoaded] = React.useState(false)
@@ -11,6 +12,12 @@ const Intro = props => {
   React.useEffect(() => {
     setLoaded(true)
   }, [])
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
+  if (isMobile) return null
 
   return (
     <>

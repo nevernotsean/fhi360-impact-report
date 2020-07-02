@@ -1,7 +1,6 @@
 import React, { useMemo, useRef } from "react"
 import styled from "styled-components"
-import { Flex, Box } from "rebass/styled-components"
-import { animated } from "react-spring"
+import { Box } from "rebass/styled-components"
 
 import useDimensions from "react-use-dimensions"
 
@@ -19,13 +18,16 @@ const OrderedListCard = ({
 
   return (
     <OrderedListCardContainer
+      px={[0, 25]}
       {...props}
       height={height || h}
       innerMaxWidth={maxWidth}
     >
-      <span
+      <Box
+        as={"span"}
         ref={ref}
         className={"inner"}
+        width={[1, "calc(100% - 25px)"]}
         style={{
           transform: `translateY(${y})`,
           transition: transition,
@@ -39,14 +41,12 @@ const OrderedListCard = ({
             Learn More
           </a>
         )}
-      </span>
+      </Box>
     </OrderedListCardContainer>
   )
 }
 
 const OrderedListCardContainer = styled(Box)`
-  padding: 0 25px;
-
   overflow: hidden;
   position: relative;
   height: ${({ height }) => height}px;
@@ -56,7 +56,6 @@ const OrderedListCardContainer = styled(Box)`
   .inner {
     position: absolute;
     height: auto;
-    width: calc(100% - 25px);
     ${({ innerMaxWidth }) => innerMaxWidth && `max-width: ${innerMaxWidth}px;`}
   }
 

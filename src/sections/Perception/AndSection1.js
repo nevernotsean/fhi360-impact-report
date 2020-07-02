@@ -33,28 +33,30 @@ const RightSide = () => (
       <span className="serif">of companies.</span>
     </H2>
     <Box maxWidth={480} className="section-body">
-      <p>Each of our subsidiaries is designed to make us:</p>
+      <p className="section-body">
+        Each of our subsidiaries is designed to make us:
+      </p>
       <ul>
         <li>
-          <p>nimble</p>
+          <p className="section-body">nimble</p>
         </li>
         <li>
-          <p>innovative</p>
+          <p className="section-body">innovative</p>
         </li>
         <li>
-          <p>responsive</p>
+          <p className="section-body">responsive</p>
         </li>
         <li>
-          <p>fit for purpose</p>
+          <p className="section-body">fit for purpose</p>
         </li>
       </ul>
-      <p>
+      <p className="section-body">
         All have a shared common goal:
         <br />
         Improving lives in lasting ways.
       </p>
     </Box>
-    <Box mt={-30} ml={0} width={[2 / 3, 1 / 2]}>
+    <Box mt={[-10, -30]} ml={0} width={[1 / 3, 1 / 2]}>
       <HandDrawnSVG
         svg={ZipZag}
         alt="zigzag"

@@ -1,15 +1,15 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import ReactDOM from "react-dom"
 
 import Logo from "../assets/svg/fhi-logo-dark.svg"
 import MenuButton from "../assets/svg/menu-button.svg"
-import { Flex, Box } from "rebass/styled-components"
+import { Flex, Box, Text } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import ShareButton from "../assets/svg/share-icon.svg"
+import { useMediaQuery } from "react-responsive"
 
 const Header = ({
   siteTitle,
@@ -23,6 +23,10 @@ const Header = ({
   const [scrolledPast, setScrolledPast] = React.useState()
   const context = React.useContext(LocomotiveContext)
 
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
   React.useEffect(() => {
     setLoaded(true)
 
@@ -33,11 +37,13 @@ const Header = ({
     }
   }, [loaded])
 
+  const headerHeight = isMobile ? 50 : scrolledPast ? 75 : 100
+
   return (
     <Container style={{ ...headerStyle }} scrolledPast={scrolledPast}>
       <Flex
-        height={scrolledPast ? 75 : 100}
-        p={"0 60px 0 20px"}
+        height={headerHeight}
+        p={["0 20px", "0 60px 0 20px"]}
         alignItems={"center"}
         justifyContent={"space-between"}
         sx={{ transition: "height .5s ease" }}
@@ -58,26 +64,30 @@ const Header = ({
         >
           <Link
             to="/"
+            fontSize={[8, 12]}
             style={{
               zIndex: 995,
               color: theme.colors.black,
               textDecoration: `none`,
             }}
           >
-            <Box width={100} mr={20}>
+            <Box width={[60, 100]} mr={20}>
               <Logo className="fill-detect"></Logo>
             </Box>
           </Link>
-          <span
+          <Text
+            as={"span"}
             className="color-detect header-title"
             style={{
-              marginBottom: "-6px",
+              marginBottom: !isMobile && "-6px",
               fontWeight: 700,
               letterSpacing: "1px",
+              fontSize: isMobile && 10,
+              display: isMobile && "none",
             }}
           >
             The science of improving lives
-          </span>
+          </Text>
         </h1>
         <Flex>
           <Box
@@ -119,6 +129,7 @@ const Container = styled.header`
   top: 0;
   left: 0%;
   width: 100%;
+  max-width: 100vw;
 
   z-index: 99;
 

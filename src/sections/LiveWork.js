@@ -16,51 +16,49 @@ import map from "../images/map.jpg"
 import { Box, Flex, Image } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 
+const LiveFirst = () => (
+  <>
+    <Lead>We live where we work</Lead>
+    <H2 className={"section-title"}>
+      With our teams based in
+      <br />
+      <span className="serif">
+        the countries or communities where they work...
+      </span>
+    </H2>
+    <div
+      className="divider"
+      style={{
+        borderTop: "1px solid black",
+        marginBottom: "1.45rem",
+      }}
+    />
+    <Box maxWidth={480}>
+      <p className={"section-body"}>
+        ...we collaborate hand-in-hand with our partners and share our knowledge
+        so we can learn together and achieve far more than we ever could alone.
+      </p>
+    </Box>
+  </>
+)
+
 const LiveWork = () => (
   <Container>
     <SectionDividerDark
       img={LiveCard}
       alt="we live where we work"
-      // duration={1}
-      // duration2={0.2}
-      // delay={1}
-      // overrideLength={[11000]}
     ></SectionDividerDark>
     <SplitSectionLong
       flip
       contentArray={[
         {
-          img: image1,
+          image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
-          content: () => (
-            <>
-              <Lead>We live where we work</Lead>
-              <H2 className={"section-title"}>
-                With our teams based in
-                <br />
-                <span className="serif">
-                  the countries or communities where they work...
-                </span>
-              </H2>
-              <div
-                className="divider"
-                style={{
-                  borderTop: "1px solid black",
-                  marginBottom: "1.45rem",
-                }}
-              />
-              <Box maxWidth={480}>
-                <p className={"section-body"}>
-                  ...we collaborate hand-in-hand with our partners and share our
-                  knowledge so we can learn together and achieve far more than
-                  we ever could alone.
-                </p>
-              </Box>
-            </>
-          ),
+          content: LiveFirst,
+          mobileContent: LiveFirst,
         },
         {
-          img: image1,
+          image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
           content: () => (
             <>
@@ -76,9 +74,17 @@ const LiveWork = () => (
               </Box>
             </>
           ),
+          mobileContent: () => (
+            <p className={"section-body"}>
+              Our development professionals, scientists and researchers partner
+              with nurses and mothers to solve nutrition problems, with young
+              adults and public officials to ensure that public policies meet
+              youth needs, and with women to develop new contraception methods.
+            </p>
+          ),
         },
         {
-          img: image1,
+          image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
           content: () => (
             <>
@@ -91,6 +97,12 @@ const LiveWork = () => (
               </Box>
             </>
           ),
+          mobileContent: () => (
+            <p className={"section-body"}>
+              By empowering individuals, families and communities to tackle
+              their challenges, we drive progress for years to come.
+            </p>
+          ),
         },
       ]}
     ></SplitSectionLong>
@@ -102,6 +114,7 @@ const LiveWork = () => (
         sx={{
           objectFit: "contain",
           objectPosition: "center center",
+          marginTop: ["-20vh", 0],
         }}
       ></Image>
       <FlexSectionContainer>
@@ -111,7 +124,7 @@ const LiveWork = () => (
           className={"infront"}
           width={1}
           maxWidth={1200}
-          minHeight={"100vh"}
+          minHeight={["unset", "100vh"]}
         >
           <Box width={[1, 1 / 2]} mb={[0, 100]}>
             <Lead>We live where we work</Lead>

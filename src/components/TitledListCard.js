@@ -18,8 +18,10 @@ const TitledListCard = ({
 
   return (
     <TitledListCardContainer
+      px={[0, 25]}
       {...props}
-      height={height || h}
+      height={height}
+      animatedHeight={h}
       innerMaxWidth={maxWidth}
     >
       <animated.span
@@ -46,11 +48,9 @@ const TitledListCard = ({
 }
 
 const TitledListCardContainer = styled(Box)`
-  padding: 0 25px;
-
   overflow: hidden;
   position: relative;
-  height: ${({ height }) => height}px;
+  ${({ animatedHeight }) => animatedHeight && `height: ${animatedHeight}px`};
   /* display: flex;
   justify-content: center; */
 
@@ -82,7 +82,7 @@ const TitledListCardContainer = styled(Box)`
   .learn-more {
     color: ${({ theme }) => theme.colors.orange};
     font-family: ${({ theme }) => theme.fonts.sans};
-    font-weight: 900;
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
   }

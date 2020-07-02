@@ -1,22 +1,21 @@
 import React from "react"
 
-import { Box, Flex } from "rebass/styled-components"
+import { Box, Flex, Image } from "rebass/styled-components"
 
 import strip from "../../images/pattern-strip.png"
 import theme from "../../styles/index"
 import styled from "styled-components"
 
-const BGImage = styled.img`
+const BGImage = styled(Image)`
   margin: 0;
   display: block;
   object-fit: cover;
-  object-position: center center;
-  height: 100vh;
   width: 100vw;
 `
 
 const OutroWord = ({
   image,
+  imagePosition = "center center",
   alt,
   imageCredits,
   children,
@@ -27,7 +26,7 @@ const OutroWord = ({
     <>
       <Flex
         flexDirection={"column"}
-        minHeight={"100vh"}
+        minHeight={["80vh", "100vh"]}
         alignItems={"center"}
         style={{ background: theme.colors.grey }}
       >
@@ -40,13 +39,17 @@ const OutroWord = ({
         >
           <Box>{children}</Box>
         </Flex>
-        <Box height={45} style={{ textAlign: "center" }}>
-          <img src={pattern}></img>
+        <Box height={[28, 45]} style={{ textAlign: "center" }}>
+          <img src={pattern} style={{ marginBottom: 0 }}></img>
         </Box>
       </Flex>
       {image && (
         <div>
-          <BGImage src={image} alt={alt || imageCredits}></BGImage>
+          <BGImage
+            src={image}
+            alt={alt || imageCredits}
+            sx={{ objectPosition: imagePosition, height: ["80vh", "100vh"] }}
+          ></BGImage>
         </div>
       )}
     </>

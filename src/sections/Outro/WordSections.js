@@ -38,12 +38,13 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={"-100px auto"} maxWidth={250} w={1}>
+        <Box m={["-70px auto", "-100px auto"]} maxWidth={[150, 250]} w={1}>
           <HandDrawnSVG svg={Works}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord
         image={empowersImage}
+        imagePosition={["75% center", "center center"]}
         alt={"woman in focus group (current layout)"}
         imageCredits={""}
         pattern={pattern2}
@@ -56,7 +57,7 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={"-80px auto"} maxWidth={550} w={1}>
+        <Box m={["-50px auto", "-80px auto"]} maxWidth={[300, 550]} w={1}>
           <HandDrawnSVG svg={Empowers}></HandDrawnSVG>
         </Box>
       </OutroWord>
@@ -69,12 +70,12 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={"-100px auto"} maxWidth={600} w={1}>
+        <Box m={["-50px auto", "-100px auto"]} maxWidth={[300, 600]} w={1}>
           <HandDrawnSVG svg={Engages}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <FlexSectionContainer
-        minHeight={"100vh"}
+        minHeight={["80vh", "100vh"]}
         textAlign={"center"}
         justifyContent="center"
       >

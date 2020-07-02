@@ -27,9 +27,15 @@ const MastheadContainer = styled.div`
   .hr {
     width: 100%;
     max-width: 600px;
+
     transform: translateX(-300px);
     border-bottom: 1px solid ${({ theme }) => theme.colors.black};
     margin-bottom: 50px;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      max-width: 60vw;
+      transform: translateX(-20px);
+    }
   }
 `
 

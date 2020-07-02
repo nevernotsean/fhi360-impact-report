@@ -9,8 +9,14 @@ import Nav from "../components/Report/Nav"
 import styled from "styled-components"
 
 import map from "../images/map.jpg"
+import { useMediaQuery } from "react-responsive"
+import theme from "./../styles/index"
 
 const GlobalReach = () => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
   return (
     <Layout bg={"#e2e2e2"} hideMenuButton={true}>
       <SEO title="Home" />
@@ -26,31 +32,33 @@ const GlobalReach = () => {
           </p>
         </Box>
       </Masthead>
-      <Box>
-        <Image src={map}></Image>
-        <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
-          <Box
-            sx={{
-              position: "absolute",
-              width: [1, 500],
-              right: 0,
-              bottom: 0,
-              zIndex: 1,
-              padding: "50px 20px",
-            }}
-          >
-            <p style={{ textAlign: "right" }}>
-              <small>
-                The boundaries and names on this map do not imply official
-                endorsement acceptance by FHI 360. Countries where FHI 360 is
-                registered but does not have an office or activity are not
-                highlighted on this map.
-              </small>
-            </p>
+      {!isMobile && (
+        <Box>
+          <Image src={map}></Image>
+          <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                position: "absolute",
+                width: ["100%", 500],
+                right: 0,
+                bottom: 0,
+                zIndex: 1,
+                padding: "50px 20px",
+              }}
+            >
+              <p style={{ textAlign: "right" }}>
+                <small>
+                  The boundaries and names on this map do not imply official
+                  endorsement acceptance by FHI 360. Countries where FHI 360 is
+                  registered but does not have an office or activity are not
+                  highlighted on this map.
+                </small>
+              </p>
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Section px={20}>
+      )}
+      <Section px={[0, 20]}>
         <StyledTable border="0" cellspacing="0" cellpadding="0">
           <thead>
             <tr>

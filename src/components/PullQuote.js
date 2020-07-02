@@ -2,8 +2,8 @@ import React from "react"
 import { Box } from "rebass/styled-components"
 import { Lead } from "../elements/Type"
 import Streak from "../assets/svg/streak.svg"
-import HandDrawnSVG from "./HandDrawnSVG"
 import { P } from "../elements/Type"
+import { Underlined } from "./WordNote"
 
 const PullQuote = ({
   children,
@@ -25,12 +25,13 @@ const PullQuote = ({
         ></P>
       </Box>
       <Box width={200}>
-        <HandDrawnSVG
+        <Underlined
+          orange
           duration={0.25}
-          svg={streak}
-          className="pullquote-streak"
           overrideLength={[238]}
-        ></HandDrawnSVG>
+          underlineLength={200}
+          className="pullquote-streak"
+        ></Underlined>
       </Box>
     </Box>
   )

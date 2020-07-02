@@ -1,23 +1,20 @@
 import React from "react"
 import YouAreHere from "../images/you-are-here.png"
 import Sig from "../images/sig.png"
-import { Flex, Box, Image } from "rebass/styled-components"
+import { Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
-import HandDrawnSVG from "../components/HandDrawnSVG"
 
 // img
 import hero from "../images/patrick-fine-hero.png"
 import heroMobile from "../images/patrick-fine-hero-mobile.png"
 import strip from "../images/pattern-Patrick.png"
 import PullQuote from "../components/PullQuote"
-import { Lead } from "../elements/Type"
+import { Lead, H2, H1, H3 } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
 import { FlexWrap } from "../elements/Flex"
-import { H1 } from "../elements/Type"
 
 import Streak2 from "../assets/svg/streak2.svg"
-import { H3 } from "./../elements/Type"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -68,11 +65,11 @@ const Hero = () => {
               // duration={2}
             ></Image>
             <div className="line">
-              <h2>
+              <H2 fontSize={14}>
                 Patrick Fine
                 <br />
                 CEO
-              </h2>
+              </H2>
             </div>
           </Box>
         </Box>
@@ -212,6 +209,9 @@ const HeroContainer = styled(Box)`
       border-top: none;
       border-bottom: 1px solid black;
       transform: translate(-9vw, 70px);
+
+      width: 50vw;
+
       h2 {
         margin-left: 0;
         transform: translateX(20vw);

@@ -7,6 +7,7 @@ import HandDrawnSVG from "../../components/HandDrawnSVG"
 import Streak from "../../assets/svg/streak2.svg"
 import { Lead, H2, H3 } from "../../elements/Type"
 import AndSection from "./AndSection"
+import { Underlined } from "./../../components/WordNote"
 
 const LeftSide = () => (
   <>
@@ -40,7 +41,7 @@ const RightSide = () => (
             zIndex: -1,
           }}
         >
-          <HandDrawnSVG svg={Streak} duration={0.3} delay={0.5}></HandDrawnSVG>
+          <Underlined duration={0.3} delay={0.5} orange></Underlined>
         </Box>
       </span>
     </span>

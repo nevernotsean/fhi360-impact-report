@@ -9,15 +9,21 @@ import shortid from "shortid"
 import theme from "../styles/index"
 import { useInView } from "react-intersection-observer"
 import PhotoCredits from "./PhotoCredits"
+import { useMediaQuery } from "react-responsive"
 
 const SplitSectionImage = ({
   image,
-  hideImageOnMobile,
+  // hideImageOnMobile,
   width = [1, 1 / 2],
+  height = "100vh",
   flip,
   ...props
 }) => (
-  <SplitImageContainer width={width} hideImageOnMobile={hideImageOnMobile}>
+  <SplitImageContainer
+    width={width}
+    height={"100%"}
+    // hideImageOnMobile={hideImageOnMobile}
+  >
     <InViewImage
       imageCredits
       src={image}
@@ -25,7 +31,7 @@ const SplitSectionImage = ({
       imageSpeed={1.5}
       style={{
         width: "100%",
-        height: "100vh",
+        height: height,
         objectFit: "cover",
         objectPosition: "center center",
         marginBottom: 0,
@@ -37,13 +43,13 @@ const SplitSectionImage = ({
 
 const SplitImageContainer = styled(Box)`
   position: relative;
-  ${({ hideImageOnMobile }) =>
+  /* ${({ hideImageOnMobile }) =>
     hideImageOnMobile &&
     `
       @media screen and (max-width: 1024px) {
         display: none;
       }
-  `}
+  `} */
 `
 
 export const SplitSection = ({
@@ -53,58 +59,77 @@ export const SplitSection = ({
   imageCredits = "CREDITS MISSING",
   hideImageOnMobile,
   pattern = stripeVert,
+  height = "100vh",
   ...props
 }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
+  const hideImage = hideImageOnMobile == true && isMobile == true
+
   return (
     <FlexWrap minHeight={"100vh"} {...props}>
-      {!flip && (
-        <SplitSectionImage
-          image={image}
-          scrollSpeed={0}
-          hideImageOnMobile={hideImageOnMobile}
-          flip={flip}
-        ></SplitSectionImage>
+      {!hideImage && (!flip || isMobile) && (
+        <>
+          <SplitSectionImage
+            image={image}
+            scrollSpeed={0}
+            flip={flip}
+            height={"50vh"}
+          ></SplitSectionImage>
+          {isMobile && (
+            <PhotoCredits
+              credits={imageCredits}
+              sx={{ alignSelf: "start" }}
+            ></PhotoCredits>
+          )}
+        </>
       )}
       <Box
         width={[1, 1 / 2]}
         style={{ position: "relative", marginLeft: "auto" }}
       >
-        <img
-          data-scroll
-          data-scroll-speed={1.2}
-          src={pattern}
-          alt="pattern"
-          style={{
-            position: "absolute",
-            left: flip ? undefined : 0,
-            right: !flip ? undefined : 0,
-            height: "616px",
-            width: "23px",
-            marginTop: "1.45rem",
-          }}
-        />
+        {!isMobile && (
+          <img
+            data-scroll
+            data-scroll-speed={1.2}
+            src={pattern}
+            alt="pattern"
+            style={{
+              position: "absolute",
+              left: flip ? undefined : 0,
+              right: !flip ? undefined : 0,
+              height: "616px",
+              width: "23px",
+              marginTop: "1.45rem",
+            }}
+          />
+        )}
 
         <Flex
           flexDirection={"column"}
           justifyContent={"center"}
-          height={"100vh"}
+          height={["auto", "100vh"]}
           pr={[15, 30]}
           pl={[15, 60]}
+          py={[50, 0]}
           maxWidth={600}
           mx={"auto"}
         >
           {children}
         </Flex>
-        <PhotoCredits
-          credits={imageCredits}
-          sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
-        ></PhotoCredits>
+        {!hideImage && !isMobile && (
+          <PhotoCredits
+            credits={imageCredits}
+            sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+          ></PhotoCredits>
+        )}
       </Box>
-      {flip && (
+      {!hideImage && !flip && !isMobile && (
         <SplitSectionImage
           image={image}
           scrollSpeed={0}
-          hideImageOnMobile={hideImageOnMobile}
           flip={flip}
         ></SplitSectionImage>
       )}
@@ -120,28 +145,37 @@ export const SplitSectionCroppedImage = ({
   minHeight,
   pattern = stripeVert,
   alignImageMobile = "center center",
+  hideImageOnMobile,
   ...props
 }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
+  const hideImage = hideImageOnMobile == true && isMobile == true
+
   return (
     <Flex
-      minHeight={"100vh"}
+      minHeight={["unset", "100vh"]}
       className={"cropped-image-section"}
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
       style={{ position: "relative" }}
+      pb={isMobile && 50}
     >
-      <FlexWrap>
-        {flip && (
+      <FlexWrap width={1}>
+        {!isMobile && flip && (
           <Box
             width={[1, 1 / 2]}
+            flex={"1 0 auto"}
             mr={"auto"}
             style={{ position: "relative", zIndex: 1 }}
           >
             <Flex
               flexDirection={"column"}
               justifyContent={"center"}
-              height={"100vh"}
+              height={!isMobile && "100vh"}
               pr={[15, 30]}
               pl={[15, 60]}
               maxWidth={600}
@@ -151,62 +185,74 @@ export const SplitSectionCroppedImage = ({
             </Flex>
           </Box>
         )}
-        <Flex
-          width={[1, 1 / 2]}
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
-          <Box
-            width={[1]}
-            style={{ position: "relative" }}
-            pr={flip && "10vh"}
-            pl={!flip && "10vh"}
+        {!hideImage && (
+          <Flex
+            width={[1, 1 / 2]}
+            flex={"1 0 auto"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            minHeight={["60vh", "unset"]}
           >
-            <InViewImage
-              src={image}
-              scrollSpeed={-0.5}
-              imageSpeed={1}
-              usePattern={flip}
-              maxHeight={"80vh"}
-              sx={{
-                display: "block",
-                maxWidth: "none",
-                width: "100%",
-                height: "80vh",
-                objectFit: "cover",
-                objectPosition: [alignImageMobile, "center center"],
-                marginLeft: !flip && "auto !important",
-                marginRight: flip && "auto  !important",
-              }}
-            ></InViewImage>
-          </Box>
-        </Flex>
-
-        {!flip && (
+            <Box
+              width={[1]}
+              style={{ position: "relative" }}
+              pr={isMobile ? 0 : flip && "10vh"}
+              pl={isMobile ? 0 : !flip && "10vh"}
+            >
+              <InViewImage
+                src={image}
+                scrollSpeed={-0.5}
+                imageSpeed={1}
+                usePattern={flip}
+                maxHeight={"80vh"}
+                sx={{
+                  display: "block",
+                  maxWidth: "none",
+                  width: "100%",
+                  height: "80vh",
+                  objectFit: "cover",
+                  objectPosition: [alignImageMobile, "center center"],
+                  marginLeft: !flip && "auto !important",
+                  marginRight: flip && "auto  !important",
+                }}
+              ></InViewImage>
+            </Box>
+          </Flex>
+        )}
+        {isMobile && !hideImage && (
+          <PhotoCredits
+            credits={imageCredits}
+            sx={{ alignSelf: "start" }}
+          ></PhotoCredits>
+        )}
+        {(isMobile || !flip) && (
           <Box
             width={[1, 1 / 2]}
             ml={"auto"}
             style={{ position: "relative", zIndex: 1 }}
+            pt={[50, 0]}
           >
-            <img
-              data-scroll
-              data-scroll-speed={1.2}
-              src={pattern}
-              alt="pattern"
-              style={{
-                position: "absolute",
-                left: flip ? undefined : 0,
-                right: !flip ? undefined : 0,
-                height: "616px",
-                width: "23px",
-                marginTop: "-313px",
-                top: "50%",
-              }}
-            />
+            {!isMobile && (
+              <img
+                data-scroll
+                data-scroll-speed={1.2}
+                src={pattern}
+                alt="pattern"
+                style={{
+                  position: "absolute",
+                  left: flip ? undefined : 0,
+                  right: !flip ? undefined : 0,
+                  height: "616px",
+                  width: "23px",
+                  marginTop: "-313px",
+                  top: "50%",
+                }}
+              />
+            )}
             <Flex
               flexDirection={"column"}
               justifyContent={"center"}
-              height={"100vh"}
+              height={!isMobile && "100vh"}
               pr={[15, 30]}
               pl={[15, 60]}
               maxWidth={600}
@@ -217,23 +263,55 @@ export const SplitSectionCroppedImage = ({
           </Box>
         )}
       </FlexWrap>
-      <PhotoCredits
-        credits={imageCredits}
-        sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
-      ></PhotoCredits>
+      {!hideImage && !isMobile && (
+        <PhotoCredits
+          credits={imageCredits}
+          sx={{
+            position: "absolute",
+            zIndex: 2,
+            bottom: 0,
+            left: 0,
+          }}
+        ></PhotoCredits>
+      )}
     </Flex>
   )
 }
 
 export const SplitSectionLong = ({
   children,
-  contentArray = [{ img: null, imgCredits: null, content: null }],
+  contentArray = [
+    { image: null, imageCredits: null, content: null, mobileContent: null },
+  ],
   pattern = stripeVert,
   ...props
 }) => {
   const id = useMemo(() => shortid())
   const [activeSection, setActive] = React.useState(0)
   const total = contentArray.length
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
+  if (isMobile) {
+    const { image, imageCredits } = contentArray[0]
+    return (
+      <>
+        <SplitSection {...props} image={image} imageCredits={imageCredits}>
+          {contentArray.map(
+            ({ mobileContent: Content, content, ...contentProps }, i) => (
+              <Content
+                key={i}
+                hideImageOnMobile={i !== 0}
+                {...contentProps}
+              ></Content>
+            )
+          )}
+        </SplitSection>
+      </>
+    )
+  }
 
   return (
     <Box
@@ -242,23 +320,6 @@ export const SplitSectionLong = ({
       id={`fixedScroll-${id}`}
       sx={{ position: "relative" }}
     >
-      {/* <img
-        data-scroll
-        data-scroll-speed={1}
-        src={pattern}
-        alt="pattern"
-        style={{
-          position: "absolute",
-          zIndex: 9,
-          top: "50%",
-          left: "50%",
-          // left: props.flip ? undefined : 0,
-          // right: !props.flip ? undefined : 0,
-          height: "616px",
-          width: "23px",
-          marginTop: "1.45rem",
-        }}
-      /> */}
       <Box>
         {contentArray.map(({ content: Content, ...contentProps }, i) => (
           <SplitSectionLongInner
@@ -267,6 +328,7 @@ export const SplitSectionLong = ({
             target={`#fixedScroll-${id}`}
             index={i}
             total={total}
+            isMobile={isMobile}
             {...props}
             {...contentProps}
           >
@@ -284,16 +346,18 @@ const SplitSectionLongInner = ({
   imageCredits,
   hideImageOnMobile,
   minHeight,
-  img,
+  image,
   target,
   index,
   total,
+  height,
   ...props
 }) => {
   const [ref, isInview] = useInView({
     rootMargin: "0px 0px -100% 0px",
     threshold: 0,
   })
+
   return (
     <>
       <Box
@@ -311,10 +375,10 @@ const SplitSectionLongInner = ({
         data-scroll
         data-scroll-sticky
         data-scroll-target={target}
-        minHeight={"100vh"}
+        minHeight={["unset", "100vh"]}
+        height={height}
         width={1}
         {...props}
-        width={1}
         sx={{
           background: "white",
           position: "absolute",
@@ -327,7 +391,7 @@ const SplitSectionLongInner = ({
       >
         {!flip && (
           <Image
-            src={img}
+            src={image}
             flip={flip}
             width={[1, 1 / 2]}
             sx={{
@@ -361,7 +425,7 @@ const SplitSectionLongInner = ({
 
         {flip && (
           <Image
-            src={img}
+            src={image}
             flip={flip}
             width={[1, 1 / 2]}
             sx={{

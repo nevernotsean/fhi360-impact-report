@@ -27,13 +27,21 @@ const AndSection = ({ children, ...props }) => {
   // }, [isInView])
 
   return (
-    <FlexSectionContainer minHeight={"100vh"} className="section1" centered>
-      <Flex justifyContent={"space-between"}>
+    <FlexSectionContainer
+      minHeight={["unset", "100vh"]}
+      className="section1"
+      centered
+    >
+      <Flex justifyContent={"space-between"} flexWrap={"wrap"}>
         {/* Left */}
         <AndSectionSide>{children[0]}</AndSectionSide>
         {/* Middle */}
-        <Flex justifyContent={"center"} alignItems={"center"} width={1 / 5}>
-          <Box width={200} ml={0}>
+        <Flex
+          justifyContent={"center"}
+          alignItems={"center"}
+          width={[1 / 2, 1 / 5]}
+        >
+          <Box width={[150, 200]} ml={0}>
             <HandDrawnSVG svg={And}></HandDrawnSVG>
           </Box>
         </Flex>
@@ -52,6 +60,7 @@ const AndSectionSide = ({ children, ...props }) => {
   return (
     <Flex
       width={[1, 2 / 5]}
+      flex={"1 0 auto"}
       maxWidth={500}
       style={{ position: "relative" }}
       flexDirection={"column"}

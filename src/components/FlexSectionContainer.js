@@ -1,28 +1,30 @@
 import React from "react"
 import { Flex, Box } from "rebass/styled-components"
+import styled from "styled-components"
 
 const FlexSectionContainer = ({
   py = 100,
   px = 20,
-  minHeight = "100vh",
+  minHeight = ["unset", "100vh"],
   children,
   centered,
   ...props
 }) => (
-  <Box
+  <StyledSectionContainer
     py={py}
     px={px}
     width={1}
     maxWidth={1200}
     mx={"auto"}
     minHeight={minHeight}
-    display={"flex"}
     flexDirection={"column"}
     justifyContent={centered && "center"}
     {...props}
   >
     {children}
-  </Box>
+  </StyledSectionContainer>
 )
+
+const StyledSectionContainer = styled(Flex)``
 
 export default FlexSectionContainer

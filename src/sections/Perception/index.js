@@ -1,12 +1,10 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 
 import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
 
 import SectionDividerDark from "../../components/SectionDividerDark"
 import HandDrawnSVG from "../../components/HandDrawnSVG"
-
-import { useTrail, useSpring, animated } from "react-spring"
 
 import image1 from "../../images/WeAreConstantlyDeveloping_creditLeanneGray.jpg"
 
@@ -22,7 +20,9 @@ import AndSection1 from "./AndSection1"
 import AndSection2 from "./AndSection2"
 import AndSection3 from "./AndSection3"
 import { SplitSectionCroppedImage } from "../../components/SplitSection"
-import Streak from "../../assets/svg/streak2.svg"
+import { Underlined } from "./../../components/WordNote"
+import theme from "../../styles/index"
+import { useMediaQuery } from "react-responsive"
 
 const data = [
   {
@@ -56,12 +56,16 @@ const Perception = props => {
     transition: `transform 600ms ease ${i * 300 + 500}ms`,
     y: listInView ? "0" : "101%",
   }))
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
 
   return (
     <Container>
       <FlexSectionContainer justifyContent="center" alightItems="center">
         <FlexWrap alignItems={"center"} width={1}>
           <Box width={[1, 1 / 3]}>
+            <div ref={listRef}></div>
             <H2 className="section-title">
               Perception
               <br />
@@ -88,7 +92,7 @@ const Perception = props => {
               ></HandDrawnSVG>
             </Box>
           </Box>
-          <Box width={[1, 2 / 3]} ref={listRef}>
+          <Box width={[1, 2 / 3]}>
             <Flex flexWrap="wrap">
               <Box className="spacer" width={[1, 1 / 4]}></Box>
               {listAnim.map((animProps, index) => (
@@ -111,83 +115,67 @@ const Perception = props => {
         alt="let's change perception"
       ></SectionDividerDark>
       <AndSection1 />
-      <AndSection2 />{" "}
-      {/* <SplitSectionCroppedImage
-        flip
-        image={"https://via.placeholder.com/1920x1080?text=FPO"}
-      >
-        <Lead>LET’S CHANGE PERCEPTION</Lead>
-        <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>
-          Nepal to
-          <br />
-          North Dakota
-        </H3>
-        <Box maxWidth={["none", 320]}>
-          <span className="section-body">
-            Our committed team of development professionals, scientists and
-            researchers is continuously applying an entrepreneurial approach and
-            striving for excellence to reduce inequality and achieve{" "}
-            <span style={{ position: "relative" }}>
-              meaningful impact.
-              <Box
-                sx={{
-                  left: 0,
-                  width: "150px",
-                  position: "absolute",
-                  transform: "translateY(-20%)",
-                  zIndex: -1,
-                }}
-              >
-                <HandDrawnSVG
-                  svg={Streak}
-                  duration={0.3}
-                  delay={1}
-                ></HandDrawnSVG>
-              </Box>
-            </span>
-          </span>
-        </Box>
-      </SplitSectionCroppedImage> */}
-      <AndSection3 />{" "}
-      <SplitSectionCroppedImage
-        flip
-        image={image1}
-        imageCredits={"Leanne Gray/ FHI 360"}
-        alignImageMobile={"center top"}
-      >
-        <Lead>LET’S CHANGE PERCEPTION</Lead>
-        <H3 fontWeight={900} sx={{ textTransform: "uppercase" }}>
-          We Are
-          <br />
-          <span style={{ position: "relative" }}>
-            constantly
-            <Box
-              sx={{
-                left: "50%",
-                width: "150px",
-                position: "absolute",
-                transform: "translate(-50%, -30%)",
-                zIndex: -1,
-              }}
+      <AndSection2 />
+      <AndSection3 />
+      {isMobile ? (
+        <Flex
+          flexDirection="column"
+          justifyContent="center"
+          alignContent="center"
+          textAlign="center"
+          py={100}
+        >
+          <Lead>LET’S CHANGE PERCEPTION</Lead>
+          <Box maxWidth={480} px={[20, 0]}>
+            <H2
+              className={"section-title"}
+              fontSize={isMobile && "34px !important"}
+              lineHeight={isMobile && "38px !important"}
             >
-              <HandDrawnSVG
-                svg={Streak}
+              We are constantly <br />
+              <Underlined
+                sx={{ top: "100%" }}
+                orange
                 duration={0.3}
                 delay={1.5}
-              ></HandDrawnSVG>
-            </Box>
-          </span>
-          <br />
-          developing
-        </H3>
-        <Box maxWidth={["none", 320]}>
-          <span className="section-body">
-            New partnerships, new funding relationships and customized solutions
-            that we apply to solving some of the world’s most intractable
-            problems.
-          </span>
-        </Box>
-      </SplitSectionCroppedImage>
+              >
+                developing:
+              </Underlined>
+              <br />
+              <br />
+              <br />
+              <span className="serif">
+                New partnerships, new funding relationships and customized
+                solutions that we apply to solving some of the world’s most
+                intractable problems.
+              </span>
+            </H2>
+          </Box>
+        </Flex>
+      ) : (
+        <SplitSectionCroppedImage
+          flip
+          image={image1}
+          imageCredits={"Leanne Gray/ FHI 360"}
+          alignImageMobile={"center top"}
+        >
+          <Lead>LET’S CHANGE PERCEPTION</Lead>
+          <H3 fontWeight={900} sx={{ textTransform: "uppercase" }} mb={[3]}>
+            We are{" "}
+            <Underlined orange duration={0.3} delay={1.5}>
+              constantly
+            </Underlined>{" "}
+            developing
+          </H3>
+          <Box maxWidth={["none", 320]}>
+            <span className="section-body">
+              New partnerships, new funding relationships and customized
+              solutions that we apply to solving some of the world’s most
+              intractable problems.
+            </span>
+          </Box>
+        </SplitSectionCroppedImage>
+      )}
     </Container>
   )
 }

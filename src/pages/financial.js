@@ -21,8 +21,8 @@ const Financial = () => (
       <Box mb={50}>
         <p>Twelve months ending September 30 2019</p>
       </Box>
-      <Flex mx={[0, -20]}>
-        <Box width={[1, 1 / 2]} px={20}>
+      <Flex mx={[0, -20]} flexWrap={"wrap"}>
+        <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
           <StyledTable>
             <thead>
               <tr>
@@ -63,7 +63,7 @@ const Financial = () => (
           </StyledTable>
         </Box>
 
-        <Box width={[1, 1 / 2]} px={20}>
+        <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
           <StyledTable>
             <thead>
               <tr>
@@ -97,7 +97,7 @@ const Financial = () => (
     <Section title={"Revenue by source"}>
       <Image
         src={Image5}
-        maxWidth={800}
+        maxWidth={["80vw", 800]}
         mx={"auto"}
         sx={{ display: "block" }}
       ></Image>
@@ -105,7 +105,7 @@ const Financial = () => (
     <Section title={"Allocation of expenses"}>
       <Image
         src={Image4}
-        maxWidth={800}
+        maxWidth={["80vw", 800]}
         mx={"auto"}
         sx={{ display: "block" }}
       ></Image>
@@ -113,7 +113,7 @@ const Financial = () => (
     <Section title={"Work by area"}>
       <Image
         src={Image3}
-        maxWidth={800}
+        maxWidth={["80vw", 800]}
         mx={"auto"}
         sx={{ display: "block" }}
       ></Image>
@@ -121,7 +121,7 @@ const Financial = () => (
     <Section title={"Work by region"}>
       <Image
         src={Image2}
-        maxWidth={800}
+        maxWidth={["80vw", 800]}
         mx={"auto"}
         sx={{ display: "block" }}
       ></Image>

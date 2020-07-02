@@ -22,6 +22,7 @@ import LightModeTrigger from "./LightModeTrigger"
 import theme from "../styles/index"
 import { Box } from "rebass/styled-components"
 import Intro from "./Intro"
+import { useMediaQuery } from "react-responsive"
 
 const Layout = ({
   children,
@@ -43,6 +44,9 @@ const Layout = ({
   `)
 
   const [sideNavOpen, setSideNavOpen] = React.useState(false)
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
 
   return (
     <Providers>
@@ -61,7 +65,7 @@ const Layout = ({
         setSideNavOpen={setSideNavOpen}
       />
       {showIntro && <Intro></Intro>}
-      <main id={"main-content"} style={{ paddingTop: 100 }}>
+      <main id={"main-content"} style={{ paddingTop: isMobile ? 50 : 100 }}>
         {children}
         <Footer></Footer>
       </main>

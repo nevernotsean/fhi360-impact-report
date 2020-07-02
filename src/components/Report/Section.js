@@ -4,6 +4,30 @@ import styled from "styled-components"
 import { H2, H3, Lead } from "../../elements/Type"
 import FlexSectionContainer from "../FlexSectionContainer"
 import StatBlock from "./StatBlock"
+import { useMediaQuery } from "react-responsive"
+import theme from "./../../styles/index"
+
+const Stats = ({ link, project, funder, ...props }) => (
+  <>
+    <Box mb={3}>
+      <H3 className="labelhead" mb={2}>
+        Project
+      </H3>
+      <a href={link} className={"project label"}>
+        {project}
+      </a>
+    </Box>
+    <Box>
+      <H3 className="labelhead" mb={2}>
+        Funder
+      </H3>
+      <H3
+        className={"funder label"}
+        dangerouslySetInnerHTML={{ __html: funder }}
+      ></H3>
+    </Box>
+  </>
+)
 
 const Section = ({
   children,
@@ -15,12 +39,16 @@ const Section = ({
   body,
   ...props
 }) => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
   return (
     <Container {...props}>
       <FlexSectionContainer minHeight={"none"}>
         <TitleRule title={title}></TitleRule>
-        <Flex>
-          <Box width={[1, 1 / 2, 7 / 16]}>
+        <Flex flexWrap={"wrap"}>
+          <Box width={[1, 1 / 2, 7 / 16]} flex={"1 0 auto"}>
             <Flex flexDirection={"column"}>
               <H2
                 className="headline"
@@ -31,28 +59,24 @@ const Section = ({
                 {headline}
               </H2>
 
-              <H3 className="labelhead" mb={2}>
-                Project
-              </H3>
-              <a href={link} className={"project label"}>
-                {project}
-              </a>
-              <H3 className="labelhead" mb={2}>
-                Funder
-              </H3>
-              <H3
-                className={"funder label"}
-                dangerouslySetInnerHTML={{ __html: funder }}
-              ></H3>
+              {!isMobile && (
+                <Stats link={link} project={project} funder={funder}></Stats>
+              )}
             </Flex>
           </Box>
           <Flex
             flexDirection={"column"}
             justifyContent={"space-between"}
             width={[1, 9 / 16, 1 / 2]}
+            flex={"1 0 auto"}
             ml={[0, "auto"]}
           >
             <p className={"body"} dangerouslySetInnerHTML={{ __html: body }} />
+            {isMobile && (
+              <Box my={50}>
+                <Stats link={link} project={project} funder={funder}></Stats>
+              </Box>
+            )}
           </Flex>
         </Flex>
         {children}

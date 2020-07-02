@@ -17,6 +17,7 @@ const WordNote = ({
   delay = 1,
   orange,
   transform,
+  underlineLength,
   ...props
 }) => {
   const [ref, { width: w }] = useDimensions()
@@ -28,7 +29,7 @@ const WordNote = ({
         sx={{
           top: "50%",
           left: 0,
-          width: w || "80px",
+          width: w || underlineLength || "80px",
           position: "absolute",
           transform: transform,
           zIndex: 1,
@@ -41,6 +42,7 @@ const WordNote = ({
           duration={0.3}
           delay={delay}
           orange={orange}
+          {...props}
         ></HandDrawnSVG>
       </Box>
     </span>

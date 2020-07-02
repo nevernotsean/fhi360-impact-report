@@ -74,6 +74,10 @@ const Container = styled(Box)`
 
   transition: opacity 300ms linear;
 
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-y: auto;
+
   .background {
     position: absolute;
     right: 0;

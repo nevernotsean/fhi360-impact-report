@@ -2,8 +2,6 @@ import React, { useContext } from "react"
 import { useInView } from "react-intersection-observer"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 
-import { useTrail } from "react-spring"
-
 import styled from "styled-components"
 import Innovate from "../images/innovators.png"
 import SectionDividerDark from "../components/SectionDividerDark"
@@ -17,12 +15,35 @@ import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
 import image2 from "../images/innovate-2.jpg"
-import image3 from "../images/Innovators2.png"
 
 import { Box } from "rebass/styled-components"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import innoVert from "../images/pattern-vert-WeAreInnovators_section1.png"
+
+const InnoFirst = () => (
+  <>
+    <Lead>We are innovators</Lead>
+    <H2 className={"section-title"}>
+      We are pioneering new ways of doing business
+      <br />
+      <span className="serif">in the international nonprofit sector.</span>
+    </H2>
+    <div
+      className="divider"
+      style={{
+        borderTop: "1px solid black",
+        marginBottom: "1.45rem",
+      }}
+    />
+    <Box maxWidth={480}>
+      <p className={"section-body"}>
+        FHI 360 and our family of companies provide fit-for-purpose solutions to
+        businesses, foundations, governments and civil society organizations.
+      </p>
+    </Box>
+  </>
+)
 
 const Innovators = () => {
   const { scroll } = useContext(LocomotiveContext)
@@ -38,9 +59,6 @@ const Innovators = () => {
       <SectionDividerDark
         img={Innovate}
         alt="we are innovative"
-        // duration={1}
-        // duration2={0.2}
-        // delay={1}
       ></SectionDividerDark>
       <SplitSectionCroppedImage
         image={image1}
@@ -86,37 +104,13 @@ const Innovators = () => {
         flip
         contentArray={[
           {
-            img: image2,
+            image: image2,
             imageCredits: "Leanne Gray/ FHI 360",
-            content: () => (
-              <>
-                <Lead>We are innovators</Lead>
-                <H2 className={"section-title"}>
-                  We are pioneering new ways of doing business
-                  <br />
-                  <span className="serif">
-                    in the international nonprofit sector.
-                  </span>
-                </H2>
-                <div
-                  className="divider"
-                  style={{
-                    borderTop: "1px solid black",
-                    marginBottom: "1.45rem",
-                  }}
-                />
-                <Box maxWidth={480}>
-                  <p className={"section-body"}>
-                    FHI 360 and our family of companies provide fit-for-purpose
-                    solutions to businesses, foundations, governments and civil
-                    society organizations.
-                  </p>
-                </Box>
-              </>
-            ),
+            content: InnoFirst,
+            mobileContent: InnoFirst,
           },
           {
-            img: image2,
+            image: image2,
             imageCredits: "CREDITS MISSING",
             content: () => (
               <>
@@ -130,6 +124,14 @@ const Innovators = () => {
                   </p>
                 </Box>
               </>
+            ),
+            mobileContent: () => (
+              <p className="section-body">
+                From Nepal to North Dakota, our global presence and networks
+                enable us to cross-pollinate ideas and knowledge within and
+                across countries so that we can pilot initiatives, nurture
+                innovation and expand our social impact.
+              </p>
             ),
           },
         ]}

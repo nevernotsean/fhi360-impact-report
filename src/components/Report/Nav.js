@@ -10,7 +10,8 @@ const Nav = () => {
       maxWidth={1200}
       mx={"auto"}
       py={30}
-      px={50}
+      px={[0, 50]}
+      flexDirection={["column", "row"]}
     >
       <Link className={"link"} to={"/report"}>
         2019 Overview
@@ -38,6 +39,11 @@ const Container = styled(Flex)`
     letter-spacing: 2px;
     margin: 0 10px;
     font-size: 12px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      text-align: right;
+    }
   }
 `
 

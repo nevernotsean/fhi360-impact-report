@@ -192,7 +192,7 @@ const Outro = () => {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Box width={1} maxWidth={600} sx={{ position: "relative" }}>
+          <Box width={1} maxWidth={[300, 600]} sx={{ position: "relative" }}>
             <HandDrawnSVG
               svg={ThisIsFHI}
               delay2={2}

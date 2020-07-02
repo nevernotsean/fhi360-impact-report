@@ -154,12 +154,12 @@ const Funders = () => (
           <P>Secretary of State for Health and Social Care (U.K.)</P>
         </Box>
       </Section>
-      <Box width={1} minHeight={"100vh"}>
+      <Box width={1} minHeight={["80vh", "100vh"]}>
         <Flex
           width={1}
           maxWidth={1200}
           mx={"auto"}
-          minHeight={"100vh"}
+          minHeight={["80vh", "100vh"]}
           flexDirection={"column"}
           justifyContent="center"
           alignItems="center"
@@ -219,7 +219,9 @@ const Section = ({ title, children, bg, ...props }) => (
           {title}
         </H2>
       </Box>
-      <Flex sx={{ marginX: [0, -20] }}>{children}</Flex>
+      <Flex sx={{ marginX: [0, -20] }} flexDirection={["column", "row"]}>
+        {children}
+      </Flex>
     </Flex>
   </Box>
 )

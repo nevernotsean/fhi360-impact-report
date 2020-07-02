@@ -5,6 +5,8 @@ import { animated } from "react-spring"
 import useDimensions from "react-use-dimensions"
 import { Box, Image } from "rebass/styled-components"
 import Pattern from "../images/pattern.png"
+import { useMediaQuery } from "react-responsive"
+import theme from "./../styles/index"
 
 const InViewImage = ({
   src,
@@ -30,6 +32,12 @@ const InViewImage = ({
   React.useEffect(() => {
     if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
   }, [height, inView, loaded])
+
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[0]})`,
+  })
+
+  const patternMove = isMobile ? 15 : 30
 
   return (
     <Container
@@ -67,7 +75,8 @@ const InViewImage = ({
             transition: `transform 0.25s ease-out ${
               revealSpeed + 0.01
             }s, opacity 1ms linear ${revealSpeed}s`,
-            transform: inView && `translate(30px, -30px)`,
+            transform:
+              inView && `translate(${patternMove}px, -${patternMove}px)`,
             opacity: inView ? 1 : 0,
           }}
         ></Box>

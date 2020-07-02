@@ -23,6 +23,35 @@ import { Circled, Underlined } from "../components/WordNote"
 
 import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"
 
+const BraveFirst = () => (
+  <>
+    <Lead>We are brave</Lead>
+    <H2 className={"section-title"}>
+      Our willingness to tackle novel challenges
+      <br />
+      <span className={"serif"}>
+        keeps us ahead of the curve in recognizing and responding to critical
+        global issues
+      </span>
+    </H2>
+    {/* <H3 className={"section-subtitle"}>
+      We are afraid not to try.
+    </H3> */}
+    <div
+      className="divider"
+      style={{
+        borderTop: "1px solid black",
+        marginBottom: "1.45rem",
+      }}
+    />
+    <Box maxWidth={480}>
+      <p className={"section-body"}>
+        in recognizing and responding to critical and global issues.
+      </p>
+    </Box>
+  </>
+)
+
 const Brave = () => {
   return (
     <>
@@ -30,39 +59,13 @@ const Brave = () => {
       <SplitSectionLong
         contentArray={[
           {
-            img: image1,
+            image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
-            content: () => (
-              <>
-                <Lead>We are brave</Lead>
-                <H2 className={"section-title"}>
-                  Our willingness to tackle novel challenges
-                  <br />
-                  <span className={"serif"}>
-                    keeps us ahead of the curve in recognizing and responding to
-                    critical global issues
-                  </span>
-                </H2>
-                {/* <H3 className={"section-subtitle"}>
-                  We are afraid not to try.
-                </H3> */}
-                <div
-                  className="divider"
-                  style={{
-                    borderTop: "1px solid black",
-                    marginBottom: "1.45rem",
-                  }}
-                />
-                <Box maxWidth={480}>
-                  <p className={"section-body"}>
-                    in recognizing and responding to critical and global issues.
-                  </p>
-                </Box>
-              </>
-            ),
+            content: BraveFirst,
+            mobileContent: BraveFirst,
           },
           {
-            img: image1,
+            image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
@@ -78,9 +81,17 @@ const Brave = () => {
                 </Box>
               </>
             ),
+            mobileContent: () => (
+              <span className={"section-body"}>
+                We invested our own capital and put our trust in pilot projects
+                to prove, when few thought it possible, that lifesaving
+                anti-retrovirals <Underlined orange={true}>could be</Underlined>{" "}
+                delivered in low-resource settings.
+              </span>
+            ),
           },
           {
-            img: image1,
+            image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
@@ -95,9 +106,17 @@ const Brave = () => {
                 </Box>
               </>
             ),
+            mobileContent: () => (
+              <span className={"section-body"}>
+                Our trailblazing work in contraceptive research and development
+                builds on a long history of leadership in family planning that
+                empowers women and men to decide the size of their families and
+                improve their lives.
+              </span>
+            ),
           },
           {
-            img: image1,
+            image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
             content: () => (
               <>
@@ -116,6 +135,17 @@ const Brave = () => {
                 </Box>
               </>
             ),
+            mobileContent: () => (
+              <span className={"section-body"}>
+                In the United States, we{" "}
+                <Underlined orange={true}>partner</Underlined> with Native
+                American populations on early childcare, education and tribal
+                language revitalization; <Circled>improve</Circled> employment
+                outcomes for young adults caught in the criminal justice system;
+                promote <Underlined orange={true}>healthy</Underlined>{" "}
+                behaviors; and work to lessen the stigma of HIV.
+              </span>
+            ),
           },
         ]}
       ></SplitSectionLong>
@@ -123,6 +153,7 @@ const Brave = () => {
       <SplitSectionCroppedImage
         image={image2}
         imageCredits={"Jessica Scranton/FHI 360"}
+        hideImageOnMobile={false}
         pattern={gapVert}
       >
         <Lead>We are brave</Lead>

@@ -1,10 +1,7 @@
 import React from "react"
-import styled, { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 import { Flex, Box, Image } from "rebass/styled-components"
 import HandDrawnSVG from "./HandDrawnSVG"
-import { H2 } from "../elements/Type"
-import { useInView } from "react-intersection-observer"
-import LightModeTrigger from "./LightModeTrigger"
 
 const SectionDividerDark = ({
   svg,
@@ -18,7 +15,6 @@ const SectionDividerDark = ({
 }) => {
   return (
     <>
-      {/* <LightModeTrigger height={100}></LightModeTrigger> */}
       <Container>
         <Box
           width={1}
@@ -57,6 +53,11 @@ const SectionDividerDark = ({
 
 const Container = styled(Flex)`
   min-height: 100vh;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    min-height: unset;
+  }
+
   display: flex;
   justify-content: center;
   align-items: center;

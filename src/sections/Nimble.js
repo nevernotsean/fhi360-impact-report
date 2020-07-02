@@ -58,7 +58,7 @@ const Nimble = () => {
 
   const [listRef, listInView] = useInView({
     rootMargin: "20% 0px -20% 0px",
-    threshold: 0.8,
+    threshold: 0,
     triggerOnce: true,
   })
 
@@ -67,6 +67,8 @@ const Nimble = () => {
     y: listInView ? "0" : "400px",
   })
 
+  console.log("TODO, Insert Credits here: for 2 women health workers")
+
   return (
     <Container>
       <SectionDividerDark
@@ -74,8 +76,8 @@ const Nimble = () => {
         alt="we are nimble"
       ></SectionDividerDark>
       <FlexSectionContainer>
-        <Flex alignItems={"center"} width={1}>
-          <Box width={[1, 1 / 2]} maxWidth={480} mr={"auto"}>
+        <Flex alignItems={"center"} width={1} flexWrap={"wrap"} ref={listRef}>
+          <Box width={[1, 1 / 2]} flex={"1 0 auto"} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
             <H2 className="section-title">
               Our global platform means we do not need a lot of lead time
@@ -95,8 +97,13 @@ const Nimble = () => {
               Our four subsidiaries have unique areas of focus:
             </H3>
             <Box
-              mt={-50}
-              style={{ transform: "translate(15%, -30%) rotate(-12deg)" }}
+              mt={50}
+              sx={{
+                transform: [
+                  "translate(75px, -65px) scale(.5,-.5) rotate(-45deg)",
+                  "translate(15%, -30%) rotate(-12deg)",
+                ],
+              }}
             >
               <HandDrawnSVG
                 svg={Arrow}
@@ -105,16 +112,17 @@ const Nimble = () => {
               ></HandDrawnSVG>
             </Box>
           </Box>
-          <Box width={[1, 1 / 2]} ref={listRef} overflow="hidden">
+          <Box width={[1, 1 / 2]} flex={"1 0 auto"} overflow="hidden">
             <Flex flexWrap="wrap">
               {listAnim.map(({ y, ...rest }, index) => (
                 <TitledListCard
                   key={index}
                   title={data[index].title}
                   width={[1, 1 / 3]}
-                  maxWidth={180}
-                  height={350}
-                  p={"25px"}
+                  maxWidth={["unset", 180]}
+                  height={[200, 350]}
+                  p={[0, "25px"]}
+                  mb={[30, 0]}
                   y={y}
                   href={data[index].href}
                   // noBorder={index < 2}
