@@ -12,9 +12,7 @@ const Links = ({ textAlign = "right", ...props }) => (
 )
 
 const Footer = () => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <StyledFooter

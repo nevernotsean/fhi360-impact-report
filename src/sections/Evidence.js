@@ -22,9 +22,7 @@ import { useMediaQuery } from "react-responsive"
 import theme from "./../styles/index"
 
 const Evidence = () => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Container className={isMobile && "isMobile"}>

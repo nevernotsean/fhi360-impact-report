@@ -44,9 +44,7 @@ const Layout = ({
   `)
 
   const [sideNavOpen, setSideNavOpen] = React.useState(false)
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Providers>

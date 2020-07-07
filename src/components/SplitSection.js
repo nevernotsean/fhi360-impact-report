@@ -62,9 +62,7 @@ export const SplitSection = ({
   height = "100vh",
   ...props
 }) => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   const hideImage = hideImageOnMobile == true && isMobile == true
 
@@ -148,9 +146,7 @@ export const SplitSectionCroppedImage = ({
   hideImageOnMobile,
   ...props
 }) => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   const hideImage = hideImageOnMobile == true && isMobile == true
 
@@ -163,6 +159,7 @@ export const SplitSectionCroppedImage = ({
       alignItems={"center"}
       style={{ position: "relative" }}
       pb={isMobile && 50}
+      overflowX={["hidden", "auto"]}
     >
       <FlexWrap width={1}>
         {!isMobile && flip && (
@@ -290,9 +287,7 @@ export const SplitSectionLong = ({
   const [activeSection, setActive] = React.useState(0)
   const total = contentArray.length
 
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   if (isMobile) {
     const { image, imageCredits } = contentArray[0]

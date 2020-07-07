@@ -13,9 +13,7 @@ import { useMediaQuery } from "react-responsive"
 import theme from "./../styles/index"
 
 const GlobalReach = () => {
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Layout bg={"#e2e2e2"} hideMenuButton={true}>

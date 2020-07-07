@@ -10,7 +10,7 @@ const PhotoCredits = ({ credits, ...props }) => {
       <span className={"button"} onClick={() => setIsOpen(!isOpen)}>
         Photo Credits
       </span>
-      <p className={"credit"}>: {credits}</p>
+      <span className={"credit"}>: {credits}</span>
     </PhotoCreditsContainer>
   )
 }

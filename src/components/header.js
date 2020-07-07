@@ -23,9 +23,7 @@ const Header = ({
   const [scrolledPast, setScrolledPast] = React.useState()
   const context = React.useContext(LocomotiveContext)
 
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   React.useEffect(() => {
     setLoaded(true)
@@ -36,6 +34,10 @@ const Header = ({
       })
     }
   }, [loaded])
+
+  React.useEffect(() => {
+    console.log("isMobile: ", isMobile)
+  }, [isMobile])
 
   const headerHeight = isMobile ? 50 : scrolledPast ? 75 : 100
 

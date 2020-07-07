@@ -56,9 +56,7 @@ const Perception = props => {
     transition: `transform 600ms ease ${i * 300 + 500}ms`,
     y: listInView ? "0" : "101%",
   }))
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Container>

@@ -13,9 +13,7 @@ const Intro = props => {
     setLoaded(true)
   }, [])
 
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <>

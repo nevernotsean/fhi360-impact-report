@@ -203,7 +203,7 @@ const HeroContainer = styled(Box)`
   .lockup-mobile {
     position: absolute;
     top: 30px;
-    left: 45vw;
+    right: -20px;
 
     .line {
       width: 40vw;

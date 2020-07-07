@@ -33,9 +33,7 @@ const InViewImage = ({
     if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
   }, [height, inView, loaded])
 
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${theme.breakpoints[0]})`,
-  })
+  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   const patternMove = isMobile ? 15 : 30
 
