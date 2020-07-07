@@ -17,16 +17,16 @@ const Intro = props => {
     query: `(max-width: ${theme.breakpoints[0]})`,
   })
 
-  if (isMobile) return null
-
   return (
     <>
-      <GlobalStyle loaded={loaded}></GlobalStyle>
-      <Container loaded={loaded}>
-        <Box id={"loading-screen"}>
-          <Image src={welcome}></Image>
-        </Box>
-      </Container>
+      <GlobalStyle loaded={!isMobile || loaded}></GlobalStyle>
+      {!isMobile && (
+        <Container loaded={loaded}>
+          <Box id={"loading-screen"}>
+            <Image src={welcome}></Image>
+          </Box>
+        </Container>
+      )}
     </>
   )
 }
