@@ -50,7 +50,9 @@ const Layout = ({
 
   return (
     <Providers>
-      <Helmet></Helmet>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
       <GlobalStyles bg={bg} />
       <SideNav
         data={sidenavData}

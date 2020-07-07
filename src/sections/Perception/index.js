@@ -122,15 +122,15 @@ const Perception = props => {
           flexDirection="column"
           justifyContent="center"
           alignContent="center"
-          textAlign="center"
           py={100}
         >
-          <Lead>LET’S CHANGE PERCEPTION</Lead>
+          <Lead textAlign="center">LET’S CHANGE PERCEPTION</Lead>
           <Box maxWidth={480} px={[20, 0]}>
             <H2
               className={"section-title"}
               fontSize={isMobile && "34px !important"}
               lineHeight={isMobile && "38px !important"}
+              textAlign="center"
             >
               We are constantly <br />
               <Underlined

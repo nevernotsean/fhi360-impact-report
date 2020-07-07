@@ -90,15 +90,15 @@ const Evidence = () => {
           flexDirection="column"
           justifyContent="center"
           alignContent="center"
-          textAlign="center"
           py={100}
         >
-          <Lead>We lead with science</Lead>
+          <Lead textAlign="center">We lead with science</Lead>
           <Box maxWidth={480}>
             <H2
               className={"section-title"}
               fontSize={isMobile && "34px !important"}
               lineHeight={isMobile && "38px !important"}
+              textAlign="center"
             >
               <Underlined sx={{ top: "100%" }}>The result:</Underlined>
               <br />
