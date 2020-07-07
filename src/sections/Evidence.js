@@ -27,7 +27,7 @@ const Evidence = () => {
   })
 
   return (
-    <Container>
+    <Container className={isMobile && "isMobile"}>
       <SectionDividerDark
         alt="we lead with science"
         img={EvidenceCard}
@@ -91,6 +91,7 @@ const Evidence = () => {
           justifyContent="center"
           alignContent="center"
           py={100}
+          px={20}
         >
           <Lead textAlign="center">We lead with science</Lead>
           <Box maxWidth={480}>

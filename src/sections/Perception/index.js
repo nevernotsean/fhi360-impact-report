@@ -123,6 +123,7 @@ const Perception = props => {
           justifyContent="center"
           alignContent="center"
           py={100}
+          px={20}
         >
           <Lead textAlign="center">LET’S CHANGE PERCEPTION</Lead>
           <Box maxWidth={480} px={[20, 0]}>

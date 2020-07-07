@@ -190,6 +190,7 @@ const HeroContainer = styled(Box)`
       visibility: hidden;
       position: absolute;
       pointer-events: none;
+      right: 0;
     }
   }
 
@@ -213,8 +214,8 @@ const HeroContainer = styled(Box)`
       width: 50vw;
 
       h2 {
-        margin-left: 0;
-        transform: translateX(20vw);
+        margin-left: 20vw;
+        /* transform: translateX(20vw); */
       }
     }
   }
