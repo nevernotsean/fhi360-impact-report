@@ -9,12 +9,10 @@ import Nav from "../components/Report/Nav"
 import styled from "styled-components"
 
 import map from "../images/map.jpg"
-import { useMediaQuery } from "react-responsive"
-import theme from "./../styles/index"
+import Media from "../components/Media"
+// import { useMediaQuery } from "react-responsive"
 
 const GlobalReach = () => {
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   return (
     <Layout bg={"#e2e2e2"} hideMenuButton={true}>
       <SEO title="Home" />
@@ -30,7 +28,7 @@ const GlobalReach = () => {
           </p>
         </Box>
       </Masthead>
-      {!isMobile && (
+      <Media greaterThanOrEqual={"md"}>
         <Box>
           <Image src={map}></Image>
           <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
@@ -55,7 +53,7 @@ const GlobalReach = () => {
             </Box>
           </Box>
         </Box>
-      )}
+      </Media>
       <Section px={[0, 20]}>
         <StyledTable border="0" cellspacing="0" cellpadding="0">
           <thead>

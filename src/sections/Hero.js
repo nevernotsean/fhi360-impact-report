@@ -14,8 +14,6 @@ import { Lead, H2, H1, H3 } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
 import { FlexWrap } from "../elements/Flex"
 
-import Streak2 from "../assets/svg/streak2.svg"
-
 const introLetter = [
   "Dear friends and colleagues,",
 
@@ -122,7 +120,6 @@ const Hero = () => {
                         title={pullquoteContent.title}
                         px={[1, 5]}
                         fontSize={"28px"}
-                        streak={Streak2}
                         mb={50}
                       >
                         {pullquoteContent.body}

@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
-import { animated } from "react-spring"
 import useDimensions from "react-use-dimensions"
 import { Box, Image } from "rebass/styled-components"
 import Pattern from "../images/pattern.png"
-import { useMediaQuery } from "react-responsive"
-import theme from "./../styles/index"
+// import { useMediaQuery } from "react-responsive"
 
 const InViewImage = ({
   src,
@@ -33,10 +31,6 @@ const InViewImage = ({
     if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
   }, [height, inView, loaded])
 
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
-  const patternMove = isMobile ? 15 : 30
-
   return (
     <Container
       ref={parentRef}
@@ -47,6 +41,7 @@ const InViewImage = ({
       sx={sx}
       revealSpeed={revealSpeed}
       style={{ position: usePattern && "relative" }}
+      inView={inView}
     >
       <div className="mask">
         <Image
@@ -62,6 +57,7 @@ const InViewImage = ({
       </div>
       {usePattern && (
         <Box
+          className={"pattern"}
           style={{
             position: "absolute",
             zIndex: -1,
@@ -73,8 +69,6 @@ const InViewImage = ({
             transition: `transform 0.25s ease-out ${
               revealSpeed + 0.01
             }s, opacity 1ms linear ${revealSpeed}s`,
-            transform:
-              inView && `translate(${patternMove}px, -${patternMove}px)`,
             opacity: inView ? 1 : 0,
           }}
         ></Box>
@@ -108,5 +102,15 @@ const Container = styled(Box)`
         height: ${h}px;
       }
     `}
+  .pattern {
+    ${({ inView, theme }) =>
+      inView &&
+      `transform: translate(30px, -30px);
+    
+    @media screen and (max-width: ${theme.breakpoints[0]}) { 
+      transform: translate(15px, -15px); 
+    }
+    `}
+  }
 `
 export default InViewImage

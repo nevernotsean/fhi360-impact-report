@@ -90,7 +90,10 @@ const GlobalStyles = createGlobalStyle`
       line-height: 14px; 
     }
   }
-  
+
+  .fresnel-container {
+    width: 100%;
+  }
 `
 
 export default GlobalStyles

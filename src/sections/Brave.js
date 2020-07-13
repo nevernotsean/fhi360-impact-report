@@ -15,10 +15,7 @@ import {
 } from "../components/SplitSection"
 
 import { Box } from "rebass/styled-components"
-import HandDrawnSVG from "../components/HandDrawnSVG"
 
-import Streak from "../assets/svg/streak2.svg"
-import Circle from "../assets/svg/circle.svg"
 import { Circled, Underlined } from "../components/WordNote"
 
 import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"

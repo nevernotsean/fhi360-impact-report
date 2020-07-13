@@ -28,7 +28,7 @@ const Circle = () => {
                 transform="translate(6.31 5.95)"
                 style={{
                   fill: "none",
-                  stroke: "#f93",
+                  stroke: "#f08a20",
                   strokeMiterlimit: 10,
                   strokeWidth: "30px",
                 }}

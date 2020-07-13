@@ -2,7 +2,7 @@ import React from "react"
 import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 import styled from "styled-components"
-import { useMediaQuery } from "react-responsive"
+import Media from "./Media"
 
 const Links = ({ textAlign = "right", ...props }) => (
   <Box style={{ textAlign: textAlign }} {...props}>
@@ -12,8 +12,6 @@ const Links = ({ textAlign = "right", ...props }) => (
 )
 
 const Footer = () => {
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   return (
     <StyledFooter
       style={{
@@ -28,7 +26,10 @@ const Footer = () => {
         justifyContent={"space-between"}
         flexDirection={["column", "row"]}
       >
-        {isMobile && <Links textAlign={"left"} width={1} />}
+        <Media at={"sm"}>
+          <Links textAlign={"left"} width={1} />
+        </Media>
+
         <Box>
           <h5 mb={3}>
             © {new Date().getFullYear()}, FHI 360
@@ -39,7 +40,10 @@ const Footer = () => {
             FHI 360 is the registered trade name of Family Health International.
           </h5>
         </Box>
-        {!isMobile && <Links />}
+
+        <Media greaterThanOrEqual={"md"}>
+          <Links />
+        </Media>
       </Flex>
     </StyledFooter>
   )

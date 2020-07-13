@@ -18,14 +18,13 @@ import FlexSectionContainer from "../components/FlexSectionContainer"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import { Circled, Underlined } from "../components/WordNote"
-import { useMediaQuery } from "react-responsive"
-import theme from "./../styles/index"
+// import { useMediaQuery } from "react-responsive"
+// import theme from "./../styles/index"
+import Media from "../components/Media"
 
 const Evidence = () => {
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   return (
-    <Container className={isMobile && "isMobile"}>
+    <Container>
       <SectionDividerDark
         alt="we lead with science"
         img={EvidenceCard}
@@ -73,8 +72,7 @@ const Evidence = () => {
             <Underlined delay={0.75} transform={"translateY(-10%)"} orange>
               reliable
             </Underlined>{" "}
-            data and <br style={{ display: isMobile && "none" }} />
-            develop{" "}
+            data and develop{" "}
             <Circled delay={1} transform={"translateY(-25%) scale(1.5)"}>
               new
             </Circled>{" "}
@@ -83,7 +81,7 @@ const Evidence = () => {
         </FlexSectionContainer>
         <img src={strip} className="strip"></img>
       </Flex>
-      {isMobile ? (
+      <Media at={"sm"}>
         <Flex
           flexDirection="column"
           justifyContent="center"
@@ -95,8 +93,8 @@ const Evidence = () => {
           <Box maxWidth={480}>
             <H2
               className={"section-title"}
-              fontSize={isMobile && "34px !important"}
-              lineHeight={isMobile && "38px !important"}
+              fontSize={"34px !important"}
+              lineHeight={"38px !important"}
               textAlign="center"
             >
               <Underlined sx={{ top: "100%" }}>The result:</Underlined>
@@ -109,13 +107,15 @@ const Evidence = () => {
             </H2>
           </Box>
         </Flex>
-      ) : (
+      </Media>
+      <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage
           image={image1}
-          flip={true}
+          flip
           imageCredits={"mom & baby (current layout)"}
           pattern={vert}
-          hideImageOnMobile={true}
+          hideImageOnMobile
+          id={"evidence-the-result-desktop"}
         >
           <Lead>We lead with science</Lead>
           <Box maxWidth={480}>
@@ -138,7 +138,7 @@ const Evidence = () => {
             </H3>
           </Box>
         </SplitSectionCroppedImage>
-      )}
+      </Media>
     </Container>
   )
 }

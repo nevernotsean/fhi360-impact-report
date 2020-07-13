@@ -3,9 +3,9 @@ import { Box, Flex } from "rebass"
 import styled from "styled-components"
 import { H2, H3, Lead } from "../../elements/Type"
 import FlexSectionContainer from "../FlexSectionContainer"
-import StatBlock from "./StatBlock"
-import { useMediaQuery } from "react-responsive"
+// import { useMediaQuery } from "react-responsive"
 import theme from "./../../styles/index"
+import Media from "../Media"
 
 const Stats = ({ link, project, funder, ...props }) => (
   <>
@@ -39,8 +39,6 @@ const Section = ({
   body,
   ...props
 }) => {
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   return (
     <Container {...props}>
       <FlexSectionContainer minHeight={"none"}>
@@ -57,9 +55,9 @@ const Section = ({
                 {headline}
               </H2>
 
-              {!isMobile && (
+              <Media greaterThanOrEqual={"md"}>
                 <Stats link={link} project={project} funder={funder}></Stats>
-              )}
+              </Media>
             </Flex>
           </Box>
           <Flex
@@ -70,11 +68,11 @@ const Section = ({
             ml={[0, "auto"]}
           >
             <p className={"body"} dangerouslySetInnerHTML={{ __html: body }} />
-            {isMobile && (
+            <Media at={"sm"}>
               <Box my={50}>
                 <Stats link={link} project={project} funder={funder}></Stats>
               </Box>
-            )}
+            </Media>
           </Flex>
         </Flex>
         {children}

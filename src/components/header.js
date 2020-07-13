@@ -9,7 +9,7 @@ import styled from "styled-components"
 import theme from "../styles/index"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import ShareButton from "../assets/svg/share-icon.svg"
-import { useMediaQuery } from "react-responsive"
+import Media from "./Media"
 
 const Header = ({
   siteTitle,
@@ -23,8 +23,6 @@ const Header = ({
   const [scrolledPast, setScrolledPast] = React.useState()
   const context = React.useContext(LocomotiveContext)
 
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   React.useEffect(() => {
     setLoaded(true)
 
@@ -35,16 +33,12 @@ const Header = ({
     }
   }, [loaded])
 
-  React.useEffect(() => {
-    console.log("isMobile: ", isMobile)
-  }, [isMobile])
-
-  const headerHeight = isMobile ? 50 : scrolledPast ? 75 : 100
+  const headerHeight = scrolledPast ? 75 : 100
 
   return (
     <Container style={{ ...headerStyle }} scrolledPast={scrolledPast}>
       <Flex
-        height={headerHeight}
+        height={[50, headerHeight]}
         p={["0 20px", "0 60px 0 20px"]}
         alignItems={"center"}
         justifyContent={"space-between"}
@@ -77,19 +71,15 @@ const Header = ({
               <Logo className="fill-detect"></Logo>
             </Box>
           </Link>
-          <Text
-            as={"span"}
-            className="color-detect header-title"
-            style={{
-              marginBottom: !isMobile && "-6px",
-              fontWeight: 700,
-              letterSpacing: "1px",
-              fontSize: isMobile && 10,
-              display: isMobile && "none",
-            }}
-          >
-            The science of improving lives
-          </Text>
+          <Media greaterThanOrEqual="md">
+            <Text
+              as={"span"}
+              className="color-detect header-title"
+              mb={[0, "-6px"]}
+            >
+              The science of improving lives
+            </Text>
+          </Media>
         </h1>
         <Flex>
           <Box

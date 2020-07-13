@@ -3,8 +3,7 @@ import { Image } from "rebass"
 import welcome from "../images/welcome-fpo.gif"
 import { Box } from "rebass/styled-components"
 import styled, { createGlobalStyle } from "styled-components"
-import { useMediaQuery } from "react-responsive"
-import theme from "./../styles/index"
+import Media from "./Media"
 
 const Intro = props => {
   const [loaded, setLoaded] = React.useState(false)
@@ -13,18 +12,17 @@ const Intro = props => {
     setLoaded(true)
   }, [])
 
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
-
   return (
     <>
-      <GlobalStyle loaded={!isMobile || loaded}></GlobalStyle>
-      {!isMobile && (
+      <GlobalStyle loaded={loaded}></GlobalStyle>
+
+      <Media greaterThanOrEqual={"md"}>
         <Container loaded={loaded}>
           <Box id={"loading-screen"}>
             <Image src={welcome}></Image>
           </Box>
         </Container>
-      )}
+      </Media>
     </>
   )
 }
@@ -33,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
   #sections  {
     opacity: 0;
     ${({ loaded }) => loaded && `opacity: 1;`}
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    #sections { opacity: 1; }
   }
 `
 

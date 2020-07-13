@@ -4,7 +4,6 @@ import { Box } from "rebass/styled-components"
 import HandDrawnSVG from "../../components/HandDrawnSVG"
 
 // SVG
-import Streak from "../../assets/svg/streak2.svg"
 import { Lead, H2, H3 } from "../../elements/Type"
 import AndSection from "./AndSection"
 import { Underlined } from "./../../components/WordNote"

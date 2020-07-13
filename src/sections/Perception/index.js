@@ -21,8 +21,9 @@ import AndSection2 from "./AndSection2"
 import AndSection3 from "./AndSection3"
 import { SplitSectionCroppedImage } from "../../components/SplitSection"
 import { Underlined } from "./../../components/WordNote"
-import theme from "../../styles/index"
-import { useMediaQuery } from "react-responsive"
+// import theme from "../../styles/index"
+import Media from "../../components/Media"
+// import { useMediaQuery } from "react-responsive"
 
 const data = [
   {
@@ -56,7 +57,6 @@ const Perception = props => {
     transition: `transform 600ms ease ${i * 300 + 500}ms`,
     y: listInView ? "0" : "101%",
   }))
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Container>
@@ -115,7 +115,7 @@ const Perception = props => {
       <AndSection1 />
       <AndSection2 />
       <AndSection3 />
-      {isMobile ? (
+      <Media at={"sm"}>
         <Flex
           flexDirection="column"
           justifyContent="center"
@@ -127,8 +127,8 @@ const Perception = props => {
           <Box maxWidth={480} px={[20, 0]}>
             <H2
               className={"section-title"}
-              fontSize={isMobile && "34px !important"}
-              lineHeight={isMobile && "38px !important"}
+              fontSize={"34px !important"}
+              lineHeight={"38px !important"}
               textAlign="center"
             >
               We are constantly <br />
@@ -151,7 +151,8 @@ const Perception = props => {
             </H2>
           </Box>
         </Flex>
-      ) : (
+      </Media>
+      <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage
           flip
           image={image1}
@@ -174,7 +175,7 @@ const Perception = props => {
             </span>
           </Box>
         </SplitSectionCroppedImage>
-      )}
+      </Media>
     </Container>
   )
 }

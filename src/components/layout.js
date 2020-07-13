@@ -18,11 +18,9 @@ import Footer from "./Footer"
 
 import { Helmet } from "react-helmet"
 import SideNav from "./SideNav"
-import LightModeTrigger from "./LightModeTrigger"
-import theme from "../styles/index"
-import { Box } from "rebass/styled-components"
 import Intro from "./Intro"
-import { useMediaQuery } from "react-responsive"
+import styled from "styled-components"
+import { mediaStyles } from "./Media"
 
 const Layout = ({
   children,
@@ -44,12 +42,12 @@ const Layout = ({
   `)
 
   const [sideNavOpen, setSideNavOpen] = React.useState(false)
-  const isMobile = useMediaQuery(...theme.isMobileQuery)
 
   return (
     <Providers>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>{mediaStyles}</style>
       </Helmet>
       <GlobalStyles bg={bg} />
       <SideNav
@@ -65,10 +63,10 @@ const Layout = ({
         setSideNavOpen={setSideNavOpen}
       />
       {showIntro && <Intro></Intro>}
-      <main id={"main-content"} style={{ paddingTop: isMobile ? 50 : 100 }}>
+      <StyledMain id={"main-content"}>
         {children}
         <Footer></Footer>
-      </main>
+      </StyledMain>
     </Providers>
   )
 }
@@ -76,5 +74,13 @@ const Layout = ({
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+const StyledMain = styled.main`
+  padding-top: 100px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    padding-top: 50px;
+  }
+`
 
 export default Layout
