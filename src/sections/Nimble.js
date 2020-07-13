@@ -41,7 +41,7 @@ const data = [
   {
     title: "FHI<br/><span class='bolder'>Konung</span>",
     body:
-      "Lorem ipsum fpo summary copy only no link fpo lorem ipsum summary copy only no lnk fpo.",
+      "Global governance solutions for effective and sustainable human development",
   },
   {
     title: "FHI<br/><span class='bolder'>Partners</span>",
@@ -91,10 +91,10 @@ const Nimble = () => {
               style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
             />
             <H3 className="section-subtitle">
-              We are eager, ready & able to jump in, pivot and act.
+              We are ready to jump in, pivot and act.
               <br />
               <br />
-              Our four subsidiaries have unique areas of focus:
+              Our five subsidiaries have unique areas of focus:
             </H3>
             <Box
               mt={50}
@@ -148,7 +148,7 @@ const Nimble = () => {
           <br />
           can move
           <br />
-          <span className={"serif"}>quickly and seamlessly.</span>
+          <span className={"serif"}>quickly and seamlessly</span>
         </H2>
         <div
           className="divider"

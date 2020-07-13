@@ -23,7 +23,7 @@ const LiveFirst = () => (
       With our teams based in
       <br />
       <span className="serif">
-        the countries or communities where they work...
+        the countries or communities where they work
       </span>
     </H2>
     <div
@@ -35,8 +35,8 @@ const LiveFirst = () => (
     />
     <Box maxWidth={480}>
       <p className={"section-body"}>
-        ...we collaborate hand-in-hand with our partners and share our knowledge
-        so we can learn together and achieve far more than we ever could alone.
+        we collaborate hand-in-hand with our partners and share our knowledge so
+        we can learn together and achieve far more than we ever could alone.
       </p>
     </Box>
   </>
@@ -69,7 +69,7 @@ const LiveWork = () => (
                   partner with nurses and mothers to solve nutrition problems,
                   with young adults and public officials to ensure that public
                   policies meet youth needs, and with women to develop new
-                  contraception methods.
+                  contraception methods, and so many others.
                 </p>
               </Box>
             </>
@@ -79,7 +79,8 @@ const LiveWork = () => (
               Our development professionals, scientists and researchers partner
               with nurses and mothers to solve nutrition problems, with young
               adults and public officials to ensure that public policies meet
-              youth needs, and with women to develop new contraception methods.
+              youth needs, and with women to develop new contraception methods,
+              and so many others.
             </p>
           ),
         },
@@ -142,9 +143,8 @@ const LiveWork = () => (
             />
             <Box maxWidth={480}>
               <p className={"section-body"}>
-                Hand-in-hand, we work with our partners and share our knowledge,
-                so we can learn together to achieve far more than we ever could
-                alone.
+                We work with our partners and share our knowledge so we can
+                learn together to achieve far more than we ever could alone.
               </p>
             </Box>
           </Box>

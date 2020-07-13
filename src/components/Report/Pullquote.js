@@ -8,7 +8,7 @@ import HandDrawnSVG from "./../HandDrawnSVG"
 const ReportPullquote = ({ title, headline, ...props }) => {
   return (
     <Container {...props} width={[1, 2 / 3]}>
-      <Lead dangerouslySetInnerHTML={{ __html: title }} mb={50}></Lead>
+      <Lead dangerouslySetInnerHTML={{ __html: title }} mb={30}></Lead>
       <H2
         dangerouslySetInnerHTML={{ __html: headline }}
         fontSize={[24, 48]}

@@ -144,7 +144,7 @@ const Perception = props => {
               <br />
               <br />
               <span className="serif">
-                New partnerships, new funding relationships and customized
+                new partnerships, new funding relationships and customized
                 solutions that we apply to solving some of the world’s most
                 intractable problems.
               </span>

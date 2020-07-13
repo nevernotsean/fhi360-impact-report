@@ -19,7 +19,8 @@ const Financial = () => (
     <Nav></Nav>
     <Masthead title={"(unaudited)"} headline={"2019<br/>Financial Summary"}>
       <Box mb={50}>
-        <p>Twelve months ending September 30 2019</p>
+        <p>Twelve months ending September 30, 2019.</p>
+        <p>Unaudited</p>
       </Box>
       <Flex mx={[0, -20]} flexWrap={"wrap"}>
         <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
@@ -32,7 +33,7 @@ const Financial = () => (
             </thead>
             <tbody>
               <tr>
-                <td>Us Government</td>
+                <td>US Government</td>
                 <td>$642,000,000</td>
               </tr>
               <tr>
@@ -40,12 +41,12 @@ const Financial = () => (
                 <td>$66,000,000</td>
               </tr>
               <tr>
-                <td>Multilateral Agencies</td>
-                <td>$28,000,000</td>
-              </tr>
-              <tr>
                 <td>Corporations</td>
                 <td>$39,000,000</td>
+              </tr>
+              <tr>
+                <td>Multilateral Agencies</td>
+                <td>$28,000,000</td>
               </tr>
               <tr>
                 <td>Other</td>
@@ -77,7 +78,7 @@ const Financial = () => (
                 <td>$667,000,000</td>
               </tr>
               <tr>
-                <td>General & Administrative</td>
+                <td>General and Administrative</td>
                 <td>$102,000,000</td>
               </tr>
               <tr className="no-stroke">

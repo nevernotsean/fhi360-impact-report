@@ -133,7 +133,7 @@ const Evidence = () => {
           />
           <Box maxWidth={480}>
             <H3 className={"section-body"}>
-              And the co-creation of interventions most likely to yield the
+              and the co-creation of interventions most likely to yield the
               greatest impact.
             </H3>
           </Box>

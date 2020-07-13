@@ -28,13 +28,13 @@ const BraveFirst = () => (
       <br />
       <span className={"serif"}>
         keeps us ahead of the curve in recognizing and responding to critical
-        global issues
+        global issues.
       </span>
     </H2>
     {/* <H3 className={"section-subtitle"}>
       We are afraid not to try.
     </H3> */}
-    <div
+    {/* <div
       className="divider"
       style={{
         borderTop: "1px solid black",
@@ -45,7 +45,7 @@ const BraveFirst = () => (
       <p className={"section-body"}>
         in recognizing and responding to critical and global issues.
       </p>
-    </Box>
+    </Box> */}
   </>
 )
 
@@ -71,7 +71,7 @@ const Brave = () => {
                   <span className={"section-body"}>
                     We invested our own capital and put our trust in pilot
                     projects to prove, when few thought it possible, that
-                    lifesaving anti-retrovirals{" "}
+                    lifesaving antiretrovirals{" "}
                     <Underlined orange={true}>could be</Underlined> delivered in
                     low-resource settings.
                   </span>
@@ -82,7 +82,7 @@ const Brave = () => {
               <span className={"section-body"}>
                 We invested our own capital and put our trust in pilot projects
                 to prove, when few thought it possible, that lifesaving
-                anti-retrovirals <Underlined orange={true}>could be</Underlined>{" "}
+                antiretrovirals <Underlined orange={true}>could be</Underlined>{" "}
                 delivered in low-resource settings.
               </span>
             ),

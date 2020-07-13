@@ -30,7 +30,7 @@ const WordSections = () => {
         imageCredits="Kiana Hayeri/The Verbatim Agency for FHI 360"
         pattern={pattern1}
       >
-        <Lead>Lead</Lead>
+        {/* <Lead>Lead</Lead> */}
         <H2 className={"section-title"}>
           We are
           <br />
@@ -49,7 +49,7 @@ const WordSections = () => {
         imageCredits={""}
         pattern={pattern2}
       >
-        <Lead>Inspire</Lead>
+        {/* <Lead>Inspire</Lead> */}
         <H2 className={"section-title"}>
           We are
           <br />
@@ -62,7 +62,7 @@ const WordSections = () => {
         </Box>
       </OutroWord>
       <OutroWord pattern={pattern3}>
-        <Lead>Innovate</Lead>
+        {/* <Lead>Innovate</Lead> */}
         <H2 className={"section-title"}>
           We are
           <br />
@@ -79,7 +79,7 @@ const WordSections = () => {
         textAlign={"center"}
         justifyContent="center"
       >
-        <Lead>LOREM IPSUM</Lead>
+        {/* <Lead>LOREM IPSUM</Lead> */}
         <H2 className="section-title">
           Our world
           <br />

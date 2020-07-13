@@ -14,7 +14,7 @@ const LeftSide = () => (
     <H2 className="section-title">
       FHI 360 has been a longtime partner
       <br />
-      <span className="serif">of U.S. federal and local governments</span>
+      <span className="serif">of U.S. federal and local governments.</span>
     </H2>
   </>
 )

@@ -1,5 +1,6 @@
 import React from "react"
 import YouAreHere from "../images/you-are-here.png"
+import YouAreHereSVG from "../assets/svg/you-are-here.svg"
 import Sig from "../images/sig.png"
 import { Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
@@ -13,6 +14,8 @@ import PullQuote from "../components/PullQuote"
 import { Lead, H2, H1, H3 } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
 import { FlexWrap } from "../elements/Flex"
+import { Underlined } from "./../components/WordNote"
+import HandDrawnSVG from "./../components/HandDrawnSVG"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -25,11 +28,22 @@ const introLetter = [
 
   "Today, we find ourselves called to deliver on our mission to combine science with the art of improving lives like never before. The scale of the challenge is vast, and the stakes couldn’t be higher. This is what FHI 360 is built for. Take a look at what we’re doing.",
 ]
-const pullquoteContent = {
-  title: "QUOTE",
-  body:
-    "Now as never before, we will be challenged to be creative and work differently ... the vast scope and urgency of this crisis demand nothing less.",
-}
+
+const HeroPullquote = props => (
+  <PullQuote px={[1, 5]} mb={50} {...props}>
+    Now as never before, we will be challenged to be creative and work{" "}
+    <Underlined
+      orange
+      duration={0.25}
+      overrideLength={[238]}
+      underlineLength={200}
+      className="pullquote-streak"
+    >
+      differently
+    </Underlined>{" "}
+    ... the vast scope and urgency of this crisis demand nothing less.
+  </PullQuote>
+)
 
 const Hero = () => {
   return (
@@ -56,12 +70,13 @@ const Hero = () => {
               very glad
               <span className="hidden">you are here</span>
             </H1>
-            <Image
-              src={YouAreHere}
+            <HandDrawnSVG
+              svg={YouAreHereSVG}
               alt={"You are here"}
               className="you-are-here"
-              // duration={2}
-            ></Image>
+              delay={3}
+              duration={3}
+            ></HandDrawnSVG>
             <div className="line">
               <H2 fontSize={14}>
                 Patrick Fine
@@ -82,9 +97,7 @@ const Hero = () => {
             revealSpeed={0}
           ></InViewImage>
           <img src={strip} className="strip"></img>
-          <PullQuote title={pullquoteContent.title} px={[1, 5]} mb={50}>
-            {pullquoteContent.body}
-          </PullQuote>
+          <HeroPullquote />
         </Box>
         <Box width={[1, 1 / 2]}>
           <Box className="lockup lockup-desktop" display={["none", "block"]}>
@@ -95,12 +108,14 @@ const Hero = () => {
               very glad
               <span className="hidden">you are here</span>
             </H1>
-            <Image
-              src={YouAreHere}
+            <HandDrawnSVG
+              svg={YouAreHereSVG}
               alt={"You are here"}
               className="you-are-here"
-              // duration={2}
-            ></Image>
+              delay={3}
+              duration={3}
+            ></HandDrawnSVG>
+
             <div className="line">
               <H3 fontWeight={700} fontSize={[14]} lineHeight={"20px"} mt={10}>
                 Patrick Fine
@@ -116,14 +131,7 @@ const Hero = () => {
                   <p>{body}</p>
                   {i == 2 && (
                     <Box display={["block", "none"]}>
-                      <PullQuote
-                        title={pullquoteContent.title}
-                        px={[1, 5]}
-                        fontSize={"28px"}
-                        mb={50}
-                      >
-                        {pullquoteContent.body}
-                      </PullQuote>
+                      <HeroPullquote px={[1, 5]} fontSize={"28px"} mb={50} />
                     </Box>
                   )}
                 </React.Fragment>

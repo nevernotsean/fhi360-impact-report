@@ -16,7 +16,7 @@ const Funders = () => (
     <SEO title="Home" />
     <Nav></Nav>
     <Container>
-      <Masthead title={"Thank you"} headline={"2019<br/>Funders"}>
+      <Masthead title={"Thank you"} headline={"2019<br/>Operating Funders"}>
         <Box width={[1, 480]}>
           <p>
             FHI 360’s work would not be possible without the generous support of
@@ -125,40 +125,6 @@ const Funders = () => (
         <P>National Cancer Centre Singapore</P>
         <P>Secretary of State for Health and Social Care (U.K.)</P>
       </Section>
-      <Box width={1} minHeight={["80vh", "100vh"]}>
-        <Flex
-          width={1}
-          maxWidth={1200}
-          mx={"auto"}
-          minHeight={["80vh", "100vh"]}
-          flexDirection={"column"}
-          justifyContent="center"
-          alignItems="center"
-          sx={{ textAlign: "center" }}
-        >
-          <Lead>
-            Operating funders
-            <br />
-            for calendar year 2019
-          </Lead>
-          <H2 className={"section-title"}>
-            We express our
-            <br />
-            gratitude to the individuals
-            <br />
-            <span className="serif">who support FHI 360 programs.</span>
-          </H2>
-          <p>
-            These gifts enable us to expand our reach while deepening our search
-            <br />
-            for solutions to today’s most challenging issues in human
-            development.
-          </p>
-          <Box width={1 / 2} maxWidth={300} mx={"auto"}>
-            <HandDrawnSVG svg={Streak} duration={0.3}></HandDrawnSVG>
-          </Box>
-        </Flex>
-      </Box>
     </Container>
   </Layout>
 )
@@ -190,14 +156,14 @@ const Section = ({ title, children, bg, ...props }) => (
           {title}
         </H2>
       </Box>
-      <Flex sx={{ marginX: [0, -20] }} flexDirection={["column", "row"]}>
-        {children}
-      </Flex>
+      <Columns>{children}</Columns>
     </Flex>
   </Box>
 )
 
-const Columns = props => <Box {...props} sx={{ columnCount: [1, 2] }}></Box>
+const Columns = props => (
+  <Box {...props} sx={{ columnCount: [1, 2], marginX: [0, -20] }}></Box>
+)
 
 const P = styled(Text)`
   font-size: 16px;

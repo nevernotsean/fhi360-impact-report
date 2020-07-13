@@ -14,7 +14,7 @@ const Masthead = ({
   return (
     <MastheadContainer>
       <FlexSectionContainer minHeight={"50vh"} {...props}>
-        <Lead mb={3}>{title}</Lead>
+        {/* <Lead mb={3}>{title}</Lead> */}
         <div className="hr"></div>
         <H1 dangerouslySetInnerHTML={{ __html: headline }}></H1>
         {children && <Box my={30}>{children}</Box>}

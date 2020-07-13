@@ -51,8 +51,7 @@ const RightSide = () => (
         </li>
       </ul>
       <p className="section-body">
-        All have a shared common goal:
-        <br />
+        All have a shared common goal — <br />
         Improving lives in lasting ways.
       </p>
     </Box>
