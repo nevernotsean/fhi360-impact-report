@@ -32,7 +32,7 @@ const WordNote = ({
           width: w * 1.15 || width || "80px",
           position: "absolute",
           transform: transform,
-          zIndex: 1,
+          zIndex: -1,
           ...sx,
         }}
         style={style}

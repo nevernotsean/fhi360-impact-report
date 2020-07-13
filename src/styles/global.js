@@ -102,8 +102,8 @@ const GlobalStyles = createGlobalStyle`
       line-height: 28px; 
     }
     .section-subtitle, .section-body { 
-      font-size: 12px; 
-      line-height: 14px; 
+      font-size: 14px; 
+      line-height: 18px; 
     }
   }
 

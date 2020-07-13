@@ -136,8 +136,7 @@ const Perception = props => {
             >
               We are constantly
               <br />
-              developing:
-              <br />
+              developing
               <br />
               <br />
               <span className="serif">
