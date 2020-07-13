@@ -1,6 +1,4 @@
 import React from "react"
-import YouAreHere from "../images/you-are-here.png"
-import YouAreHereSVG from "../assets/svg/you-are-here.svg"
 import Sig from "../images/sig.png"
 import { Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
@@ -16,6 +14,7 @@ import InViewImage from "../components/InViewImage"
 import { FlexWrap } from "../elements/Flex"
 import { Underlined } from "./../components/WordNote"
 import HandDrawnSVG from "./../components/HandDrawnSVG"
+import YouAreHere from "./../components/svg/YouAreHere"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -71,7 +70,7 @@ const Hero = () => {
               <span className="hidden">you are here</span>
             </H1>
             <HandDrawnSVG
-              svg={YouAreHereSVG}
+              svg={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
               delay={3}
@@ -109,7 +108,7 @@ const Hero = () => {
               <span className="hidden">you are here</span>
             </H1>
             <HandDrawnSVG
-              svg={YouAreHereSVG}
+              svg={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
               delay={3}

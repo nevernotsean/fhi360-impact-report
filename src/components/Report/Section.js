@@ -44,7 +44,7 @@ const Section = ({
       <FlexSectionContainer minHeight={"none"}>
         <TitleRule title={title}></TitleRule>
         <Flex flexWrap={"wrap"}>
-          <Box width={[1, 1 / 2, 7 / 16]} flex={"1 0 auto"}>
+          <Box width={[1, 1 / 2, 7 / 16]} flex={"1 0 auto"} pr={[0, 50]}>
             <Flex flexDirection={"column"}>
               <H2
                 className="headline"
