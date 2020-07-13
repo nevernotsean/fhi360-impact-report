@@ -2,14 +2,11 @@ import React, { useMemo } from "react"
 import { Flex, Box, Image } from "rebass/styled-components"
 import stripeVert from "../images/pattern-vert.png"
 import InViewImage from "../components/InViewImage"
-import styled from "styled-components"
 import { FlexWrap } from "../elements/Flex"
 import shortid from "shortid"
-import theme from "../styles/index"
 import { useInView } from "react-intersection-observer"
 import PhotoCredits from "./PhotoCredits"
 import Media from "./Media"
-// import { useMediaQuery } from "react-responsive"
 
 const SplitSectionImage = ({
   image,
@@ -299,176 +296,176 @@ export const SplitSectionCroppedImage = ({
   )
 }
 
-export const SplitSectionLong = ({
-  children,
-  contentArray = [
-    { image: null, imageCredits: null, content: null, mobileContent: null },
-  ],
-  pattern = stripeVert,
-  ...props
-}) => {
-  const id = useMemo(() => shortid())
-  const [activeSection, setActive] = React.useState(0)
-  const total = contentArray.length
+// export const SplitSectionLong = ({
+//   children,
+//   contentArray = [
+//     { image: null, imageCredits: null, content: null, mobileContent: null },
+//   ],
+//   pattern = stripeVert,
+//   ...props
+// }) => {
+//   const id = useMemo(() => shortid())
+//   const [activeSection, setActive] = React.useState(0)
+//   const total = contentArray.length
 
-  return (
-    <>
-      <Media at={"sm"}>
-        <SplitSection
-          {...props}
-          image={contentArray[0].image}
-          imageCredits={contentArray[0].imageCredits}
-        >
-          {contentArray.map(
-            ({ mobileContent: Content, content, ...contentProps }, i) => (
-              <Content
-                key={i}
-                hideImageOnMobile={i !== 0}
-                {...contentProps}
-              ></Content>
-            )
-          )}
-        </SplitSection>
-      </Media>
-      <Media greaterThanOrEqual={"md"}>
-        <Box
-          height={`${total + 1}00vh`}
-          id={`fixedScroll-${id}`}
-          sx={{ position: "relative" }}
-        >
-          <Box>
-            {contentArray.map(({ content: Content, ...contentProps }, i) => (
-              <SplitSectionLongInner
-                key={i}
-                className={"long-section-inner"}
-                target={`#fixedScroll-${id}`}
-                index={i}
-                total={total}
-                setActive={setActive}
-                activeIndex={activeSection}
-                {...props}
-                {...contentProps}
-              >
-                <Content></Content>
-              </SplitSectionLongInner>
-            ))}
-          </Box>
-        </Box>
-      </Media>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <Media at={"sm"}>
+//         <SplitSection
+//           {...props}
+//           image={contentArray[0].image}
+//           imageCredits={contentArray[0].imageCredits}
+//         >
+//           {contentArray.map(
+//             ({ mobileContent: Content, content, ...contentProps }, i) => (
+//               <Content
+//                 key={i}
+//                 hideImageOnMobile={i !== 0}
+//                 {...contentProps}
+//               ></Content>
+//             )
+//           )}
+//         </SplitSection>
+//       </Media>
+//       <Media greaterThanOrEqual={"md"}>
+//         <Box
+//           height={`${total + 1}00vh`}
+//           id={`fixedScroll-${id}`}
+//           sx={{ position: "relative" }}
+//         >
+//           <Box>
+//             {contentArray.map(({ content: Content, ...contentProps }, i) => (
+//               <SplitSectionLongInner
+//                 key={i}
+//                 className={"long-section-inner"}
+//                 target={`#fixedScroll-${id}`}
+//                 index={i}
+//                 total={total}
+//                 setActive={setActive}
+//                 activeIndex={activeSection}
+//                 {...props}
+//                 {...contentProps}
+//               >
+//                 <Content></Content>
+//               </SplitSectionLongInner>
+//             ))}
+//           </Box>
+//         </Box>
+//       </Media>
+//     </>
+//   )
+// }
 
-const SplitSectionLongInner = ({
-  children,
-  flip,
-  imageCredits,
-  hideImageOnMobile,
-  minHeight,
-  image,
-  target,
-  index,
-  total,
-  height,
-  setActive,
-  ...props
-}) => {
-  const [ref, isInview] = useInView({
-    rootMargin: "0px 0px -100% 0px",
-    threshold: 0,
-  })
+// const SplitSectionLongInner = ({
+//   children,
+//   flip,
+//   imageCredits,
+//   hideImageOnMobile,
+//   minHeight,
+//   image,
+//   target,
+//   index,
+//   total,
+//   height,
+//   setActive,
+//   ...props
+// }) => {
+//   const [ref, isInview] = useInView({
+//     rootMargin: "0px 0px -100% 0px",
+//     threshold: 0,
+//   })
 
-  React.useEffect(() => {
-    if (isInview) {
-      setActive(index)
-    }
-  }, [isInview])
+//   React.useEffect(() => {
+//     if (isInview) {
+//       setActive(index)
+//     }
+//   }, [isInview])
 
-  return (
-    <>
-      <Box
-        className={"inview-trigger"}
-        height={`${(total - index + 1) * 100}vh`}
-        width={1}
-        ref={ref}
-        sx={{
-          position: "absolute",
-          top: 0,
-          transform: `translateY(${index * 100}vh)`,
-        }}
-      ></Box>
-      <FlexWrap
-        data-scroll
-        data-scroll-sticky
-        data-scroll-target={target}
-        minHeight={["unset", "100vh"]}
-        height={height}
-        width={1}
-        {...props}
-        sx={{
-          background: "white",
-          position: "absolute",
-          zIndex: index,
-          top: 0,
-          left: 0,
-          opacity: index == 0 || isInview ? 1 : 0,
-          transition: "opacity .3s linear",
-        }}
-      >
-        {!flip && (
-          <Image
-            src={image}
-            flip={flip}
-            width={[1, 1 / 2]}
-            sx={{
-              height: "100vh",
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-            flip={flip}
-          ></Image>
-        )}
-        <Box
-          width={[1, 1 / 2]}
-          style={{ position: "relative", marginLeft: "auto" }}
-        >
-          <Flex
-            flexDirection={"column"}
-            justifyContent={"center"}
-            height={"100vh"}
-            pr={[15, 30]}
-            pl={[15, 60]}
-            maxWidth={600}
-            mx={"auto"}
-          >
-            {children}
-          </Flex>
-          <PhotoCredits
-            credits={imageCredits}
-            sx={{
-              position: "absolute",
-              zIndex: 2,
-              bottom: 0,
-              left: 0,
-              pointerEvents: isInview ? "auto" : "none",
-            }}
-          ></PhotoCredits>
-        </Box>
+//   return (
+//     <>
+//       <Box
+//         className={"inview-trigger"}
+//         height={`${(total - index + 1) * 100}vh`}
+//         width={1}
+//         ref={ref}
+//         sx={{
+//           position: "absolute",
+//           top: 0,
+//           transform: `translateY(${index * 100}vh)`,
+//         }}
+//       ></Box>
+//       <FlexWrap
+//         data-scroll
+//         data-scroll-sticky
+//         data-scroll-target={target}
+//         minHeight={["unset", "100vh"]}
+//         height={height}
+//         width={1}
+//         {...props}
+//         sx={{
+//           background: "white",
+//           position: "absolute",
+//           zIndex: index,
+//           top: 0,
+//           left: 0,
+//           opacity: index == 0 || isInview ? 1 : 0,
+//           transition: "opacity .3s linear",
+//         }}
+//       >
+//         {!flip && (
+//           <Image
+//             src={image}
+//             flip={flip}
+//             width={[1, 1 / 2]}
+//             sx={{
+//               height: "100vh",
+//               objectFit: "cover",
+//               objectPosition: "center center",
+//             }}
+//             flip={flip}
+//           ></Image>
+//         )}
+//         <Box
+//           width={[1, 1 / 2]}
+//           style={{ position: "relative", marginLeft: "auto" }}
+//         >
+//           <Flex
+//             flexDirection={"column"}
+//             justifyContent={"center"}
+//             height={"100vh"}
+//             pr={[15, 30]}
+//             pl={[15, 60]}
+//             maxWidth={600}
+//             mx={"auto"}
+//           >
+//             {children}
+//           </Flex>
+//           <PhotoCredits
+//             credits={imageCredits}
+//             sx={{
+//               position: "absolute",
+//               zIndex: 2,
+//               bottom: 0,
+//               left: 0,
+//               pointerEvents: isInview ? "auto" : "none",
+//             }}
+//           ></PhotoCredits>
+//         </Box>
 
-        {flip && (
-          <Image
-            src={image}
-            flip={flip}
-            width={[1, 1 / 2]}
-            sx={{
-              height: "100vh",
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-            flip={flip}
-          ></Image>
-        )}
-      </FlexWrap>
-    </>
-  )
-}
+//         {flip && (
+//           <Image
+//             src={image}
+//             flip={flip}
+//             width={[1, 1 / 2]}
+//             sx={{
+//               height: "100vh",
+//               objectFit: "cover",
+//               objectPosition: "center center",
+//             }}
+//             flip={flip}
+//           ></Image>
+//         )}
+//       </FlexWrap>
+//     </>
+//   )
+// }

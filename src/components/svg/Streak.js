@@ -2,7 +2,7 @@ import React from "react"
 import shortid from "shortid"
 
 const Streak = ({ orange, ...props }) => {
-  const newId = React.useMemo(() => shortid())
+  const newId = React.useMemo(() => shortid(), [])
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.65 30">
       <defs>

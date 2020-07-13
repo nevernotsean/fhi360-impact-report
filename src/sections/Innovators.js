@@ -7,10 +7,7 @@ import Innovate from "../images/innovators.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import {
-  SplitSectionCroppedImage,
-  SplitSectionLong,
-} from "../components/SplitSection"
+import { SplitSectionCroppedImage } from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 
 import image1 from "../images/Innovators1.png"
@@ -20,6 +17,7 @@ import { Box } from "rebass/styled-components"
 import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import innoVert from "../images/pattern-vert-WeAreInnovators_section1.png"
+import SplitSectionLongContent from "./../components/SplitSectionLongContent"
 
 const InnoFirst = () => (
   <>
@@ -99,7 +97,7 @@ const Innovators = () => {
           </span>
         </Box>
       </SplitSectionCroppedImage>
-      <SplitSectionLong
+      <SplitSectionLongContent
         image={image2}
         flip
         contentArray={[
@@ -135,7 +133,7 @@ const Innovators = () => {
             ),
           },
         ]}
-      ></SplitSectionLong>
+      ></SplitSectionLongContent>
     </Container>
   )
 }

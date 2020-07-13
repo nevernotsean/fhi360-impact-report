@@ -1,15 +1,14 @@
-import React, { useContext } from "react"
-import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
+import React from "react"
 
 import styled from "styled-components"
 import LiveCard from "../images/live.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import { Lead, H2 } from "../elements/Type"
-import { SplitSectionLong } from "../components/SplitSection"
+import SplitSectionLongContent from "../components/SplitSectionLongContent"
 
 import image1 from "../images/we-live-work.jpg"
-import image2 from "../images/we-live-work-2.jpg"
+// import image2 from "../images/we-live-work-2.jpg"
 
 import map from "../images/map.jpg"
 
@@ -48,7 +47,7 @@ const LiveWork = () => (
       img={LiveCard}
       alt="we live where we work"
     ></SectionDividerDark>
-    <SplitSectionLong
+    <SplitSectionLongContent
       flip
       contentArray={[
         {
@@ -106,7 +105,7 @@ const LiveWork = () => (
           ),
         },
       ]}
-    ></SplitSectionLong>
+    ></SplitSectionLongContent>
 
     <Box className={"fullpage"}>
       <Image

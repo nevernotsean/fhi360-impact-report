@@ -8,11 +8,7 @@ import image1 from "../images/fpo-brave-1.png"
 import image2 from "../images/stand-gap.jpg"
 
 import { Lead, H2, H3 } from "../elements/Type"
-import {
-  SplitSectionCroppedImage,
-  SplitSection,
-  SplitSectionLong,
-} from "../components/SplitSection"
+import SplitSectionLongContent from "../components/SplitSectionLongContent"
 
 import { Box } from "rebass/styled-components"
 
@@ -31,21 +27,6 @@ const BraveFirst = () => (
         global issues.
       </span>
     </H2>
-    {/* <H3 className={"section-subtitle"}>
-      We are afraid not to try.
-    </H3> */}
-    {/* <div
-      className="divider"
-      style={{
-        borderTop: "1px solid black",
-        marginBottom: "1.45rem",
-      }}
-    />
-    <Box maxWidth={480}>
-      <p className={"section-body"}>
-        in recognizing and responding to critical and global issues.
-      </p>
-    </Box> */}
   </>
 )
 
@@ -53,7 +34,7 @@ const Brave = () => {
   return (
     <>
       <SectionDividerDark img={BraveCard}></SectionDividerDark>
-      <SplitSectionLong
+      <SplitSectionLongContent
         contentArray={[
           {
             image: image1,
@@ -171,7 +152,7 @@ const Brave = () => {
             ),
           },
         ]}
-      ></SplitSectionLong>
+      ></SplitSectionLongContent>
     </>
   )
 }

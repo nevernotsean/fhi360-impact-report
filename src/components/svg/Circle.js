@@ -2,7 +2,7 @@ import React from "react"
 import shortid from "shortid"
 
 const Circle = () => {
-  const id = React.useMemo(() => shortid())
+  const id = React.useMemo(() => shortid(), [])
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208.41 102.1">
       <defs>

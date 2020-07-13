@@ -111,6 +111,12 @@ const Outro = () => {
     setWp1(isWp1)
   }, [scroll, zoomProps.bottom])
 
+  const [triggered, setTriggered] = useState(false)
+
+  useEffect(() => {
+    setTriggered(opacity < 0.6)
+  }, [opacity])
+
   return (
     <>
       <Container className="grid" wp1={wp1}>
@@ -190,28 +196,58 @@ const Outro = () => {
             </div>
           </div>
         </div>
-        <Flex
+        <StyledEndcard
           id="endcard"
           minHeight={"calc(100vh - 150px)"}
           justifyContent={"center"}
           alignItems={"center"}
+          triggered={triggered}
         >
-          <Box width={1} maxWidth={[300, 600]} sx={{ position: "relative" }}>
+          <Box width={1} maxWidth={[300, 600]} className="relative">
             <HandDrawnSVG
+              id="this-is"
               svg={ThisIsFHI}
               delay2={2}
               duration={2}
               duration2={2}
               useInviewTrigger={false}
-              animated={opacity < 0.6}
+              animated={triggered}
             ></HandDrawnSVG>
-            {/* <FHILogo></FHILogo> */}
+            <FHILogo id="logo"></FHILogo>
           </Box>
-        </Flex>
+        </StyledEndcard>
       </Container>
     </>
   )
 }
+
+const isTriggered = ({ triggered }) => (triggered ? 1 : 0)
+const isTriggeredOneMinus = ({ triggered }) => (triggered ? 0 : 1)
+
+const StyledEndcard = styled(Flex)`
+  .relative {
+    position: relative;
+  }
+  #logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+  }
+
+  #this-is,
+  #logo {
+    transition: opacity 1s linear 5s;
+  }
+
+  #this-is {
+    opacity: ${isTriggeredOneMinus};
+  }
+  #logo {
+    opacity: ${isTriggered};
+  }
+`
 
 const Container = styled.div`
   position: relative;

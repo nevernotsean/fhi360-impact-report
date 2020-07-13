@@ -2,7 +2,7 @@ import React from "react"
 import shortid from "shortid"
 
 const YouAreHere = ({ ...props }) => {
-  const newId = React.useMemo(() => shortid())
+  const newId = React.useMemo(() => shortid(), [])
   return (
     <svg
       id="layer"
