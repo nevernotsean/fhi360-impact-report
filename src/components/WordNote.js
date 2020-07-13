@@ -29,7 +29,7 @@ const WordNote = ({
         sx={{
           top: "50%",
           left: 0,
-          width: w || width || "80px",
+          width: w * 1.15 || width || "80px",
           position: "absolute",
           transform: transform,
           zIndex: 1,

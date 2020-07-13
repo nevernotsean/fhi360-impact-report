@@ -5,16 +5,16 @@ import BraveCard from "../images/brave.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import image1 from "../images/fpo-brave-1.png"
-import image2 from "../images/stand-gap.jpg"
+// import image2 from "../images/stand-gap.jpg"
 
 import { Lead, H2, H3 } from "../elements/Type"
 import SplitSectionLongContent from "../components/SplitSectionLongContent"
 
 import { Box } from "rebass/styled-components"
 
-import { Circled, Underlined } from "../components/WordNote"
+import { Underlined } from "../components/WordNote"
 
-import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"
+// import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"
 
 const BraveFirst = () => (
   <>
@@ -45,7 +45,7 @@ const Brave = () => {
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
-            content: () => (
+            content: ({ animated }) => (
               <>
                 <Lead>We are brave</Lead>
                 <Box maxWidth={480}>
@@ -53,17 +53,31 @@ const Brave = () => {
                     We invested our own capital and put our trust in pilot
                     projects to prove, when few thought it possible, that
                     lifesaving antiretrovirals{" "}
-                    <Underlined orange={true}>could be</Underlined> delivered in
-                    low-resource settings.
+                    <Underlined
+                      orange={true}
+                      useInviewTrigger={false}
+                      animated={animated}
+                    >
+                      could be
+                    </Underlined>{" "}
+                    delivered in low-resource settings.
                   </span>
                 </Box>
               </>
             ),
-            mobileContent: () => (
+            mobileContent: ({ animated }) => (
               <span className={"section-body"}>
                 We invested our own capital and put our trust in pilot projects
                 to prove, when few thought it possible, that lifesaving
-                antiretrovirals <Underlined orange={true}>could be</Underlined>{" "}
+                antiretrovirals{" "}
+                <Underlined
+                  orange={true}
+                  useInviewTrigger={false}
+                  animated={animated}
+                  delay={0}
+                >
+                  could be
+                </Underlined>{" "}
                 delivered in low-resource settings.
               </span>
             ),
@@ -96,25 +110,46 @@ const Brave = () => {
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
-            content: () => (
+            content: ({ animated }) => (
               <>
                 <Lead>We are brave</Lead>
                 <Box maxWidth={480}>
                   <span className={"section-body"}>
                     In the United States, we{" "}
-                    <Underlined orange={true}>partner</Underlined> with Native
-                    American populations on early childcare, education and
-                    tribal language revitalization;{" "}
-                    <Underlined orange={true}>improve</Underlined> employment
-                    outcomes for young adults caught in the criminal justice
-                    system; promote{" "}
-                    <Underlined orange={true}>healthy</Underlined> behaviors;
-                    and work to lessen the stigma of HIV.
+                    <Underlined
+                      orange={true}
+                      useInviewTrigger={false}
+                      animated={animated}
+                      delay={1}
+                    >
+                      partner
+                    </Underlined>{" "}
+                    with Native American populations on early childcare,
+                    education and tribal language revitalization;{" "}
+                    <Underlined
+                      orange={true}
+                      useInviewTrigger={false}
+                      animated={animated}
+                      delay={2}
+                    >
+                      improve
+                    </Underlined>{" "}
+                    employment outcomes for young adults caught in the criminal
+                    justice system; promote{" "}
+                    <Underlined
+                      orange={true}
+                      useInviewTrigger={false}
+                      animated={animated}
+                      delay={3}
+                    >
+                      healthy
+                    </Underlined>{" "}
+                    behaviors; and work to lessen the stigma of HIV.
                   </span>
                 </Box>
               </>
             ),
-            mobileContent: () => (
+            mobileContent: ({ animated }) => (
               <span className={"section-body"}>
                 In the United States, we{" "}
                 <Underlined orange={true}>partner</Underlined> with Native

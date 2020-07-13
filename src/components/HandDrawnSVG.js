@@ -18,6 +18,7 @@ const HandDrawnSVG = ({
   rootMargin = "20% 0px -20% 0px",
   overrideLength = [],
   orange,
+  scrollSpeed = -0.1,
   ...props
 }) => {
   const ref = useRef()
@@ -77,7 +78,11 @@ const HandDrawnSVG = ({
       delay={delay}
       delay2={delay2}
     >
-      <Box data-scroll data-scroll-speed={0.25} className={orange && "orange"}>
+      <Box
+        data-scroll
+        data-scroll-speed={scrollSpeed}
+        className={orange && "orange"}
+      >
         <SvgComponent orange={orange}></SvgComponent>
       </Box>
     </MaskOuter>

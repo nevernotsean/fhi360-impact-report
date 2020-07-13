@@ -29,20 +29,9 @@ const RightSide = () => (
     <span className="section-body">
       educational institutions, faith-based organizations, local communities,
       non-U.S. governments and{" "}
-      <span style={{ position: "relative" }}>
+      <Underlined duration={0.3} delay={0.5} orange>
         more.
-        <Box
-          sx={{
-            left: "50%",
-            width: "100px",
-            position: "absolute",
-            transform: "translate(-50%, -50%) scaleX(0.5)",
-            zIndex: -1,
-          }}
-        >
-          <Underlined duration={0.3} delay={0.5} orange></Underlined>
-        </Box>
-      </span>
+      </Underlined>
     </span>
   </>
 )
