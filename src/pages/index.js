@@ -73,7 +73,7 @@ const data = [
   },
   {
     id: "report",
-    label: "Impact Report",
+    label: "2019 Impact Report",
     url: "/report",
   },
 ]

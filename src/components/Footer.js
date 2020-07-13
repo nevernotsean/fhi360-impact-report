@@ -3,11 +3,14 @@ import { Flex, Box } from "rebass/styled-components"
 import theme from "../styles/index"
 import styled from "styled-components"
 import Media from "./Media"
+import { Link } from "gatsby"
 
 const Links = ({ textAlign = "right", ...props }) => (
   <Box style={{ textAlign: textAlign }} {...props}>
     <h5>LEARN MORE</h5>
-    <h5>SHARE</h5>
+    <Link to={"/photo-credits"}>
+      <h5>Photography Credits</h5>
+    </Link>
   </Box>
 )
 
@@ -56,6 +59,12 @@ const StyledFooter = styled.footer`
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 `
 

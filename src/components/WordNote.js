@@ -17,7 +17,7 @@ const WordNote = ({
   delay = 1,
   orange,
   transform,
-  underlineLength,
+  width,
   ...props
 }) => {
   const [ref, { width: w }] = useDimensions()
@@ -29,7 +29,7 @@ const WordNote = ({
         sx={{
           top: "50%",
           left: 0,
-          width: w || underlineLength || "80px",
+          width: w || width || "80px",
           position: "absolute",
           transform: transform,
           zIndex: 1,

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Image, Box } from "rebass/styled-components"
-import RectangleFrame from "../../assets/svg/rect-frame.svg"
+import RectangleFrame from "../../images/rect-frame.png"
 import HandDrawnSVG from "../HandDrawnSVG"
 
 const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
@@ -10,10 +10,8 @@ const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
       <Box sx={{ position: "relative", height: 0, paddingBottom: "61.4%" }}>
         <Image src={src} alt={alt}></Image>
       </Box>
-      <Box className="frame">
-        <RectangleFrame></RectangleFrame>
-        {/* <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG> */}
-      </Box>
+      <Image src={RectangleFrame} className="frame"></Image>
+      {/* <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG> */}
       <Box mt={30} ml={[50]}>
         <p>Photo Credit: {credit}</p>
       </Box>
@@ -36,10 +34,11 @@ const Container = styled(Box)`
 
   .frame {
     position: absolute;
-    top: -12%;
-    left: -8%;
+    top: -17%;
+    left: -13%;
     height: auto;
-    width: 116%;
+    width: 125%;
+    max-width: none;
     pointer-events: none;
   }
 

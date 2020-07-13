@@ -147,6 +147,29 @@ const Brave = () => {
               </span>
             ),
           },
+          {
+            image: image1,
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            content: () => (
+              <>
+                <Lead>We are brave</Lead>
+                <Box maxWidth={480}>
+                  <span className={"section-body"}>
+                    In times of conflict, disaster or displacement, we are there
+                    to meet both urgent needs and to help people rebuild their
+                    lives and communities.
+                  </span>
+                </Box>
+              </>
+            ),
+            mobileContent: () => (
+              <span className={"section-body"}>
+                In times of conflict, disaster or displacement, we are there to
+                meet both urgent needs and to help people rebuild their lives
+                and communities.
+              </span>
+            ),
+          },
         ]}
       ></SplitSectionLong>
     </>

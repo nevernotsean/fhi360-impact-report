@@ -102,7 +102,7 @@ const Nimble = () => {
               sx={{
                 transform: [
                   "translate(75px, -65px) scale(.5,-.5) rotate(-45deg)",
-                  "translate(15%, -30%) rotate(-12deg)",
+                  "translate(0%, -30%) rotate(-12deg)",
                 ],
               }}
             >
@@ -113,7 +113,12 @@ const Nimble = () => {
               ></HandDrawnSVG>
             </Box>
           </Box>
-          <Box width={[1, 1 / 2]} flex={"1 0 auto"} overflow="hidden">
+          <Box
+            width={[1, 1 / 2]}
+            flex={"1 0 auto"}
+            overflow="hidden"
+            pl={[0, 50]}
+          >
             <Flex flexWrap="wrap">
               {listAnim.map(({ y, ...rest }, index) => (
                 <TitledListCard

@@ -12,10 +12,10 @@ import Streak from "../../assets/svg/streak.svg"
 import Works from "../../assets/svg/works.svg"
 import worksImage from "../../images/outro-1.jpg"
 
+import Impacts from "../../assets/svg/impacts.svg"
+
 import Empowers from "../../assets/svg/empowers.svg"
 import empowersImage from "../../images/outro-empowers2.jpg"
-
-import Engages from "../../assets/svg/engages.svg"
 
 import pattern1 from "../../images/pattern-WeAreChanging_Works.png"
 import pattern2 from "../../images/pattern-WeAreChanging_Empowers.png"
@@ -39,7 +39,7 @@ const WordSections = () => {
           <span className="serif">human development</span>
         </H2>
         <Box m={["-70px auto", "-100px auto"]} maxWidth={[150, 250]} w={1}>
-          <HandDrawnSVG svg={Works}></HandDrawnSVG>
+          <HandDrawnSVG svg={Works} duration={1.5} delay={0.2}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord
@@ -57,8 +57,8 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-50px auto", "-80px auto"]} maxWidth={[300, 550]} w={1}>
-          <HandDrawnSVG svg={Empowers}></HandDrawnSVG>
+        <Box m={["-50px auto", "-120px auto"]} maxWidth={[300, 550]} w={1}>
+          <HandDrawnSVG svg={Impacts} duration={1.5} delay={0.2}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord pattern={pattern3}>
@@ -71,7 +71,11 @@ const WordSections = () => {
           <span className="serif">human development</span>
         </H2>
         <Box m={["-50px auto", "-100px auto"]} maxWidth={[300, 600]} w={1}>
-          <HandDrawnSVG svg={Engages}></HandDrawnSVG>
+          <HandDrawnSVG
+            svg={Empowers}
+            duration={1.5}
+            delay={0.2}
+          ></HandDrawnSVG>
         </Box>
       </OutroWord>
       <FlexSectionContainer

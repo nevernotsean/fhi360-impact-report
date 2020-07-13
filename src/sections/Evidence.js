@@ -8,7 +8,7 @@ import Streak from "../assets/svg/streak.svg"
 import strip from "../images/pattern-LeadWithScience_WeStudy.png"
 import vert from "../images/pattern-vert-WeLeadwithScience_TheResult.png"
 
-import { Lead, H2, H3 } from "../elements/Type"
+import { Lead, H2, H3, H1 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 
 import image1 from "../images/Evidence1.png"
@@ -43,24 +43,29 @@ const Evidence = () => {
               orange
               duration={0.25}
               className="pullquote-streak"
-              underlineLength={250}
+              width={250}
             ></Underlined>
           </Box>
         </Box>
       </FlexSectionContainer>
-      <Flex style={{ background: "#cccccc", position: "relative" }} width={1}>
+      <Flex style={{ background: "#f1f1f1", position: "relative" }} width={1}>
         <FlexSectionContainer
           width={1}
-          px={[20, 250]}
+          maxWidth={500}
+          px={[20, 0]}
           centered={true}
           textAlign={"center"}
         >
           <Lead>We Lead With Science</Lead>
+          <H2 className="section-title" style={{ marginBottom: 0 }}>
+            We study, test and evaluate.
+          </H2>
           <Text
             as={"span"}
             fontWeight={900}
             fontSize={["24px", "48px"]}
             lineHeight={["28px", "54px"]}
+            className={"serif"}
           >
             We gather{" "}
             <Underlined delay={0.5} transform={"translateY(-10%)"} orange>

@@ -6,6 +6,7 @@ import FlexSectionContainer from "../FlexSectionContainer"
 // import { useMediaQuery } from "react-responsive"
 import theme from "./../../styles/index"
 import Media from "../Media"
+import BackToTop from "./../BackToTop"
 
 const Stats = ({ link, project, funder, ...props }) => (
   <>
@@ -16,6 +17,7 @@ const Stats = ({ link, project, funder, ...props }) => (
       <a href={link} className={"project label"}>
         {project}
       </a>
+      {/* <span style={{ marginLeft: "10px", fontSize: "16px" }}>〉</span> */}
     </Box>
     <Box>
       <H3 className="labelhead" mb={2}>
@@ -68,11 +70,16 @@ const Section = ({
             ml={[0, "auto"]}
           >
             <p className={"body"} dangerouslySetInnerHTML={{ __html: body }} />
+
             <Media at={"sm"}>
               <Box my={50}>
                 <Stats link={link} project={project} funder={funder}></Stats>
               </Box>
             </Media>
+
+            <BackToTop style={{ cursor: "pointer", textAlign: "right" }}>
+              <em>Back to top</em>
+            </BackToTop>
           </Flex>
         </Flex>
         {children}
@@ -89,6 +96,9 @@ const TitleRule = ({ children, title, ...props }) => (
 )
 
 const Container = styled.div`
+  .clickable {
+    cursor: pointer;
+  }
   .hr {
     border-bottom: 1px solid ${({ theme }) => theme.colors.black};
     margin-bottom: 20px;

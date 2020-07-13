@@ -3,8 +3,8 @@ const colors = {
   orange: "#f08a20",
   black: "#231f20",
   white: "#ffffff",
-  offwhite: "#e2e2e2",
-  grey: "#cccccc",
+  offwhite: "#f1f1f1",
+  grey: "#f1f1f1",
 }
 
 export default colors

@@ -12,7 +12,7 @@ import Streak from "../assets/svg/streak.svg"
 import HandDrawnSVG from "./../components/HandDrawnSVG"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 const Funders = () => (
-  <Layout bg={"#e2e2e2"} hideMenuButton={true}>
+  <Layout bg={"#f1f1f1"} hideMenuButton={true}>
     <SEO title="Home" />
     <Nav></Nav>
     <Container>

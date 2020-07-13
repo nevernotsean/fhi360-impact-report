@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Lead, H2 } from "../../elements/Type"
 import Streak from "../../assets/svg/streak.svg"
 import HandDrawnSVG from "./../HandDrawnSVG"
+import { Underlined } from "./../WordNote"
 
 const ReportPullquote = ({ title, headline, ...props }) => {
   return (
@@ -14,9 +15,7 @@ const ReportPullquote = ({ title, headline, ...props }) => {
         fontSize={[24, 48]}
         className={"quote"}
       ></H2>
-      <Box width={100} className="underline">
-        <HandDrawnSVG svg={Streak} duration={0.3}></HandDrawnSVG>
-      </Box>
+      <Underlined width={250}></Underlined>
     </Container>
   )
 }
@@ -28,9 +27,6 @@ const Container = styled(Box)`
     line-height: 1;
     max-width: 1000px;
     font-size: 32px;
-  }
-
-  .underline {
   }
 `
 

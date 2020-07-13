@@ -54,7 +54,7 @@ const Perception = props => {
   })
 
   const listAnim = data.map((props, i) => ({
-    transition: `transform 600ms ease ${i * 300 + 500}ms`,
+    transition: `transform 600ms ease ${i * 300 + 300}ms`,
     y: listInView ? "0" : "101%",
   }))
 
@@ -67,7 +67,9 @@ const Perception = props => {
             <H2 className="section-title">
               Perception
               <br />
-              is 9/10 of <span className="serif">reality</span>
+              is 9/10 of
+              <br />
+              <span className="serif">reality</span>
             </H2>
             <H3 className="section-subtitle">
               and we want to change
@@ -76,6 +78,7 @@ const Perception = props => {
             </H3>
             <Box
               mt={-50}
+              ml={[0, -50]}
               sx={{
                 transform: [
                   "translate(75px, -65px) scale(.5,-.5) rotate(-45deg)",
@@ -161,9 +164,7 @@ const Perception = props => {
           alignImageMobile={"center top"}
         >
           <Lead>LET’S CHANGE PERCEPTION</Lead>
-          <H3 fontWeight={900} sx={{ textTransform: "uppercase" }} mb={[3]}>
-            We are constantly developing
-          </H3>
+          <H2 className={"section-title"}>We are constantly developing</H2>
           <Box maxWidth={["none", 320]}>
             <span className="section-body">
               <Underlined orange duration={0.3} delay={1.5}>

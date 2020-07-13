@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 // import centerImage from "../../images/RS11344_1F2A9964.jpg"
 
-import Frame from "../../assets/svg/square-frame.svg"
+import Frame from "../../images/square-frame.png"
 import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import lerp from "lerp"
 
@@ -21,7 +21,7 @@ import imageH from "../../images/collage-h.png"
 import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 
 import FlexSectionContainer from "../../components/FlexSectionContainer"
-import { Flex, Box } from "rebass/styled-components"
+import { Flex, Box, Image } from "rebass/styled-components"
 import HandDrawnSVG from "./../../components/HandDrawnSVG"
 
 import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
@@ -156,7 +156,7 @@ const Outro = () => {
                   backgroundPosition: "80% 50%",
                 }}
               ></div>
-              <Frame id="frame"></Frame>
+              <Image src={Frame} id="frame"></Image>
             </div>
             <div className="s-instagram-layer">
               <div
@@ -384,9 +384,9 @@ const Container = styled.div`
   #frame {
     display: block;
     position: absolute;
-    top: 14vw;
-    left: 13.5vw;
-    width: 38vw;
+    top: 12vw;
+    left: 11.5vw;
+    width: 42vw;
     height: auto;
     transform: scaleY(1.05);
   }

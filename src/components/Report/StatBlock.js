@@ -3,6 +3,7 @@ import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
 import { useCountUp } from "react-countup"
 import { useInView } from "react-intersection-observer"
+import { Underlined } from "./../WordNote"
 
 const StatBlock = ({
   children,
@@ -50,10 +51,11 @@ const StatBlock = ({
         </Box>
         <Box className={"body"}>
           {children}
-          <div className="black-box"></div>
+          {/* <div className="black-box"></div> */}
         </Box>
+        <Underlined width={250}></Underlined>
       </Flex>
-      <div className="hr"></div>
+      {/* <div className="hr"></div> */}
     </StatBlockContainer>
   )
 }

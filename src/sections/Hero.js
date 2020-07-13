@@ -35,7 +35,7 @@ const HeroPullquote = props => (
       orange
       duration={0.25}
       overrideLength={[238]}
-      underlineLength={200}
+      width={200}
       className="pullquote-streak"
     >
       differently

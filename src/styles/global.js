@@ -25,8 +25,12 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.sans};
   }
 
+  .fresnel-container {
+    width: 100%;
+  }
+
   /** sections */
-  .section-title {
+  .section-title { 
     font-size: 48px;
     line-height: 52px;
 
@@ -39,9 +43,10 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 30px;
   }
 
-  .section-body {
+  .section-body { 
     font-size: 19px;
     line-height: 24px;
+
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 400;
   }
@@ -77,7 +82,18 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.sans};
     font-weight: 400;
     font-size: 18px;
-    line-height: 26px;
+    line-height: 26px; 
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[2]}) {
+    .section-title {
+      font-size: 3.3vw;
+      line-height: 3.6vw;
+    }
+    .section-body {
+      font-size: 1.5vw;
+      line-height: 1.75vw;
+    }
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
@@ -91,9 +107,6 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  .fresnel-container {
-    width: 100%;
-  }
 `
 
 export default GlobalStyles

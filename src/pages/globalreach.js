@@ -14,7 +14,7 @@ import Media from "../components/Media"
 
 const GlobalReach = () => {
   return (
-    <Layout bg={"#e2e2e2"} hideMenuButton={true}>
+    <Layout bg={"#f1f1f1"} hideMenuButton={true}>
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead title={"Where we work"} headline={"2019<br/>Global Reach"}>

@@ -17,104 +17,106 @@ import DAM2 from "../images/ExpandingSelfCare_creditJessicaScranton.jpg"
 import enhancingFisheries from "../images/ImpactReport_EnhancingFisheries.jpg"
 import breastFeeding from "../images/MeasuringtheCostBreastfeeding_GiacomoPirozzi.jpg"
 
-const impactReport = () => (
-  <Layout bg={"#e2e2e2"} sidenavData={data}>
-    <SEO title="Home" />
-    <Nav></Nav>
-    <Masthead></Masthead>
-    <Section {...data[0]}>
-      <Box width={[1, 1 / 2]} ml={"auto"}>
-        <StatBlock end={9000} duration={2} postfix={"+"}>
-          people reached through community engagement activities in the
-          Democratic Republic of the Congo.
-        </StatBlock>
-      </Box>
-    </Section>
-    <Section {...data[1]}>
-      <FramedImage
-        src={tribeJPG}
-        credit="FatCamera/Getty Images"
-        alt="native american mother with child"
-      ></FramedImage>
-    </Section>
-    <Section {...data[2]}>
-      <Box py={5}>
-        <ReportPullquote
-          title={"Results"}
-          headline={
-            "The results support continued access to the three contraceptives studied."
-          }
-        ></ReportPullquote>
-      </Box>
-    </Section>
-    <Section {...data[3]}>
-      <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
-        <StatBlock end={32.9} decimals={1} duration={2} postfix={"M"}>
-          people reached through social media.
-        </StatBlock>
-      </Box>
-    </Section>
-    <Section {...data[4]}>
-      <FramedImage
-        src={enhancingFisheries}
-        credit="Qualcomm® Wireless Reach™"
-        alt="(photo of WISE phone app)"
-      ></FramedImage>
-    </Section>
-    <Section {...data[5]}>
-      <Box width={[1, 7 / 16]} mt={50} flip>
-        <StatBlock end={707843} decimals={0} duration={2} flip>
-          students learning in their local languages.
-        </StatBlock>
-      </Box>
-    </Section>
-    <Section {...data[6]}>
-      <FramedImage
-        src={DAM}
-        credit="Jessica Scranton/FHI 360"
-        alt="(photo from DAM: 10737, two youth, Indonesia)"
-      ></FramedImage>
-    </Section>
-    <Section {...data[7]}>
-      <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
-        <StatBlock end={70} decimals={0} duration={2} postfix={"%"}>
-          price reduction for TB diagnostic tests.
-        </StatBlock>
-      </Box>
-    </Section>
-    <Section {...data[8]}>
-      <Box width={[1, 2 / 3]} ml={"auto"} mt={50}>
-        <StatBlock end={75} decimals={0} duration={2} postfix={"%"}>
-          participants are back in schools or have a job or apprenticeship.
-        </StatBlock>
-      </Box>
-    </Section>
-    <Section {...data[9]}>
-      <FramedImage
-        src={breastFeeding}
-        credit="Giacamo Pirozzi/FHI 360"
-        alt="Asian mom and newborn"
-      ></FramedImage>
-    </Section>
-    <Section {...data[10]}>
-      <Box py={5}>
-        <ReportPullquote
-          title={"Learn More"}
-          headline={
-            '<a href="www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank">www.ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
-          }
-        ></ReportPullquote>
-      </Box>
-    </Section>
-    <Section {...data[11]}>
-      <FramedImage
-        src={DAM2}
-        credit="Jessica Scranton/FHI 360"
-        alt="(photo from DAM: 10948, woman in Uganda)"
-      ></FramedImage>
-    </Section>
-  </Layout>
-)
+const impactReport = () => {
+  return (
+    <Layout bg={"#f1f1f1"} sidenavData={data}>
+      <SEO title="Home" />
+      <Nav></Nav>
+      <Masthead></Masthead>
+      <Section {...data[0]}>
+        <Box width={[1, 1 / 2]} ml={"auto"}>
+          <StatBlock end={9000} duration={2} postfix={"+"}>
+            people reached through community engagement activities in the
+            Democratic Republic of the Congo.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[1]}>
+        <FramedImage
+          src={tribeJPG}
+          credit="FatCamera/Getty Images"
+          alt="native american mother with child"
+        ></FramedImage>
+      </Section>
+      <Section {...data[2]}>
+        <Box py={5}>
+          <ReportPullquote
+            title={"Results"}
+            headline={
+              "The results support continued access to the three contraceptives studied."
+            }
+          ></ReportPullquote>
+        </Box>
+      </Section>
+      <Section {...data[3]}>
+        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
+          <StatBlock end={32.9} decimals={1} duration={2} postfix={"M"}>
+            people reached through social media.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[4]}>
+        <FramedImage
+          src={enhancingFisheries}
+          credit="Qualcomm® Wireless Reach™"
+          alt="(photo of WISE phone app)"
+        ></FramedImage>
+      </Section>
+      <Section {...data[5]}>
+        <Box width={[1, 7 / 16]} mt={50} flip>
+          <StatBlock end={707843} decimals={0} duration={2} flip>
+            students learning in their local languages.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[6]}>
+        <FramedImage
+          src={DAM}
+          credit="Jessica Scranton/FHI 360"
+          alt="(photo from DAM: 10737, two youth, Indonesia)"
+        ></FramedImage>
+      </Section>
+      <Section {...data[7]}>
+        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
+          <StatBlock end={70} decimals={0} duration={2} postfix={"%"}>
+            price reduction for TB diagnostic tests.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[8]}>
+        <Box width={[1, 2 / 3]} ml={"auto"} mt={50}>
+          <StatBlock end={75} decimals={0} duration={2} postfix={"%"}>
+            participants are back in schools or have a job or apprenticeship.
+          </StatBlock>
+        </Box>
+      </Section>
+      <Section {...data[9]}>
+        <FramedImage
+          src={breastFeeding}
+          credit="Giacamo Pirozzi/FHI 360"
+          alt="Asian mom and newborn"
+        ></FramedImage>
+      </Section>
+      <Section {...data[10]}>
+        <Box py={5}>
+          <ReportPullquote
+            title={"Learn More"}
+            headline={
+              '<a href="www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank">www.ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
+            }
+          ></ReportPullquote>
+        </Box>
+      </Section>
+      <Section {...data[11]}>
+        <FramedImage
+          src={DAM2}
+          credit="Jessica Scranton/FHI 360"
+          alt="(photo from DAM: 10948, woman in Uganda)"
+        ></FramedImage>
+      </Section>
+    </Layout>
+  )
+}
 
 const data = [
   // { id:"", title:"", headline:"", project:"", funder:"", body:"" }

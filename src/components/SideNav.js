@@ -32,27 +32,33 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
         >
           <CloseSVG></CloseSVG>
         </Box>
-        {data.map(({ label, id, component, url, ...props }, i) =>
-          url ? (
-            <Link key={id + i} to={url} {...props} className="link">
-              {label}
-              <div className="hr"></div>
-            </Link>
-          ) : (
-            <ScrollToLink
-              key={id + i}
-              {...props}
-              onClick={() => {
-                if (context.scroll) {
-                  closeSidenav()
-                  context.scroll.scrollTo(`#${id}`)
-                }
-              }}
-            >
-              {label}
-              <div className="hr"></div>
-            </ScrollToLink>
-          )
+        {data.map(
+          ({ label, id, component, url, ...props }, i) =>
+            !url && (
+              <ScrollToLink
+                key={id + i}
+                {...props}
+                onClick={() => {
+                  if (context.scroll) {
+                    closeSidenav()
+                    context.scroll.scrollTo(`#${id}`)
+                  }
+                }}
+              >
+                {label}
+                <div className="hr"></div>
+              </ScrollToLink>
+            )
+        )}
+        <hr></hr>
+        {data.map(
+          ({ label, id, component, url, ...props }, i) =>
+            url && (
+              <Link key={id + i} to={url} {...props} className="link">
+                {label}
+                <div className="hr"></div>
+              </Link>
+            )
         )}
       </Flex>
     </Container>
@@ -101,16 +107,18 @@ const Container = styled(Box)`
     right: 0;
     top: 0;
     bottom: 0;
-    max-width: 320px;
+    max-width: 360px;
     width: 100%;
     height: 100vh;
     padding-right: 60px;
+    padding-left: 60px;
     background: rgba(255, 255, 255, 1);
     z-index: 9999;
   }
 
   .scrollToLink,
   .link {
+    color: ${({ theme }) => theme.colors.black};
     cursor: pointer;
 
     font-size: 18px;
@@ -123,7 +131,7 @@ const Container = styled(Box)`
     position: relative;
 
     .hr {
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid ${({ theme }) => theme.colors.black};
       transition: transform 500ms ease;
       transform: scaleX(0);
       transform-origin: right center;
@@ -141,9 +149,20 @@ const Container = styled(Box)`
     }
   }
 
+  hr {
+    background: ${({ theme }) => theme.colors.black};
+    height: 1px;
+    width: 200px;
+    margin-top: calc(1.45rem - 1px);
+  }
+
   .link {
     color: ${({ theme }) => theme.colors.black};
     text-decoration: none;
+
+    .hr {
+      border-color: ${({ theme }) => theme.colors.black};
+    }
   }
 `
 
