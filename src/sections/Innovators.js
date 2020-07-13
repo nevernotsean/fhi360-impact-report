@@ -44,13 +44,13 @@ const InnoFirst = () => (
 )
 
 const Innovators = () => {
-  const { scroll } = useContext(LocomotiveContext)
+  // const { scroll } = useContext(LocomotiveContext)
 
-  const [listRef, listInView] = useInView({
-    rootMargin: "20% 0px -20% 0px",
-    threshold: 0.8,
-    triggerOnce: true,
-  })
+  // const [listRef, listInView] = useInView({
+  //   rootMargin: "20% 0px -20% 0px",
+  //   threshold: 0.8,
+  //   triggerOnce: true,
+  // })
 
   return (
     <Container>
@@ -109,7 +109,7 @@ const Innovators = () => {
           },
           {
             image: image2,
-            imageCredits: "CREDITS MISSING",
+            imageCredits: "Leanne Gray/ FHI 360",
             content: () => (
               <>
                 <Lead>We are innovators</Lead>
