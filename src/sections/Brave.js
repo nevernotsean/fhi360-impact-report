@@ -123,9 +123,10 @@ const Brave = () => {
                     In the United States, we{" "}
                     <Underlined orange={true}>partner</Underlined> with Native
                     American populations on early childcare, education and
-                    tribal language revitalization; <Circled>improve</Circled>{" "}
-                    employment outcomes for young adults caught in the criminal
-                    justice system; promote{" "}
+                    tribal language revitalization;{" "}
+                    <Underlined orange={true}>improve</Underlined> employment
+                    outcomes for young adults caught in the criminal justice
+                    system; promote{" "}
                     <Underlined orange={true}>healthy</Underlined> behaviors;
                     and work to lessen the stigma of HIV.
                   </span>
@@ -137,36 +138,17 @@ const Brave = () => {
                 In the United States, we{" "}
                 <Underlined orange={true}>partner</Underlined> with Native
                 American populations on early childcare, education and tribal
-                language revitalization; <Circled>improve</Circled> employment
+                language revitalization;{" "}
+                <Underlined orange={true}>improve</Underlined> employment
                 outcomes for young adults caught in the criminal justice system;
                 promote <Underlined orange={true}>healthy</Underlined>{" "}
-                behaviors; and work to lessen the stigma of HIV.
+                behaviors; and work to lessen the stigma of HIV. We aren't
+                afraid to stand in the gap to create a more equitable world.
               </span>
             ),
           },
         ]}
       ></SplitSectionLong>
-
-      <SplitSectionCroppedImage
-        image={image2}
-        imageCredits={"Jessica Scranton/FHI 360"}
-        hideImageOnMobile={false}
-        pattern={gapVert}
-      >
-        <Lead>We are brave</Lead>
-        <H2 className={"section-title"}>
-          We aren’t
-          <br />
-          afraid to stand
-          <br />
-          <span className={"serif"}>in the gap.</span>
-        </H2>
-        <Box maxWidth={480}>
-          <H3 className={"section-body"}>
-            We step in to create a more equitable world.
-          </H3>
-        </Box>
-      </SplitSectionCroppedImage>
     </>
   )
 }

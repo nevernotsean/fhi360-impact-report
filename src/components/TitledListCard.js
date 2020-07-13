@@ -38,7 +38,7 @@ const TitledListCard = ({
         ></div>
         {children}
         {href && (
-          <a href={href} className="learn-more">
+          <a href={href} className="learn-more" target={"_blank"}>
             Learn More
           </a>
         )}

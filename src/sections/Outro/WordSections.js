@@ -13,7 +13,7 @@ import Works from "../../assets/svg/works.svg"
 import worksImage from "../../images/outro-1.jpg"
 
 import Empowers from "../../assets/svg/empowers.svg"
-import empowersImage from "../../images/outro-empowers.jpg"
+import empowersImage from "../../images/outro-empowers2.jpg"
 
 import Engages from "../../assets/svg/engages.svg"
 

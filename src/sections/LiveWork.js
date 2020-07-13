@@ -128,7 +128,11 @@ const LiveWork = () => (
           minHeight={["unset", "100vh"]}
         >
           <Box width={[1, 1 / 2]} mb={[0, 100]}>
-            <Lead>We live where we work</Lead>
+            <Lead>
+              We live
+              <br />
+              where we work
+            </Lead>
             <H2 className={"section-title"}>
               We work in more than
               <br />

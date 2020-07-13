@@ -11,7 +11,7 @@ import SectionDividerDark from "../components/SectionDividerDark"
 import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 
-import image1 from "../images/Nimble1.png"
+import image2 from "../images/RS11215_1F2A5696.png"
 
 import { Flex, Box } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
@@ -24,30 +24,31 @@ import nimbleVert from "../images/pattern-vert-WeAreNimble_EachSubsidiary.png"
 
 const data = [
   {
-    title: "FHI<br/><span class='bolder'>Clinical</span>",
-    body: "Complex clinical research support in resource-limited settings",
-    href: "https://www.fhiclinical.com/",
-  },
-  {
-    title: "FHI<br/><span class='bolder'>Ventures</span>",
-    body: "Innovative funding and impact investing",
-    href: "https://www.fhiventures.com/",
-  },
-  {
     title: "FHI<br/><span class='bolder'>Solutions</span>",
     body: "Customized nutrition and health solutions",
     href: "https://www.fhisolutions.org/",
-  },
-  {
-    title: "FHI<br/><span class='bolder'>Konung</span>",
-    body:
-      "Global governance solutions for effective and sustainable human development",
   },
   {
     title: "FHI<br/><span class='bolder'>Partners</span>",
     body:
       "Specialized solutions in partnership with foundations and the private sector",
     href: "https://www.fhipartners.org/",
+  },
+
+  {
+    title: "FHI<br/><span class='bolder'>Ventures</span>",
+    body: "Innovative funding and impact investing",
+    href: "https://www.fhiventures.com/",
+  },
+  {
+    title: "FHI<br/><span class='bolder'>Clinical</span>",
+    body: "Complex clinical research support in resource-limited settings",
+    href: "https://www.fhiclinical.com/",
+  },
+  {
+    title: "FHI<br/><span class='bolder'>Konung</span>",
+    body:
+      "Global governance solutions for effective and sustainable human development",
   },
 ]
 
@@ -138,9 +139,9 @@ const Nimble = () => {
       </FlexSectionContainer>
       <SplitSectionCroppedImage
         pattern={nimbleVert}
-        image={image1}
+        image={image2}
         flip
-        imageCredits={"2 women health workers"}
+        imageCredits={"Jessica Scranton/FHI 360"}
       >
         <Lead>We are nimble</Lead>
         <H2 className={"section-title"}>

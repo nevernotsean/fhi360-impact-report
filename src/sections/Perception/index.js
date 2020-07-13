@@ -131,22 +131,23 @@ const Perception = props => {
               lineHeight={"38px !important"}
               textAlign="center"
             >
-              We are constantly <br />
-              <Underlined
-                sx={{ top: "100%" }}
-                orange
-                duration={0.3}
-                delay={1.5}
-              >
-                developing:
-              </Underlined>
+              We are constantly
+              <br />
+              developing:
               <br />
               <br />
               <br />
               <span className="serif">
-                new partnerships, new funding relationships and customized
-                solutions that we apply to solving some of the world’s most
-                intractable problems.
+                <Underlined
+                  sx={{ top: "100%" }}
+                  orange
+                  duration={0.3}
+                  delay={1.5}
+                >
+                  new partnerships
+                </Underlined>
+                , new funding relationships and customized solutions that we
+                apply to solving some of the world’s most intractable problems.
               </span>
             </H2>
           </Box>
@@ -161,17 +162,15 @@ const Perception = props => {
         >
           <Lead>LET’S CHANGE PERCEPTION</Lead>
           <H3 fontWeight={900} sx={{ textTransform: "uppercase" }} mb={[3]}>
-            We are{" "}
-            <Underlined orange duration={0.3} delay={1.5}>
-              constantly
-            </Underlined>{" "}
-            developing
+            We are constantly developing
           </H3>
           <Box maxWidth={["none", 320]}>
             <span className="section-body">
-              New partnerships, new funding relationships and customized
-              solutions that we apply to solving some of the world’s most
-              intractable problems.
+              <Underlined orange duration={0.3} delay={1.5}>
+                New partnerships
+              </Underlined>
+              , new funding relationships and customized solutions that we apply
+              to solving some of the world’s most intractable problems.
             </span>
           </Box>
         </SplitSectionCroppedImage>

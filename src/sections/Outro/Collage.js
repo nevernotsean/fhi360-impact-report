@@ -1,14 +1,16 @@
 import React, { useEffect, useContext, useState } from "react"
 import styled from "styled-components"
 
-import centerImage from "../../images/RS11344_1F2A9964.jpg"
+// import centerImage from "../../images/RS11344_1F2A9964.jpg"
 
-import Frame from "../../assets/svg/rect-frame.svg"
+import Frame from "../../assets/svg/square-frame.svg"
 import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import lerp from "lerp"
 
-import imageA from "../../images/collage-a.png"
-import imageB from "../../images/collage-b.png"
+import centerImage from "../../images/collage-center.png"
+
+import imageA from "../../images/collage-a.jpg"
+import imageB from "../../images/collage-b.jpg"
 import imageC from "../../images/collage-c.png"
 import imageD from "../../images/collage-d.png"
 import imageE from "../../images/collage-e.png"
@@ -21,6 +23,8 @@ import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 import FlexSectionContainer from "../../components/FlexSectionContainer"
 import { Flex, Box } from "rebass/styled-components"
 import HandDrawnSVG from "./../../components/HandDrawnSVG"
+
+import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
 
 const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
   lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
@@ -140,7 +144,7 @@ const Outro = () => {
             <div className="s-instagram-layer">
               <div
                 className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageH})` }}
+                style={{ backgroundImage: `url(${imageC})` }}
               ></div>
             </div>
             <div className="s-instagram-layer center-square">
@@ -157,13 +161,13 @@ const Outro = () => {
             <div className="s-instagram-layer">
               <div
                 className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageE})` }}
+                style={{ backgroundImage: `url(${imageH})` }}
               ></div>
             </div>
             <div className="s-instagram-layer">
               <div
                 className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageC})` }}
+                style={{ backgroundImage: `url(${imageE})` }}
               ></div>
             </div>
             <div className="s-instagram-layer">
@@ -201,6 +205,7 @@ const Outro = () => {
               useInviewTrigger={false}
               animated={opacity < 0.6}
             ></HandDrawnSVG>
+            {/* <FHILogo></FHILogo> */}
           </Box>
         </Flex>
       </Container>
@@ -280,8 +285,9 @@ const Container = styled.div`
     z-index: 1;
     width: 70vw;
     height: 60vw;
-    margin: 0 calc(100vw / 20 * 3);
-    margin-bottom: 8.125vw;
+    margin: 8.125vw calc(100vw / 20 * 3);
+    /* margin-bottom: 8.125vw; */
+    /* margin-top: 8.125vw; */
     position: absolute;
 
     will-change: transform;
@@ -372,17 +378,17 @@ const Container = styled.div`
   .s-instagram-layer:nth-child(4) .s-instagram-block {
     top: 17.5vw;
     left: 17.5vw;
-    width: 40vw;
+    width: 30vw;
     height: 30vw;
   }
   #frame {
     display: block;
     position: absolute;
-    top: 16vw;
-    left: 15.5vw;
-    width: 46vw;
+    top: 14vw;
+    left: 13.5vw;
+    width: 38vw;
     height: auto;
-    transform: scaleY(1.22);
+    transform: scaleY(1.05);
   }
   @media only screen and (max-width: 580px) {
     .s-instagram-layer:nth-child(4) .s-instagram-block {
@@ -397,7 +403,7 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(5) .s-instagram-block {
     top: 25vw;
-    left: 60vw;
+    left: 50vw;
     width: 5vw;
     height: 5vw;
     background-color: #cb9274;
@@ -429,7 +435,7 @@ const Container = styled.div`
     }
   }
   .s-instagram-layer:nth-child(6) .s-instagram-block {
-    left: 60vw;
+    left: 50vw;
     top: 32.5vw;
     width: 15vw;
     height: 15vw;
@@ -455,7 +461,7 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(8) .s-instagram-block {
     bottom: 5vw;
-    left: 52.5vw;
+    left: 42.5vw;
     width: 5vw;
     height: 5vw;
   }
@@ -466,7 +472,7 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(9) .s-instagram-block {
     bottom: 0;
-    left: 60vw;
+    left: 50vw;
     width: 10vw;
     height: 10vw;
   }

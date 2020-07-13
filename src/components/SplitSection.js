@@ -332,7 +332,6 @@ export const SplitSectionLong = ({
       </Media>
       <Media greaterThanOrEqual={"md"}>
         <Box
-          activeIndex={activeSection}
           height={`${total + 1}00vh`}
           id={`fixedScroll-${id}`}
           sx={{ position: "relative" }}
@@ -345,6 +344,8 @@ export const SplitSectionLong = ({
                 target={`#fixedScroll-${id}`}
                 index={i}
                 total={total}
+                setActive={setActive}
+                activeIndex={activeSection}
                 {...props}
                 {...contentProps}
               >
@@ -369,12 +370,19 @@ const SplitSectionLongInner = ({
   index,
   total,
   height,
+  setActive,
   ...props
 }) => {
   const [ref, isInview] = useInView({
     rootMargin: "0px 0px -100% 0px",
     threshold: 0,
   })
+
+  React.useEffect(() => {
+    if (isInview) {
+      setActive(index)
+    }
+  }, [isInview])
 
   return (
     <>
@@ -437,7 +445,13 @@ const SplitSectionLongInner = ({
           </Flex>
           <PhotoCredits
             credits={imageCredits}
-            sx={{ position: "absolute", zIndex: 2, bottom: 0, left: 0 }}
+            sx={{
+              position: "absolute",
+              zIndex: 2,
+              bottom: 0,
+              left: 0,
+              pointerEvents: isInview ? "auto" : "none",
+            }}
           ></PhotoCredits>
         </Box>
 

@@ -15,7 +15,6 @@ import image1 from "../images/Evidence1.png"
 
 import { Flex, Box, Text } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
-import HandDrawnSVG from "../components/HandDrawnSVG"
 
 import { Circled, Underlined } from "../components/WordNote"
 // import { useMediaQuery } from "react-responsive"
@@ -39,19 +38,20 @@ const Evidence = () => {
             <br />
             than our tagline.
           </H2>
-          <Box width={250} mx={"auto"} mt={-20}>
-            <HandDrawnSVG
+          <Box ml={-250} mt={-30}>
+            <Underlined
+              orange
               duration={0.25}
-              svg={Streak}
               className="pullquote-streak"
-            ></HandDrawnSVG>
+              underlineLength={250}
+            ></Underlined>
           </Box>
         </Box>
       </FlexSectionContainer>
       <Flex style={{ background: "#cccccc", position: "relative" }} width={1}>
         <FlexSectionContainer
           width={1}
-          px={[20, 100]}
+          px={[20, 250]}
           centered={true}
           textAlign={"center"}
         >
@@ -112,7 +112,7 @@ const Evidence = () => {
         <SplitSectionCroppedImage
           image={image1}
           flip
-          imageCredits={"mom & baby (current layout)"}
+          imageCredits={"Jessica Scranton/FHI 360"}
           pattern={vert}
           hideImageOnMobile
           id={"evidence-the-result-desktop"}
