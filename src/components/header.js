@@ -10,9 +10,11 @@ import theme from "../styles/index"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import ShareButton from "../assets/svg/share-icon.svg"
 import Media from "./Media"
+import BackToTop from "./BackToTop"
 
 const Header = ({
   siteTitle,
+  pageTitle,
   setSideNavOpen,
   sideNavOpen,
   hideMenuButton = false,
@@ -81,7 +83,18 @@ const Header = ({
             </Text>
           </Media>
         </h1>
-        <Flex>
+        <Flex alignItems="center">
+          <BackToTop
+            sx={{
+              color: "white",
+              cursor: "pointer",
+              textTransform: "uppercase",
+              fontWeight: 700,
+            }}
+            mr={20}
+          >
+            <a>{pageTitle}</a>
+          </BackToTop>
           <Box
             width={26}
             sx={{ cursor: "pointer", opacity: sideNavOpen ? 0 : 1 }}
@@ -115,8 +128,6 @@ const Header = ({
 }
 
 const Container = styled.header`
-  pointer-events: none;
-
   position: fixed;
   top: 0;
   left: 0%;
@@ -126,10 +137,6 @@ const Container = styled.header`
   z-index: 99;
 
   background: ${({ theme }) => theme.colors.black};
-
-  .allow-pointer-events {
-    pointer-events: all;
-  }
 
   .color-detect {
     transition: color 0.7s ease;

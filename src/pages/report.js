@@ -19,7 +19,7 @@ import breastFeeding from "../images/MeasuringtheCostBreastfeeding_GiacomoPirozz
 
 const impactReport = () => {
   return (
-    <Layout bg={"#f1f1f1"} sidenavData={data}>
+    <Layout bg={"#f1f1f1"} sidenavData={data} pageTitle={"2019 Impact Report"}>
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead></Masthead>
@@ -122,7 +122,7 @@ const data = [
   // { id:"", title:"", headline:"", project:"", funder:"", body:"" }
   {
     id: "i",
-    label: "Crisis Response",
+    label: "Ebola response",
     title: "Crisis Response",
     headline: "Responding in real time to Ebola",
     body:
@@ -135,7 +135,7 @@ const data = [
   },
   {
     id: "ii",
-    label: "EDUCATION I",
+    label: "Community building",
     title: "EDUCATION",
     headline: "Building community among Native American tribes",
     body:
@@ -148,7 +148,7 @@ const data = [
 
   {
     id: "iii",
-    label: "RESEARCH",
+    label: "Research leadership",
     title: "RESEARCH",
     headline: "Leading trailblazing research",
     body:
@@ -163,7 +163,7 @@ const data = [
 
   {
     id: "iv",
-    label: "HEALTH I",
+    label: "Ending HIV stigma",
     title: "HEALTH",
     headline: "Using social media to end HIV stigma",
     body:
@@ -177,7 +177,7 @@ const data = [
 
   {
     id: "v",
-    label: "TECHNOLOGY",
+    label: "Digital innovation",
     title: "TECHNOLOGY",
     headline: "Enhancing fishery outcomes",
     body:
@@ -191,7 +191,7 @@ const data = [
 
   {
     id: "vi",
-    label: "EDUCATION II",
+    label: "Literacy building",
     title: "EDUCATION",
     headline: "Building literacy in Ghanaian early learners",
     body:
@@ -205,7 +205,7 @@ const data = [
 
   {
     id: "vii",
-    label: "HEALTH II",
+    label: "HIV interventions",
     title: "HEALTH",
     headline: "Supporting high-impact HIV interventions",
     body:
@@ -221,7 +221,7 @@ const data = [
 
   {
     id: "ix",
-    label: "HEALTH III",
+    label: "Cost savings",
     title: "HEALTH",
     headline: "Reducing costs through private-sector partnerships",
     body:
@@ -235,7 +235,7 @@ const data = [
 
   {
     id: "x",
-    label: "EDUCATION III",
+    label: "Recidivism decline",
     title: "EDUCATION",
     headline: "Reducing recidivism among young Americans",
     body:
@@ -248,7 +248,7 @@ const data = [
 
   {
     id: "xi",
-    label: "FHI SOLUTIONS",
+    label: "Breastfeeding gains",
     title: "FHI SOLUTIONS",
     headline: "Measuring the cost of not breastfeeding",
     body:
@@ -262,7 +262,7 @@ const data = [
 
   {
     id: "xii",
-    label: "CIVIL SOCIETY",
+    label: "Vital civil society",
     title: "CIVIL SOCIETY",
     headline: "Activating civil society",
     body:
@@ -276,7 +276,7 @@ const data = [
 
   {
     id: "xiii",
-    label: "HEALTH IV",
+    label: "Self-care option",
     title: "HEALTH",
     headline: "Expanding self-care options through public and private sectors",
     body:

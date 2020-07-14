@@ -14,7 +14,7 @@ import Nav from "../components/Report/Nav"
 import styled from "styled-components"
 
 const Financial = () => (
-  <Layout bg={"#f1f1f1"} hideMenuButton={true}>
+  <Layout bg={"#f1f1f1"} hideMenuButton={true} pageTitle={"2019 Impact Report"}>
     <SEO title="Home" />
     <Nav></Nav>
     <Masthead title={"(unaudited)"} headline={"2019<br/>Financial Summary"}>
@@ -118,6 +118,12 @@ const Financial = () => (
         mx={"auto"}
         sx={{ display: "block" }}
       ></Image>
+      <p style={{ maxWidth: "400px" }}>
+        <small>
+          Crosscutting areas, such as technology, gender and youth, are
+          integrated into many of our programs.
+        </small>
+      </p>
     </Section>
     <Section title={"Work by region"}>
       <Image

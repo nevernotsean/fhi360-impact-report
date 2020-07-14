@@ -15,6 +15,7 @@ import { FlexWrap } from "../elements/Flex"
 import { Underlined } from "./../components/WordNote"
 import HandDrawnSVG from "./../components/HandDrawnSVG"
 import YouAreHere from "./../components/svg/YouAreHere"
+import PhotoCredits from "./../components/PhotoCredits"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -61,6 +62,7 @@ const Hero = () => {
             display={"block"}
           ></Image>
           <Image src={strip} className="strip" ml={"-20px"}></Image>
+          <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <Box className="lockup lockup-mobile" width={"50vw"}>
             <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
             <H1 className="title">
@@ -96,6 +98,7 @@ const Hero = () => {
             revealSpeed={0}
           ></InViewImage>
           <img src={strip} className="strip"></img>
+          <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <HeroPullquote />
         </Box>
         <Box width={[1, 1 / 2]}>

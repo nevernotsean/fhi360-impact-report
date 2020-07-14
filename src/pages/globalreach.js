@@ -14,7 +14,11 @@ import Media from "../components/Media"
 
 const GlobalReach = () => {
   return (
-    <Layout bg={"#f1f1f1"} hideMenuButton={true}>
+    <Layout
+      bg={"#f1f1f1"}
+      hideMenuButton={true}
+      pageTitle={"2019 Impact Report"}
+    >
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead title={"Where we work"} headline={"2019<br/>Global Reach"}>
@@ -64,9 +68,9 @@ const GlobalReach = () => {
             </strong>
           </P>
           <P>
-            Durham, North Carolina, USA
+            Durham, NC USA
             <br />
-            Washington, D.C., USA
+            Washington, DC USA
           </P>
         </Box>
         <Box>
@@ -87,7 +91,7 @@ const GlobalReach = () => {
         </Box>
       </Section>
 
-      <Section title={"Country Offices"} px={[0, 20]}>
+      <Section title={"Where We Work"} px={[0, 20]}>
         <P>
           <strong>Afghanistan</strong> (Kabul)
         </P>
@@ -347,7 +351,8 @@ const GlobalReach = () => {
           <strong>United Kingdom</strong>
         </P>
         <P>
-          <strong>United States</strong> (Durham, NC; Washington, DC)
+          <strong>United States</strong> (Main Office: Durham, NC; Washington,
+          DC)
         </P>
         <P>
           <strong>Vietnam</strong> (Hanoi)
@@ -361,14 +366,14 @@ const GlobalReach = () => {
         <P>
           <strong>Zimbabwe</strong> (Harare)
         </P>
-        <P>
+        {/* <P>
           <strong>FHI 360 Asia Pacific Regional Office</strong> (Bankok,
           Thailand)
         </P>
         <P>
           <strong>FHI 360 East and Southern Africa Regional Office</strong>{" "}
           (Pretoria, South Africa)
-        </P>
+        </P> */}
       </Section>
       <Box maxWidth={1200} mx={"auto"} px={20}>
         <p style={{ fontSize: "14px", fontWeight: 400, textAlign: "right" }}>

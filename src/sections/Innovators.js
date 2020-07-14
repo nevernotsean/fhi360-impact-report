@@ -10,7 +10,7 @@ import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 
-import image1 from "../images/Innovators1.png"
+import image1 from "../images/GQ4B5999.jpg"
 import image2 from "../images/innovate-2.jpg"
 
 import { Box } from "rebass/styled-components"
@@ -60,7 +60,7 @@ const Innovators = () => {
       ></SectionDividerDark>
       <SplitSectionCroppedImage
         image={image1}
-        imageCredits={"2 men (current layout)"}
+        imageCredits={"Mohammad Magayda/FHI 360"}
         pattern={innoVert}
       >
         <Lead>We are innovators</Lead>

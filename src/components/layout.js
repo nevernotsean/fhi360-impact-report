@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "../styles/layout.css"
+import "../styles/locomotive-scroll.css"
 
 import Providers from "./Providers"
 import GlobalStyles from "../styles/global"
@@ -29,6 +30,7 @@ const Layout = ({
   hideMenuButton,
   headerStyle,
   showIntro,
+  pageTitle,
   ...props
 }) => {
   const data = useStaticQuery(graphql`
@@ -57,6 +59,7 @@ const Layout = ({
       ></SideNav>
       <Header
         siteTitle={data.site.siteMetadata.title}
+        pageTitle={pageTitle}
         hideMenuButton={hideMenuButton}
         headerStyle={headerStyle}
         sideNavOpen={sideNavOpen}

@@ -8,6 +8,9 @@ import { Box, Flex, Image } from "rebass/styled-components"
 import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
 import PhotoCredits from "./PhotoCredits"
+import theme from "./../styles/index"
+import { lerp } from "lerp"
+import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
 
 const SplitSectionLongContent = ({
   children,
@@ -17,9 +20,29 @@ const SplitSectionLongContent = ({
   pattern = stripeVert,
   ...props
 }) => {
+  const context = React.useContext(LocomotiveContext)
   const id = React.useMemo(() => shortid(), [])
   const [activeSection, setActive] = React.useState(0)
   const total = contentArray.length
+  const [loaded, setLoaded] = React.useState(false)
+  const [scroll, setScroll] = React.useState(false)
+  const [enabled, setEnabled] = React.useState(false)
+
+  React.useEffect(() => {
+    setLoaded(true)
+
+    if (context.scroll) {
+      context.scroll.on("scroll", props => {
+        setScroll(props.scroll.y)
+      })
+
+      context.scroll.on("call", (value, type, props) => {
+        if (value == `long-form-start-${id}`) {
+          console.log(props)
+        }
+      })
+    }
+  }, [loaded])
 
   return (
     <Container>
@@ -45,6 +68,8 @@ const SplitSectionLongContent = ({
           className={"relative"}
           height={`${total + 1}00vh`}
           id={`fixedScroll-${id}`}
+          data-scroll
+          data-scroll-call={`long-form-start-${id}`}
         >
           {contentArray.map((props, i) => (
             <SectionTrigger setActive={setActive} key={i} index={i} />
@@ -64,7 +89,7 @@ const SplitSectionLongContent = ({
                 {...props}
                 {...contentProps}
               >
-                <Content></Content>
+                <Content animated={activeSection == i}></Content>
               </SplitSectionLongInner>
             ))}
           </Box>
@@ -202,5 +227,33 @@ const SectionTrigger = ({ setActive, index, props }) => {
 
   return <Box ref={ref} sx={{ height: "100vh", pointerEvents: "none" }}></Box>
 }
+
+const mapLinear = (scrollY, startY, endY, scaleStart, scaleEnd) =>
+  lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
+
+const BreadCrumb = ({ scroll, scrollStart, scrollEnd, ...props }) => (
+  <Box sx={{ width: "100%", position: "relative" }} {...props}>
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "2px",
+        background: theme.colors.grey,
+      }}
+    ></Box>
+    <Box
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: mapLinear(scroll, scrollStart, scrollEnd, 0, 100) + "%",
+        height: "2px",
+        background: theme.colors.orange,
+      }}
+    ></Box>
+  </Box>
+)
 
 export default SplitSectionLongContent

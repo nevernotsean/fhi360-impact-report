@@ -1,7 +1,8 @@
 import React from "react"
 import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
+import { Box } from "rebass/styled-components"
 
-const BackToTop = ({ children = "Back to top", ...props }) => {
+const BackToTop = ({ ...props }) => {
   const context = React.useContext(LocomotiveContext)
   const [loaded, setLoaded] = React.useState()
 
@@ -12,17 +13,13 @@ const BackToTop = ({ children = "Back to top", ...props }) => {
     }
   }, [context, context.scroll])
 
-  if (!loaded) return null
-
   return (
-    <div
+    <Box
       className={"clickable"}
       onClick={() => context.scroll && context.scroll.scrollTo(`#main-content`)}
       style={{ cursor: "pointer" }}
       {...props}
-    >
-      {children}
-    </div>
+    ></Box>
   )
 }
 

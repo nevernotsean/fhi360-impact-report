@@ -1,6 +1,5 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useInView } from "react-intersection-observer"
-import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 
 import { useTrail } from "react-spring"
 
@@ -55,8 +54,6 @@ const data = [
 const config = { mass: 5, tension: 2000, friction: 200 }
 
 const Nimble = () => {
-  const { scroll } = useContext(LocomotiveContext)
-
   const [listRef, listInView] = useInView({
     rootMargin: "20% 0px -20% 0px",
     threshold: 0,
@@ -67,8 +64,6 @@ const Nimble = () => {
     config,
     y: listInView ? "0" : "400px",
   })
-
-  console.log("TODO, Insert Credits here: for 2 women health workers")
 
   return (
     <Container>
