@@ -9,8 +9,10 @@ import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
 import PhotoCredits from "./PhotoCredits"
 import theme from "./../styles/index"
-import { lerp } from "lerp"
+import lerp from "lerp"
 import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
+import ScrollPercent from "./SplitSectionScrollPercent"
+import SectionTrigger from "./SplitSectionLongTrigger"
 
 const SplitSectionLongContent = ({
   children,
@@ -22,27 +24,28 @@ const SplitSectionLongContent = ({
 }) => {
   const context = React.useContext(LocomotiveContext)
   const id = React.useMemo(() => shortid(), [])
-  const [activeSection, setActive] = React.useState(0)
   const total = contentArray.length
+
+  const [activeSection, setActive] = React.useState(-1)
   const [loaded, setLoaded] = React.useState(false)
-  const [scroll, setScroll] = React.useState(false)
-  const [enabled, setEnabled] = React.useState(false)
+
+  // const [scrollProps, setScrollProps] = React.useState()
 
   React.useEffect(() => {
     setLoaded(true)
 
-    if (context.scroll) {
-      context.scroll.on("scroll", props => {
-        setScroll(props.scroll.y)
-      })
+    //   if (context.scroll) {
+    //     context.scroll.on("call", (value, type, props) => {
+    //       if (value == `long-form-start-${id}`) setScrollProps(props)
+    //     })
+    //   }
+  }, [])
 
-      context.scroll.on("call", (value, type, props) => {
-        if (value == `long-form-start-${id}`) {
-          console.log(props)
-        }
-      })
-    }
-  }, [loaded])
+  const [sectionProps, setSectionProps] = React.useState([])
+
+  // React.useEffect(() => {
+  //   if (sectionProps.length) console.log(sectionProps)
+  // }, [sectionProps])
 
   return (
     <Container>
@@ -72,7 +75,17 @@ const SplitSectionLongContent = ({
           data-scroll-call={`long-form-start-${id}`}
         >
           {contentArray.map((props, i) => (
-            <SectionTrigger setActive={setActive} key={i} index={i} />
+            <SectionTrigger
+              setSectionProps={props => {
+                // console.log(props, i)
+                sectionProps[i] = props
+                setSectionProps(sectionProps)
+              }}
+              setActive={setActive}
+              activeSection={activeSection}
+              key={i}
+              index={i}
+            />
           ))}
           <Box
             data-scroll
@@ -86,6 +99,18 @@ const SplitSectionLongContent = ({
                 index={i}
                 total={total}
                 isVisible={activeSection == i}
+                scrollStart={
+                  sectionProps &&
+                  sectionProps.length &&
+                  sectionProps[i] &&
+                  sectionProps[i].top
+                }
+                scrollEnd={
+                  sectionProps &&
+                  sectionProps.length &&
+                  sectionProps[i] &&
+                  sectionProps[i].bottom
+                }
                 {...props}
                 {...contentProps}
               >
@@ -131,6 +156,9 @@ const SplitSectionLongInner = ({
   total,
   height,
   isVisible,
+  innerPercent,
+  scrollStart,
+  scrollEnd,
   ...props
 }) => {
   return (
@@ -147,7 +175,15 @@ const SplitSectionLongInner = ({
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
-              <PhotoCredits credits={imageCredits} className={"credits"} />
+              <BottomContainer>
+                <ScrollPercent
+                  scrollStart={scrollStart}
+                  scrollEnd={scrollEnd}
+                  enabled={isVisible}
+                  index={index}
+                />
+                <PhotoCredits credits={imageCredits} className={"credits"} />
+              </BottomContainer>
             </CenteredFlex>
           </>
         ) : (
@@ -157,7 +193,15 @@ const SplitSectionLongInner = ({
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
-              <PhotoCredits credits={imageCredits} className={"credits"} />
+              <BottomContainer>
+                <ScrollPercent
+                  scrollStart={scrollStart}
+                  scrollEnd={scrollEnd}
+                  enabled={isVisible}
+                  index={index}
+                />
+                <PhotoCredits credits={imageCredits} className={"credits"} />
+              </BottomContainer>
             </CenteredFlex>
             {/* Right */}
             <CenteredFlex>
@@ -170,6 +214,10 @@ const SplitSectionLongInner = ({
   )
 }
 
+const BottomContainer = props => (
+  <Box className={"bottom-container"} {...props}></Box>
+)
+
 const StyledInner = styled(Box)`
   opacity: 0;
   transition: opacity 0.5s linear;
@@ -180,7 +228,7 @@ const StyledInner = styled(Box)`
   .split-section-long-content-inner {
   }
 
-  .credits {
+  .bottom-container {
     position: absolute;
     left: 0;
     right: 0;
@@ -210,50 +258,6 @@ const FullImage = props => (
     }}
     {...props}
   ></Image>
-)
-
-const SectionTrigger = ({ setActive, index, props }) => {
-  const [ref, isInview] = useInView({
-    rootMargin: "0px 0px -100% 0px",
-    threshold: 0,
-  })
-
-  React.useEffect(() => {
-    if (isInview) {
-      console.log(index, "active")
-      setActive(index)
-    }
-  }, [isInview])
-
-  return <Box ref={ref} sx={{ height: "100vh", pointerEvents: "none" }}></Box>
-}
-
-const mapLinear = (scrollY, startY, endY, scaleStart, scaleEnd) =>
-  lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
-
-const BreadCrumb = ({ scroll, scrollStart, scrollEnd, ...props }) => (
-  <Box sx={{ width: "100%", position: "relative" }} {...props}>
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "2px",
-        background: theme.colors.grey,
-      }}
-    ></Box>
-    <Box
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: mapLinear(scroll, scrollStart, scrollEnd, 0, 100) + "%",
-        height: "2px",
-        background: theme.colors.orange,
-      }}
-    ></Box>
-  </Box>
 )
 
 export default SplitSectionLongContent
