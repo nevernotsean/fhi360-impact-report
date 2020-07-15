@@ -60,7 +60,8 @@ const Innovators = () => {
       ></SectionDividerDark>
       <SplitSectionCroppedImage
         image={image1}
-        imageCredits={"Mohammad Magayda/FHI 360"}
+        imageCredits={"SweetSense - SweetSense"}
+        alt={"two women beekeepers"}
         pattern={innoVert}
       >
         <Lead>We are innovators</Lead>
@@ -104,12 +105,14 @@ const Innovators = () => {
           {
             image: image2,
             imageCredits: "Leanne Gray/ FHI 360",
+            alt: "smiling woman holding tablet",
             content: InnoFirst,
             mobileContent: InnoFirst,
           },
           {
             image: image2,
             imageCredits: "Leanne Gray/ FHI 360",
+            alt: "smiling woman holding tablet",
             content: () => (
               <>
                 <Lead>We are innovators</Lead>

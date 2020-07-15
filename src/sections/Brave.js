@@ -5,7 +5,6 @@ import BraveCard from "../images/brave.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import image1 from "../images/fpo-brave-1.png"
-// import image2 from "../images/stand-gap.jpg"
 
 import { Lead, H2, H3 } from "../elements/Type"
 import SplitSectionLongContent from "../components/SplitSectionLongContent"
@@ -13,8 +12,6 @@ import SplitSectionLongContent from "../components/SplitSectionLongContent"
 import { Box } from "rebass/styled-components"
 
 import { Underlined } from "../components/WordNote"
-
-// import gapVert from "../images/pattern-vert-WeAreBrave_StandintheGap.png"
 
 const BraveFirst = () => (
   <>
@@ -33,18 +30,23 @@ const BraveFirst = () => (
 const Brave = () => {
   return (
     <>
-      <SectionDividerDark img={BraveCard}></SectionDividerDark>
+      <SectionDividerDark
+        img={BraveCard}
+        alt={"We are Brave"}
+      ></SectionDividerDark>
       <SplitSectionLongContent
         contentArray={[
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
             content: BraveFirst,
             mobileContent: BraveFirst,
           },
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
             content: ({ animated }) => (
               <>
                 <Lead>We are brave</Lead>
@@ -85,6 +87,7 @@ const Brave = () => {
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
             content: () => (
               <>
                 <Lead>We are brave</Lead>
@@ -110,6 +113,7 @@ const Brave = () => {
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
             content: ({ animated }) => (
               <>
                 <Lead>We are brave</Lead>
@@ -121,6 +125,7 @@ const Brave = () => {
                       useInviewTrigger={false}
                       animated={animated}
                       delay={1}
+                      sx={{ top: "20%" }}
                     >
                       partner
                     </Underlined>{" "}
@@ -131,6 +136,7 @@ const Brave = () => {
                       useInviewTrigger={false}
                       animated={animated}
                       delay={2}
+                      sx={{ top: "20%" }}
                     >
                       improve
                     </Underlined>{" "}
@@ -141,6 +147,7 @@ const Brave = () => {
                       useInviewTrigger={false}
                       animated={animated}
                       delay={3}
+                      sx={{ top: "20%" }}
                     >
                       healthy
                     </Underlined>{" "}
@@ -166,6 +173,7 @@ const Brave = () => {
           {
             image: image1,
             imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
             content: () => (
               <>
                 <Lead>We are brave</Lead>
@@ -183,6 +191,28 @@ const Brave = () => {
                 In times of conflict, disaster or displacement, we are there to
                 meet both urgent needs and to help people rebuild their lives
                 and communities.
+              </span>
+            ),
+          },
+          {
+            image: image1,
+            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            alt: "doctor smiling",
+            content: () => (
+              <>
+                <Lead>We are brave</Lead>
+                <Box maxWidth={480}>
+                  <span className={"section-body"}>
+                    We aren’t afraid to stand in the gap. We step in to create a
+                    more equitable world.
+                  </span>
+                </Box>
+              </>
+            ),
+            mobileContent: () => (
+              <span className={"section-body"}>
+                We aren’t afraid to stand in the gap. We step in to create a
+                more equitable world.
               </span>
             ),
           },

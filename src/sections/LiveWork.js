@@ -8,7 +8,6 @@ import { Lead, H2 } from "../elements/Type"
 import SplitSectionLongContent from "../components/SplitSectionLongContent"
 
 import image1 from "../images/we-live-work.jpg"
-// import image2 from "../images/we-live-work-2.jpg"
 
 import map from "../images/map.jpg"
 
@@ -53,12 +52,14 @@ const LiveWork = () => (
         {
           image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
+          alt: "two men smiling",
           content: LiveFirst,
           mobileContent: LiveFirst,
         },
         {
           image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
+          alt: "two men smiling",
           content: () => (
             <>
               <Lead>We live where we work</Lead>
@@ -86,6 +87,7 @@ const LiveWork = () => (
         {
           image: image1,
           imageCredits: "Mbuto Machili/FHI 360",
+          alt: "two men smiling",
           content: () => (
             <>
               <Lead>We live where we work</Lead>
@@ -111,6 +113,7 @@ const LiveWork = () => (
       <Image
         className={"bg"}
         src={map}
+        alt={"map of world"}
         sx={{
           objectFit: "contain",
           objectPosition: "center center",

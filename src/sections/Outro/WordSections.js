@@ -45,8 +45,8 @@ const WordSections = () => {
       <OutroWord
         image={empowersImage}
         imagePosition={["75% center", "center center"]}
-        alt={"woman in focus group (current layout)"}
-        imageCredits={""}
+        alt={"woman in focus group"}
+        imageCredits={"Jessica Scranton/FHI 360"}
         pattern={pattern2}
       >
         {/* <Lead>Inspire</Lead> */}

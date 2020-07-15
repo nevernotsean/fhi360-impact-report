@@ -60,6 +60,7 @@ const Hero = () => {
             width={"50%"}
             ml={"-20px"}
             display={"block"}
+            alt={"photo of Patrick Fine"}
           ></Image>
           <Image src={strip} className="strip" ml={"-20px"}></Image>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
@@ -92,6 +93,7 @@ const Hero = () => {
           <InViewImage
             src={hero}
             className="hero-image"
+            alt={"photo of Patrick Fine"}
             scrollSpeed={0}
             imageSpeed={1.5}
             mt={[0, 50]}
@@ -141,7 +143,7 @@ const Hero = () => {
             })}
             <p>Warm regards,</p>
             <Box width={275} mr={"auto"} mb={25}>
-              <Image src={Sig}></Image>
+              <Image src={Sig} alt={"patrick fine"}></Image>
             </Box>
             <p>
               Patrick C. Fine

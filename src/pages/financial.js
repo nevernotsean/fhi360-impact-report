@@ -97,6 +97,7 @@ const Financial = () => (
     <Flex flexDirection={"column"}></Flex>
     <Section title={"Revenue by source"}>
       <Image
+        alt={"pie chart of Revenue by source"}
         src={Image5}
         maxWidth={["80vw", 800]}
         mx={"auto"}
@@ -105,6 +106,7 @@ const Financial = () => (
     </Section>
     <Section title={"Allocation of expenses"}>
       <Image
+        alt={"pie chart of Allocation of expenses"}
         src={Image4}
         maxWidth={["80vw", 800]}
         mx={"auto"}
@@ -113,6 +115,7 @@ const Financial = () => (
     </Section>
     <Section title={"Work by area"}>
       <Image
+        alt={"pie chart of Work by area"}
         src={Image3}
         maxWidth={["80vw", 800]}
         mx={"auto"}
@@ -127,6 +130,7 @@ const Financial = () => (
     </Section>
     <Section title={"Work by region"}>
       <Image
+        alt={"pie chart of Work by region"}
         src={Image2}
         maxWidth={["80vw", 800]}
         mx={"auto"}

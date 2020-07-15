@@ -1,8 +1,6 @@
 import React, { useEffect, useContext, useState } from "react"
 import styled from "styled-components"
 
-// import centerImage from "../../images/RS11344_1F2A9964.jpg"
-
 import Frame from "../../images/square-frame.png"
 import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import lerp from "lerp"
@@ -207,11 +205,12 @@ const Outro = () => {
             <HandDrawnSVG
               id="this-is"
               svg={ThisIsFHI}
-              delay2={2}
-              duration={2}
-              duration2={2}
+              delay2={3}
+              duration={3}
+              duration2={3}
               useInviewTrigger={false}
               animated={triggered}
+              ease={"linear"}
             ></HandDrawnSVG>
             <FHILogo id="logo"></FHILogo>
           </Box>
@@ -253,7 +252,7 @@ const StyledEndcard = styled(Flex)`
 
 const Container = styled.div`
   position: relative;
-  min-height: 400vh;
+  min-height: 500vh;
   overflow: hidden;
 
   #endcard {

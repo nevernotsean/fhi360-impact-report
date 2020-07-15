@@ -19,6 +19,7 @@ const HandDrawnSVG = ({
   overrideLength = [],
   orange,
   scrollSpeed = -0.1,
+  ease = "ease-in-out",
   ...props
 }) => {
   const ref = useRef()
@@ -77,6 +78,7 @@ const HandDrawnSVG = ({
       duration2={duration2}
       delay={delay}
       delay2={delay2}
+      ease={ease}
     >
       <Box
         data-scroll
@@ -89,14 +91,14 @@ const HandDrawnSVG = ({
   )
 }
 
-const animate = ({ animated, duration, duration2, delay, delay2 }, i) => {
+const animate = ({ animated, duration, duration2, delay, delay2, ease }, i) => {
   duration = i === 1 ? duration : duration2
   delay = i === 1 ? delay : duration * (i - 1) + delay
   if (delay2 > -1 && i == 2) delay = delay2
 
   return (
     animated &&
-    ` stroke-dashoffset: 0; transition: stroke-dashoffset ${duration}s ease ${delay}s; `
+    ` stroke-dashoffset: 0; transition: stroke-dashoffset ${duration}s ${ease} ${delay}s; `
   )
 }
 

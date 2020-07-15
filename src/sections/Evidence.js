@@ -118,6 +118,7 @@ const Evidence = () => {
           image={image1}
           flip
           imageCredits={"Jessica Scranton/FHI 360"}
+          alt={"woman smiling holding baby"}
           pattern={vert}
           hideImageOnMobile
           id={"evidence-the-result-desktop"}

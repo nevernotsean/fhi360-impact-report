@@ -160,6 +160,7 @@ const Perception = props => {
           flip
           image={image1}
           imageCredits={"Leanne Gray/ FHI 360"}
+          alt={"man holding baby"}
           alignImageMobile={"center top"}
         >
           <Lead>LET’S CHANGE PERCEPTION</Lead>

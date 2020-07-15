@@ -17,12 +17,18 @@ import SectionTrigger from "./SplitSectionLongTrigger"
 const SplitSectionLongContent = ({
   children,
   contentArray = [
-    { image: null, imageCredits: null, content: null, mobileContent: null },
+    {
+      image: null,
+      imageCredits: null,
+      alt: null,
+      content: null,
+      mobileContent: null,
+    },
   ],
   pattern = stripeVert,
   ...props
 }) => {
-  const context = React.useContext(LocomotiveContext)
+  // const context = React.useContext(LocomotiveContext)
   const id = React.useMemo(() => shortid(), [])
   const total = contentArray.length
 
@@ -151,6 +157,7 @@ const SplitSectionLongInner = ({
   imageCredits,
   minHeight,
   image,
+  alt,
   target,
   index,
   total,
@@ -168,7 +175,7 @@ const SplitSectionLongInner = ({
           <>
             {/* Left */}
             <CenteredFlex>
-              <FullImage src={image}></FullImage>
+              <FullImage src={image} alt={alt}></FullImage>
             </CenteredFlex>
             {/* Right */}
             <CenteredFlex>
@@ -205,7 +212,7 @@ const SplitSectionLongInner = ({
             </CenteredFlex>
             {/* Right */}
             <CenteredFlex>
-              <FullImage src={image}></FullImage>
+              <FullImage src={image} alt={alt}></FullImage>
             </CenteredFlex>
           </>
         )}

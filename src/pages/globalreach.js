@@ -34,7 +34,7 @@ const GlobalReach = () => {
       </Masthead>
       <Media greaterThanOrEqual={"md"}>
         <Box>
-          <Image src={map}></Image>
+          <Image src={map} alt={"map of world"}></Image>
           <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
             <Box
               sx={{

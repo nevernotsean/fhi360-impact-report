@@ -140,6 +140,7 @@ const Nimble = () => {
       <SplitSectionCroppedImage
         pattern={nimbleVert}
         image={image2}
+        alt={"three students talking"}
         flip
         imageCredits={"Jessica Scranton/FHI 360"}
       >

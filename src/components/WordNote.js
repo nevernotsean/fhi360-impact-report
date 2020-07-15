@@ -32,7 +32,7 @@ const WordNote = ({
           width: w * 1.15 || width || "80px",
           position: "absolute",
           transform: transform,
-          zIndex: -1,
+          zIndex: 0,
           ...sx,
         }}
         style={style}
@@ -42,6 +42,7 @@ const WordNote = ({
           duration={0.3}
           delay={delay}
           orange={orange}
+          scrollSpeed={0}
           {...props}
         ></HandDrawnSVG>
       </Box>
