@@ -41,14 +41,14 @@ const OutroWord = ({
           <Box>{children}</Box>
         </Flex>
         <Box height={[28, 45]} style={{ textAlign: "center" }}>
-          <img src={pattern} style={{ marginBottom: 0 }}></img>
+          <img src={pattern} style={{ marginBottom: 0 }} alt=""></img>
         </Box>
       </Flex>
       {image && (
         <div style={{ position: "relative" }}>
           <BGImage
             src={image}
-            alt={alt || imageCredits}
+            alt={alt || ""}
             sx={{ objectPosition: imagePosition, height: ["80vh", "100vh"] }}
           ></BGImage>
           <PhotoCredits

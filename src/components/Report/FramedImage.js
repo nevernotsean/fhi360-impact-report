@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { Image, Box } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 import RectangleFrame from "../../images/rect-frame.png"
 import HandDrawnSVG from "../HandDrawnSVG"
+import Image from "../image"
 
 const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
   return (

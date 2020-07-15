@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Flex, Box, Image } from "rebass/styled-components"
+import { Flex, Box } from "rebass/styled-components"
 import HandDrawnSVG from "./HandDrawnSVG"
+import Image from "./image"
 
 const SectionDividerDark = ({
   svg,

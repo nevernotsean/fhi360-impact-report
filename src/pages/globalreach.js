@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Masthead from "../components/Report/Masthead"
-import { Flex, Box, Image, Text } from "rebass/styled-components"
+import { Flex, Box, Text } from "rebass/styled-components"
 import { H2 } from "../elements/Type"
 import Nav from "../components/Report/Nav"
 import styled from "styled-components"
@@ -11,13 +11,15 @@ import styled from "styled-components"
 import map from "../images/map.jpg"
 import Media from "../components/Media"
 // import { useMediaQuery } from "react-responsive"
+import Image from "./../components/image"
 
-const GlobalReach = () => {
+const GlobalReach = ({ location }) => {
   return (
     <Layout
       bg={"#f1f1f1"}
       hideMenuButton={true}
       pageTitle={"2019 Impact Report"}
+      location={location || "/globalreach"}
     >
       <SEO title="Home" />
       <Nav></Nav>

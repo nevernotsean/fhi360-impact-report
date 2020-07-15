@@ -4,11 +4,10 @@ import styled from "styled-components"
 import EvidenceCard from "../images/evidence.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import Streak from "../assets/svg/streak.svg"
 import strip from "../images/pattern-LeadWithScience_WeStudy.png"
 import vert from "../images/pattern-vert-WeLeadwithScience_TheResult.png"
 
-import { Lead, H2, H3, H1 } from "../elements/Type"
+import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 
 import image1 from "../images/Evidence1.png"
@@ -89,7 +88,7 @@ const Evidence = () => {
             ideas.
           </Text>
         </FlexSectionContainer>
-        <img src={strip} className="strip"></img>
+        <img src={strip} className="strip" alt=""></img>
       </Flex>
       <Media at={"sm"}>
         <Flex

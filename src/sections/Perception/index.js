@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 
 import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
@@ -14,7 +14,6 @@ import { H2, H3, Lead } from "../../elements/Type"
 import OrderedListCard from "../../components/OrderedListCard"
 import FlexSectionContainer from "../../components/FlexSectionContainer"
 import { useInView } from "react-intersection-observer"
-import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import { FlexWrap } from "../../elements/Flex"
 import AndSection1 from "./AndSection1"
 import AndSection2 from "./AndSection2"
@@ -45,8 +44,6 @@ const data = [
 ]
 
 const Perception = props => {
-  const { scroll } = useContext(LocomotiveContext)
-
   const [listRef, listInView] = useInView({
     rootMargin: "20% 0px -20% 0px",
     threshold: 0.8,
@@ -166,6 +163,13 @@ const Perception = props => {
             We are constantly <br />
             <span className="serif">developing</span>
           </H2>
+          {/* <div
+            className="divider"
+            style={{
+              borderTop: "1px solid black",
+              marginBottom: "1.45rem",
+            }}
+          /> */}
           <Box maxWidth={["none", 320]}>
             <span className="section-body">
               <Underlined orange duration={0.3} delay={1.5}>

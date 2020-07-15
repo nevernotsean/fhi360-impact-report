@@ -1,6 +1,6 @@
-import React, { useMemo, useRef } from "react"
+import React from "react"
 import styled from "styled-components"
-import { Flex, Box } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 import { animated } from "react-spring"
 
 import useDimensions from "react-use-dimensions"
@@ -38,7 +38,12 @@ const TitledListCard = ({
         ></div>
         {children}
         {href && (
-          <a href={href} className="learn-more" target={"_blank"}>
+          <a
+            href={href}
+            className="learn-more"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             Learn More
           </a>
         )}

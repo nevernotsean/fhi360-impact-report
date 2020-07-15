@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SplitSectionLongContent from "./../components/SplitSectionLongContent"
-import { Flex, Box, Image } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 import { Lead, H2, H3 } from "../elements/Type"
 
 const TestSection = () => (
@@ -31,13 +31,14 @@ const TestSection = () => (
   </>
 )
 
-const Debug = () => (
-  <Layout>
+const Debug = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Debug" />
 
     <Box id="sections">
       <SplitSectionLongContent
         flip
+        id={"debug"}
         contentArray={[
           {
             image: "https://via.placeholder.com/2000x2000?text=1",

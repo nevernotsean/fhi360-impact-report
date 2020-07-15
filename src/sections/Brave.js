@@ -1,12 +1,11 @@
 import React from "react"
 
-import styled from "styled-components"
 import BraveCard from "../images/brave.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
 import image1 from "../images/fpo-brave-1.png"
 
-import { Lead, H2, H3 } from "../elements/Type"
+import { Lead, H2 } from "../elements/Type"
 import SplitSectionLongContent from "../components/SplitSectionLongContent"
 
 import { Box } from "rebass/styled-components"
@@ -35,6 +34,7 @@ const Brave = () => {
         alt={"We are Brave"}
       ></SectionDividerDark>
       <SplitSectionLongContent
+        id={"brave"}
         contentArray={[
           {
             image: image1,

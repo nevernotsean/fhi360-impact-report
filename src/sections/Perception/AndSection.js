@@ -6,7 +6,7 @@ import { useSpring, animated } from "react-spring"
 // SVG
 
 import And from "../../assets/svg/and.svg"
-import { Lead, H2, H3 } from "../../elements/Type"
+import { Lead } from "../../elements/Type"
 import FlexSectionContainer from "../../components/FlexSectionContainer"
 import { useInView } from "react-intersection-observer"
 

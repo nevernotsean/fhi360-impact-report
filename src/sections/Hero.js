@@ -1,6 +1,6 @@
 import React from "react"
 import Sig from "../images/sig.png"
-import { Box, Image } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
 
@@ -16,6 +16,7 @@ import { Underlined } from "./../components/WordNote"
 import HandDrawnSVG from "./../components/HandDrawnSVG"
 import YouAreHere from "./../components/svg/YouAreHere"
 import PhotoCredits from "./../components/PhotoCredits"
+import Image from "../components/image"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -103,7 +104,7 @@ const Hero = () => {
             mt={[0, 50]}
             revealSpeed={0}
           ></InViewImage>
-          <img src={strip} className="strip desktop"></img>
+          <img src={strip} className="strip desktop" alt=""></img>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <HeroPullquote />
         </Box>
@@ -137,7 +138,7 @@ const Hero = () => {
               return (
                 <React.Fragment key={i}>
                   <p>{body}</p>
-                  {i == 2 && (
+                  {i === 2 && (
                     <Box display={["block", "none"]}>
                       <HeroPullquote px={[1, 5]} fontSize={"28px"} mb={50} />
                     </Box>

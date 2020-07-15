@@ -1,13 +1,13 @@
 import React from "react"
 
-import { Flex, Box } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 
 import HandDrawnSVG from "../../components/HandDrawnSVG"
 
 // SVG
 
 import ZipZag from "../../assets/svg/zigzag.svg"
-import { Lead, H2, H3 } from "../../elements/Type"
+import { Lead, H2 } from "../../elements/Type"
 import AndSection from "./AndSection"
 
 const LeftSide = () => (

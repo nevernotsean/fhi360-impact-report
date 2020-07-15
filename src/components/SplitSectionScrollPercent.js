@@ -23,9 +23,10 @@ const ScrollPercent = ({
 
   React.useEffect(() => {
     setLoaded(true)
-    if (context.scroll)
+    if (context.scroll) {
       context.scroll.on("scroll", props => {
         if (enabled) {
+          // console.log(scrollStart, scrollEnd)
           if (!scrollStart || !scrollEnd) return
 
           let width = mapLinear(props.scroll.y, scrollStart, scrollEnd, 0, 100)
@@ -37,7 +38,8 @@ const ScrollPercent = ({
           setScroll(width)
         }
       })
-  }, [loaded, enabled, scroll])
+    }
+  }, [loaded, enabled])
 
   return (
     <Box sx={{ width: "100%", position: "relative" }} {...props}>

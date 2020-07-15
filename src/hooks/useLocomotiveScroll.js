@@ -1,37 +1,44 @@
-import React, { useRef, useEffect, useContext, createContext } from "react"
+import React, { useEffect, useContext, createContext } from "react"
 import LocomotiveScroll from "locomotive-scroll"
 
 // import { onRouteUpdate } from "../../gatsby-browser"
 
 export const LocomotiveContext = createContext({ scroll: null })
 
-export const useLocomotiveScroll = (options, ref) => {
-  const tempRef = useRef()
-
-  if (!ref) ref = tempRef
-
+export const useLocomotiveScroll = ({ location, ...options }) => {
   const context = useContext(LocomotiveContext)
 
   useEffect(() => {
+    // console.log("update")
     var el = document.querySelector(options.query)
 
-    if (ref.current) el = ref.current
-
-    context.scroll = new LocomotiveScroll({
+    let scroll = new LocomotiveScroll({
       el,
       smooth: true,
       scrollFromAnywhere: true,
       ...options,
     })
+    scroll.update()
+
+    scroll.on("scroll", func => {
+      // Update `data-direction` with scroll direction.
+      document.documentElement.setAttribute("data-direction", func.direction)
+    })
+
+    context.scroll = scroll
+    window.scroll = scroll
 
     return () => context.scroll.destroy()
-  }, [ref, ref.current])
+  }, [location])
 
-  return [ref, context]
+  return context
 }
 
-export const LocomotiveScrollFull = ({ options, ...props }) => {
-  const [_, context] = useLocomotiveScroll({ query: "#main-content" })
+export const LocomotiveScrollFull = ({ options, location, ...props }) => {
+  const context = useLocomotiveScroll({
+    query: "#main-content",
+    location: location,
+  })
 
   return (
     <>

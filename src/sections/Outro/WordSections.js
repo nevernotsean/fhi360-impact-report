@@ -5,7 +5,7 @@ import FlexSectionContainer from "../../components/FlexSectionContainer"
 import HandDrawnSVG from "../../components/HandDrawnSVG"
 
 import { Box } from "rebass/styled-components"
-import { Lead, H2, H3 } from "../../elements/Type"
+import { H2 } from "../../elements/Type"
 
 import Streak from "../../assets/svg/streak.svg"
 

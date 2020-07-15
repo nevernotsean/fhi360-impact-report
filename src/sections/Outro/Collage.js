@@ -18,18 +18,20 @@ import imageH from "../../images/collage-h.png"
 
 import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 
-import FlexSectionContainer from "../../components/FlexSectionContainer"
-import { Flex, Box, Image } from "rebass/styled-components"
+import { Flex, Box } from "rebass/styled-components"
 import HandDrawnSVG from "./../../components/HandDrawnSVG"
 
 import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
 
-const getScale = (scrollY, startY, endY, scaleStart, scaleEnd) =>
-  lerp(scaleStart, scaleEnd, (scrollY - startY) / (endY - startY))
+import { easeCubic } from "d3-ease"
+import Image from "./../../components/image"
+
+const getScale = (t, ease = easeCubic) => {
+  let scale = ease(t)
+  return `scale(${scale})`
+}
 
 const Outro = () => {
-  const image = "https://via.placeholder.com/1000?text=FPO"
-
   const context = useContext(LocomotiveContext)
   const [loaded, setLoaded] = useState()
 
@@ -54,50 +56,51 @@ const Outro = () => {
       })
 
       context.scroll.on("call", (value, type, props) => {
-        if (value == "zoom") {
+        if (value === "zoom") {
           // console.log(props)
           setZoomProps(props)
           setLastType(type)
         }
       })
     }
-  }, [loaded])
+  }, [loaded, context.scroll])
 
   useEffect(() => {
     if (scroll && zoomProps.top) {
-      if (lastType == "enter" || scroll >= zoomProps.top - 100) {
-        var newScale = getScale(
-          scroll,
-          zoomProps.top - window.innerHeight * 1,
-          zoomProps.bottom - window.innerHeight * 1, // 100vh of scrolling to disappear
-          3,
-          1
+      var startScale = 3
+      var endScale = 1
+      if (lastType === "enter" || scroll >= zoomProps.top - 100) {
+        var startY = zoomProps.top - window.innerHeight * 1
+        var endY = zoomProps.bottom - window.innerHeight * 1
+
+        var newScale = lerp(
+          startScale,
+          endScale,
+          (scroll - startY) / (endY - startY)
         )
-        newScale = newScale < 1 ? 1 : newScale
-        newScale = newScale > 3 ? 3 : newScale
+
+        newScale = newScale <= endScale ? endScale : newScale
+        newScale = newScale >= startScale ? startScale : newScale
+
         setScale(newScale)
-      } else setScale(3)
+      } else setScale(startScale)
 
       if (
-        lastType == "enter" ||
+        lastType === "enter" ||
         scroll >= zoomProps.bottom - window.innerHeight
       ) {
-        var newOp = getScale(
-          scroll,
-          zoomProps.bottom - window.innerHeight * 1,
-          zoomProps.bottom,
-          1,
-          0
-        )
+        var startYop = zoomProps.bottom - window.innerHeight * 1
+        var endYop = zoomProps.bottom
+        var newOp = lerp(1, 0, (scroll - startYop) / (endYop - startYop))
 
         newOp = newOp <= 0 ? 0 : newOp
         newOp = newOp >= 1 ? 1 : newOp
         setOpacity(newOp)
 
-        // if (newOp == 0) console.log(scroll, zoomProps)
+        // if (newOp === 0) console.log(scroll, zoomProps)
       } else setOpacity(1)
     }
-  }, [scroll, lastType])
+  }, [scroll, lastType, zoomProps.bottom, zoomProps.top])
 
   // trigger dissapear all but center
   const [wp1, setWp1] = useState(false)
@@ -127,31 +130,46 @@ const Outro = () => {
           data-scroll-call="zoom"
           data-scroll-repeat={"true"}
         >
-          <div
-            className="s-instagram-grid"
-            style={{
-              transform: `scale(${scale})`,
-            }}
-          >
-            <div className="s-instagram-layer">
+          <div className="s-instagram-grid">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageA})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageB})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageC})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer center-square">
+            <div
+              className="s-instagram-layer center-square"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
                 className="s-instagram-block"
@@ -162,31 +180,56 @@ const Outro = () => {
               ></div>
               <Image src={Frame} id="frame"></Image>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageH})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageE})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageF})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageG})` }}
               ></div>
             </div>
-            <div className="s-instagram-layer">
+            <div
+              className="s-instagram-layer"
+              style={{
+                transform: getScale(scale, easeCubic),
+              }}
+            >
               <div
                 className="s-instagram-block"
                 style={{ backgroundImage: `url(${imageD})` }}
