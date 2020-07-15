@@ -9,7 +9,7 @@ const Image = props => {
   React.useEffect(() => {
     if (loaded && context.scroll)
       !console.log("image loaded") && context.scroll.update()
-  })
+  }, [loaded])
   return <RebassImage {...props} onLoad={() => setLoaded(true)}></RebassImage>
 }
 
