@@ -37,7 +37,7 @@ const ScrollPercent = ({
           setScroll(width)
         }
       })
-  }, [loaded, enabled])
+  }, [loaded, enabled, scroll])
 
   return (
     <Box sx={{ width: "100%", position: "relative" }} {...props}>
