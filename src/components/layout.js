@@ -45,8 +45,10 @@ const Layout = ({
 
   const [sideNavOpen, setSideNavOpen] = React.useState(false)
 
+  // console.log(props.location)
+
   return (
-    <Providers>
+    <Providers location={props.location}>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>{mediaStyles}</style>
@@ -85,5 +87,20 @@ const StyledMain = styled.main`
     padding-top: 50px;
   }
 `
+
+// const UpdateLocomotive = ({ location, ...props }) => {
+//   const context = React.useContext(LocomotiveContext)
+
+//   React.useEffect(() => {
+//     console.log(location)
+//     if (context && context.scroll) {
+//       context.scroll.update()
+//     } else {
+//       console.log("context missing")
+//     }
+//   }, [context, context.scroll, location])
+
+//   return null
+// }
 
 export default Layout

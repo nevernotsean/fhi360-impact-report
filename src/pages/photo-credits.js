@@ -6,10 +6,9 @@ import Masthead from "../components/Report/Masthead"
 import { Flex, Box, Text } from "rebass/styled-components"
 import { H2 } from "../elements/Type"
 import styled from "styled-components"
-import Nav from "../components/Report/Nav"
 
-const Funders = () => (
-  <Layout bg={"#f1f1f1"} hideMenuButton={true}>
+const Funders = ({ location }) => (
+  <Layout bg={"#f1f1f1"} hideMenuButton={true} location={location}>
     <SEO title="Home" />
     <Container>
       <Masthead headline={"Photography<br/>Credits"}>

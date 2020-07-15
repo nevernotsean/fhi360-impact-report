@@ -1,5 +1,5 @@
 import React from "react"
-import { Image } from "rebass"
+import Image from "./image"
 import welcome from "../images/welcome-fpo.gif"
 import { Box } from "rebass/styled-components"
 import styled, { createGlobalStyle } from "styled-components"

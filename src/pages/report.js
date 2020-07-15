@@ -17,9 +17,14 @@ import DAM2 from "../images/ExpandingSelfCare_creditJessicaScranton.jpg"
 import enhancingFisheries from "../images/ImpactReport_EnhancingFisheries.jpg"
 import breastFeeding from "../images/MeasuringtheCostBreastfeeding_GiacomoPirozzi.jpg"
 
-const impactReport = () => {
+const impactReport = ({ location }) => {
   return (
-    <Layout bg={"#f1f1f1"} sidenavData={data} pageTitle={"2019 Impact Report"}>
+    <Layout
+      bg={"#f1f1f1"}
+      sidenavData={data}
+      pageTitle={"2019 Impact Report"}
+      location={location}
+    >
       <SEO title="Home" />
       <Nav></Nav>
       <Masthead></Masthead>
@@ -106,7 +111,7 @@ const impactReport = () => {
           <ReportPullquote
             title={"Learn More"}
             headline={
-              '<a href="www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank">www.ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
+              '<a href="www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank"  rel="noreferrer">www.ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
             }
           ></ReportPullquote>
         </Box>

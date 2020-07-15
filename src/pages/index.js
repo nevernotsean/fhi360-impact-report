@@ -12,8 +12,8 @@ import LiveWork from "../sections/LiveWork"
 import Outro from "../sections/Outro/"
 import { Box } from "rebass/styled-components"
 
-const IndexPage = () => (
-  <Layout sidenavData={data} showIntro={true}>
+const IndexPage = ({ location }) => (
+  <Layout sidenavData={data} showIntro={true} location={location}>
     <SEO title="Home" />
 
     <Box id="sections">

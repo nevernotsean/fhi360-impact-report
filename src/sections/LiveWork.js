@@ -11,8 +11,9 @@ import image1 from "../images/we-live-work.jpg"
 
 import map from "../images/map.jpg"
 
-import { Box, Flex, Image } from "rebass/styled-components"
+import { Box, Flex } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
+import Image from "../components/image"
 
 const LiveFirst = () => (
   <>

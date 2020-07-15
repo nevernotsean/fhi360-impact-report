@@ -2,7 +2,6 @@ import React from "react"
 import { useInView } from "react-intersection-observer"
 import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
 import { Box } from "rebass/styled-components"
-import shortid from "shortid"
 
 const SectionTrigger = ({
   setActive,
@@ -34,13 +33,13 @@ const SectionTrigger = ({
 
   const callback = React.useCallback(
     (value, type, props) => {
-      if (value != sectionId) return
+      if (value !== sectionId) return
 
       // console.log(props.top, props.bottom, activeSection, index)
 
       setSectionProps({ top: props.top, bottom: props.bottom })
     },
-    [setSectionProps, isInview, sectionId]
+    [setSectionProps, sectionId]
   )
 
   React.useEffect(() => {

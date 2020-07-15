@@ -1,18 +1,14 @@
 import React from "react"
 import Media from "./Media"
 import stripeVert from "../images/pattern-vert.png"
-import shortid from "shortid"
 import { SplitSection } from "./SplitSection"
 import { FlexWrap } from "./../elements/Flex"
-import { Box, Flex, Image } from "rebass/styled-components"
-import { useInView } from "react-intersection-observer"
+import { Box, Flex } from "rebass/styled-components"
 import styled from "styled-components"
 import PhotoCredits from "./PhotoCredits"
-import theme from "./../styles/index"
-import lerp from "lerp"
-import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
 import ScrollPercent from "./SplitSectionScrollPercent"
 import SectionTrigger from "./SplitSectionLongTrigger"
+import Image from "./image"
 
 const SplitSectionLongContent = ({
   children,
@@ -42,7 +38,7 @@ const SplitSectionLongContent = ({
 
     //   if (context.scroll) {
     //     context.scroll.on("call", (value, type, props) => {
-    //       if (value == `long-form-start-${id}`) setScrollProps(props)
+    //       if (value === `long-form-start-${id}`) setScrollProps(props)
     //     })
     //   }
   }, [])
@@ -105,7 +101,7 @@ const SplitSectionLongContent = ({
                 key={i}
                 index={i}
                 total={total}
-                isVisible={activeSection == i}
+                isVisible={activeSection === i}
                 scrollStart={
                   sectionProps &&
                   sectionProps.length &&
@@ -121,7 +117,7 @@ const SplitSectionLongContent = ({
                 {...props}
                 {...contentProps}
               >
-                <Content animated={activeSection == i}></Content>
+                <Content animated={activeSection === i}></Content>
               </SplitSectionLongInner>
             ))}
           </Box>

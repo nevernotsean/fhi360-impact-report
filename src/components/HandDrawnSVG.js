@@ -14,7 +14,7 @@ const HandDrawnSVG = ({
   useInviewTrigger = true,
   animated = false,
   triggerOnce,
-  threshold,
+  threshold = 0.8,
   rootMargin = "20% 0px -20% 0px",
   overrideLength = [],
   orange,
@@ -28,8 +28,7 @@ const HandDrawnSVG = ({
 
   const [inViewRef, inView, entry] = useInView({
     rootMargin,
-    threshold: 0.8,
-    threshold,
+    threshold: threshold,
     triggerOnce,
   })
 
@@ -94,7 +93,7 @@ const HandDrawnSVG = ({
 const animate = ({ animated, duration, duration2, delay, delay2, ease }, i) => {
   duration = i === 1 ? duration : duration2
   delay = i === 1 ? delay : duration * (i - 1) + delay
-  if (delay2 > -1 && i == 2) delay = delay2
+  if (delay2 > -1 && i === 2) delay = delay2
 
   return (
     animated &&
@@ -107,7 +106,7 @@ const MaskOuter = styled.div`
     pointer-events: none;
   }
   .animate {
-    opacity: ${({ length }) => (length == 0 ? 0 : 1)};
+    opacity: ${({ length }) => (length === 0 ? 0 : 1)};
     stroke-dasharray: ${({ length }) => `${length}px ${length}px`};
     stroke-dashoffset: ${({ length }) => `${length}px`};
 

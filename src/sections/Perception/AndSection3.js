@@ -1,10 +1,5 @@
 import React from "react"
-
-import { Box } from "rebass/styled-components"
-import HandDrawnSVG from "../../components/HandDrawnSVG"
-
-// SVG
-import { Lead, H2, H3 } from "../../elements/Type"
+import { Lead, H2 } from "../../elements/Type"
 import AndSection from "./AndSection"
 import { Underlined } from "./../../components/WordNote"
 

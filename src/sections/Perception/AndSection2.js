@@ -1,23 +1,7 @@
 import React from "react"
-
-import { Flex, Box } from "rebass/styled-components"
-
-import HandDrawnSVG from "../../components/HandDrawnSVG"
-
-// SVG
-
-import ZipZag from "../../assets/svg/zigzag.svg"
-import { Lead, H2, H3 } from "../../elements/Type"
+import { Lead, H2 } from "../../elements/Type"
 import AndSection from "./AndSection"
-
-import { animated } from "react-spring"
-
-// SVG
-
-import Circle from "../../assets/svg/circle.svg"
 import { Underlined } from "../../components/WordNote"
-
-const config = { mass: 300, tension: 2000, friction: 20000 }
 
 const LeftSide = () => (
   <>

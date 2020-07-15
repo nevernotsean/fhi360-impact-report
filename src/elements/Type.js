@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import { Text, Heading } from "rebass/styled-components"
 
 export const H1 = props => (

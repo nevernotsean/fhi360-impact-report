@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Masthead from "../components/Report/Masthead"
-import { Flex, Box, Image } from "rebass/styled-components"
+import { Flex, Box } from "rebass/styled-components"
 
 import Image2 from "../images/2019FinancialsV2-02.jpg"
 import Image3 from "../images/2019FinancialsV2-03.jpg"
@@ -12,9 +12,15 @@ import Image5 from "../images/2019FinancialsV2-05.jpg"
 import { H2 } from "../elements/Type"
 import Nav from "../components/Report/Nav"
 import styled from "styled-components"
+import Image from "../components/image"
 
-const Financial = () => (
-  <Layout bg={"#f1f1f1"} hideMenuButton={true} pageTitle={"2019 Impact Report"}>
+const Financial = ({ location }) => (
+  <Layout
+    bg={"#f1f1f1"}
+    hideMenuButton={true}
+    pageTitle={"2019 Impact Report"}
+    location={location}
+  >
     <SEO title="Home" />
     <Nav></Nav>
     <Masthead title={"(unaudited)"} headline={"2019<br/>Financial Summary"}>

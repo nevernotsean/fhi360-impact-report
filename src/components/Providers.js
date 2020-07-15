@@ -7,7 +7,7 @@ import { MediaContextProvider } from "./Media"
 
 const Providers = props => (
   <ThemeProvider theme={theme}>
-    <LocomotiveScrollFull>
+    <LocomotiveScrollFull location={props.location}>
       <MediaContextProvider>{props.children} </MediaContextProvider>
     </LocomotiveScrollFull>
   </ThemeProvider>

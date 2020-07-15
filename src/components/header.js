@@ -108,7 +108,7 @@ const Header = ({
               }}
             ></ShareButton>
           </Box>
-          {hideMenuButton != true && (
+          {hideMenuButton !== true && (
             <Box
               ml={20}
               height={26.66}

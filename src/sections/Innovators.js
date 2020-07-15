@@ -1,12 +1,10 @@
-import React, { useContext } from "react"
-import { useInView } from "react-intersection-observer"
-import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
+import React from "react"
 
 import styled from "styled-components"
 import Innovate from "../images/innovators.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import { Lead, H2, H3 } from "../elements/Type"
+import { Lead, H2 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 import Streak from "../assets/svg/streak2.svg"
 

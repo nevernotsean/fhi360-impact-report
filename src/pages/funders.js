@@ -4,15 +4,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Masthead from "../components/Report/Masthead"
 import { Flex, Box, Text } from "rebass/styled-components"
-import { H2, Lead } from "../elements/Type"
+import { H2 } from "../elements/Type"
 import styled from "styled-components"
 import Nav from "../components/Report/Nav"
-import { H3 } from "./../elements/Type"
-import Streak from "../assets/svg/streak.svg"
-import HandDrawnSVG from "./../components/HandDrawnSVG"
-import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
-const Funders = () => (
-  <Layout bg={"#f1f1f1"} hideMenuButton={true} pageTitle={"2019 Impact Report"}>
+const Funders = ({ location }) => (
+  <Layout
+    bg={"#f1f1f1"}
+    hideMenuButton={true}
+    pageTitle={"2019 Impact Report"}
+    location={location}
+  >
     <SEO title="Home" />
     <Nav></Nav>
     <Container>
