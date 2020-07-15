@@ -141,6 +141,10 @@ const Container = styled.div`
   a {
     color: ${({ theme }) => theme.colors.black};
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    overflow: hidden;
+  }
 `
 
 export default Section

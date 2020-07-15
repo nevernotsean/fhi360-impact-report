@@ -111,7 +111,7 @@ const impactReport = ({ location }) => {
           <ReportPullquote
             title={"Learn More"}
             headline={
-              '<a href="www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank"  rel="noreferrer">www.ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
+              '<a href="https://www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank"  rel="noreferrer">ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
             }
           ></ReportPullquote>
         </Box>

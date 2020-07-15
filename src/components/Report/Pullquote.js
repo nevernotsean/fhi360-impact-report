@@ -25,6 +25,11 @@ const Container = styled(Box)`
     line-height: 1;
     max-width: 1000px;
     font-size: 32px;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      max-width: calc(100vw - 40px);
+      overflow: hidden;
+    }
   }
 `
 

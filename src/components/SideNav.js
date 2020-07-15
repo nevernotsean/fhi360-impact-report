@@ -25,7 +25,7 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
         <Box
           className={"closeButton"}
           width={32}
-          pt={35}
+          pt={[15, 35]}
           pb={80}
           onClick={() => closeSidenav()}
         >
@@ -99,10 +99,25 @@ const Container = styled(Box)`
 
   .closeButton {
     cursor: pointer;
+    user-select: none;
+
+    &:active,
+    &:focus {
+      background: none;
+      outline: none;
+    }
+
+    * {
+      &:active,
+      &:focus {
+        background: none;
+        outline: none;
+      }
+    }
   }
 
   #sidenav {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
@@ -113,6 +128,12 @@ const Container = styled(Box)`
     padding-left: 60px;
     background: rgba(255, 255, 255, 1);
     z-index: 9999;
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      max-width: 90vw;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
 
   .scrollToLink,
@@ -145,6 +166,11 @@ const Container = styled(Box)`
       .hr {
         transform: scaleX(1);
       }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      font-size: 16px;
+      white-space: nowrap;
     }
   }
 

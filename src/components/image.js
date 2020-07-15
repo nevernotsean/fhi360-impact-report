@@ -7,9 +7,11 @@ const Image = props => {
   const context = React.useContext(LocomotiveContext)
 
   React.useEffect(() => {
-    if (loaded && context.scroll)
-      !console.log("image loaded") && context.scroll.update()
-  })
+    if (loaded && context.scroll) {
+      console.log("update")
+      context.scroll.update()
+    }
+  }, [])
   return <RebassImage {...props} onLoad={() => setLoaded(true)}></RebassImage>
 }
 

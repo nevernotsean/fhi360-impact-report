@@ -9,13 +9,16 @@ export const useLocomotiveScroll = ({ location, ...options }) => {
   const context = useContext(LocomotiveContext)
 
   useEffect(() => {
-    // console.log("update")
+    console.log("update")
     var el = document.querySelector(options.query)
 
     let scroll = new LocomotiveScroll({
       el,
       smooth: true,
-      scrollFromAnywhere: true,
+      smoothMobile: false,
+      getDirection: true,
+      touchMultiplier: 2.5,
+      lerp: 0.15,
       ...options,
     })
     scroll.update()

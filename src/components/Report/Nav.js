@@ -8,18 +8,18 @@ const Nav = () => {
     <Container>
       <Flex
         justifyContent={"space-between"}
-        alignItems={"center"}
+        alignItems={["flex-end", "center"]}
         mx={"auto"}
-        pr={[0, 50]}
-        height={50}
+        pr={[10, 50]}
+        height={["auto", 50]}
         flexDirection={["column", "row"]}
       >
-        <Box px={[0, 10]}>
+        <Box px={[0, 10]} display={["none", "block"]}>
           <Link className={"link back"} to={"/"}>
             ← Back to We Are FHI 360
           </Link>
         </Box>
-        <Flex>
+        <Flex flexDirection={["column", "row"]}>
           <Link className={"link"} to={"/report"}>
             2019 Overview
           </Link>

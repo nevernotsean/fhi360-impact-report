@@ -13,7 +13,11 @@ const Masthead = ({
 }) => {
   return (
     <MastheadContainer>
-      <FlexSectionContainer minHeight={"50vh"} {...props}>
+      <FlexSectionContainer
+        minHeight={["none", "50vh"]}
+        {...props}
+        py={[50, 100]}
+      >
         {/* <Lead mb={3}>{title}</Lead> */}
         <div className="hr"></div>
         <H1 dangerouslySetInnerHTML={{ __html: headline }}></H1>

@@ -75,7 +75,7 @@ const Nimble = () => {
         <Flex alignItems={"center"} width={1} flexWrap={"wrap"} ref={listRef}>
           <Box width={[1, 1 / 2]} flex={"1 0 auto"} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
-            <H2 className="section-title">
+            <H2 className="section-title" maxWidth={[300, "none"]}>
               We are eager, ready and able to
               <br />
               <span className="serif">jump in, pivot and act.</span>

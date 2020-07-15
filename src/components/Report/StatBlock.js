@@ -36,7 +36,7 @@ const StatBlock = ({
   }, [inView])
 
   return (
-    <StatBlockContainer flexDirection={"column"} {...props}>
+    <StatBlockContainer flexDirection={"column"} {...props} mb={[100, 50]}>
       <div ref={parentRef}></div>
       <Flex
         flexDirection={"column"}

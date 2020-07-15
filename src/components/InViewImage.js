@@ -92,9 +92,10 @@ const Container = styled(Box)`
     }
   }
 
-  ${({ h, w }) =>
-    h !== undefined &&
-    `
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    ${({ h, w }) =>
+      h !== undefined &&
+      `
       height: ${h}px;
       
       .mask {
@@ -102,6 +103,8 @@ const Container = styled(Box)`
         height: ${h}px;
       }
     `}
+  }
+
   .pattern {
     ${({ inView, theme }) =>
       inView &&
