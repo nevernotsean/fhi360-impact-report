@@ -37,7 +37,7 @@ const Debug = ({ location }) => (
 
     <Box id="sections">
       <SplitSectionLongContent
-        flip
+        flip={false}
         id={"debug"}
         contentArray={[
           {
