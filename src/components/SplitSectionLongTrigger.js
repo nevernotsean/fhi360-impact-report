@@ -9,6 +9,7 @@ const SectionTrigger = ({
   activeSection,
   setSectionProps,
   index,
+  id,
   ...props
 }) => {
   const [ref, isInview] = useInView({
@@ -16,13 +17,9 @@ const SectionTrigger = ({
     threshold: 0,
   })
 
-  const id = React.useMemo(() => shortid(), [])
+  const sectionId = `${id}-${index}`
   const [loaded, setLoaded] = React.useState()
   const context = React.useContext(LocomotiveContext)
-
-  // React.useEffect(() => {
-  //   if (id) console.log(id, "id")
-  // }, [id])
 
   React.useState(() => {
     setLoaded(true)
@@ -30,31 +27,34 @@ const SectionTrigger = ({
 
   React.useEffect(() => {
     if (isInview) {
-      console.log(index, "active")
+      // console.log(index, "active")
       setActive(index)
     }
   }, [isInview])
+
+  const callback = React.useCallback(
+    (value, type, props) => {
+      if (value != sectionId) return
+
+      // console.log(props.top, props.bottom, activeSection, index)
+
+      setSectionProps({ top: props.top, bottom: props.bottom })
+    },
+    [setSectionProps, isInview, sectionId]
+  )
 
   React.useEffect(() => {
     if (!loaded) return
     if (!context || !context.scroll) return
 
-    context.scroll.on("call", (value, type, props) => {
-      if (value != id) return
-      if (activeSection == index) return
-
-      // console.log(value, id, props.top)
-      setSectionProps({ top: props.top, bottom: props.bottom })
-
-      // else setSectionProps(null)
-    })
-  }, [loaded, isInview, setSectionProps])
+    context.scroll.on("call", callback)
+  }, [loaded, setSectionProps, isInview])
 
   return (
     <Box
       ref={ref}
       data-scroll
-      data-scroll-call={id}
+      data-scroll-call={sectionId}
       sx={{ height: "100vh", pointerEvents: "none" }}
     ></Box>
   )

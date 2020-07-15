@@ -26,10 +26,10 @@ const SplitSectionLongContent = ({
     },
   ],
   pattern = stripeVert,
+  id,
   ...props
 }) => {
   // const context = React.useContext(LocomotiveContext)
-  const id = React.useMemo(() => shortid(), [])
   const total = contentArray.length
 
   const [activeSection, setActive] = React.useState(-1)
@@ -91,6 +91,7 @@ const SplitSectionLongContent = ({
               activeSection={activeSection}
               key={i}
               index={i}
+              id={id}
             />
           ))}
           <Box

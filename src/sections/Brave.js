@@ -35,6 +35,7 @@ const Brave = () => {
         alt={"We are Brave"}
       ></SectionDividerDark>
       <SplitSectionLongContent
+        id={"brave"}
         contentArray={[
           {
             image: image1,

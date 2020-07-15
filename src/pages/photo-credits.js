@@ -13,9 +13,9 @@ const Funders = () => (
     <SEO title="Home" />
     <Container>
       <Masthead headline={"Photography<br/>Credits"}>
-        <Box width={[1, 480]}>
+        {/* <Box width={[1, 480]}>
           <p>Lorem ipsum</p>
-        </Box>
+        </Box> */}
       </Masthead>
       <Section>
         <P>Joshua Woodson</P>

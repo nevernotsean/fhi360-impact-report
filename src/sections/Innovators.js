@@ -101,6 +101,7 @@ const Innovators = () => {
       <SplitSectionLongContent
         image={image2}
         flip
+        id={"innovators"}
         contentArray={[
           {
             image: image2,

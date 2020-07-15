@@ -38,6 +38,7 @@ const Debug = () => (
     <Box id="sections">
       <SplitSectionLongContent
         flip
+        id={"debug"}
         contentArray={[
           {
             image: "https://via.placeholder.com/2000x2000?text=1",

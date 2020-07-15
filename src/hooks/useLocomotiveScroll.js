@@ -24,6 +24,8 @@ export const useLocomotiveScroll = (options, ref) => {
       ...options,
     })
 
+    window.scroll = context.scroll
+
     return () => context.scroll.destroy()
   }, [ref, ref.current])
 

@@ -49,6 +49,7 @@ const LiveWork = () => (
     ></SectionDividerDark>
     <SplitSectionLongContent
       flip
+      id={"livework"}
       contentArray={[
         {
           image: image1,
