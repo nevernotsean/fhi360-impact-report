@@ -76,18 +76,17 @@ const Nimble = () => {
           <Box width={[1, 1 / 2]} flex={"1 0 auto"} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
             <H2 className="section-title">
-              Our global platform means we do not need a lot of lead time
+              We are eager, ready, and able to
               <br />
-              <span className="serif">
-                to respond to new crises or existing challenges.
-              </span>
+              <span className="serif">jump in, pivot and act.</span>
             </H2>
             <div
               className="divider"
               style={{ borderTop: "1px solid black", marginBottom: "1.45rem" }}
             />
             <H3 className="section-subtitle">
-              We are ready to jump in, pivot and act.
+              Our global platform means we do not need a lot of lead time to
+              respond to new crises or existing challenges.
               <br />
               <br />
               Our five subsidiaries have unique areas of focus:
@@ -128,7 +127,7 @@ const Nimble = () => {
                   href={data[index].href}
                   // noBorder={index < 2}
                 >
-                  <p>
+                  <p className={"title-card-body"}>
                     <em>{data[index].body}</em>
                   </p>
                 </TitledListCard>

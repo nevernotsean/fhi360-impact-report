@@ -44,6 +44,7 @@ const LiveWork = () => (
   <Container>
     <SectionDividerDark
       img={LiveCard}
+      maxWidth={[1000, 1200]}
       alt="we live where we work"
     ></SectionDividerDark>
     <SplitSectionLongContent

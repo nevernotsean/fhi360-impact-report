@@ -40,7 +40,8 @@ const StatBlock = ({
       <div ref={parentRef}></div>
       <Flex
         flexDirection={"column"}
-        alignItems={flip ? "flex-end" : "flex-start"}
+        // alignItems={"flex-start"}
+        // alignItems={flip ? "flex-end" : "flex-start"}
       >
         <Box className={"number"}>
           {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}

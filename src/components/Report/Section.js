@@ -14,7 +14,7 @@ const Stats = ({ link, project, funder, ...props }) => (
       <H3 className="labelhead" mb={2}>
         Project
       </H3>
-      <a href={link} className={"project label"}>
+      <a href={link} className={"project label"} target={"_blank"}>
         {project}
       </a>
       {/* <span style={{ marginLeft: "10px", fontSize: "16px" }}>〉</span> */}
@@ -76,13 +76,12 @@ const Section = ({
                 <Stats link={link} project={project} funder={funder}></Stats>
               </Box>
             </Media>
-
-            <BackToTop style={{ cursor: "pointer", textAlign: "right" }}>
-              <em>Back to top</em>
-            </BackToTop>
           </Flex>
         </Flex>
         {children}
+        <BackToTop style={{ cursor: "pointer", textAlign: "left" }}>
+          <em>Back to top</em>
+        </BackToTop>
       </FlexSectionContainer>
     </Container>
   )

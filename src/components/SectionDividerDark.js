@@ -11,6 +11,8 @@ const SectionDividerDark = ({
   alt,
   overrideLength,
   children,
+  maxWidth = 1000,
+  sx,
   ...props
 }) => {
   return (
@@ -18,11 +20,12 @@ const SectionDividerDark = ({
       <Container>
         <Box
           width={1}
-          maxWidth={1000}
+          maxWidth={maxWidth}
           mx={"auto"}
           py={"10vw"}
           sx={{
             position: "relative",
+            ...sx,
           }}
           {...props}
         >

@@ -31,7 +31,7 @@ const introLetter = [
 
 const HeroPullquote = props => (
   <PullQuote px={[1, 5]} mb={50} {...props}>
-    Now as never before, we will be challenged to be creative and work{" "}
+    "Now as never before, we will be challenged to be creative and work{" "}
     <Underlined
       orange
       duration={0.25}
@@ -41,7 +41,7 @@ const HeroPullquote = props => (
     >
       differently
     </Underlined>{" "}
-    ... the vast scope and urgency of this crisis demand nothing less.
+    ... the vast scope and urgency of this crisis demand nothing less."
   </PullQuote>
 )
 
@@ -62,7 +62,7 @@ const Hero = () => {
             display={"block"}
             alt={"photo of Patrick Fine"}
           ></Image>
-          <Image src={strip} className="strip" ml={"-20px"}></Image>
+          <Image src={strip} className="strip mobile" ml={"-20px"}></Image>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <Box className="lockup lockup-mobile" width={"50vw"}>
             <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
@@ -89,7 +89,11 @@ const Hero = () => {
           </Box>
         </Box>
         {/* Desktop */}
-        <Box width={[1 / 2]} display={["none", "block"]}>
+        <Box
+          width={[1 / 2]}
+          display={["none", "block"]}
+          sx={{ position: "relative" }}
+        >
           <InViewImage
             src={hero}
             className="hero-image"
@@ -99,7 +103,7 @@ const Hero = () => {
             mt={[0, 50]}
             revealSpeed={0}
           ></InViewImage>
-          <img src={strip} className="strip"></img>
+          <img src={strip} className="strip desktop"></img>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <HeroPullquote />
         </Box>
@@ -167,6 +171,8 @@ const HeroContainer = styled(Box)`
   .strip {
     transform: translateY(-100%);
     width: 100%;
+
+    position: absolute;
   }
 
   .lockup {

@@ -51,29 +51,34 @@ const Evidence = () => {
       <Flex style={{ background: "#f1f1f1", position: "relative" }} width={1}>
         <FlexSectionContainer
           width={1}
-          maxWidth={500}
+          maxWidth={800}
           px={[20, 0]}
           centered={true}
           textAlign={"center"}
         >
           <Lead>We Lead With Science</Lead>
-          <H2 className="section-title" style={{ marginBottom: 0 }}>
-            We study, test and evaluate.
+          <H2
+            style={{ marginBottom: 0 }}
+            fontWeight={900}
+            fontSize={["24px", "6vw"]}
+            lineHeight={["28px", "6.6vw"]}
+          >
+            We study,
+            <br />
+            test and evaluate.
           </H2>
           <Text
             as={"span"}
             fontWeight={900}
-            fontSize={["24px", "48px"]}
-            lineHeight={["28px", "54px"]}
+            fontSize={["24px", "6vw"]}
+            lineHeight={["28px", "5vw"]}
             className={"serif"}
           >
             We gather{" "}
             <Underlined delay={0.5} transform={"translateY(-10%)"} orange>
               evidence
             </Underlined>
-            ,
-            <br />
-            generate{" "}
+            , generate{" "}
             <Underlined delay={0.75} transform={"translateY(-10%)"} orange>
               reliable
             </Underlined>{" "}
@@ -97,9 +102,8 @@ const Evidence = () => {
           <Lead textAlign="center">We lead with science</Lead>
           <Box maxWidth={480}>
             <H2
-              className={"section-title"}
-              fontSize={"34px !important"}
-              lineHeight={"38px !important"}
+              fontSize={["24px", "6vw"]}
+              lineHeight={["28px", "6.6vw"]}
               textAlign="center"
             >
               <Underlined sx={{ top: "100%" }}>The result:</Underlined>

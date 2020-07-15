@@ -44,7 +44,7 @@ const WordSections = () => {
       </OutroWord>
       <OutroWord
         image={empowersImage}
-        imagePosition={["75% center", "center center"]}
+        imagePosition={["25% center", "left center"]}
         alt={"woman in focus group"}
         imageCredits={"Jessica Scranton/FHI 360"}
         pattern={pattern2}
@@ -89,7 +89,7 @@ const WordSections = () => {
           <br />
           is connected.
           <br />
-          So are we.
+          <span className="serif">So are we.</span>
         </H2>
         <Box width={300} mx={"auto"} mt={-30}>
           <HandDrawnSVG

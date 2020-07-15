@@ -24,7 +24,7 @@ const impactReport = () => {
       <Nav></Nav>
       <Masthead></Masthead>
       <Section {...data[0]}>
-        <Box width={[1, 1 / 2]} ml={"auto"}>
+        <Box width={[1, 1 / 2, "53.25%"]} ml={"auto"}>
           <StatBlock end={9000} duration={2} postfix={"+"}>
             people reached through community engagement activities in the
             Democratic Republic of the Congo.
@@ -39,7 +39,7 @@ const impactReport = () => {
         ></FramedImage>
       </Section>
       <Section {...data[2]}>
-        <Box py={5}>
+        <Box width={[1, 1 / 2, "53.25%"]} ml={"auto"} py={5}>
           <ReportPullquote
             title={"Results"}
             headline={
@@ -49,9 +49,11 @@ const impactReport = () => {
         </Box>
       </Section>
       <Section {...data[3]}>
-        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
+        <Box width={[1, 1 / 2, "53.25%"]} mt={50}>
           <StatBlock end={32.9} decimals={1} duration={2} postfix={"M"}>
-            people reached through social media.
+            people reached through
+            <br />
+            social media.
           </StatBlock>
         </Box>
       </Section>
@@ -63,9 +65,11 @@ const impactReport = () => {
         ></FramedImage>
       </Section>
       <Section {...data[5]}>
-        <Box width={[1, 7 / 16]} mt={50} flip>
+        <Box width={[1, 1 / 2, "53.25%"]} mt={50}>
           <StatBlock end={707843} decimals={0} duration={2} flip>
-            students learning in their local languages.
+            students learning in
+            <br />
+            their local languages.
           </StatBlock>
         </Box>
       </Section>
@@ -77,14 +81,14 @@ const impactReport = () => {
         ></FramedImage>
       </Section>
       <Section {...data[7]}>
-        <Box width={[1, 1 / 2]} ml={"auto"} mt={50}>
+        <Box width={[1, 1 / 2, "53.25%"]} mt={50}>
           <StatBlock end={70} decimals={0} duration={2} postfix={"%"}>
             price reduction for TB diagnostic tests.
           </StatBlock>
         </Box>
       </Section>
       <Section {...data[8]}>
-        <Box width={[1, 2 / 3]} ml={"auto"} mt={50}>
+        <Box width={[1, 1 / 2, "53.25%"]} mt={50}>
           <StatBlock end={75} decimals={0} duration={2} postfix={"%"}>
             participants are back in schools or have a job or apprenticeship.
           </StatBlock>
@@ -98,7 +102,7 @@ const impactReport = () => {
         ></FramedImage>
       </Section>
       <Section {...data[10]}>
-        <Box py={5}>
+        <Box width={[1, 1 / 2, "53.25%"]} ml={"auto"} py={5}>
           <ReportPullquote
             title={"Learn More"}
             headline={

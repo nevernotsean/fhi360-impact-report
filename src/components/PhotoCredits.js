@@ -8,9 +8,9 @@ const PhotoCredits = ({ credits, ...props }) => {
   return (
     <PhotoCreditsContainer isOpen={isOpen} {...props}>
       <span className={"button"} onClick={() => setIsOpen(!isOpen)}>
-        Photo Credits
+        Photo Credit
       </span>
-      <span className={"credit"}>: {credits}</span>
+      <span className={"credit"}>{credits}</span>
     </PhotoCreditsContainer>
   )
 }
@@ -27,6 +27,7 @@ const PhotoCreditsContainer = styled(Box)`
   }
   .button {
     cursor: pointer;
+    margin: 0 5px 0px 0;
   }
   .credit {
     opacity: 0;
@@ -35,8 +36,15 @@ const PhotoCreditsContainer = styled(Box)`
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    flex-wrap: wrap;
+
+    .button {
+      margin: 0 5px 5px 0;
+    }
+
+    .button,
     .credit {
-      opacity: 1 !important;
+      opacity: 0.6 !important;
     }
   }
 `

@@ -376,7 +376,7 @@ const GlobalReach = () => {
         </P> */}
       </Section>
       <Box maxWidth={1200} mx={"auto"} px={20}>
-        <p style={{ fontSize: "14px", fontWeight: 400, textAlign: "right" }}>
+        <p style={{ fontSize: "14px", fontWeight: 400, textAlign: "left" }}>
           JUNE 2020
         </p>
         <p style={{ fontSize: "14px", fontWeight: 400 }}>

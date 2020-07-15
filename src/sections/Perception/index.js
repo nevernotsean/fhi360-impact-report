@@ -136,17 +136,15 @@ const Perception = props => {
             >
               We are constantly
               <br />
-              developing
-              <br />
-              <br />
               <span className="serif">
+                developing new{" "}
                 <Underlined
-                  sx={{ top: "100%" }}
+                  sx={{ top: "30%" }}
                   orange
                   duration={0.3}
                   delay={1.5}
                 >
-                  new partnerships
+                  partnerships
                 </Underlined>
                 , new funding relationships and customized solutions that we
                 apply to solving some of the world’s most intractable problems.
@@ -164,7 +162,10 @@ const Perception = props => {
           alignImageMobile={"center top"}
         >
           <Lead>LET’S CHANGE PERCEPTION</Lead>
-          <H2 className={"section-title"}>We are constantly developing</H2>
+          <H2 className={"section-title"}>
+            We are constantly <br />
+            <span className="serif">developing</span>
+          </H2>
           <Box maxWidth={["none", 320]}>
             <span className="section-body">
               <Underlined orange duration={0.3} delay={1.5}>

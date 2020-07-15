@@ -87,6 +87,11 @@ const TitledListCardContainer = styled(Box)`
     text-transform: uppercase;
   }
 
+  .title-card-body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   a {
     display: inline-block;
   }
