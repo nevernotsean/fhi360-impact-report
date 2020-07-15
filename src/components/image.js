@@ -11,7 +11,7 @@ const Image = props => {
       console.log("update")
       context.scroll.update()
     }
-  }, [])
+  }, [loaded])
   return <RebassImage {...props} onLoad={() => setLoaded(true)}></RebassImage>
 }
 

@@ -9,6 +9,8 @@ import PhotoCredits from "./PhotoCredits"
 import ScrollPercent from "./SplitSectionScrollPercent"
 import SectionTrigger from "./SplitSectionLongTrigger"
 import Image from "./image"
+import { useInView } from "react-intersection-observer"
+import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 
 const SplitSectionLongContent = ({
   children,
@@ -25,29 +27,35 @@ const SplitSectionLongContent = ({
   id,
   ...props
 }) => {
-  // const context = React.useContext(LocomotiveContext)
+  const [ref, isInView] = useInView({
+    // rootMargin: "20% 0px -20% 0px",
+    threshold: 0,
+    triggerOnce: true,
+  })
   const total = contentArray.length
 
-  const [activeSection, setActive] = React.useState(-1)
+  const [activeSection, setActive] = React.useState(0)
   const [loaded, setLoaded] = React.useState(false)
 
-  // const [scrollProps, setScrollProps] = React.useState()
+  const [scrollProps, setScrollProps] = React.useState()
+  const [scroll, setScroll] = React.useState()
+
+  const context = React.useContext(LocomotiveContext)
 
   React.useEffect(() => {
     setLoaded(true)
 
-    //   if (context.scroll) {
-    //     context.scroll.on("call", (value, type, props) => {
-    //       if (value === `long-form-start-${id}`) setScrollProps(props)
-    //     })
-    //   }
-  }, [])
+    if (context.scroll) {
+      context.scroll.on(
+        "call",
+        (value, type, props) => value === `long-${id}` && setScrollProps(props)
+      )
 
-  const [sectionProps, setSectionProps] = React.useState([])
-
-  // React.useEffect(() => {
-  //   if (sectionProps.length) console.log(sectionProps)
-  // }, [sectionProps])
+      context.scroll.on("scroll", props => {
+        setScroll(props.scroll.y)
+      })
+    }
+  }, [loaded])
 
   return (
     <Container>
@@ -74,21 +82,11 @@ const SplitSectionLongContent = ({
           height={`${total + 1}00vh`}
           id={`fixedScroll-${id}`}
           data-scroll
-          data-scroll-call={`long-form-start-${id}`}
+          data-scroll-call={`long-${id}`}
+          ref={ref}
         >
           {contentArray.map((props, i) => (
-            <SectionTrigger
-              setSectionProps={props => {
-                // console.log(props, i)
-                sectionProps[i] = props
-                setSectionProps(sectionProps)
-              }}
-              setActive={setActive}
-              activeSection={activeSection}
-              key={i}
-              index={i}
-              id={id}
-            />
+            <SectionTrigger setActive={setActive} key={i} index={i} id={id} />
           ))}
           <Box
             data-scroll
@@ -96,24 +94,27 @@ const SplitSectionLongContent = ({
             data-scroll-target={`#fixedScroll-${id}`}
             className={"magellan"}
           >
+            <BottomContainer flip={props.flip} className={"bottom-container"}>
+              <ScrollPercent
+                scrollStart={scrollProps && scrollProps.top}
+                scrollEnd={
+                  scrollProps && scrollProps.bottom - window.innerHeight
+                }
+                scroll={scroll}
+                enabled={isInView}
+              />
+              <PhotoCredits
+                credits={contentArray[0].imageCredits}
+                className={"credits"}
+              />
+            </BottomContainer>
             {contentArray.map(({ content: Content, ...contentProps }, i) => (
               <SplitSectionLongInner
                 key={i}
                 index={i}
                 total={total}
                 isVisible={activeSection === i}
-                scrollStart={
-                  sectionProps &&
-                  sectionProps.length &&
-                  sectionProps[i] &&
-                  sectionProps[i].top
-                }
-                scrollEnd={
-                  sectionProps &&
-                  sectionProps.length &&
-                  sectionProps[i] &&
-                  sectionProps[i].bottom
-                }
+                className={"magellan-inner"}
                 {...props}
                 {...contentProps}
               >
@@ -127,6 +128,14 @@ const SplitSectionLongContent = ({
   )
 }
 
+const BottomContainer = styled(Box)`
+  width: 50%;
+  ${({ flip }) => (!flip ? "right: 0;" : "left: 0;")}
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+`
+
 const Container = styled.div`
   .relative {
     position: relative;
@@ -138,7 +147,7 @@ const Container = styled.div`
     width: 100vw;
     top: 0;
     left: 0;
-    > * {
+    > .magellan-inner {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -161,12 +170,12 @@ const SplitSectionLongInner = ({
   height,
   isVisible,
   innerPercent,
-  scrollStart,
-  scrollEnd,
+  // scrollStart,
+  // scrollEnd,
   ...props
 }) => {
   return (
-    <StyledInner isVisible={isVisible}>
+    <StyledInner {...props} isVisible={isVisible}>
       <FlexWrap className={"split-section-long-content-inner"} height={"100vh"}>
         {!flip ? (
           <>
@@ -179,15 +188,6 @@ const SplitSectionLongInner = ({
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
-              <BottomContainer>
-                <ScrollPercent
-                  scrollStart={scrollStart}
-                  scrollEnd={scrollEnd}
-                  enabled={isVisible}
-                  index={index}
-                />
-                <PhotoCredits credits={imageCredits} className={"credits"} />
-              </BottomContainer>
             </CenteredFlex>
           </>
         ) : (
@@ -197,15 +197,6 @@ const SplitSectionLongInner = ({
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
-              <BottomContainer>
-                <ScrollPercent
-                  scrollStart={scrollStart}
-                  scrollEnd={scrollEnd}
-                  enabled={isVisible}
-                  index={index}
-                />
-                <PhotoCredits credits={imageCredits} className={"credits"} />
-              </BottomContainer>
             </CenteredFlex>
             {/* Right */}
             <CenteredFlex>
@@ -218,10 +209,6 @@ const SplitSectionLongInner = ({
   )
 }
 
-const BottomContainer = props => (
-  <Box className={"bottom-container"} {...props}></Box>
-)
-
 const StyledInner = styled(Box)`
   opacity: 0;
   transition: opacity 0.5s linear;
@@ -230,13 +217,6 @@ const StyledInner = styled(Box)`
     !isVisible && "pointer-events: none;"}
 
   .split-section-long-content-inner {
-  }
-
-  .bottom-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 `
 
