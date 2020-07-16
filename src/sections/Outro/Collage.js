@@ -26,14 +26,14 @@ import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
 import { easePolyIn, easePolyOut } from "d3-ease"
 import Image from "./../../components/image"
 
-import { mobileVendor } from "react-device-detect"
+import { isMobileOnly } from "react-device-detect"
 
 const getScale = (t, exp, start, end) => {
   t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
 
   let scale = lerp(start, end, t / 1)
 
-  scale = scale < end || scale > start ? start : scale
+  scale = scale == NaN || scale < end || scale > start ? start : scale
   return `scale(${scale})`
 }
 
@@ -84,17 +84,21 @@ const Outro = () => {
 
   useEffect(() => {
     if (scroll && zoomProps.top) {
-      if (entered) {
-        var startY = zoomProps.top - window.innerHeight * 1
-        var endY = zoomProps.bottom - window.innerHeight * 1
+      if (isMobileOnly) {
+        setScale(endScale)
+      } else {
+        if (entered) {
+          var startY = zoomProps.top - window.innerHeight * 1
+          var endY = zoomProps.bottom - window.innerHeight * 1
 
-        var newScale = lerp(0, 1, (scroll - startY) / (endY - startY))
+          var newScale = lerp(0, 1, (scroll - startY) / (endY - startY))
 
-        newScale = newScale <= 0 ? 0 : newScale
-        newScale = newScale >= 1 ? 1 : newScale
+          newScale = newScale <= 0 ? 0 : newScale
+          newScale = newScale >= 1 ? 1 : newScale
 
-        setScale(newScale)
-      } else setScale(startScale)
+          setScale(newScale)
+        } else setScale(startScale)
+      }
 
       if (
         lastType === "enter" ||
@@ -131,11 +135,7 @@ const Outro = () => {
 
   return (
     <>
-      <Container
-        className="grid"
-        wp1={wp1}
-        isIphone={!console.log(mobileVendor) && mobileVendor === "Apple"}
-      >
+      <Container className="grid" wp1={wp1} height={["auto", "500vh"]}>
         <div
           style={{ opacity: opacity }}
           className="s-instagram"
@@ -254,7 +254,7 @@ const Outro = () => {
         </div>
         <StyledEndcard
           id="endcard"
-          height={["calc(100vh - 300px)", "calc(100vh - 150px)"]}
+          height={["100vh", "calc(100vh - 150px)"]}
           justifyContent={"center"}
           alignItems={"center"}
           triggered={triggered}
@@ -308,9 +308,8 @@ const StyledEndcard = styled(Flex)`
   }
 `
 
-const Container = styled.div`
+const Container = styled(Box)`
   position: relative;
-  min-height: ${({ isIphone }) => (isIphone ? `100vh` : "500vh")};
   overflow: hidden;
 
   #endcard {
@@ -397,7 +396,7 @@ const Container = styled.div`
   }
   .s-instagram-figure {
     width: 100vw;
-    height: ${({ isIphone }) => (isIphone ? `100vh` : "500vh")};
+    height: 100vh;
     position: relative;
   }
   .is-device .s-instagram-figure {
@@ -429,6 +428,9 @@ const Container = styled.div`
     height: 100%;
     position: absolute;
     /* transform-origin: 44.9% 50%; */
+    @media only screen and (max-width: 580px) {
+      transform: scale(1) !important;
+    }
   }
   .s-instagram-layer:nth-child(1) .s-instagram-block {
     top: 5vw;
