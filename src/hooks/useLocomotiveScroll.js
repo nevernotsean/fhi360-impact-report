@@ -15,7 +15,7 @@ export const useLocomotiveScroll = ({ location, ...options }) => {
     context.scroll = new LocomotiveScroll({
       el,
       smooth: true,
-      smoothMobile: true,
+      smoothMobile: false,
       getDirection: true,
       touchMultiplier: 2.5,
       lerp: 0.15,

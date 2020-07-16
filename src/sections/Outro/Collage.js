@@ -134,7 +134,7 @@ const Outro = () => {
       <Container
         className="grid"
         wp1={wp1}
-        isIphone={mobileVendor === "iPhone"}
+        isIphone={!console.log(mobileVendor) && mobileVendor === "Apple"}
       >
         <div
           style={{ opacity: opacity }}
@@ -254,7 +254,7 @@ const Outro = () => {
         </div>
         <StyledEndcard
           id="endcard"
-          minHeight={"calc(100vh - 150px)"}
+          height={["calc(100vh - 300px)", "calc(100vh - 150px)"]}
           justifyContent={"center"}
           alignItems={"center"}
           triggered={triggered}
@@ -310,7 +310,7 @@ const StyledEndcard = styled(Flex)`
 
 const Container = styled.div`
   position: relative;
-  min-height: 500vh;
+  min-height: ${({ isIphone }) => (isIphone ? `100vh` : "500vh")};
   overflow: hidden;
 
   #endcard {
@@ -318,10 +318,8 @@ const Container = styled.div`
     z-index: 1;
     bottom: 0;
     left: 0;
-    ${({ isIphone }) => isIphone && `height: 100vh;`}
     width: 100%;
   }
-  ${({ isIphone }) => isIphone && `height: 100vh;`}
 
   /* .s-instagram-layer:nth-child(1) {
     transition: opacity 0.2s linear ${1 * 0.1}s;
@@ -363,7 +361,6 @@ const Container = styled.div`
         opacity: 0;
       }
       `} */
-      ${({ isIphone }) => isIphone && `height: 100vh;`}
 
   .s-instagram {
     margin: 0;
@@ -400,7 +397,7 @@ const Container = styled.div`
   }
   .s-instagram-figure {
     width: 100vw;
-    height: ${({ isIphone }) => (isIphone ? `100vh` : "400vh")};
+    height: ${({ isIphone }) => (isIphone ? `100vh` : "500vh")};
     position: relative;
   }
   .is-device .s-instagram-figure {
