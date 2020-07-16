@@ -77,7 +77,7 @@ const Hero = () => {
               svg={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
-              delay={3}
+              delay={2.25}
               duration={3}
             ></HandDrawnSVG>
             <div className="line">
@@ -121,7 +121,7 @@ const Hero = () => {
               svg={YouAreHere}
               alt={"You are here"}
               className="you-are-here"
-              delay={3}
+              delay={2.25}
               duration={3}
             ></HandDrawnSVG>
 

@@ -159,12 +159,31 @@ const Brave = () => {
             mobileContent: ({ animated }) => (
               <span className={"section-body"}>
                 In the United States, we{" "}
-                <Underlined orange={true}>partner</Underlined> with Native
-                American populations on early childcare, education and tribal
-                language revitalization;{" "}
-                <Underlined orange={true}>improve</Underlined> employment
-                outcomes for young adults caught in the criminal justice system;
-                promote <Underlined orange={true}>healthy</Underlined>{" "}
+                <Underlined
+                  orange={true}
+                  delay={1}
+                  sx={{ top: ["20%", "50%"] }}
+                >
+                  partner
+                </Underlined>{" "}
+                with Native American populations on early childcare, education
+                and tribal language revitalization;{" "}
+                <Underlined
+                  orange={true}
+                  delay={2}
+                  sx={{ top: ["20%", "50%"] }}
+                >
+                  improve
+                </Underlined>{" "}
+                employment outcomes for young adults caught in the criminal
+                justice system; promote{" "}
+                <Underlined
+                  orange={true}
+                  delay={3}
+                  sx={{ top: ["20%", "50%"] }}
+                >
+                  healthy
+                </Underlined>{" "}
                 behaviors; and work to lessen the stigma of HIV. We aren't
                 afraid to stand in the gap to create a more equitable world.
               </span>
