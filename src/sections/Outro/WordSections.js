@@ -62,7 +62,7 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-30px auto", "-90px auto"]} maxWidth={[300, 350]} w={1}>
+        <Box m={["-30px auto", "-60px auto"]} maxWidth={[300, 350]} w={1}>
           <HandDrawnSVG svg={Impacts} duration={1.5} delay={0.2}></HandDrawnSVG>
         </Box>
       </OutroWord>
@@ -80,7 +80,7 @@ const WordSections = () => {
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-20px auto", "-75px auto"]} maxWidth={[300, 400]} w={1}>
+        <Box m={["-20px auto", "-30px auto"]} maxWidth={[300, 400]} w={1}>
           <HandDrawnSVG
             svg={Empowers}
             duration={1.5}
@@ -106,7 +106,7 @@ const WordSections = () => {
           <br />
           <span className="serif">So are we.</span>
         </H2>
-        <Box width={300} mx={"auto"} mt={[0, -30]}>
+        <Box width={300} mx={"auto"} mt={[0, 0]}>
           <HandDrawnSVG
             duration={0.25}
             svg={Streak}

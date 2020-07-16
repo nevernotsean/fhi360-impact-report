@@ -33,7 +33,7 @@ const getScale = (t, exp, start, end) => {
 
   let scale = lerp(start, end, t / 1)
 
-  scale = scale == NaN || scale < end || scale > start ? start : scale
+  scale = !scale || scale < end || scale > start ? start : scale
   return `scale(${scale})`
 }
 
@@ -136,16 +136,16 @@ const Outro = () => {
   return (
     <>
       <Container className="grid" wp1={wp1} height={["auto", "500vh"]}>
-        <div
-          style={{ opacity: opacity }}
-          className="s-instagram"
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target=".grid"
-          data-scroll-call="zoom"
-          data-scroll-repeat={"true"}
-        >
-          <div className="s-instagram-grid">
+        <div className="s-instagram">
+          <div
+            style={{ opacity: opacity }}
+            className="s-instagram-grid"
+            data-scroll
+            data-scroll-sticky
+            data-scroll-target=".grid"
+            data-scroll-call="zoom"
+            data-scroll-repeat={"true"}
+          >
             <div
               className="s-instagram-layer"
               style={{
@@ -374,12 +374,12 @@ const Container = styled(Box)`
     }
   }
   .s-instagram-grid {
-    top: 0;
-    left: 8vw;
+    top: 8vw;
+    left: 0;
     z-index: 1;
     width: 70vw;
     height: 60vw;
-    margin: 8.125vw calc(100vw / 20 * 3);
+    margin: 0 calc(100vw / 20 * 3);
     /* margin-bottom: 8.125vw; */
     /* margin-top: 8.125vw; */
     position: absolute;
@@ -389,7 +389,8 @@ const Container = styled(Box)`
   @media only screen and (max-width: 580px) {
     .s-instagram-grid {
       margin: 0;
-      left: 0vw;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 89.444vw;
     }
@@ -427,7 +428,7 @@ const Container = styled(Box)`
     width: 100%;
     height: 100%;
     position: absolute;
-    /* transform-origin: 44.9% 50%; */
+    transform-origin: 44.9% 50%;
     @media only screen and (max-width: 580px) {
       transform: scale(1) !important;
     }
