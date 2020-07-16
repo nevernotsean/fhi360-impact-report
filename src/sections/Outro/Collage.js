@@ -26,6 +26,8 @@ import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
 import { easePolyIn, easePolyOut } from "d3-ease"
 import Image from "./../../components/image"
 
+import { mobileVendor } from "react-device-detect"
+
 const getScale = (t, exp, start, end) => {
   t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
 
@@ -129,7 +131,11 @@ const Outro = () => {
 
   return (
     <>
-      <Container className="grid" wp1={wp1}>
+      <Container
+        className="grid"
+        wp1={wp1}
+        isIphone={mobileVendor === "iPhone"}
+      >
         <div
           style={{ opacity: opacity }}
           className="s-instagram"
@@ -312,8 +318,10 @@ const Container = styled.div`
     z-index: 1;
     bottom: 0;
     left: 0;
+    ${({ isIphone }) => isIphone && `height: 100vh;`}
     width: 100%;
   }
+  ${({ isIphone }) => isIphone && `height: 100vh;`}
 
   /* .s-instagram-layer:nth-child(1) {
     transition: opacity 0.2s linear ${1 * 0.1}s;
@@ -355,6 +363,7 @@ const Container = styled.div`
         opacity: 0;
       }
       `} */
+      ${({ isIphone }) => isIphone && `height: 100vh;`}
 
   .s-instagram {
     margin: 0;
@@ -391,7 +400,7 @@ const Container = styled.div`
   }
   .s-instagram-figure {
     width: 100vw;
-    height: 400vh;
+    height: ${({ isIphone }) => (isIphone ? `100vh` : "400vh")};
     position: relative;
   }
   .is-device .s-instagram-figure {
