@@ -30,7 +30,12 @@ const Evidence = () => {
       <FlexSectionContainer minHeight={["unset", "100vh"]} centered={true}>
         <Box width={1} textAlign={"center"}>
           <Lead>We lead with science</Lead>
-          <H2 className="section-title">
+          <H2
+            style={{ marginBottom: 0 }}
+            fontWeight={900}
+            fontSize={["24px", "6vw", "72px"]}
+            lineHeight={["28px", "6.6vw", "80px"]}
+          >
             The science of
             <br />
             improving lives is more

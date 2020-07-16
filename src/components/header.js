@@ -11,6 +11,7 @@ import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
 import ShareButton from "../assets/svg/share-icon.svg"
 import Media from "./Media"
 import BackToTop from "./BackToTop"
+import Tagline from "../assets/svg/tagline.svg"
 
 const Header = ({
   siteTitle,
@@ -74,13 +75,7 @@ const Header = ({
             </Box>
           </Link>
           <Media greaterThanOrEqual="md">
-            <Text
-              as={"span"}
-              className="color-detect header-title"
-              mb={[0, "-6px"]}
-            >
-              The science of improving lives
-            </Text>
+            <Tagline style={{ height: "10px" }}></Tagline>
           </Media>
         </h1>
         <Flex alignItems="center">

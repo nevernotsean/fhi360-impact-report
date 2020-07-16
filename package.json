@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@artsy/fresnel": "^1.2.0",
+    "browser-update": "^3.3.19",
     "curtainsjs": "^6.1.1",
     "d3-ease": "^1.0.6",
     "gatsby": "^2.21.37",

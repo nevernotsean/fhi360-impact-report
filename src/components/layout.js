@@ -23,6 +23,8 @@ import Intro from "./Intro"
 import styled from "styled-components"
 import { mediaStyles } from "./Media"
 
+import browserUpdate from "browser-update"
+
 const Layout = ({
   children,
   sidenavData,
@@ -72,6 +74,7 @@ const Layout = ({
         {children}
         <Footer></Footer>
       </StyledMain>
+      <BrowserUpdate></BrowserUpdate>
     </Providers>
   )
 }
@@ -87,20 +90,23 @@ const StyledMain = styled.main`
     padding-top: 50px;
   }
 `
+const BrowserUpdate = props => {
+  React.useEffect(() => {
+    browserUpdate({
+      required: {
+        e: -2,
+        f: -2,
+        o: -2,
+        s: -2,
+        c: -2,
+      },
+      insecure: true,
+      test: true,
+      style: "corner",
+    })
+  }, [])
 
-// const UpdateLocomotive = ({ location, ...props }) => {
-//   const context = React.useContext(LocomotiveContext)
-
-//   React.useEffect(() => {
-//     console.log(location)
-//     if (context && context.scroll) {
-//       context.scroll.update()
-//     } else {
-//       console.log("context missing")
-//     }
-//   }, [context, context.scroll, location])
-
-//   return null
-// }
+  return null
+}
 
 export default Layout

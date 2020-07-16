@@ -50,27 +50,37 @@ const WordSections = () => {
         pattern={pattern2}
       >
         {/* <Lead>Inspire</Lead> */}
-        <H2 className={"section-title"}>
+        <H2
+          style={{ marginBottom: 0 }}
+          fontWeight={900}
+          fontSize={["24px", "6vw", "72px"]}
+          lineHeight={["28px", "6.6vw", "80px"]}
+        >
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-50px auto", "-120px auto"]} maxWidth={[300, 550]} w={1}>
+        <Box m={["-50px auto", "-90px auto"]} maxWidth={[300, 350]} w={1}>
           <HandDrawnSVG svg={Impacts} duration={1.5} delay={0.2}></HandDrawnSVG>
         </Box>
       </OutroWord>
       <OutroWord pattern={pattern3}>
         {/* <Lead>Innovate</Lead> */}
-        <H2 className={"section-title"}>
+        <H2
+          style={{ marginBottom: 0 }}
+          fontWeight={900}
+          fontSize={["24px", "6vw", "72px"]}
+          lineHeight={["28px", "6.6vw", "80px"]}
+        >
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-50px auto", "-100px auto"]} maxWidth={[300, 600]} w={1}>
+        <Box m={["-50px auto", "-75px auto"]} maxWidth={[300, 400]} w={1}>
           <HandDrawnSVG
             svg={Empowers}
             duration={1.5}
@@ -84,7 +94,12 @@ const WordSections = () => {
         justifyContent="center"
       >
         {/* <Lead>LOREM IPSUM</Lead> */}
-        <H2 className="section-title">
+        <H2
+          style={{ marginBottom: 0 }}
+          fontWeight={900}
+          fontSize={["24px", "6vw", "72px"]}
+          lineHeight={["28px", "6.6vw", "80px"]}
+        >
           Our world
           <br />
           is connected.

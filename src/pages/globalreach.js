@@ -63,14 +63,10 @@ const GlobalReach = ({ location }) => {
       <Section title={"Main Offices"} px={[0, 20]}>
         <Box>
           <P>
-            <strong>
-              FHI 360
-              <br />
-              Headquarters
-            </strong>
+            <strong>US Offices</strong>
           </P>
           <P>
-            Durham, NC USA
+            Durham, NC USA (Headquarters)
             <br />
             Washington, DC USA
           </P>
