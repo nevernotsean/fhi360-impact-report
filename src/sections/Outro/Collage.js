@@ -27,6 +27,7 @@ import { easePolyIn, easePolyOut } from "d3-ease"
 import Image from "./../../components/image"
 
 import { isMobileOnly } from "react-device-detect"
+import { useInView } from "react-intersection-observer"
 
 const getScale = (t, exp, start, end) => {
   t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
@@ -137,8 +138,8 @@ const Outro = () => {
     <>
       <Container className="grid" wp1={wp1} height={["auto", "500vh"]}>
         <div className="s-instagram">
-          <div
-            style={{ opacity: opacity }}
+          <Box
+            sx={{ opacity: [1, opacity] }}
             className="s-instagram-grid"
             data-scroll
             data-scroll-sticky
@@ -250,31 +251,43 @@ const Outro = () => {
                 style={{ backgroundImage: `url(${imageD})` }}
               ></div>
             </div>
-          </div>
-        </div>
-        <StyledEndcard
-          id="endcard"
-          height={["100vh", "calc(100vh - 150px)"]}
-          justifyContent={"center"}
-          alignItems={"center"}
-          triggered={triggered}
-        >
-          <Box width={1} maxWidth={[300, 600]} className="relative">
-            <HandDrawnSVG
-              id="this-is"
-              svg={ThisIsFHI}
-              delay2={2.5}
-              duration={2.5}
-              duration2={2.5}
-              useInviewTrigger={false}
-              animated={triggered}
-              ease={"linear"}
-            ></HandDrawnSVG>
-            <FHILogo id="logo"></FHILogo>
           </Box>
-        </StyledEndcard>
+        </div>
+        <Endcard></Endcard>
       </Container>
     </>
+  )
+}
+
+const Endcard = ({ triggered, ...props }) => {
+  const [ref, inView] = useInView({
+    // rootMargin: "90% 0px 10% 0px",
+    threshold: 0,
+  })
+
+  return (
+    <StyledEndcard
+      id="endcard"
+      height={["50vh", "calc(100vh - 150px)"]}
+      justifyContent={"center"}
+      alignItems={"center"}
+      triggered={inView || triggered}
+      ref={ref}
+    >
+      <Box width={1} maxWidth={[300, 600]} className="relative">
+        <HandDrawnSVG
+          id="this-is"
+          svg={ThisIsFHI}
+          delay2={2.5}
+          duration={2.5}
+          duration2={2.5}
+          useInviewTrigger={false}
+          animated={inView || triggered}
+          ease={"linear"}
+        ></HandDrawnSVG>
+        <FHILogo id="logo"></FHILogo>
+      </Box>
+    </StyledEndcard>
   )
 }
 
@@ -364,12 +377,12 @@ const Container = styled(Box)`
   .s-instagram {
     margin: 0;
     pointer-events: none;
-    min-height: 100vh;
+    min-height: 85vh;
     margin-bottom: 16.25vw;
   }
   @media only screen and (max-width: 580px) {
     .s-instagram {
-      margin: 27.778vw 0;
+      /* margin: 27.778vw 0; */
       pointer-events: all;
     }
   }
@@ -432,6 +445,7 @@ const Container = styled(Box)`
     @media only screen and (max-width: 580px) {
       transform: scale(1) !important;
     }
+
   }
   .s-instagram-layer:nth-child(1) .s-instagram-block {
     top: 5vw;

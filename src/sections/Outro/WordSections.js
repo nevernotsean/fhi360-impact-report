@@ -31,14 +31,19 @@ const WordSections = () => {
         pattern={pattern1}
       >
         {/* <Lead>Lead</Lead> */}
-        <H2 className={"section-title"}>
+        <H2
+          style={{ marginBottom: 0 }}
+          fontWeight={900}
+          fontSize={["24px", "6vw", "72px"]}
+          lineHeight={["28px", "6.6vw", "80px"]}
+        >
           We are
           <br />
           changing the way
           <br />
           <span className="serif">human development</span>
         </H2>
-        <Box m={["-70px auto", "-100px auto"]} maxWidth={[150, 250]} w={1}>
+        <Box m={["-30px auto", "-60px auto"]} maxWidth={[150, 250]} w={1}>
           <HandDrawnSVG svg={Works} duration={1.5} delay={0.2}></HandDrawnSVG>
         </Box>
       </OutroWord>
@@ -89,7 +94,7 @@ const WordSections = () => {
         </Box>
       </OutroWord>
       <FlexSectionContainer
-        minHeight={["80vh", "100vh"]}
+        minHeight={["50vh", "100vh"]}
         textAlign={"center"}
         justifyContent="center"
       >
@@ -106,7 +111,7 @@ const WordSections = () => {
           <br />
           <span className="serif">So are we.</span>
         </H2>
-        <Box width={300} mx={"auto"} mt={[0, 0]}>
+        <Box width={[150, 300]} mx={"auto"} mt={[0, 0]}>
           <HandDrawnSVG
             duration={0.25}
             svg={Streak}
