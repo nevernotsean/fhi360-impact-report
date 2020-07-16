@@ -16,7 +16,7 @@ const Intro = props => {
     <>
       <GlobalStyle loaded={loaded}></GlobalStyle>
 
-      <Media greaterThanOrEqual={"md"}>
+      <Media greaterThanOrEqual={"sm"}>
         <Container loaded={loaded}>
           <Box id={"loading-screen"}>
             <Image src={welcome}></Image>
@@ -69,8 +69,13 @@ const Container = styled(Box)`
       top: 0;
 
       object-fit: cover;
-      object-position: center center;
+      object-position: center 40%;
       display: block;
+
+      @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+        object-fit: contain;
+        background: #f37323;
+      }
     }
   }
 `

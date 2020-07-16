@@ -181,7 +181,6 @@ export const SplitSectionCroppedImage = ({
           flex={"1 0 auto"}
           justifyContent={"center"}
           alignItems={"center"}
-          minHeight={["60vh", "unset"]}
         >
           <Box
             width={[1]}

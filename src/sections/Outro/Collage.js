@@ -5,7 +5,7 @@ import Frame from "../../images/square-frame.png"
 import { LocomotiveContext } from "../../hooks/useLocomotiveScroll"
 import lerp from "lerp"
 
-import centerImage from "../../images/collage-center.png"
+import centerImage from "../../images/collage-center.jpg"
 
 import imageA from "../../images/collage-a.jpg"
 import imageB from "../../images/collage-b.jpg"
@@ -23,15 +23,22 @@ import HandDrawnSVG from "./../../components/HandDrawnSVG"
 
 import FHILogo from "../../assets/svg/FHI360_Logo_NewTag_Horiz.svg"
 
-import { easeCubic } from "d3-ease"
+import { easePolyIn, easePolyOut } from "d3-ease"
 import Image from "./../../components/image"
 
-const getScale = (t, ease = easeCubic) => {
-  let scale = ease(t)
+const getScale = (t, exp, start, end) => {
+  t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
+
+  let scale = lerp(start, end, t / 1)
+
+  scale = scale < end || scale > start ? start : scale
   return `scale(${scale})`
 }
 
 const Outro = () => {
+  var startScale = 3.333
+  var endScale = 1
+
   const context = useContext(LocomotiveContext)
   const [loaded, setLoaded] = useState()
 
@@ -43,8 +50,10 @@ const Outro = () => {
     top: null,
     bottom: null,
   })
+
   const [lastType, setLastType] = useState(false)
-  const [scale, setScale] = useState(3)
+  const [entered, setEntered] = useState(false)
+  const [scale, setScale] = useState(startScale)
   const [opacity, setOpacity] = useState(1)
 
   useEffect(() => {
@@ -67,20 +76,20 @@ const Outro = () => {
 
   useEffect(() => {
     if (scroll && zoomProps.top) {
-      var startScale = 3
-      var endScale = 1
-      if (lastType === "enter" || scroll >= zoomProps.top - 100) {
+      setEntered(lastType === "enter" || scroll >= zoomProps.top - 100)
+    }
+  }, [scroll, zoomProps.top, lastType])
+
+  useEffect(() => {
+    if (scroll && zoomProps.top) {
+      if (entered) {
         var startY = zoomProps.top - window.innerHeight * 1
         var endY = zoomProps.bottom - window.innerHeight * 1
 
-        var newScale = lerp(
-          startScale,
-          endScale,
-          (scroll - startY) / (endY - startY)
-        )
+        var newScale = lerp(0, 1, (scroll - startY) / (endY - startY))
 
-        newScale = newScale <= endScale ? endScale : newScale
-        newScale = newScale >= startScale ? startScale : newScale
+        newScale = newScale <= 0 ? 0 : newScale
+        newScale = newScale >= 1 ? 1 : newScale
 
         setScale(newScale)
       } else setScale(startScale)
@@ -108,7 +117,7 @@ const Outro = () => {
   useEffect(() => {
     if (!zoomProps.bottom) return
 
-    let isWp1 = scroll >= zoomProps.bottom - window.innerHeight
+    let isWp1 = scroll >= zoomProps.bottom - window.innerHeight * 0.75
     setWp1(isWp1)
   }, [scroll, zoomProps.bottom])
 
@@ -134,7 +143,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, -5, startScale, endScale),
               }}
             >
               <div
@@ -145,7 +154,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, 2, startScale, endScale),
               }}
             >
               <div
@@ -156,7 +165,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, -2, startScale, endScale),
               }}
             >
               <div
@@ -167,7 +176,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer center-square"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, -7.5, startScale, endScale),
               }}
             >
               <div
@@ -183,7 +192,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, 2, startScale, endScale),
               }}
             >
               <div
@@ -194,7 +203,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, -1, startScale, endScale),
               }}
             >
               <div
@@ -205,7 +214,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, 2, startScale, endScale),
               }}
             >
               <div
@@ -216,7 +225,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, -5.5, startScale, endScale),
               }}
             >
               <div
@@ -227,7 +236,7 @@ const Outro = () => {
             <div
               className="s-instagram-layer"
               style={{
-                transform: getScale(scale, easeCubic),
+                transform: getScale(scale, 3.5, startScale, endScale),
               }}
             >
               <div
@@ -248,9 +257,9 @@ const Outro = () => {
             <HandDrawnSVG
               id="this-is"
               svg={ThisIsFHI}
-              delay2={3}
-              duration={3}
-              duration2={3}
+              delay2={2.5}
+              duration={2.5}
+              duration2={2.5}
               useInviewTrigger={false}
               animated={triggered}
               ease={"linear"}
@@ -282,7 +291,7 @@ const StyledEndcard = styled(Flex)`
 
   #this-is,
   #logo {
-    transition: opacity 1s linear 5s;
+    transition: opacity 1s linear 6s;
   }
 
   #this-is {
@@ -306,7 +315,7 @@ const Container = styled.div`
     width: 100%;
   }
 
-  .s-instagram-layer:nth-child(1) {
+  /* .s-instagram-layer:nth-child(1) {
     transition: opacity 0.2s linear ${1 * 0.1}s;
   }
   .s-instagram-layer:nth-child(2) {
@@ -330,8 +339,8 @@ const Container = styled.div`
   }
   .s-instagram-layer:nth-child(9) {
     transition: opacity 0.2s linear ${9 * 0.1}s;
-  }
-
+  } */
+/* 
   ${({ wp1 }) =>
     wp1 &&
     `
@@ -345,7 +354,7 @@ const Container = styled.div`
       .s-instagram-layer:nth-child(9) {
         opacity: 0;
       }
-      `}
+      `} */
 
   .s-instagram {
     margin: 0;
@@ -361,7 +370,7 @@ const Container = styled.div`
   }
   .s-instagram-grid {
     top: 0;
-    left: 0;
+    left: 8vw;
     z-index: 1;
     width: 70vw;
     height: 60vw;
@@ -412,6 +421,7 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
+    /* transform-origin: 44.9% 50%; */
   }
   .s-instagram-layer:nth-child(1) .s-instagram-block {
     top: 5vw;

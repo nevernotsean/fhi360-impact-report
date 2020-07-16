@@ -8,7 +8,7 @@ const Image = props => {
 
   React.useEffect(() => {
     if (loaded && context.scroll) {
-      console.log("update")
+      // console.log("image loaded")
       context.scroll.update()
     }
   }, [loaded])

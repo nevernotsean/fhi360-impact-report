@@ -9,10 +9,10 @@ export const useLocomotiveScroll = ({ location, ...options }) => {
   const context = useContext(LocomotiveContext)
 
   useEffect(() => {
-    console.log("update")
+    console.log("scroll updated")
     var el = document.querySelector(options.query)
 
-    let scroll = new LocomotiveScroll({
+    context.scroll = new LocomotiveScroll({
       el,
       smooth: true,
       smoothMobile: false,
@@ -21,17 +21,14 @@ export const useLocomotiveScroll = ({ location, ...options }) => {
       lerp: 0.15,
       ...options,
     })
-    scroll.update()
+    context.scroll.update()
 
-    scroll.on("scroll", func => {
+    context.scroll.on("scroll", func => {
       // Update `data-direction` with scroll direction.
       document.documentElement.setAttribute("data-direction", func.direction)
     })
 
-    context.scroll = scroll
-    window.scroll = scroll
-
-    return () => context.scroll.destroy()
+    return () => context.scroll && context.scroll.destroy()
   }, [location])
 
   return context

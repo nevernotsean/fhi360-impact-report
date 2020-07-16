@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import SplitSectionLongContent from "./../components/SplitSectionLongContent"
 import { Box } from "rebass/styled-components"
 import { Lead, H2, H3 } from "../elements/Type"
+import Outro from "./../sections/Outro/index"
 
 const TestSection = () => (
   <>
@@ -35,7 +36,7 @@ const Debug = ({ location }) => (
   <Layout location={location}>
     <SEO title="Debug" />
 
-    <Box id="sections">
+    {/* <Box id="sections">
       <SplitSectionLongContent
         flip={false}
         id={"debug"}
@@ -60,7 +61,8 @@ const Debug = ({ location }) => (
           },
         ]}
       ></SplitSectionLongContent>
-    </Box>
+    </Box> */}
+    <Outro></Outro>
   </Layout>
 )
 
