@@ -41,6 +41,10 @@ const Container = styled(Box)`
     width: 125%;
     max-width: none;
     pointer-events: none;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      top: -15%;
+    }
   }
 
   p {

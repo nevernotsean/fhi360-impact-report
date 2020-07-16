@@ -36,7 +36,7 @@ const getScale = (t, exp, start, end) => {
 }
 
 const Outro = () => {
-  var startScale = 3.333
+  var startScale = 4
   var endScale = 1
 
   const context = useContext(LocomotiveContext)
@@ -384,6 +384,7 @@ const Container = styled.div`
   @media only screen and (max-width: 580px) {
     .s-instagram-grid {
       margin: 0;
+      left: 0vw;
       width: 100vw;
       height: 89.444vw;
     }
@@ -486,6 +487,12 @@ const Container = styled.div`
       left: 30.278vw;
       width: 39.444vw;
       height: 39.444vw;
+    }
+
+    #frame {
+      left: 29vw;
+      top: 30vw;
+      transform: scale(1.4);
     }
   }
   .s-instagram-layer:nth-child(5) {

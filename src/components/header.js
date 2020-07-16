@@ -85,6 +85,7 @@ const Header = ({
               cursor: "pointer",
               textTransform: "uppercase",
               fontWeight: 700,
+              fontSize: [12, 16],
             }}
             mr={20}
           >

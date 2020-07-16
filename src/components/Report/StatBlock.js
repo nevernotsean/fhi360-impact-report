@@ -3,7 +3,7 @@ import { Flex, Box } from "rebass/styled-components"
 import styled from "styled-components"
 import { useCountUp } from "react-countup"
 import { useInView } from "react-intersection-observer"
-import { Underlined } from "./../WordNote"
+import Streak from "../../assets/svg/streak.svg"
 
 const StatBlock = ({
   children,
@@ -54,7 +54,7 @@ const StatBlock = ({
           {children}
           {/* <div className="black-box"></div> */}
         </Box>
-        <Underlined width={250}></Underlined>
+        <Streak width={250}></Streak>
       </Flex>
       {/* <div className="hr"></div> */}
     </StatBlockContainer>

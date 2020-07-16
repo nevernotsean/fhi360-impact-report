@@ -24,6 +24,7 @@ import styled from "styled-components"
 import { mediaStyles } from "./Media"
 
 import browserUpdate from "browser-update"
+import { isBrowser } from "react-device-detect"
 
 const Layout = ({
   children,
@@ -74,7 +75,7 @@ const Layout = ({
         {children}
         <Footer></Footer>
       </StyledMain>
-      <BrowserUpdate></BrowserUpdate>
+      {isBrowser && <BrowserUpdate></BrowserUpdate>}
     </Providers>
   )
 }
@@ -101,7 +102,7 @@ const BrowserUpdate = props => {
         c: -2,
       },
       insecure: true,
-      test: true,
+      // test: true,
       style: "corner",
     })
   }, [])

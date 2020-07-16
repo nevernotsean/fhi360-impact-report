@@ -42,7 +42,7 @@ const Evidence = () => {
             <br />
             than our tagline.
           </H2>
-          <Box ml={-250} mt={-30}>
+          <Box ml={-250} mt={[0, -30]}>
             <Underlined
               orange
               duration={0.25}

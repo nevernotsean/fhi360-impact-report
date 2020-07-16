@@ -15,6 +15,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /locomotive-scroll/,
             use: loaders.null(),
           },
+          {
+            test: /browser-update/,
+            use: loaders.null(),
+          },
         ],
       },
     })

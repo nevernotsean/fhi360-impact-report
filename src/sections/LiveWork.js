@@ -22,7 +22,7 @@ const LiveFirst = () => (
       With our teams based in
       <br />
       <span className="serif">
-        the countries or communities where they work
+        the countries or communities where they work,
       </span>
     </H2>
     <div
@@ -72,7 +72,7 @@ const LiveWork = () => (
                   partner with nurses and mothers to solve nutrition problems,
                   with young adults and public officials to ensure that public
                   policies meet youth needs, and with women to develop new
-                  contraception methods, and so many others.
+                  contraception methods.
                 </p>
               </Box>
             </>
@@ -82,8 +82,7 @@ const LiveWork = () => (
               Our development professionals, scientists and researchers partner
               with nurses and mothers to solve nutrition problems, with young
               adults and public officials to ensure that public policies meet
-              youth needs, and with women to develop new contraception methods,
-              and so many others.
+              youth needs, and with women to develop new contraception methods.
             </p>
           ),
         },
