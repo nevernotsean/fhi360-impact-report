@@ -27,7 +27,7 @@ const introLetter = [
 
   "Now as never before, we will be challenged to be creative and work differently. And because we are stronger and more effective when we work together, this is a time to marshal our collective strengths — the vast scope and urgency of this crisis demand nothing less.",
 
-  "Today, we find ourselves called to deliver on our mission to combine science with the art of improving lives like never before. The scale of the challenge is vast, and the stakes couldn’t be higher. This is what FHI 360 is built for. Take a look at what we’re doing.",
+  "Today, more than ever, we find ourselves called to deliver on our mission to combine science with the art of improving lives. The scale of the challenge is vast, and the stakes couldn’t be higher. This is what FHI 360 is built for.",
 ]
 
 const HeroPullquote = props => (

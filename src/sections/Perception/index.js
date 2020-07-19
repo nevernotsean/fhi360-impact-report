@@ -71,7 +71,7 @@ const Perception = props => {
             <H3 className="section-subtitle">
               and we want to change
               <br />
-              your perception.
+              your perception:
             </H3>
             <Box
               mt={-50}
@@ -154,7 +154,7 @@ const Perception = props => {
         <SplitSectionCroppedImage
           flip
           image={image1}
-          imageCredits={"Leanne Gray/ FHI 360"}
+          imageCredits={"Leanne Gray/FHI 360"}
           alt={"man holding baby"}
           alignImageMobile={"center top"}
         >
@@ -173,7 +173,7 @@ const Perception = props => {
           <Box maxWidth={["none", 320]}>
             <span className="section-body">
               <Underlined orange duration={0.3} delay={1.5}>
-                New partnerships
+                new partnerships
               </Underlined>
               , new funding relationships and customized solutions that we apply
               to solving some of the world’s most intractable problems.

@@ -52,7 +52,7 @@ const RightSide = () => (
       </ul>
       <p className="section-body">
         All have a shared common goal — <br />
-        Improving lives in lasting ways.
+        improving lives in lasting ways.
       </p>
     </Box>
     <Box mt={[-10, -30]} ml={0} width={[1 / 3, 1 / 2]}>

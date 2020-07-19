@@ -103,14 +103,14 @@ const Innovators = () => {
         contentArray={[
           {
             image: image2,
-            imageCredits: "Leanne Gray/ FHI 360",
+            imageCredits: "Leanne Gray/FHI 360",
             alt: "smiling woman holding tablet",
             content: InnoFirst,
             mobileContent: InnoFirst,
           },
           {
             image: image2,
-            imageCredits: "Leanne Gray/ FHI 360",
+            imageCredits: "Leanne Gray/FHI 360",
             alt: "smiling woman holding tablet",
             content: () => (
               <>
