@@ -8,10 +8,10 @@ import useDimensions from "react-use-dimensions"
 const TitledListCard = ({
   title,
   children,
-  y,
   href,
   maxWidth,
   height,
+  translate,
   ...props
 }) => {
   const [ref, { height: h }] = useDimensions()
@@ -24,11 +24,11 @@ const TitledListCard = ({
       animatedHeight={h}
       innerMaxWidth={maxWidth}
     >
-      <animated.span
+      <span
         ref={ref}
         className={"inner"}
         style={{
-          transform: y.interpolate(y => `translateY(${y})`),
+          transform: `translateY(${translate})`,
         }}
       >
         <span className="line"></span>
@@ -47,7 +47,7 @@ const TitledListCard = ({
             Learn More
           </a>
         )}
-      </animated.span>
+      </span>
     </TitledListCardContainer>
   )
 }
@@ -64,6 +64,7 @@ const TitledListCardContainer = styled(Box)`
     height: auto;
     width: calc(100% - 25px);
     ${({ innerMaxWidth }) => innerMaxWidth && `max-width: ${innerMaxWidth}px;`}
+    ${({ index }) => `transition: all 500ms ease ${index * 400}ms;`}
   }
 
   .line {
@@ -79,8 +80,19 @@ const TitledListCardContainer = styled(Box)`
     text-transform: uppercase;
 
     .bolder {
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 900;
+
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+        font-size: 18px;
+      }
+
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+        font-size: 24px;
+      }
+    }
+
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     }
   }
 
@@ -93,8 +105,8 @@ const TitledListCardContainer = styled(Box)`
   }
 
   .title-card-body {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   a {

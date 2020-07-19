@@ -116,39 +116,47 @@ const Perception = props => {
       <AndSection2 />
       <AndSection3 />
       <Media at={"sm"}>
-        <Flex
-          flexDirection="column"
-          justifyContent="center"
-          alignContent="center"
-          py={100}
-          px={20}
+        <SplitSectionCroppedImage
+          flip
+          image={image1}
+          imageCredits={"Leanne Gray/ FHI 360"}
+          alt={"man holding baby"}
+          alignImageMobile={"center top"}
         >
-          <Lead textAlign="center">LET’S CHANGE PERCEPTION</Lead>
-          <Box maxWidth={480} px={[20, 0]}>
-            <H2
-              className={"section-title"}
-              fontSize={"34px !important"}
-              lineHeight={"38px !important"}
-              textAlign="center"
-            >
-              We are constantly
-              <br />
-              <span className="serif">
-                developing new{" "}
-                <Underlined
-                  sx={{ top: "30%" }}
-                  orange
-                  duration={0.3}
-                  delay={1.5}
-                >
-                  partnerships
-                </Underlined>
-                , new funding relationships and customized solutions that we
-                apply to solving some of the world’s most intractable problems.
-              </span>
-            </H2>
-          </Box>
-        </Flex>
+          <Flex
+            flexDirection="column"
+            justifyContent="center"
+            alignContent="center"
+            px={20}
+          >
+            <Lead textAlign="center">LET’S CHANGE PERCEPTION</Lead>
+            <Box maxWidth={480} px={[20, 0]}>
+              <H2
+                className={"section-title"}
+                fontSize={"34px !important"}
+                lineHeight={"38px !important"}
+                textAlign="center"
+              >
+                We are constantly
+                <br />
+                <span className="serif">
+                  developing new{" "}
+                  <Underlined
+                    sx={{ top: "30%" }}
+                    orange
+                    duration={0.3}
+                    delay={1.5}
+                  >
+                    partnerships
+                  </Underlined>
+                  , new funding relationships and customized solutions that we
+                  apply to solving some of the world’s most intractable
+                  problems.
+                </span>
+              </H2>
+            </Box>
+          </Flex>
+        </SplitSectionCroppedImage>
       </Media>
       <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage

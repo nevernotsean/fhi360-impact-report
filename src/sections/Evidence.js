@@ -96,30 +96,39 @@ const Evidence = () => {
         <img src={strip} className="strip" alt=""></img>
       </Flex>
       <Media at={"sm"}>
-        <Flex
-          flexDirection="column"
-          justifyContent="center"
-          alignContent="center"
-          py={100}
-          px={20}
+        <SplitSectionCroppedImage
+          image={image1}
+          flip
+          imageCredits={"Jessica Scranton/FHI 360"}
+          alt={"woman smiling holding baby"}
+          pattern={vert}
+          id={"evidence-the-result-desktop"}
         >
-          <Lead textAlign="center">We lead with science</Lead>
-          <Box maxWidth={480}>
-            <H2
-              fontSize={["24px", "6vw", "48px"]}
-              lineHeight={["28px", "6.6vw", "54px"]}
-              textAlign="center"
-            >
-              <Underlined sx={{ top: "100%" }}>The result:</Underlined>
-              <br />
-              <br />
-              <br />
-              <span className={"serif"}>
-                A deep connection to the people and communities we serve.
-              </span>
-            </H2>
-          </Box>
-        </Flex>
+          <Flex
+            flexDirection="column"
+            justifyContent="center"
+            alignContent="center"
+            py={50}
+            px={20}
+          >
+            <Lead textAlign="center">We lead with science</Lead>
+            <Box maxWidth={480}>
+              <H2
+                fontSize={["24px", "6vw", "48px"]}
+                lineHeight={["28px", "6.6vw", "54px"]}
+                textAlign="center"
+              >
+                <Underlined sx={{ top: "100%" }}>The result:</Underlined>
+                <br />
+                <br />
+                <br />
+                <span className={"serif"}>
+                  A deep connection to the people and communities we serve.
+                </span>
+              </H2>
+            </Box>
+          </Flex>
+        </SplitSectionCroppedImage>
       </Media>
       <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage

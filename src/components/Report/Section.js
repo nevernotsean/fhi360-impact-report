@@ -50,7 +50,8 @@ const Section = ({
             <Flex flexDirection={"column"}>
               <H2
                 className="headline"
-                fontSize={[24, 44, 68]}
+                fontSize={["38px", "6vw", "72px"]}
+                lineHeight={["42px", "6.6vw", "80px"]}
                 mb={[0, 100]}
                 fontWeight={400}
               >
