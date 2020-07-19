@@ -3,9 +3,12 @@ import LocomotiveScroll from "locomotive-scroll"
 
 // import { onRouteUpdate } from "../../gatsby-browser"
 
+import { isTablet } from "react-device-detect"
+
 export const LocomotiveContext = createContext({ scroll: null })
 
 export const useLocomotiveScroll = ({ location, ...options }) => {
+  console.log(isTablet)
   const context = useContext(LocomotiveContext)
 
   useEffect(() => {
@@ -15,7 +18,7 @@ export const useLocomotiveScroll = ({ location, ...options }) => {
     context.scroll = new LocomotiveScroll({
       el,
       smooth: true,
-      smoothMobile: false,
+      smoothMobile: isTablet ? true : false,
       getDirection: true,
       touchMultiplier: 2.5,
       lerp: 0.15,

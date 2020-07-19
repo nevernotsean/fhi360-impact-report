@@ -94,7 +94,7 @@ export const SplitSection = ({
         <Flex
           flexDirection={"column"}
           justifyContent={"center"}
-          height={["auto", "100vh"]}
+          height={["auto", "auto", "100vh"]}
           pr={[15, 30]}
           pl={[15, 60]}
           py={[50, 0]}
@@ -139,13 +139,13 @@ export const SplitSectionCroppedImage = ({
 }) => {
   return (
     <Flex
-      minHeight={["unset", "100vh"]}
+      minHeight={["unset", "unset", "100vh"]}
       className={"cropped-image-section"}
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
       style={{ position: "relative" }}
-      pb={[50, 0]}
+      py={[25, 100, 0]}
       overflowX={["hidden", "auto"]}
       {...props}
     >
@@ -161,7 +161,7 @@ export const SplitSectionCroppedImage = ({
               <Flex
                 flexDirection={"column"}
                 justifyContent={"center"}
-                height={["auto", "100vh"]}
+                height={["auto", "auto", "100vh"]}
                 pr={[15, 30]}
                 pl={[15, 60]}
                 maxWidth={600}
@@ -194,12 +194,12 @@ export const SplitSectionCroppedImage = ({
               scrollSpeed={-0.5}
               imageSpeed={1}
               usePattern={flip}
-              maxHeight={["unset", "80vh"]}
+              maxHeight={["50vh", "50vh", "80vh"]}
               sx={{
                 display: "block",
                 maxWidth: "none",
                 width: "100%",
-                height: ["auto", "80vh"],
+                height: ["auto", "50vh", "80vh"],
                 objectFit: "cover",
                 objectPosition: [alignImageMobile, "center center"],
                 marginLeft: !flip && "auto !important",
@@ -243,7 +243,7 @@ export const SplitSectionCroppedImage = ({
               <Flex
                 flexDirection={"column"}
                 justifyContent={"center"}
-                height={["auto", "100vh"]}
+                height={["auto", "auto", "100vh"]}
                 pr={[15, 30]}
                 pl={[15, 60]}
                 maxWidth={600}
@@ -266,7 +266,7 @@ export const SplitSectionCroppedImage = ({
               <Flex
                 flexDirection={"column"}
                 justifyContent={"center"}
-                height={["auto", "100vh"]}
+                height={["auto", "auto", "100vh"]}
                 pr={[15, 30]}
                 pl={[15, 60]}
                 maxWidth={600}

@@ -1,8 +1,6 @@
 import React from "react"
 import { useInView } from "react-intersection-observer"
 
-import { useTrail } from "react-spring"
-
 import styled from "styled-components"
 import NimbleCard from "../images/nimble.png"
 import SectionDividerDark from "../components/SectionDividerDark"
@@ -51,18 +49,11 @@ const data = [
   },
 ]
 
-const config = { mass: 5, tension: 2000, friction: 200 }
-
 const Nimble = () => {
   const [listRef, listInView] = useInView({
     rootMargin: "20% 0px -20% 0px",
     threshold: 0,
     triggerOnce: true,
-  })
-
-  const listAnim = useTrail(data.length, {
-    config,
-    y: listInView ? "0" : "400px",
   })
 
   return (
@@ -114,21 +105,21 @@ const Nimble = () => {
             pl={[0, 50]}
           >
             <Flex flexWrap="wrap">
-              {listAnim.map(({ y, ...rest }, index) => (
+              {data.map(({ body, href, title, ...props }, index) => (
                 <TitledListCard
                   key={index}
-                  title={data[index].title}
+                  index={index}
+                  title={title}
                   width={[1, 1 / 3]}
                   maxWidth={["unset", 180]}
-                  height={[200, 350]}
+                  height={[200, 200, 250]}
                   p={[0, "25px"]}
                   mb={[30, 0]}
-                  y={y}
-                  href={data[index].href}
-                  // noBorder={index < 2}
+                  href={href}
+                  translate={listInView ? "0" : "400px"}
                 >
                   <p className={"title-card-body"}>
-                    <em>{data[index].body}</em>
+                    <em>{body}</em>
                   </p>
                 </TitledListCard>
               ))}

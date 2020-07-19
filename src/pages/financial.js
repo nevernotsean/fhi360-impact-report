@@ -84,7 +84,7 @@ const Financial = ({ location }) => (
                 <td>$667,000,000</td>
               </tr>
               <tr>
-                <td>General and Administrative</td>
+                <td className={"nowrap"}>General and Administrative</td>
                 <td>$102,000,000</td>
               </tr>
               <tr className="no-stroke">
@@ -213,6 +213,10 @@ const StyledTable = styled.table`
       border-bottom: 1px solid ${({ theme }) => theme.colors.black};
       padding-top: 0.725rem;
     }
+  }
+
+  .nowrap {
+    white-space: nowrap;
   }
 `
 

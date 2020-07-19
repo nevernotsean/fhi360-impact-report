@@ -155,6 +155,10 @@ const Container = styled.div`
       top: 0;
     }
   }
+
+  .magellan-inner:not(::nth-child(0)) .image-container img {
+    opacity: 0 !important;
+  }
 `
 
 const SplitSectionLongInner = ({
@@ -180,11 +184,11 @@ const SplitSectionLongInner = ({
         {!flip ? (
           <>
             {/* Left */}
-            <CenteredFlex>
+            <CenteredFlex className={"image-container"}>
               <FullImage src={image} alt={alt}></FullImage>
             </CenteredFlex>
             {/* Right */}
-            <CenteredFlex>
+            <CenteredFlex className={"content-container"}>
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
@@ -193,13 +197,13 @@ const SplitSectionLongInner = ({
         ) : (
           <>
             {/* Left */}
-            <CenteredFlex>
+            <CenteredFlex className={"content-container"}>
               <Box pr={[15, 30]} pl={[15, 60]} maxWidth={600}>
                 {children}
               </Box>
             </CenteredFlex>
             {/* Right */}
-            <CenteredFlex>
+            <CenteredFlex className={"image-container"}>
               <FullImage src={image} alt={alt}></FullImage>
             </CenteredFlex>
           </>
@@ -210,13 +214,12 @@ const SplitSectionLongInner = ({
 }
 
 const StyledInner = styled(Box)`
-  opacity: 0;
-  transition: opacity 0.5s linear;
-  ${({ isVisible }) => isVisible && "opacity: 1;"}
-  ${({ isVisible }) =>
-    !isVisible && "pointer-events: none;"}
+  ${({ isVisible }) => !isVisible && "pointer-events: none;"}
 
-  .split-section-long-content-inner {
+  .content-container {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    ${({ isVisible }) => isVisible && "opacity: 1;"}
   }
 `
 

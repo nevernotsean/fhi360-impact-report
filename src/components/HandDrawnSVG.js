@@ -105,6 +105,7 @@ const MaskOuter = styled.div`
   svg {
     pointer-events: none;
   }
+
   .animate {
     opacity: ${({ length }) => (length === 0 ? 0 : 1)};
     stroke-dasharray: ${({ length }) => `${length}px ${length}px`};
@@ -135,6 +136,13 @@ const MaskOuter = styled.div`
     stroke-dashoffset: ${({ length3 }) => `${length3}px`};
 
     ${props => animate(props, 4)};
+  }
+
+  .animate,
+  .animate2,
+  .animate3,
+  .animate4 {
+    ${({ animated }) => !animated && "opacity: 0;"}
   }
 `
 

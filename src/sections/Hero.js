@@ -67,7 +67,12 @@ const Hero = () => {
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <Box className="lockup lockup-mobile" width={"50vw"}>
             <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
-            <H1 className="title">
+            <H1
+              className="title"
+              fontWeight={900}
+              fontSize={["24px", "6vw", "72px"]}
+              lineHeight={["28px", "6.6vw", "80px"]}
+            >
               We are so
               <br />
               very glad
@@ -111,7 +116,12 @@ const Hero = () => {
         <Box width={[1, 1 / 2]}>
           <Box className="lockup lockup-desktop" display={["none", "block"]}>
             <Lead style={{ marginBottom: "35px" }}>Welcome</Lead>
-            <H1 className="title">
+            <H1
+              className="title"
+              fontWeight={900}
+              fontSize={["24px", "6vw", "72px"]}
+              lineHeight={["28px", "6.6vw", "80px"]}
+            >
               We are so
               <br />
               very glad

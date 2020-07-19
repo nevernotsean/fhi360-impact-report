@@ -26,13 +26,28 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
           className={"closeButton"}
           width={32}
           pt={[15, 35]}
-          pb={80}
+          pb={[15, 15, 15, 80]}
           onClick={() => closeSidenav()}
         >
           <CloseSVG></CloseSVG>
         </Box>
         {data.map(
-          ({ label, id, component, url, ...props }, i) =>
+          (
+            {
+              label,
+              id,
+              component,
+              url,
+              headline,
+              body,
+              project,
+              funder,
+              title,
+              link,
+              ...props
+            },
+            i
+          ) =>
             !url && (
               <ScrollToLink
                 key={id + i}
@@ -51,7 +66,22 @@ const SideNav = ({ data, isOpen, closeSidenav, ...props }) => {
         )}
         <hr></hr>
         {data.map(
-          ({ label, id, component, url, ...props }, i) =>
+          (
+            {
+              label,
+              id,
+              component,
+              url,
+              headline,
+              body,
+              project,
+              funder,
+              title,
+              link,
+              ...props
+            },
+            i
+          ) =>
             url && (
               <Link key={id + i} to={url} {...props} className="link">
                 {label}
@@ -167,10 +197,10 @@ const Container = styled(Box)`
         transform: scaleX(1);
       }
     }
+    white-space: nowrap;
 
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints[1]}) {
       font-size: 16px;
-      white-space: nowrap;
     }
   }
 
