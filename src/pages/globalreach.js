@@ -60,10 +60,10 @@ const GlobalReach = ({ location }) => {
           </Box>
         </Box>
       </Media>
-      <Section title={"Main Offices"} px={[0, 20]}>
+      <Section title={"Main Offices"} px={[0, 20]} mb={15}>
         <Box>
           <P>
-            <strong>US Offices</strong>
+            <strong>U.S. Offices</strong>
           </P>
           <P>
             Durham, NC USA (Headquarters)
@@ -346,10 +346,10 @@ const GlobalReach = ({ location }) => {
           <strong>Ukraine</strong>
         </P>
         <P>
-          <strong>United Kingdom</strong>
+          <strong>United Kingdom</strong> (London)
         </P>
         <P>
-          <strong>United States</strong> (Main Office: Durham, NC; Washington,
+          <strong>United States</strong> (Main Offices: Durham, NC; Washington,
           DC)
         </P>
         <P>
@@ -392,12 +392,12 @@ const Section = ({ title, children, bg, ...props }) => (
     <Flex
       flexDirection={"column"}
       maxWidth={1200}
-      {...props}
       mx={"auto"}
       mb={30}
       minHeight={"50vh"}
       py={90}
       px={20}
+      {...props}
     >
       <Box sx={{ borderBottom: "1px solid black" }} mb={50}>
         <H2

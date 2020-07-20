@@ -129,6 +129,7 @@ export const SplitSection = ({
 export const SplitSectionCroppedImage = ({
   image,
   imageCredits,
+  alt = "",
   children,
   flip,
   minHeight,
@@ -190,6 +191,7 @@ export const SplitSectionCroppedImage = ({
             display={[hideImageOnMobile ? "none" : "block", "block"]}
           >
             <InViewImage
+              alt={alt}
               src={image}
               scrollSpeed={-0.5}
               imageSpeed={1}
@@ -278,19 +280,18 @@ export const SplitSectionCroppedImage = ({
           </Media>
         }
       </FlexWrap>
-      {!hideImageOnMobile && ( // credits on desktop
-        <Media greaterThanOrEqual={"md"}>
-          <PhotoCredits
-            credits={imageCredits}
-            sx={{
-              position: "absolute",
-              zIndex: 2,
-              bottom: 0,
-              left: 0,
-            }}
-          ></PhotoCredits>
-        </Media>
-      )}
+      {/* // credits on desktop */}
+      <Media greaterThanOrEqual={"md"}>
+        <PhotoCredits
+          credits={imageCredits}
+          sx={{
+            position: "absolute",
+            zIndex: 2,
+            bottom: 0,
+            left: 0,
+          }}
+        ></PhotoCredits>
+      </Media>
     </Flex>
   )
 }

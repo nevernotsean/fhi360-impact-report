@@ -38,14 +38,14 @@ const Brave = () => {
         contentArray={[
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360",
             alt: "doctor smiling",
             content: BraveFirst,
             mobileContent: BraveFirst,
           },
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360",
             alt: "doctor smiling",
             content: ({ animated }) => (
               <>
@@ -86,7 +86,7 @@ const Brave = () => {
           },
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360",
             alt: "doctor smiling",
             content: () => (
               <>
@@ -112,7 +112,7 @@ const Brave = () => {
           },
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360 ",
             alt: "doctor smiling",
             content: ({ animated }) => (
               <>
@@ -191,7 +191,7 @@ const Brave = () => {
           },
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360",
             alt: "doctor smiling",
             content: () => (
               <>
@@ -199,8 +199,8 @@ const Brave = () => {
                 <Box maxWidth={480}>
                   <span className={"section-body"}>
                     In times of conflict, disaster or displacement, we are there
-                    to meet both urgent needs and to help people rebuild their
-                    lives and communities.
+                    to meet urgent needs and to help people rebuild their lives
+                    and communities.
                   </span>
                 </Box>
               </>
@@ -208,14 +208,14 @@ const Brave = () => {
             mobileContent: () => (
               <span className={"section-body"}>
                 In times of conflict, disaster or displacement, we are there to
-                meet both urgent needs and to help people rebuild their lives
-                and communities.
+                meet urgent needs and to help people rebuild their lives and
+                communities.
               </span>
             ),
           },
           {
             image: image1,
-            imageCredits: "Kiana Hayeri/The Verbatim Agency for FHI 360",
+            imageCredits: "Jessica Scranton/FHI 360",
             alt: "doctor smiling",
             content: () => (
               <>

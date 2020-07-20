@@ -43,9 +43,10 @@ const data = [
     href: "https://www.fhiclinical.com/",
   },
   {
-    title: "FHI<br/><span class='bolder'>Konung</span>",
+    title: "Konung<br/><span class='bolder'>International</span>",
     body:
       "Global governance solutions for effective and sustainable human development",
+    href: "https://konunginternational.com/",
   },
 ]
 
@@ -67,7 +68,7 @@ const Nimble = () => {
           <Box width={[1, 1 / 2]} flex={"1 0 auto"} maxWidth={480} mr={"auto"}>
             <Lead>We are nimble</Lead>
             <H2 className="section-title" maxWidth={[300, "none"]}>
-              We are eager, ready and able to
+              We are ready to
               <br />
               <span className="serif">jump in, pivot and act.</span>
             </H2>
@@ -148,7 +149,7 @@ const Nimble = () => {
         />
         <Box maxWidth={480}>
           <H3 className="section-subtitle">
-            On its own or with the larger organization — both in the United
+            on its own or with the larger organization — both in the United
             States and around the world.
           </H3>
         </Box>

@@ -7,7 +7,6 @@ import { Link } from "gatsby"
 
 const Links = ({ textAlign = "right", ...props }) => (
   <Box style={{ textAlign: textAlign }} {...props}>
-    <h5>LEARN MORE</h5>
     <Link to={"/photo-credits"}>
       <h5>Photography Credits</h5>
     </Link>

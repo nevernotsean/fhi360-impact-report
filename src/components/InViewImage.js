@@ -8,7 +8,7 @@ import Pattern from "../images/pattern.png"
 
 const InViewImage = ({
   src,
-  alt,
+  alt = "",
   scrollSpeed = 1,
   imageSpeed = 1,
   revealSpeed = 0.75,

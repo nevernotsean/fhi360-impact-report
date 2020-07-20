@@ -37,12 +37,12 @@ const SectionDividerDark = ({
               duration={duration}
               duration2={duration2}
               delay={0.5}
-              alt={alt}
               overrideLength={overrideLength}
             ></HandDrawnSVG>
           )}
           {img && (
             <Image
+              alt={alt}
               src={img}
               width={1}
               data-scroll

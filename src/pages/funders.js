@@ -17,7 +17,7 @@ const Funders = ({ location }) => (
     <SEO title="Home" />
     <Nav></Nav>
     <Container>
-      <Masthead title={"Thank you"} headline={"2019<br/>Operating Funders"}>
+      <Masthead title={"Thank you"} headline={"2019<br/> Funders"}>
         <Box width={[1, 480]}>
           <p>
             FHI 360’s work would not be possible without the generous support of
@@ -52,8 +52,7 @@ const Funders = ({ location }) => (
         <P>The JPB Foundation</P>
         <P>Margaret A. Cargill Philanthropies</P>
         <P>Medicines for Malaria Venture</P>
-        <P>National Governors Association</P>
-        <P>Center for Best Practices</P>
+        <P>National Governors Association Center for Best Practices</P>
         <P>The Pfizer Foundation</P>
         <P>Robert Wood Johnson Foundation</P>
         <P>The Rockefeller Foundation</P>
@@ -126,6 +125,9 @@ const Funders = ({ location }) => (
         <P>National Cancer Centre Singapore</P>
         <P>Secretary of State for Health and Social Care (U.K.)</P>
       </Section>
+      <p>
+        <small>Operating funders for calendar year 2019</small>
+      </p>
     </Container>
   </Layout>
 )

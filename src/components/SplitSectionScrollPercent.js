@@ -29,7 +29,7 @@ const ScrollPercent = ({
         top: 0,
         left: "16px",
         width: "calc(100% - 32px)",
-        height: "2px",
+        height: "5px",
         background: theme.colors.grey,
       }}
     ></Box>
@@ -38,7 +38,7 @@ const ScrollPercent = ({
         position: "absolute",
         top: 0,
         left: "16px",
-        height: "2px",
+        height: "5px",
         background: theme.colors.orange,
       }}
       style={{

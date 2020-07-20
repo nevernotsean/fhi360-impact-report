@@ -14,6 +14,8 @@ import map from "../images/map.jpg"
 import { Box, Flex } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
 import Image from "../components/image"
+import { Link } from "gatsby"
+import theme from "./../styles/index"
 
 const LiveFirst = () => (
   <>
@@ -71,8 +73,8 @@ const LiveWork = () => (
                   Our development professionals, scientists and researchers
                   partner with nurses and mothers to solve nutrition problems,
                   with young adults and public officials to ensure that public
-                  policies meet youth needs, and with women to develop new
-                  contraception methods.
+                  policies meet youth needs with women to develop new
+                  contraception methods and so many others.
                 </p>
               </Box>
             </>
@@ -82,7 +84,8 @@ const LiveWork = () => (
               Our development professionals, scientists and researchers partner
               with nurses and mothers to solve nutrition problems, with young
               adults and public officials to ensure that public policies meet
-              youth needs, and with women to develop new contraception methods.
+              youth needs with women to develop new contraception methods and so
+              many others.
             </p>
           ),
         },
@@ -96,7 +99,7 @@ const LiveWork = () => (
               <Box maxWidth={480}>
                 <p className={"section-body"}>
                   By empowering individuals, families and communities to tackle
-                  their challenges, we drive progress for years to come.
+                  challenges, we drive progress for years to come.
                 </p>
               </Box>
             </>
@@ -104,7 +107,7 @@ const LiveWork = () => (
           mobileContent: () => (
             <p className={"section-body"}>
               By empowering individuals, families and communities to tackle
-              their challenges, we drive progress for years to come.
+              challenges, we drive progress for years to come.
             </p>
           ),
         },
@@ -151,8 +154,11 @@ const LiveWork = () => (
             />
             <Box maxWidth={480}>
               <p className={"section-body"}>
-                We work with our partners and share our knowledge so we can
-                learn together to achieve far more than we ever could alone.
+                For recent examples of our work and global reach, visit our{" "}
+                <Link to={"/report"} style={{ color: theme.colors.black }}>
+                  Impact Report
+                </Link>
+                .
               </p>
             </Box>
           </Box>

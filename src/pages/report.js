@@ -95,7 +95,7 @@ const impactReport = ({ location }) => {
       <Section {...data[8]}>
         <Box width={[1, 1 / 2, "53.25%"]} mt={50}>
           <StatBlock end={75} decimals={0} duration={2} postfix={"%"}>
-            participants are back in schools or have a job or apprenticeship.
+            participants back in school or have a job or apprenticeship.
           </StatBlock>
         </Box>
       </Section>
@@ -111,7 +111,7 @@ const impactReport = ({ location }) => {
           <ReportPullquote
             title={"Learn More"}
             headline={
-              '<a href="https://www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank"  rel="noreferrer">ngoconnect.net/resource/local-philanthropy-and-self-reliance</a>'
+              '<a href="https://www.ngoconnect.net/resource/local-philanthropy-and-self-reliance" target="_blank"  rel="noreferrer">Visit NGOConnect</a>'
             }
           ></ReportPullquote>
         </Box>
@@ -148,7 +148,7 @@ const data = [
     title: "EDUCATION",
     headline: "Building community among Native American tribes",
     body:
-      "Across the United States, less than 2 percent of the 46,000 Native American and Alaskan native children who are enrolled in Head Start and Early Head Start programs speak their tribal languages at home. Through the American Indian and Alaska Native Head Start Collaboration Office, FHI 360 is assisting tribal communities to incorporate native languages and cultural traditions into the classroom across 26 states. Learning these languages serves as a protective factor for well-being for native children and aids academic success. Reawakening this cultural heritage also helps bring healing to trauma-induced communities. FHI 360 brings together tribal members, educators and researchers to discuss educational challenges, solutions and practices tailored to participants’ contexts. In 2019, the Collaboration Office developed and co-hosted four statewide early childhood tribal language summits.",
+      "Across the United States, less than 2 percent of the 46,000 Native American and Alaskan Native children who are enrolled in Head Start and Early Head Start programs speak their tribal languages at home. Through the American Indian and Alaska Native Head Start Collaboration Office, FHI 360 is assisting tribal communities to incorporate native languages and cultural traditions into the classroom across 26 states. Learning these languages serves as a protective factor for well-being for native children and aids academic success. Reawakening this cultural heritage also helps bring healing to trauma-induced communities. FHI 360 brings together tribal members, educators and researchers to discuss educational challenges, solutions and practices tailored to participants’ contexts. In 2019, the Collaboration Office developed and co-hosted four statewide early childhood tribal language summits.",
 
     project: "Head Start",
     funder: "U.S. Department of Health and Human Services",
@@ -161,7 +161,7 @@ const data = [
     title: "RESEARCH",
     headline: "Leading trailblazing research",
     body:
-      "The ECHO Study was the first large-scale, randomized, clinical trial designed to yield high-quality data on the long-standing question of whether hormonal contraception is linked to greater risk of HIV infection. The study found similar risks and benefits associated with use of two hormonal contraceptives — the injectable depot-medroxyprogesterone acetate (DMPA) and a levonorgestrel implant — and one nonhormonal method — the copper intrauterine device (IUD). These data led the World Health Organization to recommend that women at high risk of HIV infection can use all contraceptive methods without restrictions, allowing women to make informed choices. A consortium of global and national institutions, led by FHI 360, the University of Washington, Wits Reproductive Health and HIV Institute, and the World Health Organization, collaborated with 12 sites in Eswatini, Kenya, South Africa and Zambia.",
+      "The ECHO Study was the first large-scale, randomized, clinical trial designed to yield high-quality data on the long-standing question of whether hormonal contraception is linked to greater risk of HIV infection. The study found similar risks and benefits associated with use of two hormonal contraceptives — the injectable depotmedroxyprogesterone acetate (DMPA) and a levonorgestrel implant — and one nonhormonal method — the copper intrauterine device (IUD). These data led the World Health Organization to recommend that women at high risk of HIV infection can use all contraceptive methods without restrictions, allowing women to make informed choices. A consortium of global and national institutions, led by FHI 360, the University of Washington, Wits Reproductive Health and HIV Institute, and the World Health Organization, collaborated with 12 sites in Eswatini, Kenya, South Africa and Zambia.",
 
     project: "Evidence for Contraceptive Options and HIV Outcomes (ECHO) Study",
     funder:
@@ -176,7 +176,7 @@ const data = [
     title: "HEALTH",
     headline: "Using social media to end HIV stigma",
     body:
-      "Stigma and complacency continue to be major obstacles to addressing HIV in the United States. FHI 360 supports the U.S. Centers for Disease Control and Prevention (CDC) national awareness and antistigma campaign, Let’s Stop HIV Together, which features all aspects of HIV education and many different campaign strategies. FHI 360 has particularly helped reach new audiences with essential messaging through social media: The campaign has attained an estimated total of 32.9 million post impressions and more than 13,000 Instagram followers.",
+      "Stigma and complacency continue to be major obstacles to addressing HIV in the United States. FHI 360 supports the U.S. Centers for Disease Control and Prevention (CDC) national awareness and antistigma campaign, Let’s Stop HIV Together, which features all aspects of HIV education and many different campaign strategies. FHI 360 has helped reach new audiences with essential messaging through social media: The campaign has attained an estimated total of 32.9 million post impressions and more than 13,000 Instagram followers.",
 
     project: "Let’s Stop HIV Together",
     funder: "U.S. Centers for Disease Control and Prevention",
@@ -204,7 +204,7 @@ const data = [
     title: "EDUCATION",
     headline: "Building literacy in Ghanaian early learners",
     body:
-      "Literacy and numeracy are the foundation of all learning, yet far too many children fail to master these critical skills. During the 2017-2019 academic years, more than 7,200 Ghanaian schools in 100 districts introduced a high-quality early grade reading program. By the end of 2019, 707,843 pupils in kindergarten and primary grades 1 and 2 had been taught using the new reading methods, and more than 51,000 teachers, head teachers and curriculum directors received instructional materials and training in advanced reading instruction methods. An independent evaluation of the early grade reading program found that students in primary grades 1 and 2 significantly increased their average scores on all reading skills tested in a Ghanaian language. In fact, the evaluation noted that, “compared with similar programs worldwide, Learning has one of the largest program impacts measured to date.”",
+      "Literacy and numeracy are the foundation of all learning, yet far too many children fail to master these critical skills. During the 2017-2019 academic years, more than 7,200 Ghanaian schools in 100 districts introduced a high-quality early grade reading program. By the end of 2019, 707,843 pupils in kindergarten and primary grades 1 and 2 had been taught using the new reading methods, and more than 51,000 teachers, head teachers and curriculum directors received instructional materials and training in advanced reading instruction methods. An independent evaluation of the early grade reading program found that students in primary grades 1 and 2 significantly increased their average scores on all reading skills tested in a Ghanaian language. In fact, the evaluation noted that, “Compared with similar programs worldwide, Learning has one of the largest program impacts measured to date.”",
 
     project: "USAID Partnership for Education: Learning",
     funder: "U.S. Agency for International Development",

@@ -119,7 +119,7 @@ const Perception = props => {
         <SplitSectionCroppedImage
           flip
           image={image1}
-          imageCredits={"Leanne Gray/ FHI 360"}
+          imageCredits={"Leanne Gray/FHI 360"}
           alt={"man holding baby"}
           alignImageMobile={"center top"}
         >

@@ -84,6 +84,8 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
+              useInviewTrigger={false}
+              animated={true}
             ></HandDrawnSVG>
             <div className="line">
               <H2 fontSize={14}>
@@ -133,6 +135,8 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
+              useInviewTrigger={false}
+              animated={true}
             ></HandDrawnSVG>
 
             <div className="line">
@@ -150,7 +154,11 @@ const Hero = () => {
                   <p>{body}</p>
                   {i === 2 && (
                     <Box display={["block", "none"]}>
-                      <HeroPullquote px={[1, 5]} fontSize={"28px"} mb={50} />
+                      <HeroPullquote
+                        px={[1, 5]}
+                        fontSize={"28px"}
+                        mb={"1.45rem"}
+                      />
                     </Box>
                   )}
                 </React.Fragment>

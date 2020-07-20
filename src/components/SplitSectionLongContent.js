@@ -167,7 +167,7 @@ const SplitSectionLongInner = ({
   imageCredits,
   minHeight,
   image,
-  alt,
+  alt = "",
   target,
   index,
   total,
