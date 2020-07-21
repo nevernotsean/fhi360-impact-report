@@ -8,11 +8,11 @@ import { isTablet } from "react-device-detect"
 export const LocomotiveContext = createContext({ scroll: null })
 
 export const useLocomotiveScroll = ({ location, ...options }) => {
-  console.log(isTablet)
+  // console.log(isTablet)
   const context = useContext(LocomotiveContext)
 
   useEffect(() => {
-    console.log("scroll updated")
+    // console.log("scroll updated")
     var el = document.querySelector(options.query)
 
     context.scroll = new LocomotiveScroll({
