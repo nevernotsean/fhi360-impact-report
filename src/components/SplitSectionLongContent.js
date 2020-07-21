@@ -221,6 +221,12 @@ const StyledInner = styled(Box)`
     transition: opacity 0.5s linear;
     ${({ isVisible }) => isVisible && "opacity: 1;"}
   }
+
+  .section-body {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+      min-height: 20vh;
+    }
+  }
 `
 
 const CenteredFlex = props => (
