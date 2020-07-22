@@ -112,32 +112,20 @@ const Financial = ({ location }) => (
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
-        <StyledTable>
-          <thead>
-            <tr>
-              <th>Expenses</th>
-              <th>US Dollars</th>
-            </tr>
-          </thead>
+        <Legend>
           <tbody>
-            <tr>
-              <td>Operational Expenses</td>
-              <td>$667,000,000</td>
-            </tr>
-            <tr>
-              <td className={"nowrap"}>General and Administrative</td>
-              <td>$102,000,000</td>
-            </tr>
-            <tr className="no-stroke">
-              <td>Business Development</td>
-              <td>$17,000,000</td>
-            </tr>
-            <tr className="white-bg no-stroke">
-              <td>Total</td>
-              <td>$786,000,000</td>
-            </tr>
+            <LegendRow stat={"64.16"}>USAID</LegendRow>
+            <LegendRow stat={"8.30"}>Foundations</LegendRow>
+            <LegendRow stat={"7.20"}>NIH/DHHS</LegendRow>
+            <LegendRow stat={"4.88"}>Corporations</LegendRow>
+            <LegendRow stat={"4.81"}>US State Department</LegendRow>
+            <LegendRow stat={"3.59"}>Multilaterals</LegendRow>
+            <LegendRow stat={"2.92"}>Other US Government</LegendRow>
+            <LegendRow stat={"2.22"}>CDC</LegendRow>
+            <LegendRow stat={"1.32"}>Other</LegendRow>
+            <LegendRow stat={"0.60"}>Government (non-US)</LegendRow>
           </tbody>
-        </StyledTable>
+        </Legend>
       </Box>
     </Section>
     <Section title={"Allocation of expenses"}>
@@ -151,32 +139,14 @@ const Financial = ({ location }) => (
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
-        <StyledTable>
-          <thead>
-            <tr>
-              <th>Expenses</th>
-              <th>US Dollars</th>
-            </tr>
-          </thead>
+        <Legend>
           <tbody>
-            <tr>
-              <td>Operational Expenses</td>
-              <td>$667,000,000</td>
-            </tr>
-            <tr>
-              <td className={"nowrap"}>General and Administrative</td>
-              <td>$102,000,000</td>
-            </tr>
-            <tr className="no-stroke">
-              <td>Business Development</td>
-              <td>$17,000,000</td>
-            </tr>
-            <tr className="white-bg no-stroke">
-              <td>Total</td>
-              <td>$786,000,000</td>
-            </tr>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
           </tbody>
-        </StyledTable>
+        </Legend>
       </Box>
     </Section>
     <Section title={"Work by area"}>
@@ -190,32 +160,14 @@ const Financial = ({ location }) => (
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
-        <StyledTable>
-          <thead>
-            <tr>
-              <th>Expenses</th>
-              <th>US Dollars</th>
-            </tr>
-          </thead>
+        <Legend>
           <tbody>
-            <tr>
-              <td>Operational Expenses</td>
-              <td>$667,000,000</td>
-            </tr>
-            <tr>
-              <td className={"nowrap"}>General and Administrative</td>
-              <td>$102,000,000</td>
-            </tr>
-            <tr className="no-stroke">
-              <td>Business Development</td>
-              <td>$17,000,000</td>
-            </tr>
-            <tr className="white-bg no-stroke">
-              <td>Total</td>
-              <td>$786,000,000</td>
-            </tr>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
           </tbody>
-        </StyledTable>
+        </Legend>
         <p style={{ maxWidth: "400px" }}>
           <small>
             Crosscutting areas, such as technology, gender and youth, are
@@ -235,32 +187,14 @@ const Financial = ({ location }) => (
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
-        <StyledTable>
-          <thead>
-            <tr>
-              <th>Expenses</th>
-              <th>US Dollars</th>
-            </tr>
-          </thead>
+        <Legend>
           <tbody>
-            <tr>
-              <td>Operational Expenses</td>
-              <td>$667,000,000</td>
-            </tr>
-            <tr>
-              <td className={"nowrap"}>General and Administrative</td>
-              <td>$102,000,000</td>
-            </tr>
-            <tr className="no-stroke">
-              <td>Business Development</td>
-              <td>$17,000,000</td>
-            </tr>
-            <tr className="white-bg no-stroke">
-              <td>Total</td>
-              <td>$786,000,000</td>
-            </tr>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
+            <LegendRow stat={""}></LegendRow>
           </tbody>
-        </StyledTable>
+        </Legend>
       </Box>
     </Section>
   </Layout>
@@ -341,5 +275,37 @@ const StyledTable = styled.table`
     white-space: nowrap;
   }
 `
+
+const Legend = styled.table`
+  th,
+  td {
+    padding: 0;
+    padding: 0 10px;
+    border: none;
+  }
+
+  .dot {
+    width: 25px;
+  }
+
+  .dot span {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: inline-block;
+  }
+`
+
+const LegendRow = ({ color = "#aaa", stat = "0", children, ...props }) => {
+  return (
+    <tr {...props}>
+      <td className="dot">
+        <span style={{ background: color }}></span>
+      </td>
+      <td style={{ width: "60px", textAlign: "right" }}>{stat}%</td>
+      <td>{children || "Lorem"}</td>
+    </tr>
+  )
+}
 
 export default Financial
