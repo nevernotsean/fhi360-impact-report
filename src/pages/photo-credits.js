@@ -16,7 +16,7 @@ const Funders = ({ location }) => (
           <p>Lorem ipsum</p>
         </Box> */}
       </Masthead>
-      <Section title={"Central Photo"}>
+      <Section title={"Central Photo"} minHeight={"unset"}>
         <P>Jessica Scranton/FHI 360</P>
       </Section>
       <Section title={"Clockwise from top"}>
@@ -37,12 +37,12 @@ const Section = ({ title, children, bg, ...props }) => (
     <Flex
       flexDirection={"column"}
       maxWidth={1200}
-      {...props}
       mx={"auto"}
       mb={30}
       minHeight={"50vh"}
       py={90}
       px={20}
+      {...props}
     >
       <Box sx={{ borderBottom: "1px solid black" }} mb={50}>
         <H2
