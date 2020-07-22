@@ -21,7 +21,7 @@ const Nav = () => {
         </Box>
         <Flex flexDirection={["column", "row"]}>
           <Link className={"link"} to={"/report"}>
-            2019 Overview
+            2019 Impact
           </Link>
           <Link className={"link"} to={"/financial"}>
             Financials
