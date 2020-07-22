@@ -119,9 +119,7 @@ const Nimble = () => {
                   href={href}
                   translate={listInView ? "0" : "400px"}
                 >
-                  <p className={"title-card-body"}>
-                    <em>{body}</em>
-                  </p>
+                  <p className={"title-card-body"}>{body}</p>
                 </TitledListCard>
               ))}
             </Flex>
