@@ -14,6 +14,8 @@ import Nav from "../components/Report/Nav"
 import styled from "styled-components"
 import Image from "../components/image"
 
+import sketch from "../images/sketch.png"
+
 const Financial = ({ location }) => (
   <Layout
     bg={"#f1f1f1"}
@@ -109,21 +111,42 @@ const Financial = ({ location }) => (
           width={1}
           mx={"auto"}
           sx={{ display: "block" }}
+          p={20}
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow stat={"64.16"}>USAID</LegendRow>
-            <LegendRow stat={"8.30"}>Foundations</LegendRow>
-            <LegendRow stat={"7.20"}>NIH/DHHS</LegendRow>
-            <LegendRow stat={"4.88"}>Corporations</LegendRow>
-            <LegendRow stat={"4.81"}>US State Department</LegendRow>
-            <LegendRow stat={"3.59"}>Multilaterals</LegendRow>
-            <LegendRow stat={"2.92"}>Other US Government</LegendRow>
-            <LegendRow stat={"2.22"}>CDC</LegendRow>
-            <LegendRow stat={"1.32"}>Other</LegendRow>
-            <LegendRow stat={"0.60"}>Government (non-US)</LegendRow>
+            <LegendRow color={"teal"} stat={"64.16%"}>
+              USAID
+            </LegendRow>
+            <LegendRow color={"orange"} stat={"8.30%"}>
+              Foundations
+            </LegendRow>
+            <LegendRow color={"pink"} stat={"7.20%"}>
+              NIH/DHHS
+            </LegendRow>
+            <LegendRow color={"grey"} stat={"4.88%"}>
+              Corporations
+            </LegendRow>
+            <LegendRow color={"purple"} stat={"4.81%"}>
+              US State Department
+            </LegendRow>
+            <LegendRow color={"lightgrey"} stat={"3.59%"}>
+              Multilaterals
+            </LegendRow>
+            <LegendRow color={"lightpurple"} stat={"2.92%"}>
+              Other US Government
+            </LegendRow>
+            <LegendRow color={"lightblue"} stat={"2.22%"}>
+              CDC
+            </LegendRow>
+            <LegendRow color={"slate"} stat={"1.32%"}>
+              Other
+            </LegendRow>
+            <LegendRow color={"bluewhite"} stat={"0.60%"}>
+              Government (non-US)
+            </LegendRow>
           </tbody>
         </Legend>
       </Box>
@@ -136,15 +159,21 @@ const Financial = ({ location }) => (
           width={1}
           mx={"auto"}
           sx={{ display: "block" }}
+          p={20}
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
+            <LegendRow color={"orange"} stat={"84.86%"}>
+              Operational Expenses
+            </LegendRow>
+            <LegendRow color={"teal"} stat={"13.03%"}>
+              General and Administrative
+            </LegendRow>
+            <LegendRow color={"slate"} stat={"2.11%"}>
+              Business Development
+            </LegendRow>
           </tbody>
         </Legend>
       </Box>
@@ -157,15 +186,45 @@ const Financial = ({ location }) => (
           width={1}
           mx={"auto"}
           sx={{ display: "block" }}
+          p={20}
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
+            <LegendRow color={"teal"} stat="35.62%">
+              HIV/AIDS, TB and Malaria Programs
+            </LegendRow>
+            <LegendRow color={"orange"} stat="12.45%">
+              Research
+            </LegendRow>
+            <LegendRow color={"pink"} stat="9.50%">
+              Education
+            </LegendRow>
+            <LegendRow color={"grey"} stat="7.38%">
+              Nutrition and Food Security
+            </LegendRow>
+            <LegendRow color={"purple"} stat="5.95%">
+              Other Health
+            </LegendRow>
+            <LegendRow color={"lightgrey"} stat="5.57%">
+              Civil Society and Peacebuilding
+            </LegendRow>
+            <LegendRow color={"lightpurple"} stat="5.15%">
+              Workforce, Learning and Economic Participation
+            </LegendRow>
+            <LegendRow color={"lightblue"} stat="4.96%">
+              Social Marketing and Communications
+            </LegendRow>
+            <LegendRow color={"#13282f"} stat="4.86%">
+              Family Planning and Maternal Child Health
+            </LegendRow>
+            <LegendRow color={"slate"} stat="4.72%">
+              International Exchanges
+            </LegendRow>
+            <LegendRow color={"bluewhite"} stat="3.84%">
+              Other
+            </LegendRow>
           </tbody>
         </Legend>
         <p style={{ maxWidth: "400px" }}>
@@ -184,15 +243,33 @@ const Financial = ({ location }) => (
           width={1}
           mx={"auto"}
           sx={{ display: "block" }}
+          p={20}
         ></Image>
       </Box>
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
-            <LegendRow stat={""}></LegendRow>
+            <LegendRow color={"teal"} stat="36.24%">
+              Global
+            </LegendRow>
+            <LegendRow color={"orange"} stat="23.38%">
+              East/Southern Africa
+            </LegendRow>
+            <LegendRow color={"pink"} stat="20.75%">
+              West/Central Africa and Middle East/North Africa
+            </LegendRow>
+            <LegendRow color={"grey"} stat="6.20%">
+              Asia/Pacific
+            </LegendRow>
+            <LegendRow color={"purple"} stat="5.69%">
+              United States
+            </LegendRow>
+            <LegendRow color={"lightgrey"} stat="4.99%">
+              Europe/Central Asia
+            </LegendRow>
+            <LegendRow color={"lightpurple"} stat="2.75%">
+              Latin America/Caribbean
+            </LegendRow>
           </tbody>
         </Legend>
       </Box>
@@ -296,13 +373,32 @@ const Legend = styled.table`
   }
 `
 
-const LegendRow = ({ color = "#aaa", stat = "0", children, ...props }) => {
+const LegendRow = ({ color = "teal", stat = "0", children, ...props }) => {
+  const colors = {
+    teal: "#2f6576",
+    orange: "#e69f50",
+    pink: "#f0c3ac",
+    grey: "#757c93",
+    purple: "#30163b",
+    lightgrey: "#979ba5",
+    lightpurple: "#adaec2",
+    lightblue: "#72b9e1",
+    slate: "#8fb0c2",
+    bluewhite: "#a6cadc",
+  }
   return (
     <tr {...props}>
       <td className="dot">
-        <span style={{ background: color }}></span>
+        <span style={{ background: colors[color] ? colors[color] : color }}>
+          {/* <span
+            style={{
+              position: "absolute",
+              background: `url(${sketch}) no-repeat center center`,
+            }}
+          ></span> */}
+        </span>
       </td>
-      <td style={{ width: "60px", textAlign: "right" }}>{stat}%</td>
+      <td style={{ width: "60px", textAlign: "right" }}>{stat}</td>
       <td>{children || "Lorem"}</td>
     </tr>
   )
