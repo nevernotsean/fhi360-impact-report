@@ -39,6 +39,9 @@ const HeroPullquote = props => (
       overrideLength={[238]}
       width={200}
       className="pullquote-streak"
+      // rootMargin={"-1000px 0px"}
+      threshold={0}
+      // debug={true}
     >
       differently
     </Underlined>{" "}
@@ -102,15 +105,17 @@ const Hero = () => {
           display={["none", "block"]}
           sx={{ position: "relative" }}
         >
-          <InViewImage
-            src={hero}
-            className="hero-image"
-            alt={"photo of Patrick Fine"}
-            scrollSpeed={0}
-            imageSpeed={1.5}
-            mt={[0, 50]}
-            revealSpeed={0}
-          ></InViewImage>
+          <Box minHeight={["100vw", "50vw", "50vw"]}>
+            <InViewImage
+              src={hero}
+              className="hero-image"
+              alt={"photo of Patrick Fine"}
+              scrollSpeed={0}
+              imageSpeed={1.5}
+              mt={[0, 50]}
+              revealSpeed={0}
+            ></InViewImage>
+          </Box>
           <img src={strip} className="strip desktop" alt=""></img>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
           <HeroPullquote />

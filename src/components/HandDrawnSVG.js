@@ -20,6 +20,7 @@ const HandDrawnSVG = ({
   orange,
   scrollSpeed = -0.1,
   ease = "ease-in-out",
+  debug,
   ...props
 }) => {
   const ref = useRef()
@@ -27,9 +28,9 @@ const HandDrawnSVG = ({
   const [triggered, setTriggered] = useState(false)
 
   const [inViewRef, inView, entry] = useInView({
-    rootMargin,
+    rootMargin: rootMargin,
     threshold: threshold,
-    triggerOnce,
+    triggerOnce: triggerOnce,
   })
 
   const setRefs = useCallback(
@@ -47,7 +48,7 @@ const HandDrawnSVG = ({
 
   useEffect(() => {
     if (inView) setTriggered(true)
-    // if(inView) console.log("triggered", ref)
+    if (inView && debug) alert("triggered", ref)
   }, [inView])
 
   useEffect(() => {

@@ -288,7 +288,7 @@ const Endcard = ({ triggered, ...props }) => {
         ></HandDrawnSVG>
         <FHILogo id="logo"></FHILogo>
         <Box id="impact-link">
-          <Link to={"report"}>View the 2019 Impact Report →</Link>
+          <Link to={"/report"}>View the 2019 Impact Report →</Link>
         </Box>
       </Box>
     </StyledEndcard>

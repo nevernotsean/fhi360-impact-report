@@ -102,46 +102,166 @@ const Financial = ({ location }) => (
     </Masthead>
     <Flex flexDirection={"column"}></Flex>
     <Section title={"Revenue by source"}>
-      <Image
-        alt={"pie chart of Revenue by source"}
-        src={Image5}
-        maxWidth={["80vw", 800]}
-        mx={"auto"}
-        sx={{ display: "block" }}
-      ></Image>
+      <Box width={[1, 1 / 2]}>
+        <Image
+          alt={"pie chart of Revenue by source"}
+          src={Image5}
+          width={1}
+          mx={"auto"}
+          sx={{ display: "block" }}
+        ></Image>
+      </Box>
+      <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
+        <StyledTable>
+          <thead>
+            <tr>
+              <th>Expenses</th>
+              <th>US Dollars</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Operational Expenses</td>
+              <td>$667,000,000</td>
+            </tr>
+            <tr>
+              <td className={"nowrap"}>General and Administrative</td>
+              <td>$102,000,000</td>
+            </tr>
+            <tr className="no-stroke">
+              <td>Business Development</td>
+              <td>$17,000,000</td>
+            </tr>
+            <tr className="white-bg no-stroke">
+              <td>Total</td>
+              <td>$786,000,000</td>
+            </tr>
+          </tbody>
+        </StyledTable>
+      </Box>
     </Section>
     <Section title={"Allocation of expenses"}>
-      <Image
-        alt={"pie chart of Allocation of expenses"}
-        src={Image4}
-        maxWidth={["80vw", 800]}
-        mx={"auto"}
-        sx={{ display: "block" }}
-      ></Image>
+      <Box width={[1, 1 / 2]}>
+        <Image
+          alt={"pie chart of Allocation of expenses"}
+          src={Image4}
+          width={1}
+          mx={"auto"}
+          sx={{ display: "block" }}
+        ></Image>
+      </Box>
+      <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
+        <StyledTable>
+          <thead>
+            <tr>
+              <th>Expenses</th>
+              <th>US Dollars</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Operational Expenses</td>
+              <td>$667,000,000</td>
+            </tr>
+            <tr>
+              <td className={"nowrap"}>General and Administrative</td>
+              <td>$102,000,000</td>
+            </tr>
+            <tr className="no-stroke">
+              <td>Business Development</td>
+              <td>$17,000,000</td>
+            </tr>
+            <tr className="white-bg no-stroke">
+              <td>Total</td>
+              <td>$786,000,000</td>
+            </tr>
+          </tbody>
+        </StyledTable>
+      </Box>
     </Section>
     <Section title={"Work by area"}>
-      <Image
-        alt={"pie chart of Work by area"}
-        src={Image3}
-        maxWidth={["80vw", 800]}
-        mx={"auto"}
-        sx={{ display: "block" }}
-      ></Image>
-      <p style={{ maxWidth: "400px" }}>
-        <small>
-          Crosscutting areas, such as technology, gender and youth, are
-          integrated into many of our programs.
-        </small>
-      </p>
+      <Box width={[1, 1 / 2]}>
+        <Image
+          alt={"pie chart of Work by area"}
+          src={Image3}
+          width={1}
+          mx={"auto"}
+          sx={{ display: "block" }}
+        ></Image>
+      </Box>
+      <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
+        <StyledTable>
+          <thead>
+            <tr>
+              <th>Expenses</th>
+              <th>US Dollars</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Operational Expenses</td>
+              <td>$667,000,000</td>
+            </tr>
+            <tr>
+              <td className={"nowrap"}>General and Administrative</td>
+              <td>$102,000,000</td>
+            </tr>
+            <tr className="no-stroke">
+              <td>Business Development</td>
+              <td>$17,000,000</td>
+            </tr>
+            <tr className="white-bg no-stroke">
+              <td>Total</td>
+              <td>$786,000,000</td>
+            </tr>
+          </tbody>
+        </StyledTable>
+        <p style={{ maxWidth: "400px" }}>
+          <small>
+            Crosscutting areas, such as technology, gender and youth, are
+            integrated into many of our programs.
+          </small>
+        </p>
+      </Box>
     </Section>
     <Section title={"Work by region"}>
-      <Image
-        alt={"pie chart of Work by region"}
-        src={Image2}
-        maxWidth={["80vw", 800]}
-        mx={"auto"}
-        sx={{ display: "block" }}
-      ></Image>
+      <Box width={[1, 1 / 2]}>
+        <Image
+          alt={"pie chart of Work by region"}
+          src={Image2}
+          width={1}
+          mx={"auto"}
+          sx={{ display: "block" }}
+        ></Image>
+      </Box>
+      <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
+        <StyledTable>
+          <thead>
+            <tr>
+              <th>Expenses</th>
+              <th>US Dollars</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Operational Expenses</td>
+              <td>$667,000,000</td>
+            </tr>
+            <tr>
+              <td className={"nowrap"}>General and Administrative</td>
+              <td>$102,000,000</td>
+            </tr>
+            <tr className="no-stroke">
+              <td>Business Development</td>
+              <td>$17,000,000</td>
+            </tr>
+            <tr className="white-bg no-stroke">
+              <td>Total</td>
+              <td>$786,000,000</td>
+            </tr>
+          </tbody>
+        </StyledTable>
+      </Box>
     </Section>
   </Layout>
 )
@@ -169,7 +289,9 @@ const Section = ({ title, children, ...props }) => (
         {title}
       </H2>
     </Box>
-    <Box mb={30}>{children}</Box>
+    <Box mb={30}>
+      <Flex>{children}</Flex>
+    </Box>
   </Flex>
 )
 
