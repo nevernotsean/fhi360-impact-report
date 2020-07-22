@@ -12,6 +12,7 @@ import ShareButton from "../assets/svg/share-icon.svg"
 import Media from "./Media"
 import BackToTop from "./BackToTop"
 import Tagline from "../assets/svg/tagline.svg"
+import { isTouch } from "react-device-detect"
 
 const Header = ({
   siteTitle,
@@ -91,19 +92,7 @@ const Header = ({
           >
             <a>{pageTitle}</a>
           </BackToTop>
-          <Box
-            width={26}
-            sx={{ cursor: "pointer", opacity: sideNavOpen ? 0 : 1 }}
-          >
-            <ShareButton
-              className="allow-pointer-events fill-detect stroke-detect"
-              onClick={() => {
-                navigator.clipboard
-                  .writeText(window.location)
-                  .then(() => alert(`Link copied: ${window.location}`))
-              }}
-            ></ShareButton>
-          </Box>
+          <ShareComponent></ShareComponent>
           {hideMenuButton !== true && (
             <Box
               ml={20}
@@ -157,5 +146,33 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
+
+const ShareComponent = props => {
+  const [isHover, setHover] = React.useState(false)
+
+  return (
+    <ShareStyled
+      width={26}
+      sx={{ opacity: props.sideNavOpen ? 0 : 1 }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <ShareButton
+        className="allow-pointer-events fill-detect stroke-detect share-button"
+        onClick={() => {
+          navigator.clipboard
+            .writeText(window.location)
+            .then(() => alert(`Link copied: ${window.location}`))
+        }}
+      ></ShareButton>
+    </ShareStyled>
+  )
+}
+
+const ShareStyled = styled(Box)`
+  cursor: pointer;
+
+  ${isTouch && ``}
+`
 
 export default Header
