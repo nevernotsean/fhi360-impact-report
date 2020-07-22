@@ -13,7 +13,12 @@ import Outro from "../sections/Outro/"
 import { Box } from "rebass/styled-components"
 
 const IndexPage = ({ location }) => (
-  <Layout sidenavData={data} showIntro={true} location={location}>
+  <Layout
+    sidenavData={data}
+    showIntro={true}
+    location={location}
+    pageTitle={"We Are FHI 360"}
+  >
     <SEO title="Home" />
 
     <Box id="sections">

@@ -6,9 +6,10 @@ import styled from "styled-components"
 import SectionDividerDark from "../../components/SectionDividerDark"
 import HandDrawnSVG from "../../components/HandDrawnSVG"
 
-import image1 from "../../images/WeAreConstantlyDeveloping_creditLeanneGray.jpg"
+import WomanHoldingBaby from "../../images/Evidence1.png"
 
 import PerceptionCard from "../../images/perception.png"
+
 import Arrow from "../../assets/svg/arrow.svg"
 import { H2, H3, Lead } from "../../elements/Type"
 import OrderedListCard from "../../components/OrderedListCard"
@@ -118,9 +119,9 @@ const Perception = props => {
       <Media at={"sm"}>
         <SplitSectionCroppedImage
           flip
-          image={image1}
-          imageCredits={"Leanne Gray/FHI 360"}
-          alt={"man holding baby"}
+          image={WomanHoldingBaby}
+          imageCredits={"Jessica Scranton/FHI 360"}
+          alt={"woman holding baby"}
           alignImageMobile={"center top"}
         >
           <Flex
@@ -161,9 +162,9 @@ const Perception = props => {
       <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage
           flip
-          image={image1}
-          imageCredits={"Leanne Gray/FHI 360"}
-          alt={"man holding baby"}
+          image={WomanHoldingBaby}
+          imageCredits={"Jessica Scranton/FHI 360"}
+          alt={"woman holding baby"}
           alignImageMobile={"center top"}
         >
           <Lead>LET’S CHANGE PERCEPTION</Lead>

@@ -111,7 +111,7 @@ const Nimble = () => {
                   key={index}
                   index={index}
                   title={title}
-                  width={[1, 1 / 3]}
+                  width={[1, index == data.length - 1 ? 2 / 5 : 1 / 3]}
                   maxWidth={["unset", 180]}
                   height={[200, 200, 250]}
                   p={[0, "25px"]}

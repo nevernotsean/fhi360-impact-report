@@ -24,7 +24,7 @@ const RightSide = () => (
     <span className="section-body">
       educational institutions, faith-based organizations, local communities,
       non-U.S. governments and{" "}
-      <Underlined duration={0.3} delay={0.5} orange>
+      <Underlined duration={0.3} delay={1.5} orange>
         more.
       </Underlined>
     </span>

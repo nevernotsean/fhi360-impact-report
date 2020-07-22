@@ -60,7 +60,7 @@ const RightSide = () => (
         svg={ZipZag}
         alt="zigzag"
         duration={0.3}
-        delay={1}
+        delay={2}
       ></HandDrawnSVG>
     </Box>
   </>

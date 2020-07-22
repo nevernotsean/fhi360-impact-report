@@ -10,7 +10,7 @@ import vert from "../images/pattern-vert-WeLeadwithScience_TheResult.png"
 import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 
-import image1 from "../images/Evidence1.png"
+import ManHoldingBaby from "../images/WeAreConstantlyDeveloping_creditLeanneGray.jpg"
 
 import { Flex, Box, Text } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"
@@ -42,12 +42,13 @@ const Evidence = () => {
             <br />
             than our tagline.
           </H2>
-          <Box ml={-250} mt={[0, -30]}>
+          <Box ml={[-200, -300, -400]} mt={[0, 0]}>
             <Underlined
               orange
               duration={0.25}
+              delay={0}
               className="pullquote-streak"
-              width={250}
+              width={[200, 300, 400]}
             ></Underlined>
           </Box>
         </Box>
@@ -97,10 +98,10 @@ const Evidence = () => {
       </Flex>
       <Media at={"sm"}>
         <SplitSectionCroppedImage
-          image={image1}
+          image={ManHoldingBaby}
+          imageCredits={"Leanne Gray/FHI 360"}
+          alt={"man holding baby"}
           flip
-          imageCredits={"Jessica Scranton/FHI 360"}
-          alt={"woman smiling holding baby"}
           pattern={vert}
           id={"evidence-the-result-desktop"}
         >
@@ -132,10 +133,10 @@ const Evidence = () => {
       </Media>
       <Media greaterThanOrEqual={"md"}>
         <SplitSectionCroppedImage
-          image={image1}
+          image={ManHoldingBaby}
+          imageCredits={"Leanne Gray/FHI 360"}
+          alt={"man holding baby"}
           flip
-          imageCredits={"Jessica Scranton/FHI 360"}
-          alt={"woman smiling holding baby"}
           pattern={vert}
           hideImageOnMobile
           id={"evidence-the-result-desktop"}

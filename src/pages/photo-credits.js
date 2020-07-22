@@ -11,20 +11,22 @@ const Funders = ({ location }) => (
   <Layout bg={"#f1f1f1"} hideMenuButton={true} location={location}>
     <SEO title="Home" />
     <Container>
-      <Masthead headline={"Photography<br/>Credits"}>
+      <Masthead headline={"Final Photo<br/>Credits"}>
         {/* <Box width={[1, 480]}>
           <p>Lorem ipsum</p>
         </Box> */}
       </Masthead>
-      <Section>
-        <P>Joshua Woodson</P>
-        <P>Kiana Hayeri/The Verbatim Agency</P>
-        <P>Leanne Gray</P>
-        <P>Mbuto Machili</P>
-        <P>FatCamera/Getty Images</P>
-        <P>Qualcomm® Wireless Reach™</P>
-        <P>Jessica Scranton</P>
-        <P>Giacamo Pirozzi</P>
+      <Section title={"Central Photo"}>
+        <P>Jessica Scranton/FHI 360</P>
+      </Section>
+      <Section title={"Clockwise from top"}>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Mbuto Machili/FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Kiana Hayeri/The Verbatim Agency for FHI 360</P>
       </Section>
     </Container>
   </Layout>
