@@ -89,7 +89,10 @@ const GlobalReach = ({ location }) => {
         </Box>
       </Section>
 
-      <Section title={"Where We Work"} px={[0, 20]}>
+      <Section
+        title={"Where We Work (Country offices in parentheses)"}
+        px={[0, 20]}
+      >
         <P>
           <strong>Afghanistan</strong> (Kabul)
         </P>
@@ -181,7 +184,7 @@ const GlobalReach = ({ location }) => {
           <strong>Ethiopia</strong> (Addis Ababa)
         </P>
         <P>
-          <strong>France</strong>
+          <strong>France*</strong>
         </P>
         <P>
           <strong>Gabon</strong>
@@ -349,8 +352,8 @@ const GlobalReach = ({ location }) => {
           <strong>United Kingdom</strong> (London)
         </P>
         <P>
-          <strong>United States</strong> (Main Offices: Durham, NC; Washington,
-          DC)
+          <strong>United States**</strong> (Main Offices: Durham, NC;
+          Washington, DC)
         </P>
         <P>
           <strong>Vietnam</strong> (Hanoi)

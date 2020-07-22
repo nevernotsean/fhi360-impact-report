@@ -27,11 +27,11 @@ const RightSide = () => (
     <span className="section-body">
       to reduce inequality and advance health, safety, education and workforce
       development — particularly among those who are{" "}
-      <Underlined delay={0.5} orange>
+      <Underlined delay={1.5} orange>
         marginalized
       </Underlined>{" "}
       and{" "}
-      <Underlined delay={1} orange>
+      <Underlined delay={2} orange>
         underserved
       </Underlined>
       .

@@ -28,6 +28,7 @@ import Image from "./../../components/image"
 
 import { isMobileOnly } from "react-device-detect"
 import { useInView } from "react-intersection-observer"
+import { Link } from "gatsby"
 
 const getScale = (t, exp, start, end) => {
   t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
@@ -278,14 +279,17 @@ const Endcard = ({ triggered, ...props }) => {
         <HandDrawnSVG
           id="this-is"
           svg={ThisIsFHI}
-          delay2={2.5}
-          duration={2.5}
-          duration2={2.5}
+          delay2={1.5}
+          duration={1.5}
+          duration2={1.5}
           useInviewTrigger={false}
           animated={inView || triggered}
           ease={"linear"}
         ></HandDrawnSVG>
         <FHILogo id="logo"></FHILogo>
+        <Box id="impact-link">
+          <Link to={"report"}>View the 2019 Impact Report →</Link>
+        </Box>
       </Box>
     </StyledEndcard>
   )
@@ -310,7 +314,7 @@ const StyledEndcard = styled(Flex)`
 
   #this-is,
   #logo {
-    transition: opacity 1s linear 6s;
+    transition: opacity 1s linear 4s;
   }
 
   #this-is {
@@ -318,6 +322,23 @@ const StyledEndcard = styled(Flex)`
   }
   #logo {
     opacity: ${isTriggered};
+  }
+  #impact-link {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    bottom: 0;
+    left: 0;
+    transition: opacity 1s linear 6s;
+    opacity: ${isTriggered};
+
+    a {
+      color: black;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-family: ${({ theme }) => theme.fonts.sans};
+    }
   }
 `
 

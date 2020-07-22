@@ -19,7 +19,7 @@ const AndSection = ({ children, ...props }) => {
 
   const fadeInProps = useSpring({
     opacity: isInView ? 1 : 0,
-    // delay: 1,
+    delay: 1000,
   })
 
   // React.useEffect(() => {
@@ -42,7 +42,11 @@ const AndSection = ({ children, ...props }) => {
           width={[1 / 2, 1 / 5]}
         >
           <Box width={[150, 200]} ml={0}>
-            <HandDrawnSVG svg={And}></HandDrawnSVG>
+            <HandDrawnSVG
+              svg={And}
+              useInviewTrigger={false}
+              animated={isInView}
+            ></HandDrawnSVG>
           </Box>
         </Flex>
         {/* Right */}
