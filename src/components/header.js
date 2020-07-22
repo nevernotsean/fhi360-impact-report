@@ -4,7 +4,7 @@ import React from "react"
 
 import Logo from "../assets/svg/fhi-logo-dark.svg"
 import MenuButton from "../assets/svg/menu-button.svg"
-import { Flex, Box, Text } from "rebass/styled-components"
+import { Flex, Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
 import { LocomotiveContext } from "../hooks/useLocomotiveScroll"
@@ -12,7 +12,11 @@ import ShareButton from "../assets/svg/share-icon.svg"
 import Media from "./Media"
 import BackToTop from "./BackToTop"
 import Tagline from "../assets/svg/tagline.svg"
-import { isTouch } from "react-device-detect"
+import { isMobile } from "react-device-detect"
+
+import FbIcon from "../assets/svg/fb-icon.svg"
+import TwitterIcon from "../assets/svg/twitter-icon.svg"
+import LinkedinIcon from "../assets/svg/linkedin-icon.svg"
 
 const Header = ({
   siteTitle,
@@ -152,27 +156,73 @@ const ShareComponent = props => {
 
   return (
     <ShareStyled
-      width={26}
       sx={{ opacity: props.sideNavOpen ? 0 : 1 }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onClick={() => setHover(!isHover)}
+      isHover={isHover}
     >
       <ShareButton
+        width="26"
+        height="30"
         className="allow-pointer-events fill-detect stroke-detect share-button"
-        onClick={() => {
-          navigator.clipboard
-            .writeText(window.location)
-            .then(() => alert(`Link copied: ${window.location}`))
-        }}
+        // onClick={() => {
+        //   isMobile &&
+        //     navigator.clipboard
+        //       .writeText(window.location)
+        //       .then(() => alert(`Link copied: ${window.location}`))
+        // }}
       ></ShareButton>
+      <a
+        className="share-icon"
+        data-fb-share=""
+        href="https://www.facebook.com/sharer/sharer.php?u=https://www.fhi360.org/annual-report-2020"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FbIcon width="30" height="30" alt="share on facebook" />
+      </a>
+      <a
+        className="share-icon"
+        data-tw-share=""
+        href="https://twitter.com/intent/tweet?text=When people have the chance to improve their lives and build their communities, they will seize the opportunity. Learn more about how FHI 360 partners with communities and nations to support people in addressing the major forces that affect their lives. https://www.fhi360.org/annual-report-2020"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <TwitterIcon width="30" height="30" alt="retweet" />
+      </a>
+      <a
+        className="share-icon"
+        data-li-share=""
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.fhi360.org/annual-report-2020&amp;title=When people have the chance to improve their lives and build their communities, they will seize the opportunity. Learn more about how FHI 360 partners with communities and nations to support people in addressing the major forces that affect their lives. &amp;source=LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedinIcon width="30" height="30" alt="share on linkedin" />
+      </a>
     </ShareStyled>
   )
 }
 
-const ShareStyled = styled(Box)`
+const ShareStyled = styled(Flex)`
   cursor: pointer;
 
-  ${isTouch && ``}
+  .share-icon {
+    display: none;
+    margin-left: 10px;
+    svg path {
+      fill: #fff;
+    }
+  }
+
+  ${({ isHover }) =>
+    isHover &&
+    `
+      .share-icon {
+        display: block;
+      }
+      .share-button {
+        display: none;
+      }
+    `}
 `
 
 export default Header
