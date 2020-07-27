@@ -14,7 +14,7 @@ const HandDrawnSVG = ({
   useInviewTrigger = true,
   animated = false,
   triggerOnce,
-  threshold = 0.8,
+  threshold = 0.4,
   rootMargin = "20% 0px -20% 0px",
   overrideLength = [],
   orange,

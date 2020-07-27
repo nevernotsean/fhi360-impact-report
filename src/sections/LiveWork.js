@@ -74,7 +74,7 @@ const LiveWork = () => (
                   partner with nurses and mothers to solve nutrition problems,
                   with young adults and public officials to ensure that public
                   policies meet youth needs, with women to develop new
-                  contraception methods, and WITH so many others.
+                  contraception methods, and with so many others.
                 </p>
               </Box>
             </>
@@ -85,7 +85,7 @@ const LiveWork = () => (
               with nurses and mothers to solve nutrition problems, with young
               adults and public officials to ensure that public policies meet
               youth needs, with women to develop new contraception methods, and
-              WITH so many others.
+              with so many others.
             </p>
           ),
         },

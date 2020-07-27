@@ -55,13 +55,13 @@ const Financial = ({ location }) => (
                 <td>Multilateral Agencies</td>
                 <td>$28,351,806</td>
               </tr>
-              <tr>
-                <td>Other</td>
-                <td>$4,811,773</td>
-              </tr>
               <tr className="no-stroke">
-                <td>Other Governments</td>
+                <td>Other</td>
                 <td>$10,965,456</td>
+              </tr>
+              <tr>
+                <td>Government (non-US)</td>
+                <td>$4,811,773</td>
               </tr>
               <tr className="white-bg no-stroke">
                 <td>Total</td>

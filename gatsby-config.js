@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `We Are FHI 360`,
+    title: `This is FHI 360`,
     description: ``,
     author: ``,
   },

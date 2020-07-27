@@ -87,6 +87,7 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
+              threshold={0}
             ></HandDrawnSVG>
             <div className="line">
               <H2 fontSize={14}>
@@ -138,6 +139,7 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
+              threshold={0}
             ></HandDrawnSVG>
 
             <div className="line">
