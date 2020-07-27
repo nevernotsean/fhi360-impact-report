@@ -73,8 +73,8 @@ const LiveWork = () => (
                   Our development professionals, scientists and researchers
                   partner with nurses and mothers to solve nutrition problems,
                   with young adults and public officials to ensure that public
-                  policies meet youth needs with women to develop new
-                  contraception methods and so many others.
+                  policies meet youth needs, with women to develop new
+                  contraception methods, and WITH so many others.
                 </p>
               </Box>
             </>
@@ -84,8 +84,8 @@ const LiveWork = () => (
               Our development professionals, scientists and researchers partner
               with nurses and mothers to solve nutrition problems, with young
               adults and public officials to ensure that public policies meet
-              youth needs with women to develop new contraception methods and so
-              many others.
+              youth needs, with women to develop new contraception methods, and
+              WITH so many others.
             </p>
           ),
         },

@@ -16,7 +16,7 @@ const Nav = () => {
       >
         <Box px={[0, 10]} display={["none", "block"]}>
           <Link className={"link back"} to={"/"}>
-            ← Back to We Are FHI 360
+            ← Back to This is FHI 360
           </Link>
         </Box>
         <Flex flexDirection={["column", "row"]}>

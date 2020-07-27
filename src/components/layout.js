@@ -73,7 +73,7 @@ const Layout = ({
       {showIntro && <Intro></Intro>}
       <StyledMain id={"main-content"}>
         {children}
-        <Footer></Footer>
+        <Footer showCredits={showIntro}></Footer>
       </StyledMain>
       {isBrowser && <BrowserUpdate></BrowserUpdate>}
     </Providers>

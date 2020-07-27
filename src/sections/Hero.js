@@ -87,8 +87,6 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
-              useInviewTrigger={false}
-              animated={true}
             ></HandDrawnSVG>
             <div className="line">
               <H2 fontSize={14}>
@@ -140,8 +138,6 @@ const Hero = () => {
               className="you-are-here"
               delay={2.25}
               duration={3}
-              useInviewTrigger={false}
-              animated={true}
             ></HandDrawnSVG>
 
             <div className="line">

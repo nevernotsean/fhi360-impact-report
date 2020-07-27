@@ -13,7 +13,7 @@ const Links = ({ textAlign = "right", ...props }) => (
   </Box>
 )
 
-const Footer = () => {
+const Footer = ({ showCredits, ...props }) => {
   return (
     <StyledFooter
       style={{
@@ -28,9 +28,11 @@ const Footer = () => {
         justifyContent={"space-between"}
         flexDirection={["column", "row"]}
       >
-        <Media at={"sm"}>
-          <Links textAlign={"left"} width={1} />
-        </Media>
+        {showCredits && (
+          <Media at={"sm"}>
+            <Links textAlign={"left"} width={1} />
+          </Media>
+        )}
 
         <Box>
           <h5 mb={3}>
@@ -43,9 +45,11 @@ const Footer = () => {
           </h5>
         </Box>
 
-        <Media greaterThanOrEqual={"md"}>
-          <Links />
-        </Media>
+        {showCredits && (
+          <Media greaterThanOrEqual={"md"}>
+            <Links />
+          </Media>
+        )}
       </Flex>
     </StyledFooter>
   )

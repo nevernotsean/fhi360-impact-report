@@ -66,9 +66,8 @@ const Header = ({
             position: "relative",
           }}
         >
-          <Link
-            to="/"
-            fontSize={[8, 12]}
+          <a
+            href={"https://www.fhi360.org/"}
             style={{
               zIndex: 995,
               color: theme.colors.black,
@@ -78,9 +77,11 @@ const Header = ({
             <Box width={[60, 100]} mr={20}>
               <Logo className="fill-detect"></Logo>
             </Box>
-          </Link>
+          </a>
           <Media greaterThanOrEqual="md">
-            <Tagline style={{ height: "10px" }}></Tagline>
+            <a href={"https://www.fhi360.org/"}>
+              <Tagline style={{ height: "10px" }}></Tagline>
+            </a>
           </Media>
         </h1>
         <Flex alignItems="center">

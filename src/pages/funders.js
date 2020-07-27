@@ -125,9 +125,11 @@ const Funders = ({ location }) => (
         <P>National Cancer Centre Singapore</P>
         <P>Secretary of State for Health and Social Care (U.K.)</P>
       </Section>
-      <p>
-        <small>Operating funders for calendar year 2019</small>
-      </p>
+      <Box px={20}>
+        <p>
+          <small>Operating funders for calendar year 2019</small>
+        </p>
+      </Box>
     </Container>
   </Layout>
 )

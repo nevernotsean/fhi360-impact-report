@@ -17,7 +17,7 @@ const IndexPage = ({ location }) => (
     sidenavData={data}
     showIntro={true}
     location={location}
-    pageTitle={"We Are FHI 360"}
+    pageTitle={"This is FHI 360"}
   >
     <SEO title="Home" />
 

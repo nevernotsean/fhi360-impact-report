@@ -6,10 +6,11 @@ import Masthead from "../components/Report/Masthead"
 import { Flex, Box, Text } from "rebass/styled-components"
 import { H2 } from "../elements/Type"
 import styled from "styled-components"
-
+import Nav from "../components/Report/Nav"
 const Funders = ({ location }) => (
   <Layout bg={"#f1f1f1"} hideMenuButton={true} location={location}>
     <SEO title="Home" />
+    <Nav></Nav>
     <Container>
       <Masthead headline={"Final Photo<br/>Credits"}>
         {/* <Box width={[1, 480]}>
@@ -24,9 +25,10 @@ const Funders = ({ location }) => (
         <P>Jessica Scranton/FHI 360</P>
         <P>Mbuto Machili/FHI 360</P>
         <P>Jessica Scranton/FHI 360</P>
-        <P>Jessica Scranton/FHI 360</P>
-        <P>Jessica Scranton/FHI 360</P>
         <P>Kiana Hayeri/The Verbatim Agency for FHI 360</P>
+        <P>Kiana Hayeri/The Verbatim Agency for FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
+        <P>Jessica Scranton/FHI 360</P>
       </Section>
     </Container>
   </Layout>

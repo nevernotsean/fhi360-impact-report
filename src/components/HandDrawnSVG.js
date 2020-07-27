@@ -47,9 +47,16 @@ const HandDrawnSVG = ({
   const [pathLength3, setPathLength3] = useState(0)
 
   useEffect(() => {
-    if (inView) setTriggered(true)
-    if (inView && debug) alert("triggered", ref)
-  }, [inView])
+    if (useInviewTrigger) {
+      if (inView) setTriggered(true)
+    } else {
+      if (animated) setTriggered(true)
+    }
+  }, [inView, useInviewTrigger, animated])
+
+  useEffect(() => {
+    if (triggered && debug) alert("triggered", ref)
+  }, [triggered, debug])
 
   useEffect(() => {
     if (!ref.current) return
@@ -73,7 +80,7 @@ const HandDrawnSVG = ({
       length1={overrideLength[1] || pathLength1}
       length2={overrideLength[2] || pathLength2}
       length3={overrideLength[3] || pathLength3}
-      animated={useInviewTrigger ? triggered : animated}
+      animated={triggered}
       duration={duration}
       duration2={duration2}
       delay={delay}

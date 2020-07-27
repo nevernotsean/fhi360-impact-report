@@ -275,21 +275,24 @@ const Endcard = ({ triggered, ...props }) => {
       triggered={inView || triggered}
       ref={ref}
     >
-      <Box width={1} maxWidth={[300, 600]} className="relative">
-        <HandDrawnSVG
-          id="this-is"
-          svg={ThisIsFHI}
-          delay2={1.5}
-          duration={1.5}
-          duration2={1.5}
-          useInviewTrigger={false}
-          animated={inView || triggered}
-          ease={"linear"}
-        ></HandDrawnSVG>
-        <FHILogo id="logo"></FHILogo>
+      <Box width={1} maxWidth={["unset", 600]} className="relative">
+        <Box px={[20, 0]} id="this-is">
+          <HandDrawnSVG
+            svg={ThisIsFHI}
+            delay2={1.5}
+            duration={1.5}
+            duration2={1.5}
+            useInviewTrigger={false}
+            animated={inView || triggered}
+            ease={"linear"}
+          ></HandDrawnSVG>
+        </Box>
         <Box id="impact-link">
           <Link to={"/report"}>View the 2019 Impact Report →</Link>
         </Box>
+        <a href={"https://www.fhi360.org/"} id="logo">
+          <FHILogo></FHILogo>
+        </a>
       </Box>
     </StyledEndcard>
   )
@@ -302,42 +305,56 @@ const StyledEndcard = styled(Flex)`
   .relative {
     position: relative;
   }
-  #logo {
+
+  #impact-link {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 100%;
-    max-width: 400px;
+    width: 100vw;
     transform: translate(-50%, -50%);
-    opacity: 0;
-  }
 
-  #this-is,
-  #logo {
-    transition: opacity 1s linear 4s;
-  }
-
-  #this-is {
-    opacity: ${isTriggeredOneMinus};
-  }
-  #logo {
     opacity: ${isTriggered};
-  }
-  #impact-link {
-    position: absolute;
+
     text-align: center;
-    width: 100%;
-    padding: 20px;
-    bottom: 0;
-    left: 0;
-    transition: opacity 1s linear 6s;
-    opacity: ${isTriggered};
 
     a {
       color: black;
       text-transform: uppercase;
       font-weight: 900;
       font-family: ${({ theme }) => theme.fonts.sans};
+      text-decoration: none;
+
+      font-size: 28px;
+
+      @media only screen and (max-width: ${({ theme }) =>
+          theme.breakpoints[0]}) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  #this-is,
+  #impact-link {
+    transition: opacity 1s linear 4s;
+  }
+
+  #this-is {
+    opacity: ${isTriggeredOneMinus};
+  }
+
+  #logo {
+    position: absolute;
+    text-align: center;
+    width: 180px;
+    /* padding: 20px; */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 1s linear 6s;
+    opacity: ${isTriggered};
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+      width: 100px;
     }
   }
 `
@@ -405,10 +422,12 @@ const Container = styled(Box)`
     .s-instagram {
       /* margin: 27.778vw 0; */
       pointer-events: all;
+
+      min-height: 100vh;
     }
   }
   .s-instagram-grid {
-    top: 8vw;
+    top: 0vw;
     left: 0;
     z-index: 1;
     width: 70vw;
