@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "./image"
-import welcome from "../images/welcome-fpo.gif"
+import welcome from "../images/welcome.gif"
 import { Box } from "rebass/styled-components"
 import styled, { createGlobalStyle } from "styled-components"
 import Media from "./Media"
@@ -51,15 +51,10 @@ const Container = styled(Box)`
     position: relative;
     width: 100vw;
     height: 100vh;
-    transition: all 800ms ease 2s;
+    transition: transform 800ms ease 2s;
     transform-origin: right center;
 
-    ${({ loaded }) =>
-      loaded &&
-      `
-      /* opacity: 0; */
-      transform: translateY(-100vh);
-  `}
+    ${({ loaded }) => loaded && ` transform: translateY(-100vh); `}
 
     img {
       position: absolute;
@@ -74,7 +69,7 @@ const Container = styled(Box)`
 
       @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
         object-fit: contain;
-        background: #f37323;
+        background: #f3621c;
       }
     }
   }
