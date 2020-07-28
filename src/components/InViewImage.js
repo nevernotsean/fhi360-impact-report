@@ -1,59 +1,66 @@
 import React, { useState } from "react"
-import { useInView } from "react-intersection-observer"
 import styled from "styled-components"
-import useDimensions from "react-use-dimensions"
-import { Box, Image } from "rebass/styled-components"
+import { Box } from "rebass/styled-components"
 import Pattern from "../images/pattern.png"
-// import { useMediaQuery } from "react-responsive"
+import Image from "./image.js"
 
 const InViewImage = ({
   src,
   alt = "",
   scrollSpeed = 1,
   imageSpeed = 1,
-  revealSpeed = 0.75,
+  revealSpeed = 0.9,
   usePattern,
   pattern = Pattern,
   sx,
+  height,
   maxHeight,
+  lazyload,
   ...props
 }) => {
-  const [loaded, setLoaded] = useState(false)
-  const [ref, { height, width }] = useDimensions()
-
-  const [parentRef, inView] = useInView({
-    rootMargin: "20% 0px -20% 0px",
-    threshold: 1,
-    triggerOnce: true,
-  })
+  // const context = React.useContext(LocomotiveContext)
+  const [inView, setInView] = useState(!lazyload)
+  const [showPattern, setTriggerPattern] = useState(false)
+  const [dims, setDims] = useState({})
 
   React.useEffect(() => {
-    if (loaded && height === 0) window.dispatchEvent(new Event("resize"))
-  }, [height, inView, loaded])
+    if (showPattern == false && inView == true && dims.height != undefined)
+      // {
+      setTimeout(() => setTriggerPattern(true), revealSpeed * 1000 + 150)
+    // } else {
+    //   console.log(showPattern, inView)
+    // }
+  }, [showPattern, inView, dims])
+
+  // React.useEffect(() => {
+  //   showPattern &&
+  //     console.log(dims.height != undefined, showPattern, "showPattern")
+  // }, [showPattern])
 
   return (
     <Container
-      ref={parentRef}
       data-scroll
       data-scroll-speed={scrollSpeed}
-      h={inView ? height : 0}
-      w={width}
+      h={inView ? dims.height : 0}
       sx={sx}
       revealSpeed={revealSpeed}
       style={{ position: usePattern && "relative" }}
       inView={inView}
+      showPattern={showPattern}
+      height={height}
     >
       <div className="mask">
-        <Image
-          ref={ref}
-          src={src}
-          alt={alt}
-          data-scroll
-          data-scroll-speed={-imageSpeed}
-          onLoad={() => setLoaded(true)}
-          maxHeight={maxHeight}
-          {...props}
-        ></Image>
+        <Box data-scroll data-scroll-speed={-imageSpeed}>
+          <Image
+            src={src}
+            alt={alt}
+            onLoad={d => setDims(d)}
+            onInView={() => setInView(true)}
+            maxHeight={maxHeight}
+            lazyload={lazyload}
+            {...props}
+          ></Image>
+        </Box>
       </div>
       {usePattern && (
         <Box
@@ -63,13 +70,9 @@ const InViewImage = ({
             zIndex: -1,
             top: "0",
             left: 0,
-            width: width + "px",
-            height: height + "px",
+            width: dims.width + "px",
+            height: dims.height + "px",
             background: `url(${pattern})`,
-            transition: `transform 0.25s ease-out ${
-              revealSpeed + 0.01
-            }s, opacity 1ms linear ${revealSpeed}s`,
-            opacity: inView ? 1 : 0,
           }}
         ></Box>
       )}
@@ -83,7 +86,7 @@ const Container = styled(Box)`
     height: 100%;
     overflow: hidden;
     ${({ revealSpeed }) =>
-      revealSpeed !== 0 && `transition: height ${revealSpeed}s ease`};
+      revealSpeed !== 0 && `transition: height ${revealSpeed}s ease 300ms`};
 
     img {
       width: 100%;
@@ -93,27 +96,28 @@ const Container = styled(Box)`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    ${({ h, w }) =>
-      h !== undefined &&
+    ${({ h }) =>
       `
-      height: ${h}px;
+      height: ${h !== undefined ? h : 0}px;
       
       .mask {
-        max-height: ${h}px;
-        height: ${h}px;
+        height: ${h !== undefined ? h : 0}px;
       }
     `}
   }
 
   .pattern {
-    ${({ inView, theme }) =>
-      inView &&
-      `transform: translate(30px, -30px);
-    
-    @media screen and (max-width: ${theme.breakpoints[0]}) { 
-      transform: translate(15px, -15px); 
-    }
-    `}
+    opacity: 0;
+    opacity: ${({ showPattern }) => showPattern && 1};
+
+    transition: transform 0.33s ease-out;
+
+    ${({ showPattern, h }) =>
+      h !== undefined && showPattern && `transform: translate(30px, -30px);`}
+
+    ${({ showPattern, theme }) =>
+      showPattern &&
+      `@media screen and (max-width: ${theme.breakpoints[0]}) {  transform: translate(15px, -15px);  }`};
   }
 `
 export default InViewImage

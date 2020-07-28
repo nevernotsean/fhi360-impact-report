@@ -8,7 +8,7 @@ import SectionDividerDark from "../components/SectionDividerDark"
 import { Lead, H2, H3 } from "../elements/Type"
 import { SplitSectionCroppedImage } from "../components/SplitSection"
 
-import image2 from "../images/RS11215_1F2A5696.png"
+import image2 from "../images/RS11215_1F2A5696.jpg"
 
 import { Flex, Box } from "rebass/styled-components"
 import FlexSectionContainer from "../components/FlexSectionContainer"

@@ -6,31 +6,34 @@ import SplitSectionLongContent from "./../components/SplitSectionLongContent"
 import { Box } from "rebass/styled-components"
 import { Lead, H2, H3 } from "../elements/Type"
 import Outro from "./../sections/Outro/index"
+import Perception from "../sections/Perception/index"
+import LiveWork from "../sections/LiveWork"
+import Nimble from "../sections/Nimble"
 
-const TestSection = () => (
-  <>
-    <Lead>LEAD</Lead>
-    <H2 className={"section-title"}>
-      LOREM
-      <br />
-      <span className={"serif"}>IPSUM</span>
-    </H2>
-    <H3 className={"section-subtitle"}>Lorem ipsum Lorem ipsum</H3>
-    <div
-      className="divider"
-      style={{
-        borderTop: "1px solid black",
-        marginBottom: "1.45rem",
-      }}
-    />
-    <Box maxWidth={480}>
-      <p className={"section-body"}>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-        Lorem ipsum
-      </p>
-    </Box>
-  </>
-)
+// const TestSection = () => (
+//   <>
+//     <Lead>LEAD</Lead>
+//     <H2 className={"section-title"}>
+//       LOREM
+//       <br />
+//       <span className={"serif"}>IPSUM</span>
+//     </H2>
+//     <H3 className={"section-subtitle"}>Lorem ipsum Lorem ipsum</H3>
+//     <div
+//       className="divider"
+//       style={{
+//         borderTop: "1px solid black",
+//         marginBottom: "1.45rem",
+//       }}
+//     />
+//     <Box maxWidth={480}>
+//       <p className={"section-body"}>
+//         Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+//         Lorem ipsum
+//       </p>
+//     </Box>
+//   </>
+// )
 
 const Debug = ({ location }) => (
   <Layout location={location}>
@@ -62,7 +65,8 @@ const Debug = ({ location }) => (
         ]}
       ></SplitSectionLongContent>
     </Box> */}
-    <Outro></Outro>
+    {/* <Outro></Outro> */}
+    <Nimble />
   </Layout>
 )
 

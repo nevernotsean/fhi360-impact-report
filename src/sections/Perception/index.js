@@ -6,7 +6,7 @@ import styled from "styled-components"
 import SectionDividerDark from "../../components/SectionDividerDark"
 import HandDrawnSVG from "../../components/HandDrawnSVG"
 
-import WomanHoldingBaby from "../../images/Evidence1.png"
+import WomanHoldingBaby from "../../images/Evidence1.jpg"
 
 import PerceptionCard from "../../images/perception.png"
 

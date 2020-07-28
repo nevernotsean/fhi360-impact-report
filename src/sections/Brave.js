@@ -3,7 +3,7 @@ import React from "react"
 import BraveCard from "../images/brave.png"
 import SectionDividerDark from "../components/SectionDividerDark"
 
-import image1 from "../images/fpo-brave-1.png"
+import image1 from "../images/fpo-brave-1.jpg"
 
 import { Lead, H2 } from "../elements/Type"
 import SplitSectionLongContent from "../components/SplitSectionLongContent"

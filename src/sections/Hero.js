@@ -5,8 +5,8 @@ import styled from "styled-components"
 import theme from "../styles/index"
 
 // img
-import hero from "../images/patrick-fine-hero.png"
-import heroMobile from "../images/patrick-fine-hero-mobile.png"
+import hero from "../images/patrick-fine-hero.jpg"
+import heroMobile from "../images/patrick-fine-hero-mobile.jpg"
 import strip from "../images/pattern-Patrick.png"
 import PullQuote from "../components/PullQuote"
 import { Lead, H2, H1, H3 } from "../elements/Type"
@@ -17,6 +17,7 @@ import HandDrawnSVG from "./../components/HandDrawnSVG"
 import YouAreHere from "./../components/svg/YouAreHere"
 import PhotoCredits from "./../components/PhotoCredits"
 import Image from "../components/image"
+import ScrollingImage from "../components/ScrollingImage"
 
 const introLetter = [
   "Dear friends and colleagues,",
@@ -65,6 +66,7 @@ const Hero = () => {
             ml={"-20px"}
             display={"block"}
             alt={"photo of Patrick Fine"}
+            lazyload={false}
           ></Image>
           <Image src={strip} className="strip mobile" ml={"-20px"}></Image>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>
@@ -105,15 +107,15 @@ const Hero = () => {
           sx={{ position: "relative" }}
         >
           <Box minHeight={["100vw", "50vw", "50vw"]}>
-            <InViewImage
+            <ScrollingImage
               src={hero}
               className="hero-image"
               alt={"photo of Patrick Fine"}
               scrollSpeed={0}
               imageSpeed={1.5}
               mt={[0, 50]}
-              revealSpeed={0}
-            ></InViewImage>
+              lazyload={false}
+            ></ScrollingImage>
           </Box>
           <img src={strip} className="strip desktop" alt=""></img>
           <PhotoCredits credits={"Joshua Woodson/FHI 360"}></PhotoCredits>

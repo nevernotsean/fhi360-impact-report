@@ -47,6 +47,7 @@ const SectionDividerDark = ({
               width={1}
               data-scroll
               data-scroll-speed={1.5}
+              darkSection={true}
             ></Image>
           )}
         </Box>

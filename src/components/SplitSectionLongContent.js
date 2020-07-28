@@ -241,16 +241,18 @@ const CenteredFlex = props => (
   />
 )
 
-const FullImage = props => (
-  <Image
-    width={1}
-    height={"100%"}
-    sx={{
-      objectFit: "cover",
-      objectPosition: "center center",
-    }}
-    {...props}
-  ></Image>
-)
+const FullImage = props => {
+  return (
+    <Image
+      width={1}
+      height={"100%"}
+      sx={{
+        objectFit: "cover",
+        objectPosition: "center center",
+      }}
+      {...props}
+    ></Image>
+  )
+}
 
 export default SplitSectionLongContent
