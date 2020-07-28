@@ -42,7 +42,7 @@ module.exports = {
       options: {
         custom: {
           families: ["benton-sans", "poynter-oldstyle-display"],
-          urls: ["/fonts/fonts.css"],
+          urls: ["/fhi360-2020/fonts/fonts.css"],
         },
       },
     },

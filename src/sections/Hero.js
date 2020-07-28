@@ -106,15 +106,12 @@ const Hero = () => {
           display={["none", "block"]}
           sx={{ position: "relative" }}
         >
-          <Box minHeight={["100vw", "50vw", "50vw"]}>
+          <Box
+          // minHeight={["100vw", "50vw", "50vw"]}
+          >
             <ScrollingImage
               src={hero}
-              className="hero-image"
               alt={"photo of Patrick Fine"}
-              scrollSpeed={0}
-              imageSpeed={1.5}
-              mt={[0, 50]}
-              lazyload={false}
             ></ScrollingImage>
           </Box>
           <img src={strip} className="strip desktop" alt=""></img>
