@@ -149,6 +149,7 @@ const Hero = () => {
               mr={50}
               top={["50%", "50%", "50%", 600]}
               zIndex={0}
+              rootMargin={"0% 0px 20% 0px"}
             ></HeroImage>
           </Box>
         </FlexWrap>
@@ -191,19 +192,6 @@ const HeroImage = ({
   </Box>
 )
 
-const HeroContainer = styled(Box)`
-  /* .hero-image {
-    margin-bottom: 0;
-    display: block;
-    width: 100%;
-  } */
-
-  .image-collage {
-    span {
-      position: absolute;
-      top: 0;
-    }
-  }
-`
+const HeroContainer = styled(Box)``
 
 export default Hero

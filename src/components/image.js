@@ -9,6 +9,7 @@ const Image = ({
   lazyload = true,
   src,
   darkSection = false,
+  rootMargin = "0% 0px 0% 0px",
   debug,
   sx,
   ...props
@@ -20,7 +21,7 @@ const Image = ({
   const [imageSrc, setSrc] = React.useState(lazyload ? "" : src)
 
   const [inViewRef, inView] = useInView({
-    rootMargin: darkSection ? "0% 0px 100% 0px" : "0% 0px 0% 0px",
+    rootMargin: darkSection ? "0% 0px 100% 0px" : rootMargin,
     threshold: 0,
     triggerOnce: true,
   })
