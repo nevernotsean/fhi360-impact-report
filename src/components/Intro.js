@@ -31,20 +31,13 @@ const Intro = props => {
 }
 
 const GlobalStyle = createGlobalStyle`
-  #sections  {
-    opacity: 0;
-    ${({ displayed }) => displayed && `opacity: 1;`}
-  }
-
-
-
-  .hasIntro {
+  .hasIntro, #sections, #main-content {
     opacity: 0;
     ${({ displayed }) => displayed && `opacity: 1;`}
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    #sections, .hasIntro { opacity: 1; }
+    #sections, .hasIntro, #main-content { opacity: 1; }
   }
 `
 
