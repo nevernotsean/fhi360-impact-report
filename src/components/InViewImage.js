@@ -16,6 +16,7 @@ const InViewImage = ({
   height,
   maxHeight,
   lazyload,
+  debug,
   ...props
 }) => {
   // const context = React.useContext(LocomotiveContext)
@@ -58,6 +59,7 @@ const InViewImage = ({
             onInView={() => setInView(true)}
             maxHeight={maxHeight}
             lazyload={lazyload}
+            debug={debug}
             {...props}
           ></Image>
         </Box>
