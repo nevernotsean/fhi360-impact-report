@@ -56,6 +56,31 @@ const Hero = () => {
           src={gladYouAreHere}
           alt={"We are so very glad you are here"}
         ></Image>
+        <Box
+          width={"calc(100vw - 40px)"}
+          height={"150vw"}
+          pb={50}
+          mx={0}
+          sx={{
+            position: "relative",
+            left: "20px",
+          }}
+        >
+          <HeroImage
+            image={HeroFamily}
+            width={2 / 3}
+            align={"right"}
+            top={"0"}
+            zIndex={1}
+          ></HeroImage>
+          <HeroImage
+            image={HeroGirl}
+            width={2 / 3}
+            align={"left"}
+            top={"50vw"}
+            zIndex={2}
+          ></HeroImage>
+        </Box>
         <Box px={20} pb={50}>
           <HeroPullquote px={[1, 5]} fontSize={"28px"} mb={"1.45rem"} />
           <Box px={[1, 5]}>
