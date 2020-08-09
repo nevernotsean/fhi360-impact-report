@@ -9,8 +9,10 @@ const HandDrawnSVG = ({
   svg: SvgComponent,
   duration = 1,
   duration2 = 1,
+  duration3 = 1,
   delay = 0,
   delay2 = -1,
+  delay3 = -1,
   useInviewTrigger = true,
   animated = false,
   triggerOnce,
@@ -83,8 +85,10 @@ const HandDrawnSVG = ({
       animated={triggered}
       duration={duration}
       duration2={duration2}
+      duration3={duration3}
       delay={delay}
       delay2={delay2}
+      delay3={delay3}
       ease={ease}
     >
       <Box
@@ -98,10 +102,19 @@ const HandDrawnSVG = ({
   )
 }
 
-const animate = ({ animated, duration, duration2, delay, delay2, ease }, i) => {
-  duration = i === 1 ? duration : duration2
+const animate = (
+  { animated, duration, duration2, duration3, delay, delay2, delay3, ease },
+  i
+) => {
+  if (i == 1) duration = duration
+  else if (i === 2) duration = duration2
+  else if (i === 3) duration = duration3
+
   delay = i === 1 ? delay : duration * (i - 1) + delay
+
   if (delay2 > -1 && i === 2) delay = delay2
+
+  if (delay3 > -1 && i === 3) delay = delay3
 
   return (
     animated &&

@@ -4,7 +4,12 @@ import { Lead } from "../elements/Type"
 import { P } from "../elements/Type"
 import { Underlined } from "./WordNote"
 
-const PullQuote = ({ children, fontSize = "48px", ...props }) => {
+const PullQuote = ({
+  children,
+  fontSize = "48px",
+  lineHeight = "1.1",
+  ...props
+}) => {
   return (
     <Box flexDirection={"column"} display={"flex"} mb={"1.45rem"} {...props}>
       {props.title && (
@@ -13,7 +18,7 @@ const PullQuote = ({ children, fontSize = "48px", ...props }) => {
         </Box>
       )}
       <Box>
-        <P lineHeight={1.1} fontSize={fontSize} className={"serif"}>
+        <P lineHeight={lineHeight} fontSize={fontSize} className={"serif"}>
           {children}
         </P>
       </Box>

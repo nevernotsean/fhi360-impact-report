@@ -25,6 +25,7 @@ import { mediaStyles } from "./Media"
 
 import browserUpdate from "browser-update"
 import { isBrowser } from "react-device-detect"
+import HeroLetter from "./HeroLetter"
 
 const Layout = ({
   children,
@@ -76,6 +77,7 @@ const Layout = ({
         <Footer showCredits={showIntro}></Footer>
       </StyledMain>
       {isBrowser && <BrowserUpdate></BrowserUpdate>}
+      {showIntro && <HeroLetter></HeroLetter>}
     </Providers>
   )
 }
