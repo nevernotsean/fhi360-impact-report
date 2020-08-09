@@ -183,14 +183,8 @@ const HeroImage = ({
         src={image}
         scrollSpeed={1}
         imageSpeed={1.5}
-        lazyload={false}
-        style={{
-          width: "100%",
-          height: height,
-          objectFit: "cover",
-          objectPosition: "center center",
-          marginBottom: 0,
-        }}
+        // lazyload={false}
+        // debug={true}
         {...props}
       ></InViewImage>
     </Box>

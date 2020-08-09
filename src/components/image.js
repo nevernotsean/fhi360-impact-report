@@ -10,6 +10,7 @@ const Image = ({
   src,
   darkSection = false,
   debug,
+  sx,
   ...props
 }) => {
   const context = React.useContext(LocomotiveContext)
@@ -38,26 +39,30 @@ const Image = ({
   React.useEffect(() => {
     if (inView) {
       if (onInView) onInView()
+      debug && console.log("in view", inViewRef)
       setSrc(src)
     }
   }, [inView])
 
   return (
-    <RebassImage
-      sx={{ visibility: imageSrc == "" && "hidden", ...props.sx }}
-      {...props}
-      src={imageSrc}
-      onLoad={e => {
-        // debug && console.log("LOADED")
-        if (onLoad) {
-          var dims = e.target.getBoundingClientRect().toJSON()
-          // debug && console.log(dims)
-          onLoad(dims)
-        }
-        setLoaded(true)
-      }}
-      ref={inViewRef}
-    ></RebassImage>
+    <>
+      <span ref={inViewRef}></span>
+      <RebassImage
+        sx={{ visibility: imageSrc == "" && "hidden", ...sx }}
+        {...props}
+        src={imageSrc}
+        onLoad={e => {
+          // debug && console.log("LOADED")
+          if (onLoad) {
+            var dims = e.target.getBoundingClientRect().toJSON()
+            // debug && console.log(dims)
+            onLoad(dims)
+          }
+          setLoaded(true)
+        }}
+        className={inView && "inView"}
+      ></RebassImage>
+    </>
   )
 }
 
