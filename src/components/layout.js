@@ -70,9 +70,10 @@ const Layout = ({
         headerStyle={headerStyle}
         sideNavOpen={sideNavOpen}
         setSideNavOpen={setSideNavOpen}
+        hasIntro={showIntro}
       />
       {showIntro && <Intro></Intro>}
-      <StyledMain id={"main-content"}>
+      <StyledMain id={"main-content"} className={showIntro && "hasIntro"}>
         {children}
         <Footer showCredits={showIntro}></Footer>
       </StyledMain>

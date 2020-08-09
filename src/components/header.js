@@ -25,6 +25,7 @@ const Header = ({
   sideNavOpen,
   hideMenuButton = false,
   headerStyle,
+  hasIntro,
   ...props
 }) => {
   const [loaded, setLoaded] = React.useState()
@@ -44,7 +45,11 @@ const Header = ({
   const headerHeight = scrolledPast ? 75 : 100
 
   return (
-    <Container style={{ ...headerStyle }} scrolledPast={scrolledPast}>
+    <Container
+      style={{ ...headerStyle }}
+      scrolledPast={scrolledPast}
+      className={hasIntro && "hasIntro"}
+    >
       <Flex
         height={[50, headerHeight]}
         p={["0 20px", "0 60px 0 20px"]}

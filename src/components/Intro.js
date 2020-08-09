@@ -7,19 +7,22 @@ import Media from "./Media"
 
 const Intro = props => {
   const [loaded, setLoaded] = React.useState(false)
+  const [displayed, setDisplayed] = React.useState(false)
 
   React.useEffect(() => {
     setLoaded(true)
+
+    setTimeout(() => setDisplayed(true), 2000)
   }, [])
 
   return (
     <>
-      <GlobalStyle loaded={loaded}></GlobalStyle>
+      <GlobalStyle loaded={loaded} displayed={displayed}></GlobalStyle>
 
       <Media greaterThanOrEqual={"sm"}>
         <Container loaded={loaded}>
           <Box id={"loading-screen"}>
-            <Image src={welcome}></Image>
+            <Image src={welcome} onLoad={() => setDisplayed(true)}></Image>
           </Box>
         </Container>
       </Media>
@@ -30,11 +33,18 @@ const Intro = props => {
 const GlobalStyle = createGlobalStyle`
   #sections  {
     opacity: 0;
-    ${({ loaded }) => loaded && `opacity: 1;`}
+    ${({ displayed }) => displayed && `opacity: 1;`}
+  }
+
+
+
+  .hasIntro {
+    opacity: 0;
+    ${({ displayed }) => displayed && `opacity: 1;`}
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    #sections { opacity: 1; }
+    #sections, .hasIntro { opacity: 1; }
   }
 `
 
