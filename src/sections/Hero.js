@@ -126,6 +126,7 @@ const Hero = () => {
               position: "relative",
               minHeight: ["100vw", "100vw", "100vw", "1000px"],
             }}
+            className={"image-collage"}
           >
             <HeroImage
               image={HeroFamily}
@@ -203,70 +204,10 @@ const HeroContainer = styled(Box)`
     width: 100%;
   } */
 
-  .strip {
-    transform: translateY(-100%);
-    width: 100%;
-
-    position: absolute;
-  }
-
-  .lockup {
-    .title {
-      /* font-size: 88px;
-      line-height: 82px;
-      font-weight: 900; */
-    }
-
-    .you-are-here {
+  .image-collage {
+    span {
       position: absolute;
-      width: 115%;
-      height: auto;
-      transform: translate(-17%, -15%);
-    }
-
-    .line {
-      border-top: 1px solid black;
-      width: 15vw;
-      transform: translate(-13px, 165px);
-
-      h3 {
-        margin-left: 32px;
-        margin-top: 16px;
-        font-size: 14px;
-      }
-    }
-
-    .hidden {
-      visibility: hidden;
-      position: absolute;
-      pointer-events: none;
-      right: 0;
-    }
-  }
-
-  .lockup-desktop {
-    position: relative;
-    margin-top: 40px;
-    min-height: 500px;
-  }
-
-  .lockup-mobile {
-    position: absolute;
-    top: 30px;
-    right: -20px;
-
-    .line {
-      width: 40vw;
-      border-top: none;
-      border-bottom: 1px solid black;
-      transform: translate(-9vw, 70px);
-
-      width: 50vw;
-
-      h2 {
-        margin-left: 20vw;
-        /* transform: translateX(20vw); */
-      }
+      top: 0;
     }
   }
 `
