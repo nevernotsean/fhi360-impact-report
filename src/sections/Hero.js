@@ -146,7 +146,7 @@ const Hero = () => {
               image={HeroMoto}
               width={1 / 2}
               align={"right"}
-              mr={50}
+              right={"5%"}
               top={["50%", "50%", "50%", 600]}
               zIndex={0}
               rootMargin={"0% 0px 20% 0px"}
@@ -166,14 +166,16 @@ const HeroImage = ({
   align,
   top,
   zIndex,
+  right = 0,
+  left = 0,
   ...props
 }) => (
   <Box
     width={width}
     sx={{
       position: "absolute",
-      left: align === "left" && 0,
-      right: align === "right" && 0,
+      left: align === "left" && left,
+      right: align === "right" && right,
       top: top,
       zIndex: zIndex,
     }}
