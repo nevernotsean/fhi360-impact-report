@@ -134,6 +134,7 @@ const Hero = () => {
               align={"right"}
               top={"0"}
               zIndex={1}
+              speed={1.1}
             ></HeroImage>
             <HeroImage
               image={HeroGirl}
@@ -141,6 +142,7 @@ const Hero = () => {
               align={"left"}
               top={["22%", "22%", "22%", 300]}
               zIndex={2}
+              speed={1}
             ></HeroImage>
             <HeroImage
               image={HeroMoto}
@@ -150,6 +152,7 @@ const Hero = () => {
               top={["50%", "50%", "50%", 600]}
               zIndex={0}
               rootMargin={"0% 0px 20% 0px"}
+              speed={0.9}
             ></HeroImage>
           </Box>
         </FlexWrap>
@@ -168,6 +171,7 @@ const HeroImage = ({
   zIndex,
   right = 0,
   left = 0,
+  speed = 1,
   ...props
 }) => (
   <Box
@@ -184,8 +188,8 @@ const HeroImage = ({
       <InViewImage
         imageCredits
         src={image}
-        scrollSpeed={1}
-        imageSpeed={1.5}
+        scrollSpeed={1 * speed}
+        imageSpeed={1.5 * speed}
         // lazyload={false}
         // debug={true}
         {...props}
