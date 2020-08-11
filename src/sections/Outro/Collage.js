@@ -16,6 +16,8 @@ import imageF from "../../images/collage-f.png"
 import imageG from "../../images/collage-g.png"
 import imageH from "../../images/collage-h.png"
 
+import collageMobile from "../../images/collage-mobile.jpg"
+
 import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 
 import { Flex, Box } from "rebass/styled-components"
@@ -29,6 +31,8 @@ import Image from "./../../components/image"
 import { isMobileOnly } from "react-device-detect"
 import { useInView } from "react-intersection-observer"
 import { Link } from "gatsby"
+
+import Media from "../../components/Media"
 
 const getScale = (t, exp, start, end) => {
   t = exp > 0 ? easePolyIn.exponent(exp)(t) : easePolyOut.exponent(-exp)(t)
@@ -138,122 +142,129 @@ const Outro = () => {
   return (
     <>
       <Container className="grid" wp1={wp1} height={["auto", "500vh"]}>
-        <div className="s-instagram">
-          <Box
-            sx={{ opacity: [1, opacity] }}
-            className="s-instagram-grid"
-            data-scroll
-            data-scroll-sticky
-            data-scroll-target=".grid"
-            data-scroll-call="zoom"
-            data-scroll-repeat={"true"}
-          >
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, -5, startScale, endScale),
-              }}
+        <Media greaterThanOrEqual="md">
+          <div className="s-instagram">
+            <Box
+              sx={{ opacity: [1, opacity] }}
+              className="s-instagram-grid"
+              data-scroll
+              data-scroll-sticky
+              data-scroll-target=".grid"
+              data-scroll-call="zoom"
+              data-scroll-repeat={"true"}
             >
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageA})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, 2, startScale, endScale),
-              }}
-            >
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageB})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, -2, startScale, endScale),
-              }}
-            >
-              <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageC})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer center-square"
-              style={{
-                transform: getScale(scale, -7.5, startScale, endScale),
-              }}
-            >
-              <div
-                aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
-                className="s-instagram-block"
+                className="s-instagram-layer"
                 style={{
-                  backgroundImage: `url(${centerImage})`,
-                  backgroundPosition: "80% 50%",
+                  transform: getScale(scale, -5, startScale, endScale),
                 }}
-              ></div>
-              <Image src={Frame} id="frame"></Image>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, 2, startScale, endScale),
-              }}
-            >
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageA})` }}
+                ></div>
+              </div>
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageH})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, -1, startScale, endScale),
-              }}
-            >
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, 2, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageB})` }}
+                ></div>
+              </div>
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageE})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, 2, startScale, endScale),
-              }}
-            >
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, -2, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageC})` }}
+                ></div>
+              </div>
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageF})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, -5.5, startScale, endScale),
-              }}
-            >
+                className="s-instagram-layer center-square"
+                style={{
+                  transform: getScale(scale, -7.5, startScale, endScale),
+                }}
+              >
+                <div
+                  aria-labelledby={"Photo Credit: Jessica Scranton/FHI 360"}
+                  className="s-instagram-block"
+                  style={{
+                    backgroundImage: `url(${centerImage})`,
+                    backgroundPosition: "80% 50%",
+                  }}
+                ></div>
+                <Image src={Frame} id="frame"></Image>
+              </div>
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageG})` }}
-              ></div>
-            </div>
-            <div
-              className="s-instagram-layer"
-              style={{
-                transform: getScale(scale, 3.5, startScale, endScale),
-              }}
-            >
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, 2, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageH})` }}
+                ></div>
+              </div>
               <div
-                className="s-instagram-block"
-                style={{ backgroundImage: `url(${imageD})` }}
-              ></div>
-            </div>
-          </Box>
-        </div>
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, -1, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageE})` }}
+                ></div>
+              </div>
+              <div
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, 2, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageF})` }}
+                ></div>
+              </div>
+              <div
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, -5.5, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageG})` }}
+                ></div>
+              </div>
+              <div
+                className="s-instagram-layer"
+                style={{
+                  transform: getScale(scale, 3.5, startScale, endScale),
+                }}
+              >
+                <div
+                  className="s-instagram-block"
+                  style={{ backgroundImage: `url(${imageD})` }}
+                ></div>
+              </div>
+            </Box>
+          </div>
+        </Media>
+        <Media at="sm">
+          <div className="s-instagram">
+            <Image src={collageMobile} px={20}></Image>
+          </div>
+        </Media>
         <Endcard></Endcard>
       </Container>
     </>
@@ -484,7 +495,8 @@ const Container = styled(Box)`
     transform-origin: 44.9% 50%;
     @media only screen and (max-width: 580px) {
       transform: scale(1) !important;
-    }
+    }import Media from './../../components/Media';
+
 
   }
   .s-instagram-layer:nth-child(1) .s-instagram-block {

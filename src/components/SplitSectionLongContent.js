@@ -233,7 +233,7 @@ const CenteredFlex = props => (
   <Flex
     width={[1, 1 / 2]}
     flex={"1 0 auto"}
-    height={["auto", "100%"]}
+    height={["100vw", "100%"]}
     alignItems={"center"}
     justifyContent={"center"}
     sx={{ position: "relative" }}

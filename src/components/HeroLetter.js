@@ -22,15 +22,12 @@ const HeroLetter = ({ ...props }) => {
         pb={60}
       >
         <Flex
-          justifyContent={"space-between"}
+          justifyContent={"flex-end"}
           width={1}
           pt={[15, 35]}
           pb={[15, 50, 50, 50]}
           alignItems="center"
         >
-          <Lead pl={[0, 60]} mb={0} fontSize={[12, 16]}>
-            A letter from our CEO
-          </Lead>
           <Box display={["none", "block"]}>
             <Flex
               className={"closeButton"}
@@ -170,6 +167,7 @@ const Container = styled(Box)`
     color: black;
     margin-bottom: 0;
     font-weight: 700;
+    font-size: 16px;
 
     @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
       font-size: 12px;
@@ -180,6 +178,7 @@ const Container = styled(Box)`
     color: grey;
     margin-bottom: 0;
     font-weight: 700;
+    font-size: 16px;
 
     @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
       font-size: 12px;

@@ -1,18 +1,11 @@
 import React from "react"
 
-import { Box, Flex, Image } from "rebass/styled-components"
+import { Box, Flex } from "rebass/styled-components"
 
 import strip from "../../images/pattern-strip.png"
 import theme from "../../styles/index"
-import styled from "styled-components"
 import PhotoCredits from "../../components/PhotoCredits"
-
-const BGImage = styled(Image)`
-  margin: 0;
-  display: block;
-  object-fit: cover;
-  width: 100vw;
-`
+import Image from "./../../components/image"
 
 const OutroWord = ({
   image,
@@ -46,11 +39,18 @@ const OutroWord = ({
       </Flex>
       {image && (
         <div style={{ position: "relative" }}>
-          <BGImage
+          <Image
             src={image}
             alt={alt || ""}
-            sx={{ objectPosition: imagePosition, height: ["80vh", "100vh"] }}
-          ></BGImage>
+            sx={{
+              objectPosition: imagePosition,
+              height: ["80vh", "100vh"],
+              margin: 0,
+              display: "block",
+              objectFit: "cover",
+              width: "100vw",
+            }}
+          ></Image>
           <PhotoCredits
             credits={imageCredits}
             sx={{

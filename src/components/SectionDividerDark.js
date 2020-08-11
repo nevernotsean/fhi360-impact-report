@@ -60,7 +60,7 @@ const Container = styled(Flex)`
   min-height: 100vh;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    min-height: unset;
+    min-height: 100vw;
   }
 
   display: flex;

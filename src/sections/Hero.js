@@ -11,7 +11,6 @@ import HandDrawnSVG from "./../components/HandDrawnSVG"
 import Image from "../components/image"
 
 import Media from "../components/Media"
-import LetterContext from "../components/HeroLetter"
 
 // img
 import GladYouAreHere from "../assets/svg/glad-you-are-here.svg"
@@ -20,12 +19,16 @@ import gladYouAreHere from "../images/glad-you-are-here.png"
 import HeroFamily from "../images/hero-family.jpg"
 import HeroGirl from "../images/hero-girl.jpg"
 import HeroMoto from "../images/hero-moto.jpg"
+
+import HeroFamilyMobile from "../images/hero-family-mobile.jpg"
+import HeroGirlMobile from "../images/hero-girl-mobile.jpg"
+
 import { HeroLetterOpen } from "./../components/HeroLetter"
 
 const HeroPullquote = props => (
   <PullQuote
     px={[1, 5]}
-    mb={50}
+    mb={25}
     {...props}
     fontSize={["24px", "4vw", "40px"]}
     lineHeight={["28px", "4.4vw", "44px"]}
@@ -67,14 +70,14 @@ const Hero = () => {
           }}
         >
           <HeroImage
-            image={HeroFamily}
+            image={HeroFamilyMobile}
             width={2 / 3}
             align={"right"}
             top={"0"}
             zIndex={1}
           ></HeroImage>
           <HeroImage
-            image={HeroGirl}
+            image={HeroGirlMobile}
             width={2 / 3}
             align={"left"}
             top={"50vw"}
@@ -94,7 +97,7 @@ const Hero = () => {
             <Lead style={{ marginBottom: "35px", textAlign: "center" }}>
               Welcome
             </Lead>
-            <Box mx={"auto"}>
+            <Box mx={"auto"} width={17 / 20} mb={["-3vw", "-3vw", "-3vw", -50]}>
               <HandDrawnSVG
                 svg={GladYouAreHere}
                 alt={"We are so very glad you are here"}
@@ -109,14 +112,9 @@ const Hero = () => {
               ></HandDrawnSVG>
             </Box>
           </Box>
-          <Box
-            width={[1 / 2]}
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent={"center"}
-          >
-            <HeroPullquote></HeroPullquote>
-            <Box px={[1, 5]} mb={50}>
+          <Box width={[1 / 2]} display={"flex"} flexDirection={"column"}>
+            <HeroPullquote mt={["9vw", "9vw", "9vw", 150]}></HeroPullquote>
+            <Box px={[1, 5]}>
               <HeroLetterOpen>Hear from our ceo →</HeroLetterOpen>
             </Box>
           </Box>
@@ -124,7 +122,7 @@ const Hero = () => {
             width={[1 / 2]}
             sx={{
               position: "relative",
-              minHeight: ["100vw", "100vw", "100vw", "1000px"],
+              minHeight: ["100vw", "100vw", "100vw", "980px"],
             }}
             className={"image-collage"}
           >
@@ -134,6 +132,7 @@ const Hero = () => {
               align={"right"}
               top={"0"}
               zIndex={1}
+              lazyload={false}
             ></HeroImage>
             <HeroImage
               image={HeroGirl}
@@ -141,6 +140,7 @@ const Hero = () => {
               align={"left"}
               top={["22%", "22%", "22%", 300]}
               zIndex={2}
+              lazyload={false}
             ></HeroImage>
             <HeroImage
               image={HeroMoto}
@@ -149,6 +149,7 @@ const Hero = () => {
               right={"5%"}
               top={["50%", "50%", "50%", 600]}
               zIndex={0}
+              lazyload={false}
               rootMargin={"0% 0px 20% 0px"}
             ></HeroImage>
           </Box>
