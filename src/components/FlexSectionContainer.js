@@ -5,7 +5,7 @@ import styled from "styled-components"
 const FlexSectionContainer = ({
   py = 100,
   px = [20, 50],
-  minHeight = ["unset", "100vh"],
+  minHeight = ["100vw", "100vh"],
   children,
   centered,
   ...props

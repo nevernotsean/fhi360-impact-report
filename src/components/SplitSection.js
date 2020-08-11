@@ -16,7 +16,7 @@ const SplitSectionImage = ({
   flip,
   ...props
 }) => (
-  <Box width={width} height={["auto", "100%"]} sx={{ position: "relative" }}>
+  <Box width={width} height={["100vw", "100%"]} sx={{ position: "relative" }}>
     <InViewImage
       imageCredits
       src={image}
