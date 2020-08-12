@@ -16,22 +16,25 @@ const InViewImage = ({
   height,
   maxHeight,
   lazyload,
+  inViewOverride,
   debug,
   ...props
 }) => {
   // const context = React.useContext(LocomotiveContext)
-  const [inView, setInView] = useState(!lazyload)
+  const [inView, setInView] = useState(
+    inViewOverride !== undefined ? inViewOverride : false
+  )
   const [showPattern, setTriggerPattern] = useState(false)
   const [dims, setDims] = useState({})
 
   React.useEffect(() => {
     if (showPattern == false && inView == true && dims.height != undefined)
-      // {
       setTimeout(() => setTriggerPattern(true), revealSpeed * 1000 + 150)
-    // } else {
-    //   console.log(showPattern, inView)
-    // }
   }, [showPattern, inView, dims])
+
+  React.useEffect(() => {
+    if (debug) console.log(dims)
+  }, [dims])
 
   // React.useEffect(() => {
   //   showPattern &&
@@ -56,7 +59,9 @@ const InViewImage = ({
             src={src}
             alt={alt}
             onLoad={d => setDims(d)}
-            onInView={() => setInView(true)}
+            onInView={() =>
+              setInView(inViewOverride !== undefined ? inViewOverride : true)
+            }
             maxHeight={maxHeight}
             lazyload={lazyload}
             debug={debug}

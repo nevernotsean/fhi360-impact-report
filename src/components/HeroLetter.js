@@ -233,7 +233,7 @@ export const HeroButton = styled.button`
   box-shadow: none;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-weight: 900;
   padding: 1rem;
 

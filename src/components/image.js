@@ -2,6 +2,7 @@ import React from "react"
 import { Image as RebassImage } from "rebass/styled-components"
 import { LocomotiveContext } from "./../hooks/useLocomotiveScroll"
 import { useInView } from "react-intersection-observer"
+import styled from "styled-components"
 
 const Image = ({
   onInView,
@@ -26,6 +27,8 @@ const Image = ({
     triggerOnce: true,
   })
 
+  const imageRef = React.createRef()
+
   React.useEffect(() => {
     if (loaded && context.scroll) {
       // console.log("image loaded")
@@ -33,14 +36,22 @@ const Image = ({
     }
   }, [loaded])
 
-  // React.useEffect(() => {
-  //   console.log(imageSrc)
-  // }, [imageSrc])
+  React.useEffect(() => {
+    if (!lazyload) {
+      var dims = imageRef.current.getBoundingClientRect().toJSON()
+
+      if (onLoad) {
+        // debug && console.log("onLoad triggered", dims)
+        onLoad(dims)
+      }
+      setLoaded(true)
+    }
+  }, [])
 
   React.useEffect(() => {
     if (inView) {
       if (onInView) onInView()
-      debug && console.log("in view", inViewRef)
+      // debug && console.log("in view triggered", inViewRef)
       setSrc(src)
     }
   }, [inView])
@@ -48,10 +59,12 @@ const Image = ({
   return (
     <>
       <span ref={inViewRef}></span>
-      <RebassImage
-        sx={{ visibility: imageSrc == "" && "hidden", ...sx }}
+      <StyledImage
+        sx={sx}
         {...props}
         src={imageSrc}
+        imageSrc={imageSrc}
+        ref={imageRef}
         onLoad={e => {
           // debug && console.log("LOADED")
           if (onLoad) {
@@ -62,9 +75,13 @@ const Image = ({
           setLoaded(true)
         }}
         className={inView && "inView"}
-      ></RebassImage>
+      ></StyledImage>
     </>
   )
 }
+
+const StyledImage = styled(RebassImage)`
+  ${({ imageSrc }) => imageSrc == "" && "visibility: hidden"}
+`
 
 export default Image

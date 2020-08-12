@@ -54,11 +54,28 @@ const Hero = () => {
   return (
     <HeroContainer bg={theme.colors.lightblue}>
       <Media at="sm">
-        <Image
+        {/* <Image
           width={1}
           src={gladYouAreHere}
           alt={"We are so very glad you are here"}
-        ></Image>
+        ></Image> */}
+        <Lead style={{ marginBottom: "35px", textAlign: "center" }}>
+          Welcome
+        </Lead>
+        <Box mx={"auto"} width={17 / 20}>
+          <HandDrawnSVG
+            svg={GladYouAreHere}
+            alt={"We are so very glad you are here"}
+            className="you-are-here"
+            delay={2.25}
+            delay2={3.25}
+            delay3={4.25}
+            duration={1.5}
+            duration2={1.5}
+            duration3={1.5}
+            threshold={0}
+          ></HandDrawnSVG>
+        </Box>
         <Box
           width={"calc(100vw - 40px)"}
           height={"150vw"}
@@ -132,8 +149,7 @@ const Hero = () => {
               align={"right"}
               top={"0"}
               zIndex={1}
-              lazyload={false}
-speed={1.1}
+              speed={1.1}
             ></HeroImage>
             <HeroImage
               image={HeroGirl}
@@ -141,8 +157,7 @@ speed={1.1}
               align={"left"}
               top={["22%", "22%", "22%", 300]}
               zIndex={2}
-              lazyload={false}
-speed={1}
+              speed={1}
             ></HeroImage>
             <HeroImage
               image={HeroMoto}
@@ -151,7 +166,6 @@ speed={1}
               right={"5%"}
               top={["50%", "50%", "50%", 600]}
               zIndex={0}
-              lazyload={false}
               rootMargin={"0% 0px 20% 0px"}
               speed={0.9}
             ></HeroImage>
@@ -191,8 +205,9 @@ const HeroImage = ({
         src={image}
         scrollSpeed={1 * speed}
         imageSpeed={1.5 * speed}
-        // lazyload={false}
+        lazyload={false}
         // debug={true}
+        inViewOverride={true}
         {...props}
       ></InViewImage>
     </Box>
