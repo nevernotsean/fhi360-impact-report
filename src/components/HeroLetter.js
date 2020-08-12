@@ -79,8 +79,9 @@ const HeroLetter = ({ ...props }) => {
             flexDirection={"column"}
             alignItems={"center"}
             onClick={() => setLetterOpen(false)}
+            my={50}
           >
-            <H3 fontSize={14} letterSpacing={4} mb={10} mt={20}>
+            <H3 fontSize={14} letterSpacing={4} mb={10}>
               CLOSE
             </H3>
             <Box width={25}>

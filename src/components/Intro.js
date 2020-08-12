@@ -36,8 +36,10 @@ const GlobalStyle = createGlobalStyle`
     ${({ displayed }) => displayed && `opacity: 1;`}
   }
 
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+  ${
+    "" /* @media screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
     #sections, .hasIntro, #main-content { opacity: 1; }
+  } */
   }
 `
 
