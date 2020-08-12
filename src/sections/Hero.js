@@ -59,10 +59,10 @@ const Hero = () => {
           src={gladYouAreHere}
           alt={"We are so very glad you are here"}
         ></Image> */}
-        <Lead style={{ marginBottom: "35px", textAlign: "center" }}>
+        {/* <Lead style={{ marginBottom: "35px", textAlign: "center" }}>
           Welcome
-        </Lead>
-        <Box mx={"auto"} width={17 / 20}>
+        </Lead> */}
+        <Box mx={"auto"} width={17 / 20} pt={20}>
           <HandDrawnSVG
             svg={GladYouAreHere}
             alt={"We are so very glad you are here"}

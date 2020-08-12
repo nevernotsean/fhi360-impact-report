@@ -196,8 +196,7 @@ export const SplitSectionCroppedImage = ({
               scrollSpeed={-0.5}
               imageSpeed={1}
               usePattern={flip}
-              height={["auto", "50vh", "80vh"]}
-              maxHeight={["50vh", "50vh", "80vh"]}
+              height={["50vh", "50vh", "80vh"]}
               sx={{
                 display: "block",
                 maxWidth: "none",
