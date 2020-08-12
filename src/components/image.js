@@ -74,7 +74,6 @@ const Image = ({
           }
           setLoaded(true)
         }}
-        className={inView && "inView"}
       ></StyledImage>
     </>
   )
