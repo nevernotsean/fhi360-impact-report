@@ -72,6 +72,7 @@ const InViewImage = ({
       {usePattern && (
         <Box
           className={"pattern"}
+          maxHeight={maxHeight}
           style={{
             position: "absolute",
             zIndex: -1,

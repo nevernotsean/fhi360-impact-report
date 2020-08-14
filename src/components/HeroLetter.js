@@ -73,6 +73,13 @@ const HeroLetter = ({ ...props }) => {
           <p className={"bold"}>Patrick C. Fine</p>
           <p className={"light"}>Chief Executive Officer, FHI 360</p>
         </Box>
+        <Box width={1} pl={[0, 60]} mt={50}>
+          <p style={{ marginBottom: "5px", color: "gray" }}>
+            <small>
+              Photo Credits: Jessica Scranton/FHI 360, Mbuto Machili/FHI 360
+            </small>
+          </p>
+        </Box>
         <Box display={["flex", "none"]} alignSelf={"center"}>
           <Flex
             className={"closeButton"}
@@ -161,6 +168,10 @@ const Container = styled(Box)`
       padding-right: 20px;
       padding-left: 20px;
     }
+  }
+
+  small {
+    font-size: 12px;
   }
 
   p.bold {
