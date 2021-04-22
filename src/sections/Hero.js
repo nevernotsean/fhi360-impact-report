@@ -3,18 +3,16 @@ import { Box } from "rebass/styled-components"
 import styled from "styled-components"
 import theme from "../styles/index"
 import PullQuote from "../components/PullQuote"
-import { Lead, H2, H1, H3 } from "../elements/Type"
+import { Lead  } from "../elements/Type"
 import InViewImage from "../components/InViewImage"
 import { FlexWrap } from "../elements/Flex"
 import { Underlined } from "./../components/WordNote"
 import HandDrawnSVG from "./../components/HandDrawnSVG"
-import Image from "../components/image"
 
 import Media from "../components/Media"
 
 // img
 import GladYouAreHere from "../assets/svg/glad-you-are-here.svg"
-import gladYouAreHere from "../images/glad-you-are-here.png"
 
 import HeroFamily from "../images/hero-family.jpg"
 import HeroGirl from "../images/hero-girl.jpg"

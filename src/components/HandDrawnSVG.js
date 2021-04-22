@@ -106,8 +106,7 @@ const animate = (
   { animated, duration, duration2, duration3, delay, delay2, delay3, ease },
   i
 ) => {
-  if (i == 1) duration = duration
-  else if (i === 2) duration = duration2
+  if (i === 2) duration = duration2
   else if (i === 3) duration = duration3
 
   delay = i === 1 ? delay : duration * (i - 1) + delay
