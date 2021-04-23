@@ -1,14 +1,12 @@
 import React from "react"
 import { Box, Flex } from "rebass"
 import styled from "styled-components"
-import { H2, H3, Lead } from "../../elements/Type"
+import { H2, H3 } from "../../elements/Type"
 import FlexSectionContainer from "../FlexSectionContainer"
-// import { useMediaQuery } from "react-responsive"
-import theme from "./../../styles/index"
-import Media from "../Media"
-import BackToTop from "./../BackToTop"
+import BackToTop from "../BackToTop"
+import ReportPullquote from "../../components/Report/Pullquote"
 
-const Stats = ({ link, project, funder, ...props }) => (
+const Project = ({ link, project, funder, body, result, ...props }) => (
   <>
     <Box mb={3}>
       <H3 className="labelhead" mb={2}>
@@ -28,6 +26,15 @@ const Stats = ({ link, project, funder, ...props }) => (
         dangerouslySetInnerHTML={{ __html: funder }}
       ></H3>
     </Box>
+    {body && (
+      <Box mt={3}><p className={"body"} dangerouslySetInnerHTML={{ __html: body }} /></Box>
+    )}
+
+    {result && 
+      <Box mt={3}>
+        <ReportPullquote title={"Results"} headline={result} ></ReportPullquote>
+      </Box>
+    }
   </>
 )
 
@@ -35,10 +42,9 @@ const Section = ({
   children,
   title,
   headline,
-  project,
-  funder,
-  link,
+  projects = [], // { project: "", "funder": "", link: "", body:"", result: ""}
   body,
+  image,
   ...props
 }) => {
   return (
@@ -46,7 +52,7 @@ const Section = ({
       <FlexSectionContainer minHeight={"none"}>
         <TitleRule title={title}></TitleRule>
         <Flex flexWrap={"wrap"}>
-          <Box width={[1, 1 / 2, 7 / 16]} flex={"1 0 auto"} pr={[0, 50]}>
+          <Box width={[1, 1 / 2]} flex={"1 0 auto"} pr={[0, 50]}>
             <Flex flexDirection={"column"}>
               <H2
                 className="headline"
@@ -57,30 +63,25 @@ const Section = ({
               >
                 {headline}
               </H2>
-
-              <Media greaterThanOrEqual={"md"}>
-                <Stats link={link} project={project} funder={funder}></Stats>
-              </Media>
+              {projects.length === 1 && (<Project project={projects[0].project} funder={projects[0].funder} link={projects[0].link} />)}
             </Flex>
           </Box>
           <Flex
             flexDirection={"column"}
             justifyContent={"space-between"}
-            width={[1, 9 / 16, 1 / 2]}
+            width={[1, 1 / 2]}
             flex={"1 0 auto"}
             ml={[0, "auto"]}
           >
             <p className={"body"} dangerouslySetInnerHTML={{ __html: body }} />
-
-            <Media at={"sm"}>
-              <Box my={50}>
-                <Stats link={link} project={project} funder={funder}></Stats>
-              </Box>
-            </Media>
           </Flex>
+
+          {projects.length > 1 && <Flex flexWrap={"wrap"} width={[1, 1 / 2]} flex="1 0 auto">
+            {projects.map((project, i) => <Box my={50} width={[1, 1 / 2]} pr={[0, 50]} key={i}><Project {...project} /></Box>)}
+          </Flex>}
         </Flex>
         {children}
-        <BackToTop style={{ cursor: "pointer", textAlign: "left" }}>
+        <BackToTop style={{ cursor: "pointer", textAlign: "left" }} mt={3}>
           <em>Back to top</em>
         </BackToTop>
       </FlexSectionContainer>

@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Box } from "rebass/styled-components"
+import { Box, Image as Img } from "rebass/styled-components"
 import RectangleFrame from "../../images/rect-frame.png"
-import HandDrawnSVG from "../HandDrawnSVG"
 import Image from "../image"
 
 const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
@@ -11,8 +10,7 @@ const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
       <Box sx={{ position: "relative", height: 0, paddingBottom: "61.4%" }}>
         <Image src={src} alt={alt}></Image>
       </Box>
-      <Image src={RectangleFrame} className="frame" lazyload="false"></Image>
-      {/* <HandDrawnSVG svg={RectangleFrame}></HandDrawnSVG> */}
+      <Img src={RectangleFrame} className="frame"></Img>
       <Box mt={30} ml={[50]}>
         <p>Photo Credit: {credit}</p>
       </Box>

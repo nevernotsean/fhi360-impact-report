@@ -1,17 +1,15 @@
 import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Masthead from "../components/Report/Masthead"
-import { Flex, Box, Text } from "rebass/styled-components"
-import { H2 } from "../elements/Type"
-import Nav from "../components/Report/Nav"
 import styled from "styled-components"
 
-import map from "../images/map.jpg"
-import Media from "../components/Media"
-// import { useMediaQuery } from "react-responsive"
-import Image from "./../components/image"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import Masthead from "../../../components/Report/Masthead"
+import { Flex, Box, Text } from "rebass/styled-components"
+import { H2 } from "../../../elements/Type"
+import Nav from "../../../components/Report/Nav"
+import map from "../../../images/map.jpg"
+import Media from "../../../components/Media"
+import Image from "./../../../components/image"
 
 const GlobalReach = ({ location }) => {
   return (

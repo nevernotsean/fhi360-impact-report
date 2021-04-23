@@ -9,14 +9,16 @@ const Masthead = ({
   title = "Measuring Progress",
   headline = "2019<br />Impact Report",
   children,
+  minHeight = ["none", "50vh"],
   ...props
 }) => {
   return (
     <MastheadContainer>
       <FlexSectionContainer
-        minHeight={["none", "50vh"]}
+        minHeight={minHeight}
         {...props}
         py={[50, 100]}
+        className="masthead-inner"
       >
         {/* <Lead mb={3}>{title}</Lead> */}
         <div className="hr"></div>

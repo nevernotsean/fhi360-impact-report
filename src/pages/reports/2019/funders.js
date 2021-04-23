@@ -1,12 +1,13 @@
 import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Masthead from "../components/Report/Masthead"
-import { Flex, Box, Text } from "rebass/styled-components"
-import { H2 } from "../elements/Type"
 import styled from "styled-components"
-import Nav from "../components/Report/Nav"
+import { Flex, Box, Text } from "rebass/styled-components"
+
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import Masthead from "../../../components/Report/Masthead"
+import { H2 } from "../../../elements/Type"
+import Nav from "../../../components/Report/Nav"
+
 const Funders = ({ location }) => (
   <Layout
     bg={"#f1f1f1"}

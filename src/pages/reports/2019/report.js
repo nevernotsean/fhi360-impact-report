@@ -1,21 +1,21 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Masthead from "../components/Report/Masthead"
-import Section from "../components/Report/Section"
-import StatBlock from "../components/Report/StatBlock"
-import FramedImage from "../components/Report/FramedImage"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import Masthead from "../../../components/Report/Masthead"
+import Section from "../../../components/Report/Section"
+import StatBlock from "../../../components/Report/StatBlock"
+import FramedImage from "../../../components/Report/FramedImage"
 
 import { Box } from "rebass"
-import ReportPullquote from "./../components/Report/Pullquote"
-import Nav from "../components/Report/Nav"
+import ReportPullquote from "../../../components/Report/Pullquote"
+import Nav from "../../../components/Report/Nav"
 
-import tribeJPG from "../images/fro-native-american.jpg"
-import DAM from "../images/SupportingHighImpactHIV_creditJessicaScranton.jpg"
-import DAM2 from "../images/ExpandingSelfCare_creditJessicaScranton.jpg"
-import enhancingFisheries from "../images/ImpactReport_EnhancingFisheries.jpg"
-import breastFeeding from "../images/MeasuringtheCostBreastfeeding_GiacomoPirozzi.jpg"
+import tribeJPG from "../../../images/fro-native-american.jpg"
+import DAM from "../../../images/SupportingHighImpactHIV_creditJessicaScranton.jpg"
+import DAM2 from "../../../images/ExpandingSelfCare_creditJessicaScranton.jpg"
+import enhancingFisheries from "../../../images/ImpactReport_EnhancingFisheries.jpg"
+import breastFeeding from "../../../images/MeasuringtheCostBreastfeeding_GiacomoPirozzi.jpg"
 
 const impactReport = ({ location }) => {
   return (

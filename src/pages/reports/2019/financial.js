@@ -1,20 +1,17 @@
 import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Masthead from "../components/Report/Masthead"
-import { Flex, Box } from "rebass/styled-components"
-
-import Image2 from "../images/2019FinancialsV2-02.jpg"
-import Image3 from "../images/2019FinancialsV2-03.jpg"
-import Image4 from "../images/2019FinancialsV2-04.jpg"
-import Image5 from "../images/2019FinancialsV2-05.jpg"
-import { H2 } from "../elements/Type"
-import Nav from "../components/Report/Nav"
 import styled from "styled-components"
-import Image from "../components/image"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
+import Masthead from "../../../components/Report/Masthead"
+import { Flex, Box } from "rebass/styled-components"
+import { H2 } from "../../../elements/Type"
+import Nav from "../../../components/Report/Nav"
+import Image from "../../../components/image"
 
-import sketch from "../images/sketch.png"
+import Image2 from "../../../images/2019FinancialsV2-02.jpg"
+import Image3 from "../../../images/2019FinancialsV2-03.jpg"
+import Image4 from "../../../images/2019FinancialsV2-04.jpg"
+import Image5 from "../../../images/2019FinancialsV2-05.jpg"
 
 const Financial = ({ location }) => (
   <Layout

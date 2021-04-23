@@ -155,7 +155,7 @@ const LiveWork = () => (
             <Box maxWidth={480}>
               <p className={"section-body"}>
                 For recent examples of our work and global reach, visit our{" "}
-                <Link to={"/report"} style={{ color: theme.colors.black }}>
+                <Link to={"/reports/2020/report"} style={{ color: theme.colors.black }}>
                   Impact Report
                 </Link>
                 .

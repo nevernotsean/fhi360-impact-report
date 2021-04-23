@@ -2,12 +2,12 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import SplitSectionLongContent from "./../components/SplitSectionLongContent"
-import { Box } from "rebass/styled-components"
-import { Lead, H2, H3 } from "../elements/Type"
-import Outro from "./../sections/Outro/index"
-import Perception from "../sections/Perception/index"
-import LiveWork from "../sections/LiveWork"
+// import SplitSectionLongContent from "./../components/SplitSectionLongContent"
+// import { Box } from "rebass/styled-components"
+// import { Lead, H2, H3 } from "../elements/Type"
+// import Outro from "./../sections/Outro/index"
+// import Perception from "../sections/Perception/index"
+// import LiveWork from "../sections/LiveWork"
 import Nimble from "../sections/Nimble"
 
 // const TestSection = () => (
