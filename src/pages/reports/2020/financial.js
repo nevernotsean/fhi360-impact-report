@@ -19,6 +19,7 @@ const Financial = ({ location }) => (
     hideMenuButton={true}
     pageTitle={"2019 Impact Report"}
     location={location}
+    altLogo
   >
     <SEO title="Home" />
     <Nav></Nav>

@@ -13,6 +13,7 @@ const Image = ({
   rootMargin = "0% 0px 0% 0px",
   debug,
   sx,
+  fadeIn,
   ...props
 }) => {
   const context = React.useContext(LocomotiveContext)
@@ -74,12 +75,24 @@ const Image = ({
           }
           setLoaded(true)
         }}
+        fadeIn={fadeIn}
+        lazyload={lazyload}
+        loaded={loaded}
       ></StyledImage>
     </>
   )
 }
 
 const StyledImage = styled(RebassImage)`
+  ${
+    ({lazyload, fadeIn}) => 
+      lazyload && fadeIn && `transition: opacity 800ms ease-out ${fadeIn}ms; opacity: 0;`
+  };
+
+  ${
+    ({lazyload, loaded}) => lazyload && loaded && "opacity: 1;"
+  };
+
   ${({ imageSrc }) => imageSrc == "" && "visibility: hidden"}
 `
 

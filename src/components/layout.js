@@ -35,6 +35,7 @@ const Layout = ({
   headerStyle,
   showIntro,
   pageTitle,
+  altLogo,
   ...props
 }) => {
   const data = useStaticQuery(graphql`
@@ -71,6 +72,7 @@ const Layout = ({
         sideNavOpen={sideNavOpen}
         setSideNavOpen={setSideNavOpen}
         hasIntro={showIntro}
+        altLogo={altLogo}
       />
       {showIntro && <Intro></Intro>}
       <StyledMain id={"main-content"} className={showIntro && "hasIntro"}>

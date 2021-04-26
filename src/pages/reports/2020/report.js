@@ -8,11 +8,11 @@ import Nav from "../../../components/Report/Nav"
 import data from '../../../data/IR-2020.json'
 import hero2020 from '../../../images/hero-report-2020.jpg'
 import HeroImageMasthead from '../../../components/Report/HeroImageMasthead';
-import report1 from '../../../images/report-2020/AP-DVS-0015.jpg'
-import report2 from '../../../images/report-2020/GettyImages-1300391710.jpg'
-import report3 from '../../../images/report-2020/Jamaica SCS photo - fhikin_135.jpg'
+import report5 from '../../../images/report-2020/AP-DVS-0015.jpg'
+import report3 from '../../../images/report-2020/GettyImages-1300391710.jpg'
+import report1 from '../../../images/report-2020/Jamaica SCS photo - fhikin_135.jpg'
 import report4 from '../../../images/report-2020/Passerelles - tippy tap.jpg'
-import report5 from '../../../images/report-2020/photo 21-ACEA.jpg'
+import report2 from '../../../images/report-2020/photo 21-ACEA.jpg'
 import report6 from '../../../images/report-2020/RS2451__MG_7928-hpr.jpg'
 import FramedImage from "../../../components/Report/FramedImage"
 
@@ -32,6 +32,7 @@ const impactReport = ({ location }) => {
       sidenavData={data}
       pageTitle={"2020 Impact Report"}
       location={location}
+      altLogo={true}
     >
       <SEO title="Home" />
       <Nav></Nav>

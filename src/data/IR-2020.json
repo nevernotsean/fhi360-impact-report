@@ -1,9 +1,9 @@
 [
   {
     "id": "i",
-    "label": "Civil Society and Peacebuilding",
+    "label": "Civil Society",
     "title": "Civil Society and Peacebuilding",
-    "headline": "Showing Up for Communities",
+    "headline": "Showing up for communities",
     "projects": [
       {
         "project": "Local Partner Development Project",
@@ -12,7 +12,7 @@
         "body": ""
       }
     ],
-    "body": "Responding to school closures and COVID-19 lockdown measures, FHI 360’s Local Partner Development Project in Jamaica collaborated with the Peace Management Initiative Ltd. to deliver psychosocial support services to youth ages 13 to 18. Our project staff offered tailored, one-on-one assistance to young people on such topics as anger management, dealing with family conflict and handling the stress of losing a school support system. The project now focuses on building local partner capacity to deliver social welfare support, including access to food and sanitization products to female-headed households, domestic violence survivors, at-risk youth and youth in juvenile correctional facilities.",
+    "body": "Responding to school closures and <span style=\"white-space: nowrap;\">COVID-19</span> lockdown measures, FHI 360’s Local Partner Development Project in Jamaica collaborated with the Peace Management Initiative Ltd. to deliver psychosocial support services to youth ages 13 to 18. Our project staff offered tailored, one-on-one assistance to young people on such topics as anger management, dealing with family conflict and handling the stress of losing a school support system. The project now focuses on building local partner capacity to deliver social welfare support, including access to food and sanitization products to female-headed households, domestic violence survivors, at-risk youth and youth in juvenile correctional facilities.",
     "image": {
       "id": 0,
       "alt": "photo of 3 people delivering food",
@@ -29,7 +29,7 @@
         "project": "Supporting Instructional Leadership for Remote Learning",
         "funder": "Bill & Melinda Gates Foundation",
         "link": "https://connectedandengaged.fhi360.org/",
-        "body": "FHI 360’s publication, Connected & Engaged, is a user-friendly instructional leadership guide to support remote and hybrid teaching and learning in grades 6–12. The website presents high-leverage strategies and practices. Informed by research and hundreds of educators, it is organized into five categories: systems and structures, teaching and learning, family engagement, social-emotional learning and professional learning.",
+        "body": "FHI 360’s publication, <em>Connected & Engaged</em>, is a user-friendly instructional leadership guide to support remote and hybrid teaching and learning in grades 6–12. The website presents high-leverage strategies and practices. Informed by research and hundreds of educators, it is organized into five categories: systems and structures, teaching and learning, family engagement, social-emotional learning and professional learning.",
         "result": "User-friendly instructional leadership guide supports remote and hybrid learning"
       },
       {
@@ -40,13 +40,13 @@
         "result": "Training and technical assistance meet the needs of migrant communities"
       }
     ],
-    "body": "FHI 360 addresses many facets of the U.S. education system, from college and career readiness to educating court-involved youth, all with a consistent focus on equity. In 2020, we worked to mitigate the impact of the COVID-19 pandemic on students, families and educators."
+    "body": "FHI 360 addresses many facets of the U.S. education system, from college and career readiness to educating court-involved youth, all with a consistent focus on equity. In 2020, we worked to mitigate the impact of the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic on students, families and educators."
   },
   {
     "id": "iii",
     "label": "Economic Development",
     "title": "Economic Development",
-    "headline": "Boosting Livelihoods Through E-Commerce",
+    "headline": "Boosting livelihoods through <span style=\"white-space: nowrap;\">e-commerce</span>",
     "projects": [
       {
         "project": "Collaborative Action for Handicraft Exports",
@@ -54,7 +54,7 @@
         "link": "https://www.fhi360.org/projects/collaborative-action-handicraft-exports"
       }
     ],
-    "body": "FHI 360’s Collaborative Action for Handicraft Exports (ACEA) project supports Tunisian artisans in the medicinal and aromatic plants sector to upgrade and export their products. The artisans — mostly rural women who serve as guardians of traditional medicinal knowledge within their communities — help sustain the local economy. They are often relegated to a marginal position in the value chain and lack equitable access to public lands and natural resources.<br/><br/> In early 2020, ACEA helped artisans prepare for Tunisia’s largest national handicraft fair. When it was canceled due to the COVID-19 pandemic, the team pivoted to help the artisans enter the e-commerce market. Partnering with some of Tunisia’s leading e-commerce platforms, the artisans increased sales in the domestic market and attracted international buyers. ACEA has also supported artisans to achieve international organic certification, which should lead to additional markets.",
+    "body": "FHI 360’s Collaborative Action for Handicraft Exports (ACEA) project supports Tunisian artisans in the medicinal and aromatic plants sector to upgrade and export their products. The artisans — mostly rural women who serve as guardians of traditional medicinal knowledge within their communities — help sustain the local economy. They are often relegated to a marginal position in the value chain and lack equitable access to public lands and natural resources.<br/><br/> In early 2020, ACEA helped artisans prepare for Tunisia’s largest national handicraft fair. When it was canceled due to the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic, the team pivoted to help the artisans enter the e-commerce market. Partnering with some of Tunisia’s leading e-commerce platforms, the artisans increased sales in the domestic market and attracted international buyers. ACEA has also supported artisans to achieve international organic certification, which should lead to additional markets.",
     "image": {
       "id": 1,
       "alt": "photo of woman pouring into bottle",
@@ -65,29 +65,29 @@
     "id": "iv",
     "label": "Research",
     "title": "Research",
-    "headline": "Taking a Lead On COVID-19 Research",
+    "headline": "Taking a lead on <span style=\"white-space: nowrap;\">COVID-19</span> research",
     "projects": [
       {
-        "project": "COVID-19 Prevention Network",
+        "project": "<span style=\"white-space: nowrap;\">COVID-19</span> Prevention Network",
         "funder": "U.S. National Institutes of Health",
         "link": "https://www.coronaviruspreventionnetwork.org/",
         "result": "Collaborating on vaccine studies"
       }
     ],
-    "body": "The U.S. National Institute of Allergy and Infectious Disease selected the Leadership and Operations Center for the <a href=\"https://www.fhi360.org/projects/hiv-prevention-trials-network-hptn-leadership-and-operations-center\" target=\"_blank\" rel=\"noreferrer\">HIV Prevention Trials Network (HPTN)</a> at FHI 360 to manage a portion of the COVID-19 Prevention Network (CoVPN) agenda as a part of the U.S. Government’s initiative to address the COVID-19 pandemic. The CoVPN Operations Center oversees the clinical trial evaluation of monoclonal antibodies for COVID-19 prevention and also collaborates on vaccine studies.<br/> <br/> The CoVPN Operations Center partnered with Eli Lilly and the U.S. National Institutes of Health on a study of a monoclonal antibody to prevent COVID-19 infection in senior nursing facilities. We also worked with Regeneron Pharmaceuticals and the U.S. National Institutes of Health on a study of a two-monoclonal antibody cocktail for prevention in households with a positive index case. These studies provide the scientific evidence needed to support an application for an Emergency Use Authorization from the U.S. Food and Drug Administration for these products to be used for prophylaxis."
+    "body": "The U.S. National Institute of Allergy and Infectious Disease selected the Leadership and Operations Center for the <a href=\"https://www.fhi360.org/projects/hiv-prevention-trials-network-hptn-leadership-and-operations-center\" target=\"_blank\" rel=\"noreferrer\"><strong>HIV Prevention Trials Network (HPTN)</strong></a> at FHI 360 to manage a portion of the <span style=\"white-space: nowrap;\">COVID-19</span> Prevention Network (CoVPN) agenda as a part of the U.S. Government’s initiative to address the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic. The CoVPN Operations Center oversees the clinical trial evaluation of monoclonal antibodies for <span style=\"white-space: nowrap;\">COVID-19</span> prevention and also collaborates on vaccine studies.<br/> <br/> The CoVPN Operations Center partnered with Eli Lilly and the U.S. National Institutes of Health on a study of a monoclonal antibody to prevent <span style=\"white-space: nowrap;\">COVID-19</span> infection in senior nursing facilities. We also worked with Regeneron Pharmaceuticals and the U.S. National Institutes of Health on a study of a two-monoclonal antibody cocktail for prevention in households with a positive index case. These studies provide the scientific evidence needed to support an application for an Emergency Use Authorization from the U.S. Food and Drug Administration for these products to be used for prophylaxis."
   },
   {
     "id": "v",
     "label": "Research",
     "title": "Research",
-    "headline": "Uncovering Attitudes Toward a COVID-19 Vaccine",
+    "headline": "Uncovering attitudes toward a <span style=\"white-space: nowrap;\">COVID-19</span> vaccine",
     "projects": [
       {
         "project": "Audience Research: Communications Services and Support for NCIRD Recurring and Urgent and Emerging Issues",
         "funder": "U.S. National Center for Immunization and Respiratory Diseases; U.S. Centers for Disease Control and Prevention"
       }
     ],
-    "body": "When the U.S. Centers for Disease Control and Prevention (CDC) wanted to better understand public perceptions, beliefs and attitudes toward prospective COVID-19 vaccines, FHI 360 conducted a remote focus group study. With participants who were low- and middle-income older adults (ages 60+), parents with children younger than age 18, young adults (ages 20 to 30) without children, practice- and hospital-based registered nurses and nonmedical essential workers, the study helped the CDC identify concerns and understand potential reactions to public discussions on initial vaccination scenarios. The CDC used the findings to inform COVID-19 vaccine communication planning.",
+    "body": "When the U.S. Centers for Disease Control and Prevention (CDC) wanted to better understand public perceptions, beliefs and attitudes toward prospective <span style=\"white-space: nowrap;\">COVID-19</span> vaccines, FHI 360 conducted a remote focus group study. With participants who were low- and middle-income older adults (ages 60+), parents with children younger than age 18, young adults (ages 20 to 30) without children, practice- and hospital-based registered nurses and nonmedical essential workers, the study helped the CDC identify concerns and understand potential reactions to public discussions on initial vaccination scenarios. The CDC used the findings to inform <span style=\"white-space: nowrap;\">COVID-19</span> vaccine communication planning.",
     "image": {
       "id": 2,
       "alt": "photo of young man get vaccinated",
@@ -98,7 +98,7 @@
     "id": "vi",
     "label": "Global Education",
     "title": "Global Education",
-    "headline": "Protecting Global Education Gains",
+    "headline": "Protecting global education gains",
     "projects": [
       {
         "project": "USAID Partnership for Education: Learning",
@@ -116,10 +116,10 @@
         "project": "USAID Passerelles Senegal",
         "funder": "U.S. Agency for International Development",
         "link": "https://www.fhi360.org/projects/usaid-passerelles-senegal#:~:text=The%20USAID%20Passerelles%20Senegal%20project,%2C%20Kolda%2C%20Sedhiou%20and%20Ziguinchor.",
-        "body": "The USAID Passerelles Senegal project provided hygiene kits to support schools in reopening. The project’s informational campaign about COVID-19 prompted some communities to build tippy tap water dispensers — which are controlled by foot levers to reduce contamination during handwashing — outside of schools and other communal areas."
+        "body": "The USAID Passerelles Senegal project provided hygiene kits to support schools in reopening. The project’s informational campaign about <span style=\"white-space: nowrap;\">COVID-19</span> prompted some communities to build tippy tap water dispensers — which are controlled by foot levers to reduce contamination during handwashing — outside of schools and other communal areas."
       }
     ],
-    "body": "In 2020, FHI 360 worked to mitigate COVID-19-related disruptions to students, educators and education systems around the world, including school closures, lack of technology infrastructure for remote learning and the need for increased sanitation measures.",
+    "body": "In 2020, FHI 360 worked to mitigate <span style=\"white-space: nowrap;\">COVID-19</span>-related disruptions to students, educators and education systems around the world, including school closures, lack of technology infrastructure for remote learning and the need for increased sanitation measures.",
     "image": {
       "id": 3,
       "alt": "photo of African young man at tippy tap",
@@ -130,18 +130,18 @@
     "id": "vii",
     "label": "Technology",
     "title": "Technology",
-    "headline": "Connecting Through Technology",
+    "headline": "Connecting through technology",
     "projects": [
       {
         "project": "HIV Services and System Strengthening",
         "funder": "U.S. Agency for International Development, U.S. President's Emergency Plan For AIDS Relief (PEPFAR)",
-        "body": "The HIV Services and Systems Strengthening project created a free, confidential HIV and COVID-19 hotline that offers information, counseling and connection to medical care for people living with or at risk of HIV in the Dominican Republic. In addition to Spanish for Dominicans, the hotline staff provide services in Creole for Haitian people and people of Haitian descent. Peer navigators, psychologists and clinicians who are from the migrant community are part of the team operating the hotline.",
-        "result": "Free, confidential HIV and COVID-19 hotline"
+        "body": "The HIV Services and Systems Strengthening project created a free, confidential HIV and <span style=\"white-space: nowrap;\">COVID-19</span> hotline that offers information, counseling and connection to medical care for people living with or at risk of HIV in the Dominican Republic. In addition to Spanish for Dominicans, the hotline staff provide services in Creole for Haitian people and people of Haitian descent. Peer navigators, psychologists and clinicians who are from the migrant community are part of the team operating the hotline.",
+        "result": "Free, confidential HIV and <span style=\"white-space: nowrap;\">COVID-19</span> hotline"
       },
       {
         "project": "Online Evidence Mapping",
         "funder": "U.K. Foreign, Commonwealth & Development Office",
-        "body": "<a href=\"https://www.konunginternational.com/\" target=\"_blank\" rel=\"noreferrer\">Konung International</a>, a subsidiary of FHI 360, built a <a href=\"https://mena-evidence-map.com/\" target=\"_blank\" rel=\"noreferrer\">tool</a> that provides a user-friendly, customizable visual interface for evidence mapping in the Middle East and North Africa region. The app enables organizations to look at a country’s interventions, such as education or peacebuilding, and outcomes, such as community participation or capacity, to see the volume of studies on that intersection and use the evidence base to inform future research and programming. The tool can track change over time and show the impact of short- and long-term interventions.",
+        "body": "<a href=\"https://www.konunginternational.com/\" target=\"_blank\" rel=\"noreferrer\"><strong>Konung International</strong></a>, a subsidiary of FHI 360, built a <a href=\"https://mena-evidence-map.com/\" target=\"_blank\" rel=\"noreferrer\"><strong>tool</strong></a> that provides a user-friendly, customizable visual interface for evidence mapping in the Middle East and North Africa region. The app enables organizations to look at a country’s interventions, such as education or peacebuilding, and outcomes, such as community participation or capacity, to see the volume of studies on that intersection and use the evidence base to inform future research and programming. The tool can track change over time and show the impact of short- and long-term interventions.",
         "result": "Using the evidence base to inform future research and programming"
       }
     ],
@@ -151,7 +151,7 @@
     "id": "viii",
     "label": "Global Health",
     "title": "Global Health",
-    "headline": "Accelerating COVID-19 Testing Capacity",
+    "headline": "Accelerating <span style=\"white-space: nowrap;\">COVID-19</span> testing capacity",
     "projects": [
       {
         "project": "Infectious Diseases Detection and Surveillance",
@@ -159,7 +159,7 @@
         "link": "https://www.fhi360.org/projects/infectious-disease-detection-and-surveillance-idds"
       }
     ],
-    "body": "The Infectious Diseases Detection and Surveillance project — for which FHI 360 leads diagnostic strengthening in a consortium led by ICF — designed and implemented a COVID-19 specimen referral and transport system in Mindanao, the Philippines, an area that was a hot spot of local transmission but had limited collection and testing capacity. <br/><br/>Between April and November 2020, project staff trained nearly 600 health care workers to collect specimens — increasing the number of facilities capable of collecting specimens from 29 to 133 — and arranged for transportation to the testing laboratory. As a result, the number of specimens collected and sent for testing increased from 15 to 179 specimens per day. The arrival time from health care facility to laboratory was drastically reduced, ensuring that specimens were tested quickly and results were returned for patient care and pandemic control. The program and model were transitioned to the government and scaled up elsewhere in the Philippines.",
+    "body": "The Infectious Diseases Detection and Surveillance project — for which FHI 360 leads diagnostic strengthening in a consortium led by ICF — designed and implemented a <span style=\"white-space: nowrap;\">COVID-19</span> specimen referral and transport system in Mindanao, the Philippines, an area that was a hot spot of local transmission but had limited collection and testing capacity. <br/><br/>Between April and November 2020, project staff trained nearly 600 health care workers to collect specimens — increasing the number of facilities capable of collecting specimens from 29 to 133 — and arranged for transportation to the testing laboratory. As a result, the number of specimens collected and sent for testing increased from 15 to 179 specimens per day. The arrival time from health care facility to laboratory was drastically reduced, ensuring that specimens were tested quickly and results were returned for patient care and pandemic control. The program and model were transitioned to the government and scaled up elsewhere in the Philippines.",
     "image": {
       "id": 4,
       "alt": "photo of person in protective gear coming out of tent",
@@ -170,35 +170,40 @@
     "id": "ix",
     "label": "Crisis Response",
     "title": "Crisis Response",
-    "headline": "Continuing Critical Humanitarian Aid",
+    "headline": "Continuing critical humanitarian aid",
     "projects": [
       {
         "project": "Scaling Up Integrated Humanitarian Assistance to Yemen (SUIHAY)",
         "funder": "U.S. Agency for International Development, Bureau for Humanitarian Assistance",
-        "result": "Nearly 60,000 people can now seek health care without traveling long distances."
+        "stat": {
+          "contentBefore": "Nearly",
+          "content": "people can now seek health care without traveling long distances.",
+          "duration": 2,
+          "end": 60000
+        }
       }
     ],
-    "body": "When the COVID-19 pandemic prevented many international aid organizations from working to alleviate the humanitarian crisis in Yemen, FHI 360 found ways to continue on the ground. Project staff refurbished two health clinics that had been closed for a decade. The Al-Gharaffi and the Al-Ghadeed clinics received much-needed repairs to the water supply, power and sanitation systems. FHI 360 also supplied laboratory and medical equipment and medications, as well as training in community case management and infection prevention for Ministry of Health staff and community health volunteers. Residents near these two clinics, which includes nearly 60,000 internally displaced people, are now able to seek primary health care without traveling long and dangerous distances."
+    "body": "When the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic prevented many international aid organizations from working to alleviate the humanitarian crisis in Yemen, FHI 360 found ways to continue on the ground. Project staff refurbished two health clinics that had been closed for a decade. The Al-Gharaffi and the Al-Ghadeed clinics received much-needed repairs to the water supply, power and sanitation systems. FHI 360 also supplied laboratory and medical equipment and medications, as well as training in community case management and infection prevention for Ministry of Health staff and community health volunteers. Residents near these two clinics, which includes nearly 60,000 internally displaced people, are now able to seek primary health care without traveling long and dangerous distances."
   },
   {
     "id": "x",
     "label": "Global Health",
     "title": "Global Health",
-    "headline": "Meeting the Needs of Women and Families",
+    "headline": "Meeting the needs of women and families",
     "projects": [
       {
         "project": "1,000 Days",
         "link": "https://thousanddays.org/",
-        "body": "1,000 Days mobilizes families to advocate for nutrition issues, brings evidence to policymakers and leads international committees to invest in nutrition programs. Acquired by FHI Solutions, a subsidiary of FHI 360, 1,000 Days supported the launch of the Nutrition for Growth Year of Action — an effort to address the malnutrition crisis further exacerbated by the COVID-19 pandemic — through stakeholder engagement and social media content."
+        "body": "1,000 Days mobilizes families to advocate for nutrition issues, brings evidence to policymakers and leads international committees to invest in nutrition programs. Acquired by FHI Solutions, a subsidiary of FHI 360, 1,000 Days supported the launch of the Nutrition for Growth Year of Action — an effort to address the malnutrition crisis further exacerbated by the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic — through stakeholder engagement and social media content."
       },
       {
         "project": "Research for Scalable Solutions",
         "funder": "U.S. Agency for International Development",
         "link": "https://www.fhi360.org/projects/research-scalable-solutions-r4s",
-        "body": "The Research for Scalable Solutions project conducts implementation science research to improve family planning programs in Africa and Asia. In 2020, FHI 360’s staff co-founded a global task team focused on adapting family planning programs to pandemic-related challenges and is currently partnering with Viamo in Malawi, Nepal, Niger and Uganda on a longitudinal assessment of women’s experiences with unintended pregnancies and family planning during the pandemic. The project also developed a widely shared survey to document the pandemic’s effect on family planning access and use."
+        "body": "The Research for Scalable Solutions project conducts implementation science research to improve family planning programs in Africa and Asia. In 2020, FHI 360’s staff co-founded a global task team focused on adapting family planning programs to pandemic-related challenges and is currently partnering with Viamo in Malawi, Nepal, Niger and Uganda on a longitudinal assessment of women’s experiences with unintended pregnancies and family planning during the pandemic. The project also developed a widely shared <a href=\"https://fhi360.us9.list-manage.com/track/click?u=92222f8f3ad2bfe9c770cf4b0&id=5794a921fd&e=125f6d0edc\" target=\"_blank\" rel=\"noreferrer\"><strong>survey</strong></a> to document the pandemic’s effect on family planning access and use."
       }
     ],
-    "body": "FHI 360 works to meet the needs of women and families by supporting access to maternal and child nutrition and family planning services, which remain essential during the COVID-19 pandemic.",
+    "body": "FHI 360 works to meet the needs of women and families by supporting access to maternal and child nutrition and family planning services, which remain essential during the <span style=\"white-space: nowrap;\">COVID-19</span> pandemic.",
     "image": {
       "id": 5,
       "alt": "photo of two women with flyer",
@@ -209,15 +214,15 @@
     "id": "xi",
     "label": "Global Health",
     "title": "Global Health",
-    "headline": "Transforming Programs to Preserve Epidemic Control",
+    "headline": "Transforming programs to preserve epidemic contro",
     "projects": [
       {
         "project": "Meeting Targets and Maintaining Epidemic Control",
-        "funder": "U.S. Agency for International Development, U.S. President's Emergency Plan For AIDS Relief (PEPFAR)",
+        "funder": "U.S. Agency for International Development,<br/>U.S. President's Emergency Plan For AIDS Relief (PEPFAR)",
         "link": "https://www.fhi360.org/projects/meeting-targets-and-maintaining-epidemic-control-epic",
         "result": "Provides quick pandemic response"
       }
     ],
-    "body": "The Meeting Targets and Maintaining Epidemic Control (EpiC) project — an FHI 360 project that implements HIV programs in 35 countries — was the catalyst and platform for several COVID-19-related programmatic modifications, which were then adopted by FHI 360’s other HIV programs, providing quick pandemic response. Staff developed a toolkit that helped programs continue to meet their targets safely and expanded differentiated service delivery models to bring HIV treatment, pre-exposure prophylaxis and testing out of health facilities and into communities. An expansion of Going Online activities allowed the team to shift to online interventions, supporting program participants through virtual case management. The team’s multicountry Online Reservation and Case Management app enabled 10 new countries to transition HIV services online as lockdowns began."
+    "body": "The Meeting Targets and Maintaining Epidemic Control (EpiC) project — an FHI 360 project that implements HIV programs in 35 countries — was the catalyst and platform for several <span style=\"white-space: nowrap;\">COVID-19</span>-related programmatic modifications, which were then adopted by FHI 360’s other HIV programs, providing quick pandemic response. Staff developed a toolkit that helped programs continue to meet their targets safely and expanded differentiated service delivery models to bring HIV treatment, pre-exposure prophylaxis and testing out of health facilities and into communities. An expansion of <a href=\"https://www.fhi360.org/resource/going-online-accelerate-impact-hiv-programs\" target=\"_blank\" rel=\"noreferrer\"><strong>Going Online</strong></a> activities allowed the team to shift to online interventions, supporting program participants through virtual case management. The team’s multicountry Online Reservation and Case Management app enabled 10 new countries to transition HIV services online as lockdowns began."
   }
 ]

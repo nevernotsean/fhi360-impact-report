@@ -18,6 +18,7 @@ const GlobalReach = ({ location }) => {
       hideMenuButton={true}
       pageTitle={"2019 Impact Report"}
       location={location || "/globalreach"}
+      altLogo
     >
       <SEO title="Home" />
       <Nav></Nav>

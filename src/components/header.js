@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import Logo from "../assets/svg/fhi-logo-dark.svg"
+import Logo2020 from "../assets/svg/fhi-logo-2020.svg"
 import MenuButton from "../assets/svg/menu-button.svg"
 import { Flex, Box, Image } from "rebass/styled-components"
 import styled from "styled-components"
@@ -26,6 +27,7 @@ const Header = ({
   hideMenuButton = false,
   headerStyle,
   hasIntro,
+  altLogo,
   ...props
 }) => {
   const [loaded, setLoaded] = React.useState()
@@ -71,7 +73,21 @@ const Header = ({
             position: "relative",
           }}
         >
-          <a
+        {altLogo ? (
+          <><a
+            href={"https://www.fhi360.org/"}
+            style={{
+              zIndex: 995,
+              color: theme.colors.black,
+              textDecoration: `none`,
+            }}
+          >
+            <Box width={[200, 260]} mr={20}>
+             <Logo2020 className="fill-detect"></Logo2020> 
+            </Box>
+          </a></>
+        ): (
+          <><a
             href={"https://www.fhi360.org/"}
             style={{
               zIndex: 995,
@@ -80,14 +96,17 @@ const Header = ({
             }}
           >
             <Box width={[60, 100]} mr={20}>
-              <Logo className="fill-detect"></Logo>
+             <Logo className="fill-detect"></Logo> 
             </Box>
           </a>
           <Media greaterThanOrEqual="md">
             <a href={"https://www.fhi360.org/"}>
               <Tagline style={{ height: "10px" }}></Tagline>
             </a>
-          </Media>
+          </Media></>
+        )
+}
+          
         </h1>
         <Flex alignItems="center">
           <BackToTop

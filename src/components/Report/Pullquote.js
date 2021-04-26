@@ -31,6 +31,15 @@ const Container = styled(Box)`
       overflow: hidden;
     }
   }
+
+  .large-font {
+    font-size: 44px;
+  }
+
+  .break {
+    margin: 15px 0;
+    display: block;
+  }
 `
 
 export default ReportPullquote

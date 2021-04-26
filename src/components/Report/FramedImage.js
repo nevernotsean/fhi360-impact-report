@@ -8,7 +8,7 @@ const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
   return (
     <Container {...props} my={[50, 100]}>
       <Box sx={{ position: "relative", height: 0, paddingBottom: "61.4%" }}>
-        <Image src={src} alt={alt}></Image>
+        <Image src={src} alt={alt} fadeIn={500}></Image>
       </Box>
       <Img src={RectangleFrame} className="frame"></Img>
       <Box mt={30} ml={[50]}>

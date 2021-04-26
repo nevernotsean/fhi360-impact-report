@@ -15,6 +15,8 @@ const StatBlock = ({
   postfix,
   separator = ",",
   flip,
+  content,
+  contentBefore,
   ...props
 }) => {
   const [parentRef, inView] = useInView({
@@ -43,6 +45,9 @@ const StatBlock = ({
         // alignItems={"flex-start"}
         // alignItems={flip ? "flex-end" : "flex-start"}
       >
+        {contentBefore && <Box className={"body"}>
+        {contentBefore}
+        </Box>}
         <Box className={"number"}>
           {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}
           <span>{countUp}</span>
@@ -52,6 +57,7 @@ const StatBlock = ({
         </Box>
         <Box className={"body"}>
           {children}
+          {content}
           {/* <div className="black-box"></div> */}
         </Box>
         <Streak width={250}></Streak>

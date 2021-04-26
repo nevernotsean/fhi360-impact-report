@@ -46,6 +46,7 @@ const Container = styled(Box)`
 
   .back {
     justify-self: flex-start;
+    text-transform: uppercase;
   }
 `
 
@@ -64,27 +65,27 @@ const ReportToggle = () => {
   return (
     <ReportToggleContainer>
       <Flex flexDirection={["column", "row"]} className="year-select">
-        <StyledLink className={"link year-link"} to={`/reports/2020/report`} active={year == '2020'}>
+        <StyledLink className={"link year-link"} to={`/reports/2020/report`} isActive={year == '2020'}>
           2020
         </StyledLink>
-        <StyledLink className={"link year-link"} to={`/reports/2019/report`} active={year == '2019'}>
+        <StyledLink className={"link year-link"} to={`/reports/2019/report`} isActive={year == '2019'}>
           2019
         </StyledLink>
       </Flex>
       <Flex flexDirection={["column", "row"]} pr={[10, 50]}>
-        <StyledSubLink className={"link"} to={`/reports/${year}/report`} active={pathname.replace(`/reports/${year}`,"").includes('/report')}>
+        <StyledSubLink className={"link"} to={`/reports/${year}/report`} isActive={pathname.replace(`/reports/${year}`,"").includes('/report')}>
           {year} Impact
         </StyledSubLink>
-        {year != 2019 && <StyledSubLink className={"link"} to={`/reports/${year}/ceoletter`} active={pathname.includes('/ceoletter')}>
+        {year != 2019 && <StyledSubLink className={"link"} to={`/reports/${year}/ceoletter`} isActive={pathname.includes('/ceoletter')}>
           CEO Letter
         </StyledSubLink>}
-        <StyledSubLink className={"link"} to={`/reports/${year}/financial`} active={pathname.includes('/financial')}>
+        <StyledSubLink className={"link"} to={`/reports/${year}/financial`} isActive={pathname.includes('/financial')}>
           Financials
         </StyledSubLink>
-        <StyledSubLink className={"link"} to={`/reports/${year}/funders`} active={pathname.includes('/funders')}>
+        <StyledSubLink className={"link"} to={`/reports/${year}/funders`} isActive={pathname.includes('/funders')}>
           Funders
         </StyledSubLink>
-        <StyledSubLink className={"link"} to={`/reports/${year}/globalreach`} active={pathname.includes('/globalreach')}>
+        <StyledSubLink className={"link"} to={`/reports/${year}/globalreach`} isActive={pathname.includes('/globalreach')}>
           Global Reach
         </StyledSubLink>
       </Flex>
@@ -99,16 +100,16 @@ const ReportToggleContainer = styled.div`
 `
 
 const StyledSubLink = styled(Link)`
-   ${({active}) => active ? "color: black !important;" : "color: lightgrey !important;"};
+   ${({isActive}) => isActive ? "color: black !important;" : "color: lightgrey !important;"};
 `
 
 const StyledLink = styled(Link)`
-    background: ${({theme, active}) => active ? theme.colors.orange : 'none'};
+    background: ${({theme, isActive}) => isActive ? theme.colors.orange : 'none'};
     margin: 0px !important;
     padding: 10px;
-    font-size: 14px !important;
+    font-size: 17px !important;
 
-    ${({active}) => active && "color: white !important;"};
+    ${({isActive}) => isActive && "color: white !important;"};
 `
 
 export default Nav

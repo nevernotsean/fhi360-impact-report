@@ -76,7 +76,7 @@ const HeroLetter = ({ ...props }) => {
         <Box width={1} pl={[0, 60]} mt={50}>
           <p style={{ marginBottom: "5px", color: "gray" }}>
             <small>
-              Photo Credits: Jessica Scranton/FHI 360, Mbuto Machili/FHI 360
+              Photo Credits: Joshua Woodson/FHI 360
             </small>
           </p>
         </Box>
@@ -174,8 +174,11 @@ const Container = styled(Box)`
     font-size: 12px;
   }
 
-  p.bold {
+  p.uppercase {
     text-transform: uppercase;
+  }
+
+  p.bold {
     color: black;
     margin-bottom: 0;
     font-weight: 700;
