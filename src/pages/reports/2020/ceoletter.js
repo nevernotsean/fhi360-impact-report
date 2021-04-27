@@ -20,43 +20,48 @@ const CeoLetter = ({ location }) => (
   >
     <SEO title="Home" />
     <Nav></Nav>
-    <Masthead title={"(unaudited)"} headline={"2020<br/>CEO Letter"}>
-      <Flex mx={[0, -20]} flexWrap={"wrap"}>
-        <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
-          <Container>
-            <Box width={1} textAlign={["center", "left"]}>
-              <Image
-                width={[120, 240]}
-                src={PatrickAvatar}
-                alt={"Patrick Fine"}
-              />
-            </Box>
-            <Box
-              px={[0, 25]}
-              py={20}
-              sx={{ borderLeft: ["none", "1px solid grey"] }}
-            >
-              {introLetter.map((body, i) => (
-                <p key={i}>{body}</p>
-              ))}
-              <p>Warm regards,</p>
-            </Box>
+    <Masthead headline={"2020<br/>CEO Letter"}>
+      <Container mt={100}>
+        <Flex flexDirection={['column', 'row']}>
+          <Box width={[1, 1 / 4]}>
             <Image
-              width={275}
-              mr={"auto"}
-              mb={-10}
-              ml={-20}
-              mt={-35}
-              src={Sig}
-              alt={"patrick fine"}
-            ></Image>
-            <p className={"bold"}>Patrick C. Fine</p>
-            <p className={"light"}>Chief Executive Officer, FHI 360</p>
-            <hr />
-            <p className="light">Credit: Joshua Woodson/FHI 360</p>
-          </Container>
-        </Box>
-      </Flex>
+              width={[120, "100%"]}
+              maxWidth={200}
+              src={PatrickAvatar}
+              alt={"Patrick Fine"}
+            />
+          </Box>
+          <Box
+            width={[1, 3 / 4]}
+            px={[0, 25]}
+            py={20}
+          >
+            {introLetter.map((body, i) => (
+              <p key={i}>{body}</p>
+            ))}
+            <p>Warm regards,</p>
+            <Image
+          width={275}
+          mr={"auto"}
+          mb={-10}
+          ml={-20}
+          mt={-35}
+          src={Sig}
+          alt={"patrick fine"}
+        ></Image>
+        <p className={"bold mb0"}>Patrick C. Fine</p>
+        <p className={"light"}>Chief Executive Officer, FHI 360</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <hr />
+        <p className="light small">Credit: Joshua Woodson/FHI 360</p>
+          </Box>
+        </Flex>
+        
+      </Container>
     </Masthead>
 
   </Layout>
@@ -88,6 +93,15 @@ const Container = styled(Box)`
       line-height: 1;
     }
   }
+
+  .mb0 { margin-bottom: 0;}
+
+  p.small {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  hr { max-width: 100px;}
 `
 
 

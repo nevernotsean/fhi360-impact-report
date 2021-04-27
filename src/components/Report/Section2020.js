@@ -7,7 +7,7 @@ import BackToTop from "../BackToTop"
 import ReportPullquote from "../../components/Report/Pullquote"
 import StatBlock from './StatBlock';
 
-const Project = ({ link, project, funder, body, result,stat, ...props }) => (
+const Project = ({ index, link, project, funder, body, result,stat, ...props }) => (
   <>
     <Box mb={3}>
       <H3 className="labelhead" mb={2}>
@@ -31,7 +31,7 @@ const Project = ({ link, project, funder, body, result,stat, ...props }) => (
 
     {result &&
       <Box mt={3}>
-        <ReportPullquote title={"Results"} headline={result} ></ReportPullquote>
+        <ReportPullquote title={"Results"} headline={result} streakDelay={index * 200}></ReportPullquote>
       </Box>
     }
 
@@ -104,7 +104,7 @@ const Section = ({
           {isMultiProject &&
             (
               <Flex flexWrap={"wrap"} width={[1, 1 / 2]} flex="1 0 auto">
-                {projects.map((project, i) => <Box my={50} width={[1, 1 / 2]} pr={[0, 50]} key={i}><Project {...project} /></Box>)}
+                {projects.map((project, i) => <Box my={50} width={[1, 1 / 2]} pr={[0, 50]} key={i}><Project {...project} index={i}/></Box>)}
               </Flex>
             )}
 

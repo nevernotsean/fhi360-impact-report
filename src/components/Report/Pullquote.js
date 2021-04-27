@@ -3,17 +3,26 @@ import { Box } from "rebass/styled-components"
 import styled from "styled-components"
 import { Lead, H2 } from "../../elements/Type"
 import Streak from "../../assets/svg/streak.svg"
+import { useInView } from 'react-intersection-observer';
 
-const ReportPullquote = ({ title, headline, ...props }) => {
+
+const ReportPullquote = ({ title, headline, streakDelay = 0, ...props }) => {
+  const [parentRef, inView] = useInView({
+    rootMargin: "20% 0px -20% 0px",
+    threshold: 1,
+    triggerOnce: true,
+  })
+
   return (
-    <Container {...props} width={1}>
+    <Container {...props} width={1} inView={inView} streakDelay={streakDelay}>
+      <div ref={parentRef}></div>
       <Lead dangerouslySetInnerHTML={{ __html: title }} mb={30}></Lead>
       <H2
         dangerouslySetInnerHTML={{ __html: headline }}
         fontSize={[24, 48]}
         className={"quote"}
       ></H2>
-      <Streak width={250}></Streak>
+      <Streak width={250} className={"streak"}></Streak>
     </Container>
   )
 }
@@ -39,6 +48,13 @@ const Container = styled(Box)`
   .break {
     margin: 15px 0;
     display: block;
+  }
+
+  .streak {
+    transform-origin: 10% center;
+    transition: transform 150ms linear ${({streakDelay}) => streakDelay + 300}ms;
+    
+    ${({inView}) => !inView && `transform: scaleX(0);`}
   }
 `
 

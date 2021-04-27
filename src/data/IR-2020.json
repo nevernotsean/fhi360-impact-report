@@ -1,7 +1,7 @@
 [
   {
     "id": "i",
-    "label": "Civil Society",
+    "label": "Communities",
     "title": "Civil Society and Peacebuilding",
     "headline": "Showing up for communities",
     "projects": [
@@ -21,9 +21,9 @@
   },
   {
     "id": "ii",
-    "label": "U.S. Education",
+    "label": "U.s. Education",
     "title": "U.S. Education",
-    "headline": "Supporting U.S. Education programs",
+    "headline": "Supporting U.S. education programs",
     "projects": [
       {
         "project": "Supporting Instructional Leadership for Remote Learning",
@@ -44,7 +44,7 @@
   },
   {
     "id": "iii",
-    "label": "Economic Development",
+    "label": "E-commerce",
     "title": "Economic Development",
     "headline": "Boosting livelihoods through <span style=\"white-space: nowrap;\">e-commerce</span>",
     "projects": [
@@ -63,7 +63,7 @@
   },
   {
     "id": "iv",
-    "label": "Research",
+    "label": "Covid-19 Research",
     "title": "Research",
     "headline": "Taking a lead on <span style=\"white-space: nowrap;\">COVID-19</span> research",
     "projects": [
@@ -78,7 +78,7 @@
   },
   {
     "id": "v",
-    "label": "Research",
+    "label": "Vaccine Attitudes",
     "title": "Research",
     "headline": "Uncovering attitudes toward a <span style=\"white-space: nowrap;\">COVID-19</span> vaccine",
     "projects": [
@@ -96,7 +96,7 @@
   },
   {
     "id": "vi",
-    "label": "Global Education",
+    "label": "Education Gains",
     "title": "Global Education",
     "headline": "Protecting global education gains",
     "projects": [
@@ -139,7 +139,7 @@
         "result": "Free, confidential HIV and <span style=\"white-space: nowrap;\">COVID-19</span> hotline"
       },
       {
-        "project": "Online Evidence Mapping",
+        "project": "Interactive Evidence Mapping",
         "funder": "U.K. Foreign, Commonwealth & Development Office",
         "body": "<a href=\"https://www.konunginternational.com/\" target=\"_blank\" rel=\"noreferrer\"><strong>Konung International</strong></a>, a subsidiary of FHI 360, built a <a href=\"https://mena-evidence-map.com/\" target=\"_blank\" rel=\"noreferrer\"><strong>tool</strong></a> that provides a user-friendly, customizable visual interface for evidence mapping in the Middle East and North Africa region. The app enables organizations to look at a country’s interventions, such as education or peacebuilding, and outcomes, such as community participation or capacity, to see the volume of studies on that intersection and use the evidence base to inform future research and programming. The tool can track change over time and show the impact of short- and long-term interventions.",
         "result": "Using the evidence base to inform future research and programming"
@@ -149,7 +149,7 @@
   },
   {
     "id": "viii",
-    "label": "Global Health",
+    "label": "Covid-19 Testing",
     "title": "Global Health",
     "headline": "Accelerating <span style=\"white-space: nowrap;\">COVID-19</span> testing capacity",
     "projects": [
@@ -187,7 +187,7 @@
   },
   {
     "id": "x",
-    "label": "Global Health",
+    "label": "Health And Nutrition",
     "title": "Global Health",
     "headline": "Meeting the needs of women and families",
     "projects": [
@@ -212,9 +212,9 @@
   },
   {
     "id": "xi",
-    "label": "Global Health",
+    "label": "Hiv Control",
     "title": "Global Health",
-    "headline": "Transforming programs to preserve epidemic contro",
+    "headline": "Transforming programs to preserve epidemic control",
     "projects": [
       {
         "project": "Meeting Targets and Maintaining Epidemic Control",
@@ -223,6 +223,6 @@
         "result": "Provides quick pandemic response"
       }
     ],
-    "body": "The Meeting Targets and Maintaining Epidemic Control (EpiC) project — an FHI 360 project that implements HIV programs in 35 countries — was the catalyst and platform for several <span style=\"white-space: nowrap;\">COVID-19</span>-related programmatic modifications, which were then adopted by FHI 360’s other HIV programs, providing quick pandemic response. Staff developed a toolkit that helped programs continue to meet their targets safely and expanded differentiated service delivery models to bring HIV treatment, pre-exposure prophylaxis and testing out of health facilities and into communities. An expansion of <a href=\"https://www.fhi360.org/resource/going-online-accelerate-impact-hiv-programs\" target=\"_blank\" rel=\"noreferrer\"><strong>Going Online</strong></a> activities allowed the team to shift to online interventions, supporting program participants through virtual case management. The team’s multicountry Online Reservation and Case Management app enabled 10 new countries to transition HIV services online as lockdowns began."
+    "body": "The Meeting Targets and Maintaining Epidemic Control (EpiC) project — an FHI 360-led project that implements HIV programs in 35 countries — was the catalyst and platform for several <span style=\"white-space: nowrap;\">COVID-19</span>-related programmatic modifications, which were then adopted by FHI 360’s other HIV programs, providing quick pandemic response. Staff developed a toolkit that helped programs continue to meet their targets safely and expanded differentiated service delivery models to bring HIV treatment, pre-exposure prophylaxis and testing out of health facilities and into communities. An expansion of <a href=\"https://www.fhi360.org/resource/going-online-accelerate-impact-hiv-programs\" target=\"_blank\" rel=\"noreferrer\"><strong>Going Online</strong></a> activities allowed the team to shift to online interventions, supporting program participants through virtual case management. The team’s multicountry Online Reservation and Case Management app enabled 10 new countries to transition HIV services online as lockdowns began."
   }
 ]

@@ -17,15 +17,15 @@ const Financial = ({ location }) => (
   <Layout
     bg={"#f1f1f1"}
     hideMenuButton={true}
-    pageTitle={"2019 Impact Report"}
+    pageTitle={"2020 Impact Report"}
     location={location}
     altLogo
   >
     <SEO title="Home" />
     <Nav></Nav>
-    <Masthead title={"(unaudited)"} headline={"2019<br/>Financial Summary"}>
+    <Masthead title={"(unaudited)"} headline={"2020<br/>Financial Summary"}>
       <Box mb={50}>
-        <p>Twelve months ending September 30, 2019.</p>
+        <p>(Unaudited preliminary amounts as of March 10, 2021.)<br/>Twelve months ending September 30, 2020.</p>
       </Box>
       <Flex mx={[0, -20]} flexWrap={"wrap"}>
         <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
@@ -39,31 +39,31 @@ const Financial = ({ location }) => (
             <tbody>
               <tr>
                 <td>US Government</td>
-                <td>$641,948,998</td>
+                <td>$585,121,250</td>
               </tr>
               <tr>
                 <td>Foundations/Individuals</td>
-                <td>$65,686,915</td>
+                <td>$50,305,801</td>
               </tr>
               <tr>
                 <td>Corporations</td>
-                <td>$38,485,401</td>
+                <td>$15,171,818</td>
               </tr>
               <tr>
                 <td>Multilateral Agencies</td>
-                <td>$28,351,806</td>
+                <td>$24,225,633</td>
               </tr>
               <tr>
                 <td>Other</td>
-                <td>$10,965,456</td>
+                <td>$8,940,378</td>
               </tr>
               <tr className="no-stroke">
                 <td>Government (non-US)</td>
-                <td>$4,811,773</td>
+                <td>$6,708,025</td>
               </tr>
               <tr className="white-bg no-stroke">
                 <td>Total</td>
-                <td>$790,250,349</td>
+                <td>$690,472,905</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -80,19 +80,19 @@ const Financial = ({ location }) => (
             <tbody>
               <tr>
                 <td>Operational Expenses</td>
-                <td>$665,443,539</td>
+                <td>$572,791,192</td>
               </tr>
               <tr>
                 <td className={"nowrap"}>General and Administrative</td>
-                <td>$104,518,891</td>
+                <td>$105,959,799</td>
               </tr>
               <tr className="no-stroke">
                 <td>Business Development</td>
-                <td>$16,613,336</td>
+                <td>$15,297,053</td>
               </tr>
               <tr className="white-bg no-stroke">
                 <td>Total</td>
-                <td>$786,575,766</td>
+                <td>$694,048,044</td>
               </tr>
             </tbody>
           </StyledTable>
@@ -114,34 +114,34 @@ const Financial = ({ location }) => (
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow color={"teal"} stat={"64.10%"}>
+            <LegendRow color={"teal"} stat={"66.75%"}>
               USAID
             </LegendRow>
-            <LegendRow color={"orange"} stat={"8.31%"}>
-              Foundations
-            </LegendRow>
-            <LegendRow color={"pink"} stat={"7.19%"}>
+            <LegendRow color={"orange"} stat={"8.10%"}>
               NIH/DHHS
             </LegendRow>
-            <LegendRow color={"grey"} stat={"4.87%"}>
-              Corporations
+            <LegendRow color={"pink"} stat={"7.29%"}>
+              Foundations
             </LegendRow>
-            <LegendRow color={"purple"} stat={"4.80%"}>
+            <LegendRow color={"lightgrey"} stat={"4.74%"}>
               US State Department
             </LegendRow>
-            <LegendRow color={"lightgrey"} stat={"3.59%"}>
+            <LegendRow color={"purple"} stat={"3.51%"}>
               Multilaterals
             </LegendRow>
-            <LegendRow color={"lightpurple"} stat={"2.93%"}>
+            <LegendRow color={"lightpurple"} stat={"3.36%"}>
               Other US Government
             </LegendRow>
-            <LegendRow color={"lightblue"} stat={"2.22%"}>
+            <LegendRow color={"grey"} stat={"2.20%"}>
+              Corporations
+            </LegendRow>
+            <LegendRow color={"lightblue"} stat={"1.79%"}>
               CDC
             </LegendRow>
-            <LegendRow color={"slate"} stat={"1.38%"}>
+            <LegendRow color={"slate"} stat={"1.29%"}>
               Other
             </LegendRow>
-            <LegendRow color={"bluewhite"} stat={"0.61%"}>
+            <LegendRow color={"bluewhite"} stat={"0.97%"}>
               Government (non-US)
             </LegendRow>
           </tbody>
@@ -162,13 +162,13 @@ const Financial = ({ location }) => (
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow color={"orange"} stat={"84.50%"}>
+            <LegendRow color={"orange"} stat={"82.54%"}>
               Operational Expenses
             </LegendRow>
-            <LegendRow color={"teal"} stat={"13.34%"}>
+            <LegendRow color={"teal"} stat={"15.26%"}>
               General and Administrative
             </LegendRow>
-            <LegendRow color={"slate"} stat={"2.16%"}>
+            <LegendRow color={"slate"} stat={"2.20%"}>
               Business Development
             </LegendRow>
           </tbody>
@@ -189,38 +189,38 @@ const Financial = ({ location }) => (
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow color={"teal"} stat="35.59%">
-              HIV/AIDS, TB and Malaria Programs
+            <LegendRow color={"teal"} stat="36.69%">
+                HIV/AIDS, TB and Malaria Programs
             </LegendRow>
-            <LegendRow color={"orange"} stat="12.45%">
-              Research
+            <LegendRow color={"orange"} stat="11.12%">
+                Research
             </LegendRow>
-            <LegendRow color={"pink"} stat="9.49%">
-              Education
+            <LegendRow color={"pink"} stat="8.92%">
+                Other Health
             </LegendRow>
-            <LegendRow color={"grey"} stat="7.55%">
-              Nutrition and Food Security
+            <LegendRow color={"grey"} stat="8.43%">
+                Civil Society and Peacebuilding
             </LegendRow>
-            <LegendRow color={"purple"} stat="5.94%">
-              Other Health
+            <LegendRow color={"purple"} stat="6.96%">
+                Education
             </LegendRow>
-            <LegendRow color={"lightgrey"} stat="5.56%">
-              Civil Society and Peacebuilding
+            <LegendRow color={"lightgrey"} stat="6.76%">
+                Nutrition and Food Security
             </LegendRow>
-            <LegendRow color={"lightpurple"} stat="5.14%">
-              Workforce, Learning and Economic Participation
+            <LegendRow color={"lightpurple"} stat="5.39%">
+                Family Planning and Maternal Child Health
             </LegendRow>
-            <LegendRow color={"lightblue"} stat="4.95%">
-              Social Marketing and Communications
+            <LegendRow color={"lightblue"} stat="4.98%">
+                Other
             </LegendRow>
-            <LegendRow color={"#13282f"} stat="4.70%">
-              Family Planning and Maternal Child Health
+            <LegendRow color={"slate"} stat="4.39%">
+                International Exchanges
             </LegendRow>
-            <LegendRow color={"slate"} stat="4.71%">
-              International Exchanges
+            <LegendRow color={"#13282f"} stat="3.99%">
+                Social Marketing and Communications
             </LegendRow>
-            <LegendRow color={"bluewhite"} stat="3.92%">
-              Other
+            <LegendRow color={"bluewhite"} stat="2.37%">
+                Workforce, Learning and Economic Participation
             </LegendRow>
           </tbody>
         </Legend>
@@ -246,25 +246,25 @@ const Financial = ({ location }) => (
       <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
         <Legend>
           <tbody>
-            <LegendRow color={"teal"} stat="36.10%">
+            <LegendRow color={"teal"} stat="33.21%">
               Global
             </LegendRow>
-            <LegendRow color={"orange"} stat="23.37%">
+            <LegendRow color={"orange"} stat="23.61%">
               East/Southern Africa
             </LegendRow>
-            <LegendRow color={"pink"} stat="20.79%">
+            <LegendRow color={"pink"} stat="20.77%">
               West/Central Africa and Middle East/North Africa
             </LegendRow>
-            <LegendRow color={"grey"} stat="6.24%">
+            <LegendRow color={"grey"} stat="9.45%">
               Asia/Pacific
             </LegendRow>
-            <LegendRow color={"purple"} stat="5.76%">
+            <LegendRow color={"purple"} stat="4.81%">
               United States
             </LegendRow>
-            <LegendRow color={"lightgrey"} stat="4.99%">
+            <LegendRow color={"lightgrey"} stat="4.31%">
               Europe/Central Asia
             </LegendRow>
-            <LegendRow color={"lightpurple"} stat="2.75%">
+            <LegendRow color={"lightpurple"} stat="3.84%">
               Latin America/Caribbean
             </LegendRow>
           </tbody>

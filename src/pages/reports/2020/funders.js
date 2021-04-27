@@ -12,131 +12,142 @@ const Funders = ({ location }) => (
   <Layout
     bg={"#f1f1f1"}
     hideMenuButton={true}
-    pageTitle={"2019 Impact Report"}
+    pageTitle={"2020 Impact Report"}
     location={location}
     altLogo
   >
     <SEO title="Home" />
     <Nav></Nav>
     <Container>
-      <Masthead title={"Thank you"} headline={"2019<br/> Funders"}>
+      <Masthead title={"Thank you"} headline={"2020<br/> Funders"}>
         <Box width={[1, 480]}>
           <p>
-            FHI 360’s work would not be possible without the generous support of
-            our funders and partners. We appreciate their crucial contribution
-            and value their continued trust.
+            FHI 360’s work would not be possible without the generous support of our funders and partners. We appreciate their crucial contribution and value their continued trust.
           </p>
         </Box>
       </Masthead>
       <Section title={"Private Sector"} bg={"#fff"}>
-        <P>Essity</P>
+        <P>International Initiative for Impact Evaluation, Inc. (3ie)</P>
+        <P>AWR Lloyd</P>
+        <P>Converse</P>
         <P>GlaxoSmithKline plc</P>
+        <P>Insight Policy Research</P>
         <P>Johnson & Johnson</P>
         <P>Mona Lisa N.V.</P>
-        <P>Pfizer, Inc.</P>
-        <P>Procter & Gamble</P>
-        <P>Qualcomm® Wireless Reach™</P>
-        <P>Sanaria, Inc.</P>
+        <P>Qualcomm®Wireless Reach™</P>
+        <P>Reckitt Benckiser Healthcare (UK) Ltd. (RB)</P>
         <P>Shell Nigeria Exploration and Production Company, Ltd.</P>
-        <P>SK Bioscience Co., Ltd.</P>
         <P>Unilever</P>
         <P>ViiV Healthcare UK (No.3) Ltd.</P>
-        <P>WCG</P>
+        <P>Whānau Tahi</P>
+        <P>Qualcomm®Wireless Reach™</P>
+        <P>Reckitt Benckiser Healthcare (UK) Ltd. (RB)</P>
+        <P>Shell Nigeria Exploration and Production Company, Ltd.</P>
+        <P>Unilever</P>
+        <P>ViiV Healthcare UK (No.3) Ltd.</P>
+        <P>Whānau Tahi</P>
       </Section>
       <Section title={"Foundations"}>
         <P>Bill & Melinda Gates Foundation</P>
         <P>CDC Foundation</P>
-        <P>Children’s Investment Fund Foundation</P>
+        <P>Children's Investment Fund Foundation</P>
+        <P>The David and Lucile Packard Foundation</P>
+        <P>Eleanor Crook Foundation</P>
         <P>FHI Foundation</P>
+        <P>GE Foundation</P>
         <P>GHR Foundation</P>
         <P>Gordon and Betty Moore Foundation</P>
         <P>Henry E. Niles Foundation</P>
         <P>The JPB Foundation</P>
+        <P>LEGO Foundation</P>
         <P>Margaret A. Cargill Philanthropies</P>
-        <P>Medicines for Malaria Venture</P>
         <P>National Governors Association Center for Best Practices</P>
-        <P>The Pfizer Foundation</P>
+        <P>Novartis Foundation</P>
+        <P>Philanthropy U, Inc.</P>
+        <P>The Pfizer Foundation, Inc.</P>
         <P>Robert Wood Johnson Foundation</P>
-        <P>The Rockefeller Foundation</P>
-        <P>Wallace Genetic Foundation, Inc.</P>
+        <P>Tanoto Foundation</P>
+        <P>The Wallace Foundation</P>
+        <P>Wallace Genetic Foundation</P>
       </Section>
       <Section title={"NONPROFIT ORGANIZATIONS"} bg={"#fff"}>
-        <P>American Cleaning Institute</P>
-        <P>Avenir Health</P>
         <P>BRAC</P>
-        <P>Business for Social Responsibility</P>
-        <P>CONRAD</P>
-        <P>The END Fund</P>
+        <P>Clinton Health Access Initiative</P>
+        <P>Desire Line</P>
+        <P>DKT WomanCare (DKT International)</P>
+        <P>Dubai Cares</P>
         <P>Girl Scouts of Greater New York</P>
-        <P>PATH</P>
-        <P>PATH Vaccine Solutions</P>
-        <P>Philanthropy U</P>
-        <P>WaterAid</P>
+        <P>Infectious Disease Research Institute (IDRI)</P>
+        <P>InterAction</P>
+        <P>MCI</P>
+        <P>PSI</P>
+        <P>The END Fund</P>
       </Section>
       <Section title={"Educational Institutions"}>
         <P>Cornell Cooperative Extension of Oneida County</P>
-        <P>Emory University</P>
-        <P>Hempstead Union Free School District</P>
+        <P>Johns Hopkins University</P>
         <P>Liverpool School of Tropical Medicine</P>
+        <P>Nagasaki University</P>
+        <P>Shanghai Institute of Planned Parenthood Research (SIPPR)</P>
+        <P>Tufts University</P>
+        <P>University of Georgia</P>
+        <P>University of Massachusetts Donahue Institute</P>
       </Section>
-      <Section title={"MULTILATERAL ORGANIZATIONS"} bg={"#fff"}>
+      <Section title={"MULTILATERAL ORGANIZATIONS"} bg={"#fff"} columnCount={1}>
         <P>The Global Fund to Fight AIDS, Tuberculosis and Malaria</P>
-        <P>UNAIDS</P>
+        <P>UNFPA</P>
         <P>UNHCR</P>
         <P>UNICEF</P>
-        <P>UNOPS/Water Supply & Sanitation Collaborative Council</P>
-        <P>The World Bank/IFC</P>
+        <P>World Health Organization </P>
+        <P>World Bank/IDA</P>
       </Section>
-      <Section title={"U.S. FEDERAL AND LOCAL GOVERNMENT AGENCIES"}>
-        <P>AmeriCorps NCCC</P>
+      <Section title={"U.S. FEDERAL AND LOCAL GOVERNMENT AGENCIES"} columnCount={1}>
+        <P>Consumer Financial Protection Bureau</P>
         <P>Millennium Challenge Corporation</P>
-        <P>National Science Foundation</P>
         <P>New York City Department of Education</P>
         <P>Open World Leadership Center</P>
         <P>U.S. Agency for International Development</P>
         <P>U.S. Department of Agriculture</P>
         <P>U.S. Department of Defense</P>
-        <P className="indent1">
-          U.S. Army Medical Research and Material Command
-        </P>
-        <P className="indent1">U.S. Navy</P>
+        <P className="indent1">Department of the Navy</P>
         <P>U.S. Department of Education</P>
         <P>U.S. Department of Health and Human Services</P>
         <P className="indent1">Centers for Disease Control and Prevention</P>
+        <P className="indent2">CDC/PEPFAR</P>
         <P className="indent1">Health Resources and Services Administration</P>
         <P className="indent1">National Institutes of Health</P>
-        <P className="indent2">
-          National Institute of Allergy and Infectious Diseases
-        </P>
-        <P className="indent1">
-          Substance Abuse and Mental Health Services Administration
-        </P>
+        <P className="indent2">National Institute of Allergy and Infectious Diseases</P>
+        <P className="indent2">National Institute of Mental Health</P>
+        <P className="indent2">National Institute for Health Development</P>
+        <P className="indent1">Substance Abuse and Mental Health Services Administration</P>
+        <P>U.S. Department of the Interior</P>
         <P>U.S. Department of Labor</P>
-        <P>U.S. Department of State</P>
+        <P>U.S. Department of States</P>
       </Section>
       <Section
         title={"PARTNER COUNTRY GOVERNMENTS AND BILATERAL AGENCIES"}
         bg={"#fff"}
       >
         <P>Department of Foreign Affairs and Trade (Australia)</P>
-        <P>Department for International Development (U.K.)</P>
-        <P>Foreign and Commonwealth Office (U.K.)</P>
-        <P>Government of Equatorial Guinea</P>
-        <P>Government of the Netherlands</P>
+        <P>Department of Health & Social Care (U.K.)</P>
+        <P>Foreign, Commonwealth & Development Office (U.K.)</P>
+        <P>Government of Madagascar</P>
+        <P>Government of the Netherlands, Ministry of Foreign Trade and Development Cooperation</P>
         <P>International Development Research Centre (Canada)</P>
-        <P>National Cancer Centre Singapore</P>
-        <P>Secretary of State for Health and Social Care (U.K.)</P>
+        <P>Irish Aid, via the Embassy of Ireland in Vietnam</P>
+        <P>National Department of Health (Papua New Guinea)</P>
+        <P>Newark Trust for Education</P>
       </Section>
       <Box px={20}>
         <p>
-          <small>Operating funders for calendar year 2019</small>
+          <small>Operating funders for calendar year 2020</small>
         </p>
       </Box>
     </Container>
   </Layout>
 )
 
-const Section = ({ title, children, bg, ...props }) => (
+const Section = ({ title, children, bg, columnCount, ...props }) => (
   <Box backgroundColor={bg}>
     <Flex
       flexDirection={"column"}
@@ -163,13 +174,13 @@ const Section = ({ title, children, bg, ...props }) => (
           {title}
         </H2>
       </Box>
-      <Columns>{children}</Columns>
+      <Columns columnCount={columnCount}>{children}</Columns>
     </Flex>
   </Box>
 )
 
-const Columns = props => (
-  <Box {...props} sx={{ columnCount: [1, 2], marginX: [0, -20] }}></Box>
+const Columns = ({columnCount, ...props}) => (
+  <Box {...props} sx={{ columnCount: columnCount || [1, 2], marginX: [0, -20] }}></Box>
 )
 
 const P = styled(Text)`
