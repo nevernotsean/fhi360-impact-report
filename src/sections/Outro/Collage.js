@@ -18,6 +18,8 @@ import imageH from "../../images/collage-h.png"
 
 import collageMobile from "../../images/collage-mobile.jpg"
 
+import Endcard from './EndCard';
+
 import ThisIsFHI from "../../assets/svg/this-is-fhi.svg"
 
 import { Flex, Box } from "rebass/styled-components"
@@ -265,110 +267,11 @@ const Outro = () => {
             <Image src={collageMobile} px={20}></Image>
           </div>
         </Media>
-        <Endcard></Endcard>
+        <Endcard />
       </Container>
     </>
   )
 }
-
-const Endcard = ({ triggered, ...props }) => {
-  const [ref, inView] = useInView({
-    // rootMargin: "90% 0px 10% 0px",
-    threshold: 0,
-  })
-
-  return (
-    <StyledEndcard
-      id="endcard"
-      height={["50vh", "calc(100vh - 150px)"]}
-      justifyContent={"center"}
-      alignItems={"center"}
-      triggered={inView || triggered}
-      ref={ref}
-    >
-      <Box width={1} maxWidth={["unset", 600]} className="relative">
-        <Box px={[20, 0]} id="this-is">
-          <HandDrawnSVG
-            svg={ThisIsFHI}
-            delay2={1.5}
-            duration={1.5}
-            duration2={1.5}
-            useInviewTrigger={false}
-            animated={inView || triggered}
-            ease={"linear"}
-          ></HandDrawnSVG>
-        </Box>
-        <Box id="impact-link">
-          <Link to={"/reports/2020/report"}>View our 2019 Impact Report →</Link>
-        </Box>
-        <a href={"https://www.fhi360.org/"} id="logo">
-          <FHILogo></FHILogo>
-        </a>
-      </Box>
-    </StyledEndcard>
-  )
-}
-
-const isTriggered = ({ triggered }) => (triggered ? 1 : 0)
-const isTriggeredOneMinus = ({ triggered }) => (triggered ? 0 : 1)
-
-const StyledEndcard = styled(Flex)`
-  .relative {
-    position: relative;
-  }
-
-  #impact-link {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100vw;
-    transform: translate(-50%, -50%);
-
-    opacity: ${isTriggered};
-
-    text-align: center;
-
-    a {
-      color: black;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-family: ${({ theme }) => theme.fonts.sans};
-      text-decoration: none;
-
-      font-size: 28px;
-
-      @media only screen and (max-width: ${({ theme }) =>
-          theme.breakpoints[0]}) {
-        font-size: 18px;
-      }
-    }
-  }
-
-  #this-is,
-  #impact-link {
-    transition: opacity 1s linear 4s;
-  }
-
-  #this-is {
-    opacity: ${isTriggeredOneMinus};
-  }
-
-  #logo {
-    position: absolute;
-    text-align: center;
-    width: 180px;
-    /* padding: 20px; */
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 1s linear 6s;
-    opacity: ${isTriggered};
-
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-      width: 100px;
-    }
-  }
-`
 
 const Container = styled(Box)`
   position: relative;
@@ -493,11 +396,7 @@ const Container = styled(Box)`
     height: 100%;
     position: absolute;
     transform-origin: 44.9% 50%;
-    @media only screen and (max-width: 580px) {
-      transform: scale(1) !important;
-    }import Media from './../../components/Media';
-
-
+    @media only screen and (max-width: 580px) { transform: scale(1) !important; }
   }
   .s-instagram-layer:nth-child(1) .s-instagram-block {
     top: 5vw;
