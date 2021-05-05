@@ -25,7 +25,7 @@ const Financial = ({ location }) => (
     <Nav></Nav>
     <Masthead title={"(unaudited)"} headline={"2020<br/>Financial Summary"}>
       <Box mb={50}>
-        <p>(Unaudited preliminary amounts as of March 10, 2021.)<br/>Twelve months ending September 30, 2020.</p>
+        <p>(Unaudited preliminary amounts as of March 10, 2021)<br/>Twelve months ending September 30, 2020</p>
       </Box>
       <Flex mx={[0, -20]} flexWrap={"wrap"}>
         <Box width={[1, 1 / 2]} px={[0, 20]} flex={"1 0 auto"}>
@@ -46,12 +46,12 @@ const Financial = ({ location }) => (
                 <td>$50,305,801</td>
               </tr>
               <tr>
-                <td>Corporations</td>
-                <td>$15,171,818</td>
-              </tr>
-              <tr>
                 <td>Multilateral Agencies</td>
                 <td>$24,225,633</td>
+              </tr>
+              <tr>
+                <td>Corporations</td>
+                <td>$15,171,818</td>
               </tr>
               <tr>
                 <td>Other</td>

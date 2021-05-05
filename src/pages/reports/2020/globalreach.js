@@ -32,13 +32,13 @@ const GlobalReach = ({ location }) => {
           </p>
         </Box>
       </Masthead>
-      <Media greaterThanOrEqual={"md"}>
+      {/* <Media greaterThanOrEqual={"md"}> */}
         <Box>
           <Image src={map} alt={"map of world"}></Image>
           <Box maxWidth={1200} mx={"auto"} sx={{ position: "relative" }}>
             <Box
               sx={{
-                position: "absolute",
+                position: ["static", "absolute"],
                 width: ["100%", 500],
                 right: 0,
                 bottom: 0,
@@ -46,24 +46,24 @@ const GlobalReach = ({ location }) => {
                 padding: "50px 20px",
               }}
             >
-              <p style={{ textAlign: "right", maxWidth: "400px" }}>
+              <p style={{ textAlign: "right", maxWidth: "435px" }}>
                 <small>
-                  The boundaries and names on this page do not imply official endorsement or acceptance by FHI 360. Countries where FHI 360 is registered but does not have an office or activity are not listed.
+                  The boundaries and names on this page do not imply official endorsement or acceptance by <span style={{whiteSpace: 'nowrap'}}>FHI 360</span>. Countries where <span style={{whiteSpace: 'nowrap'}}>FHI 360</span> is registered but does not have an office or activity are not listed.
                 </small>
               </p>
             </Box>
           </Box>
         </Box>
-      </Media>
-      <Section title={"Main Offices"} px={[0, 20]} mb={15}>
+      {/* </Media> */}
+      <Section title={"Main Offices"} px={20} mb={15}>
         <Box>
           <P>
             <strong>U.S. Offices</strong>
           </P>
           <P>
-            Durham, NC USA (Headquarters)
+            Durham, NC (Headquarters)
             <br />
-            Washington, DC USA
+            Washington, DC
           </P>
         </Box>
         <Box>
@@ -86,7 +86,7 @@ const GlobalReach = ({ location }) => {
 
       <Section
         title={"Where We Work (Country offices in parentheses)"}
-        px={[0, 20]}
+        px={20}
       >
         <P><strong>Afghanistan</strong> (Kabul)</P>
         <P><strong>Albania</strong></P>
@@ -232,7 +232,7 @@ const P = styled(Text)`
 `
 
 P.defaultProps = {
-  px: 20,
+  px: [0, 20],
 }
 
 export default GlobalReach

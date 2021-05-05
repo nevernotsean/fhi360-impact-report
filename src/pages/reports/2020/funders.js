@@ -27,19 +27,13 @@ const Funders = ({ location }) => (
         </Box>
       </Masthead>
       <Section title={"Private Sector"} bg={"#fff"}>
-        <P>International Initiative for Impact Evaluation, Inc. (3ie)</P>
         <P>AWR Lloyd</P>
         <P>Converse</P>
         <P>GlaxoSmithKline plc</P>
         <P>Insight Policy Research</P>
+        <P>International Initiative for Impact Evaluation, Inc. (3ie)</P>
         <P>Johnson & Johnson</P>
         <P>Mona Lisa N.V.</P>
-        <P>Qualcomm®Wireless Reach™</P>
-        <P>Reckitt Benckiser Healthcare (UK) Ltd. (RB)</P>
-        <P>Shell Nigeria Exploration and Production Company, Ltd.</P>
-        <P>Unilever</P>
-        <P>ViiV Healthcare UK (No.3) Ltd.</P>
-        <P>Whānau Tahi</P>
         <P>Qualcomm®Wireless Reach™</P>
         <P>Reckitt Benckiser Healthcare (UK) Ltd. (RB)</P>
         <P>Shell Nigeria Exploration and Production Company, Ltd.</P>
@@ -101,28 +95,39 @@ const Funders = ({ location }) => (
         <P>World Health Organization </P>
         <P>World Bank/IDA</P>
       </Section>
-      <Section title={"U.S. FEDERAL AND LOCAL GOVERNMENT AGENCIES"} columnCount={1}>
-        <P>Consumer Financial Protection Bureau</P>
-        <P>Millennium Challenge Corporation</P>
-        <P>New York City Department of Education</P>
-        <P>Open World Leadership Center</P>
-        <P>U.S. Agency for International Development</P>
-        <P>U.S. Department of Agriculture</P>
-        <P>U.S. Department of Defense</P>
-        <P className="indent1">Department of the Navy</P>
-        <P>U.S. Department of Education</P>
-        <P>U.S. Department of Health and Human Services</P>
-        <P className="indent1">Centers for Disease Control and Prevention</P>
-        <P className="indent2">CDC/PEPFAR</P>
-        <P className="indent1">Health Resources and Services Administration</P>
-        <P className="indent1">National Institutes of Health</P>
-        <P className="indent2">National Institute of Allergy and Infectious Diseases</P>
-        <P className="indent2">National Institute of Mental Health</P>
-        <P className="indent2">National Institute for Health Development</P>
-        <P className="indent1">Substance Abuse and Mental Health Services Administration</P>
-        <P>U.S. Department of the Interior</P>
-        <P>U.S. Department of Labor</P>
-        <P>U.S. Department of States</P>
+      <Section title={"U.S. FEDERAL AND LOCAL GOVERNMENT AGENCIES"} columnCount={0}>
+        <Box width={[1, 1/2]}>
+          <P>Consumer Financial Protection Bureau</P>
+          <P>Millennium Challenge Corporation</P>
+          <P>New York City Department of Education</P>
+          <P>Open World Leadership Center</P>
+          <P>U.S. Agency for International Development</P>
+          <P>U.S. Department of Agriculture</P>
+
+          <div className="column-group">
+            <P>U.S. Department of Defense</P>
+            <P className="indent1">Department of the Navy</P>
+          </div>
+
+          <P>U.S. Department of Education</P>
+        </Box>
+        <Box width={[1, 1/2]}>
+          <div className="column-group">
+            <P>U.S. Department of Health and Human Services</P>
+            <P className="indent1">Centers for Disease Control and Prevention</P>
+            <P className="indent2">CDC/PEPFAR</P>
+            <P className="indent1">Health Resources and Services Administration</P>
+            <P className="indent1">National Institutes of Health</P>
+            <P className="indent2">National Institute of Allergy and Infectious Diseases</P>
+            <P className="indent2">National Institute of Mental Health</P>
+            <P className="indent2">National Institute for Health Development</P>
+            <P className="indent1">Substance Abuse and Mental Health Services Administration</P>
+          </div>
+
+          <P>U.S. Department of the Interior</P>
+          <P>U.S. Department of Labor</P>
+          <P>U.S. Department of State</P>
+        </Box>
       </Section>
       <Section
         title={"PARTNER COUNTRY GOVERNMENTS AND BILATERAL AGENCIES"}
@@ -137,6 +142,7 @@ const Funders = ({ location }) => (
         <P>Irish Aid, via the Embassy of Ireland in Vietnam</P>
         <P>National Department of Health (Papua New Guinea)</P>
         <P>Newark Trust for Education</P>
+
       </Section>
       <Box px={20}>
         <p>
@@ -147,7 +153,7 @@ const Funders = ({ location }) => (
   </Layout>
 )
 
-const Section = ({ title, children, bg, columnCount, ...props }) => (
+const Section = ({ title, children, bg, columnCount, breakInside, ...props }) => (
   <Box backgroundColor={bg}>
     <Flex
       flexDirection={"column"}
@@ -174,13 +180,22 @@ const Section = ({ title, children, bg, columnCount, ...props }) => (
           {title}
         </H2>
       </Box>
-      <Columns columnCount={columnCount}>{children}</Columns>
+      {
+        columnCount === 0 ?
+          (<Wrap>{children}</Wrap>) :
+          (<Columns columnCount={columnCount} breakInside={breakInside}>{children}</Columns>)
+      }
+
     </Flex>
   </Box>
 )
 
-const Columns = ({columnCount, ...props}) => (
-  <Box {...props} sx={{ columnCount: columnCount || [1, 2], marginX: [0, -20] }}></Box>
+const Columns = ({ columnCount, breakInside, ...props }) => (
+  <Box {...props} sx={{ columnCount: columnCount || [1, 2], pageBreakInside: breakInside, marginX: [0, -20] }}></Box>
+)
+
+const Wrap = (props) => (
+  <Flex {...props} sx={{ flexWrap: "wrap", marginX: [0, -20] }}></Flex>
 )
 
 const P = styled(Text)`
@@ -205,11 +220,11 @@ const Container = styled.div`
 
   @media screen and (max-width: 1024px) {
     .indent1 {
-      margin-left: 30px;
+      margin-left: 15px;
     }
 
     .indent2 {
-      margin-left: 15px;
+      margin-left: 30px;
     }
   }
 `

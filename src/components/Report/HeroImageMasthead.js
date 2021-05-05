@@ -40,8 +40,17 @@ const HeroMastheadContainer = styled(Box)`
 
         .photo-credit {
           position: absolute;
-          bottom: -40px;
-          right: 50px;
+          bottom: -20px;
+          right: unset;
+          left: 20px;
+
+          @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {  
+            bottom: -40px;  
+            right: 50px;
+            left: unset;
+          }
+
+          font-size: 10px;
         }
       }
   }

@@ -11,7 +11,7 @@ const FramedImage = ({ src, alt, credit = "credit missing", ...props }) => {
         <Image src={src} alt={alt} fadeIn={500}></Image>
       </Box>
       <Img src={RectangleFrame} className="frame"></Img>
-      <Box mt={30} ml={[50]}>
+      <Box mt={30} ml={[0,50]}>
         <p>Photo Credit: {credit}</p>
       </Box>
     </Container>
@@ -28,7 +28,7 @@ const Container = styled(Box)`
     top: 0;
     left: 0;
     object-fit: cover;
-    object-position: center center;
+    object-position: ${({objectPosition}) => objectPosition ? objectPosition : 'center center'}
   }
 
   .frame {

@@ -21,7 +21,7 @@ const CeoLetter = ({ location }) => (
     <SEO title="Home" />
     <Nav></Nav>
     <Masthead headline={"2020<br/>CEO Letter"}>
-      <Container mt={100}>
+      <Container mt={[0,100]}>
         <Flex flexDirection={['column', 'row']}>
           <Box width={[1, 1 / 4]}>
             <Image

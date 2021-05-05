@@ -45,6 +45,7 @@ const impactReport = ({ location }) => {
               src={images[entry.image.id]}
               alt={entry.image.alt}
               credit={entry.image.credit}
+              objectPosition={'top center'}
             />
           }
         </Section>
