@@ -3,7 +3,6 @@ import { Flex, Box } from "rebass/styled-components"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { useLocation } from "@reach/router"
-import Select from 'react-select'
 
 const Nav = () => {
   return (
